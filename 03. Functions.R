@@ -26,8 +26,8 @@ How_many<-function(a,b)
 
 
 
-# приемер:Describe_numeric(df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
-Describe_numeric<-function(database,parametr,sample1,mesurement)
+# приемер:Describe_numeric_Norm (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
+Describe_numeric_Norm<-function(database,parametr,sample1,mesurement)
 {
   mean1<-round(mean(database, na.rm = TRUE),2)
   sd1<-round(sd(database, na.rm = TRUE),2)
@@ -35,9 +35,18 @@ Describe_numeric<-function(database,parametr,sample1,mesurement)
   write.table(Descr, FileName, sep="*", append = TRUE)
 }
 
+# приемер:Describe_numeric_NoNorm (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
+Describe_numeric_NoNorm<-function(database,parametr,sample1,mesurement)
+{
+  median1<-round(median(database, na.rm = TRUE),2)
+  quan1<-summary(database, na.rm = TRUE)
+  Descr<-print(paste("Средний", parametr ,sample1,median1 ,"[ 95% ДИ",round(quan1[2],2),";",round(quan1[5],2),"]", mesurement,"."))
+  write.table(Descr, FileName, sep="*", append = TRUE)
+}
 
-# приемер:Table_numeric("возраст",df_Abus$Age, df_Abus$Group)
-Table_numeric<-function(parametr,database,dev )
+
+# приемер:Table_numeric_Normal("возраст",df_Abus$Age, df_Abus$Group)
+Table_numeric_Normal<-function(parametr,database,dev )
 {
   mean1<-round(mean(database, na.rm = TRUE),2)
   sd1<-round(sd(database, na.rm = TRUE),2)
@@ -47,12 +56,35 @@ Table_numeric<-function(parametr,database,dev )
 }
 
 
-# приемер:Table_numericW("возраст",df_Abus$Age, df_Abus$Group)
+# приемер:Table_numericT("возраст",gr_Jun$Age, gr_Jun$Group)
 Table_numericW<-function(parametr,database,dev )
 {
   mean1<-round(mean(database, na.rm = TRUE),2)
   sd1<-round(sd(database, na.rm = TRUE),2)
+  p_value <- round(as.numeric(t.test(database ~ dev)[3]),2)
+  Descr<-print(paste(parametr,"*",mean1 ,"±",sd1,"*", p_value))
+  write.table(Descr, FileName, sep="*", append = TRUE)
+}
+
+
+# приемер:Table_numericW("возраст",gr_Jun$Age, gr_Jun$Group)
+Table_numericW<-function(parametr,database,dev )
+{
+  median1<-round(median(database, na.rm = TRUE),2)
+  quan1<-summary(database, na.rm = TRUE)
   p_value <- round(as.numeric(wilcox.test(database ~ dev)[3]),2)
+  Descr<-print(paste(parametr,"*",median1 ,"[ 95% ДИ",round(quan1[2],2),";",round(quan1[5],2),"]","*", p_value))
+  write.table(Descr, FileName, sep="*", append = TRUE)
+}
+
+
+
+# приемер:Table_numericANOV ("возраст",df_Abus$Age, df_Abus$Group)
+Table_numericANOV<-function(parametr,database,dev )
+{
+  mean1<-round(mean(database, na.rm = TRUE),2)
+  sd1<-round(sd(database, na.rm = TRUE),2)
+  p_value <- round(as.numeric(summary(aov(database ~ dev))[[1]][["Pr(>F)"]][1],2))
   Descr<-print(paste(parametr,"*",mean1 ,"±",sd1,"*", p_value))
   write.table(Descr, FileName, sep="*", append = TRUE)
 }
@@ -60,15 +92,16 @@ Table_numericW<-function(parametr,database,dev )
 # приемер:Table_numericKr("возраст",df_Abus$Age, df_Abus$Group)
 Table_numericKr<-function(parametr,database,dev )
 {
-  mean1<-round(mean(database, na.rm = TRUE),2)
-  sd1<-round(sd(database, na.rm = TRUE),2)
+  median1<-round(median(database, na.rm = TRUE),2)
+  quan1<-summary(database, na.rm = TRUE)
   p_value <- round(as.numeric(kruskal.test(database ~ dev)[3]),2)
-  Descr<-print(paste(parametr,"*",mean1 ,"±",sd1,"*", p_value))
+  Descr<-print(paste(parametr,"*",median1 ,"[ 95% ДИ",round(quan1[2],2),";",round(quan1[5],2),"]","*", p_value))
   write.table(Descr, FileName, sep="*", append = TRUE)
 }
 
 
-# пример: Describe_nonparametric_2(df_Abus$Breast_Surgery_before, "Во всей выборке было ")
+
+# пример: Describe_Qualitative_2(df_Abus$Breast_Surgery_before, "Во всей выборке было ")
 Describe_nonparametric_2<-function(database, sample1)
 {
   
@@ -80,7 +113,7 @@ Describe_nonparametric_2<-function(database, sample1)
 }
 
 
-# приемер: Table_nonparametric_2("Опрации",df_Abus$Breast_Surgery_before,df_Abus$Breast_Surgery_before)
+# приемер: Table_Qualitative_2("Опрации",df_Abus$Breast_Surgery_before,df_Abus$Breast_Surgery_before)
 Table_nonparametric_2<-function(Type,database,dev)
 {
   nonpar_tabble<-data.frame(table(database),prop.table(table(database)))
@@ -93,7 +126,7 @@ Table_nonparametric_2<-function(Type,database,dev)
 }
 
 
-# пример: Describe_nonparametric_3(df_Abus$RI_GrN, "Лучевой наклон во всем образце составлял")
+# пример: Describe_Qualitative_3(df_Abus$RI_GrN, "Лучевой наклон во всем образце составлял")
 Describe_nonparametric_3<-function(database, sample1)
 {
   nonpar_tabble<-data.frame(table(database),prop.table(table(database)))
@@ -107,7 +140,7 @@ Describe_nonparametric_3<-function(database, sample1)
 }
 
 
-#пример: Table_nonparametric_3("Лучевой наклон",df_Abus$RI_GrN, df_Abus$Group)
+#пример: Table_Qualitative_3("Лучевой наклон",df_Abus$RI_GrN, df_Abus$Group)
 Table_nonparametric_3<-function(Type,database,dev)
 {
   nonpar_tabble<-data.frame(table(database),prop.table(table(database)))
@@ -121,9 +154,9 @@ Table_nonparametric_3<-function(Type,database,dev)
 }
 
 
-#pvalue сравнения непарметрич данных
-#приемер: pvalueNonPara(df_Abus$Gender,df_Abus$Group,"по полу")
-pvalueNonPara<-function(x,y, parametr1)
+#pvalue сравнения качественных данных
+#приемер: pvalueQualitative(df_Abus$Side,df_Abus$Group,"по стороне поражения")
+pvalueQualitative<-function(x,y, parametr1)
 {
   S_Table<-round(as.numeric(summary(table(x, y))[6]),2)
   Описание<-print(paste("Разница между группами", parametr1," составила",S_Table, "."))
@@ -131,7 +164,7 @@ pvalueNonPara<-function(x,y, parametr1)
 }
 
 #pvalue сравнения парметрич данных (kruskal.test)
-#приемер: pvalueParaKr(df_Abus,df_Abus$RI_GrN,df_Abus$Group,"по радиальному наклону")
+#приемер: pvalueParaKr(df_Abus,df_Abus$Age,df_Abus$Group,"по возрасту")
 pvalueParaKr <-function(database,x,y, parametr1)
 {
   kruskal<-round(as.numeric(kruskal.test(x ~ y, data=database)[3]),2)
@@ -140,7 +173,7 @@ pvalueParaKr <-function(database,x,y, parametr1)
 }
 
 #pvalue сравнения парметрич данных (wilcox.test)
-#приемер: pvalueParaWx(df_Abus,df_Abus$Age,df_Abus$Group,"по возрасту")
+#приемер: pvalueParaWx(gr_Jun,gr_Jun$Age,gr_Jun$Group,"по возрасту")
 pvalueParaWx <-function(database,x,y, parametr1)
 {
   wilcox<-round(as.numeric(wilcox.test(x ~ y, data=database)[3]),2)
