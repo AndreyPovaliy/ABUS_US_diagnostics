@@ -26,12 +26,12 @@ How_many<-function(a,b)
 
 
 
-# приемер:Describe_numeric_Norm (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
+# приемер:Describe_numeric_Norm (df_Abus$Age, "возраст ","пациентов по всей выборке составил "," лет")
 Describe_numeric_Norm<-function(database,parametr,sample1,mesurement)
 {
   mean1<-round(mean(database, na.rm = TRUE),2)
   sd1<-round(sd(database, na.rm = TRUE),2)
-  Descr<-print(paste("Средний", parametr ,sample1,mean1 ,"±",sd1, mesurement,"."))
+  Descr<-print(paste("Средний ", parametr ,sample1,mean1 ,"±",sd1, mesurement,".", sep=""))
   write.table(Descr, FileName, sep="*", append = TRUE)
 }
 # приемер:Describe_numeric_NoNorm (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
@@ -39,7 +39,7 @@ Describe_numeric_NoNorm<-function(database,parametr,sample1,mesurement)
 {
   median1<-round(median(database, na.rm = TRUE),2)
   quan1<-summary(database, na.rm = TRUE)
-  Descr<-print(paste("Средний", parametr ,sample1,median1 ,"[ Q1-Q3:",round(quan1[2],2),";",round(quan1[5],2),"]", mesurement,"."))
+  Descr<-print(paste("Медиана ", parametr ,sample1,median1 ," [Q1-Q3: ",round(quan1[2],2),";",round(quan1[5],2),"]", mesurement,".", sep=""))
   write.table(Descr, FileName, sep="*", append = TRUE)
 }
 
@@ -101,18 +101,18 @@ Quantity_discr<-function(parametr,database){
   while (i<n){
     Descr<-print(paste(parametr,
                        data.frame(table(database))[i+1,1],
-                       "вошло",
-                       data.frame(round(prop.table(table(database)),2))[i+1,2],
+                       " было ",
+                       data.frame(round(prop.table(table(database))*100,2))[i+1,2],
                        "% (", 
                        data.frame(table(database))[i+1,2],
                        "/",length(database),
                        "случаев)",
-                       "[95% ДИ",
+                       "[95% ДИ ",
                        round(prop.test(table(database)[i+1], length(database))$conf.int[1],2),
                        ";",
                        round(prop.test(table(database)[i+1], length(database))$conf.int[2],2),
                        "]."
-    ))
+                       , sep=""))
     write.table(Descr, FileName, sep="*", append = TRUE)
     i<-i+1
     
@@ -233,6 +233,7 @@ Describe_numeric<-function(database,parametr,sample1,mesurement){
   }
   else{
     Describe_numeric_NoNorm(database,parametr,sample1,mesurement)
+    
   }
  
 }
