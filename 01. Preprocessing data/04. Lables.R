@@ -431,207 +431,7 @@ df_01_DescrPart_Quadrant$quadrant <- 	factor(df_01_DescrPart_Quadrant$quadrant,
 
 
 #####_01_US####
-
-#####_02_MMG####
-
-#####_03_ABUS####
-
-#####_04_MRSI####
-
-
-#####_05_Tumor####
-
-
-
-
-df_Abus$morphology_structure_tumor	 <- 	factor(df_Abus$morphology_structure_tumor,
-                                       levels=c(1,2,3,4,5,6,7,8,9,10,11,12,13),
-                                       labels = c(
-                                         "1"="инвазивный рак неспециального типа",
-                                         "2"="периканаликулярная фиброаденома",
-                                         "3"="склерозирующий аденоз",
-                                         "4"="фиброз стромы с гиалинозом",
-                                         "5"="фиброаденома",
-                                         "6"="миксоидная фиброаденома",
-                                         "7"="протоковый рак in situ",
-                                         "8"="инвазивный дольковый рак",
-                                         "9"="ткань молочной железы с фиброзом стромы",
-                                         "10" = "интраканаликулярная фиброаденома",
-                                         "11" = "нелактационный мастит",
-                                         "12"="очаговый аденоз",
-                                         "13"= "фиброаденома с гиперплазией флоридного типа"
-                                         ))
-
-
-
-df_Abus$cytological_conclusion	 <- 	factor(df_Abus$cytological_conclusion,
-                                   levels=c(1,2,3,4,5,6),
-                                   labels = c(
-                                     "1"="интрадуктальная папиллома",
-                                     "2"="Цистаденопапиллома",
-                                     "3"="фиброзно-кистозные изменения",
-                                     "4"="белковая субстанция, капли жира",
-                                     "5"="фиброаденома",
-                                     "6"="фиброзно- кистозный характер изменений"
-                                     
-                                   ))
-
-
-
-df_Abus$degree_malignancy <- 	factor(df_Abus$degree_malignancy,
-                             levels=c(0,1,2,3),
-                             labels = c(
-                               "0"= "нет данных",
-                               "1"= "I (низкая 3-5 бал)",
-                               "2"= "II (умеренная 6-7 балов)",
-                               "3"= "III(высокая 8-9 бал)"
-                             ))
-
-
-df_Abus$conclusion_MMG_skin	<- 	factor(df_Abus$conclusion_MMG_skin,
-                                       levels=c(0,1,2,3,4,5,6),
-                                       labels = c(
-                                         "0"= "не выполнялась",
-                                         "1"="не изменена",
-                                         "2"="отечна",
-                                         "3"="локальное утолщение",
-                                         "4"="выбухание",
-                                         "5"="диффузное утолщение",
-                                         "6"="диагностическая ММГ"
-                                         ))
-
-df_Abus$MMG_areola	<- 	factor(df_Abus$MMG_areola,
-                              levels=c(1,2,3,4,5),
-                              labels = c(
-                                "1"="не изменена",
-                                "2"="подтянута",
-                                "3"="деформирована",
-                                "4"="отечна",
-                                "5"="уплотнена"
-                                ))
-
-df_Abus$MMG_nipple	<- 	factor(df_Abus$MMG_nipple,
-                              levels=c(1,2,3),
-                              labels = c(
-                                "1"="не изменен",
-                                "2"="втянут",
-                                "3"="отечен"
-                                
-                              ))
-
-df_Abus$MMG_background_breast	<- 	factor(df_Abus$MMG_background_breast,
-                                         levels=c(1,2,3,4,5),
-                                         labels = c(
-                                           "1"="нормальная ткань МЖ",
-                                           "2"="диффузная ФКМ",
-                                           "3"="узловая мастопатия",
-                                           "4"="инволюция",
-                                           "5"="железистая ткань"
-                                           
-                                         ))
-
-df_Abus$MMG_nodle 	<- 	factor(df_Abus$MMG_nodle,
-                              levels=c(0,1,2,3,4,5,6,7,8,9),
-                              labels = c(
-                                "0"="нет узла",
-                                "1"="неровный",
-                                "2"="дольчатый",
-                                "3"="лучистый",
-                                "4"="ровный",
-                                "5"="волнистый",
-                                "6"="фокус уплотнения",
-                                "7"="участок нарушения архитектоники",
-                                "8"= "участок уплотнения",
-                                "9"="образование"
-                                
-                                ))
-
-df_Abus$MMG_nodle_contour	<- 	factor(df_Abus$MMG_nodle_contour,
-                                     levels=c(0,1,2,3,4,5),
-                                     labels = c(
-                                       "0"="нет",
-                                       "1"="четкий",
-                                       "2"="нечеткий",
-                                       "3"="ровный",
-                                       "4"="размытый",
-                                       "5"="полициклический"
-                                       
-                                     ))
-
-df_Abus$MMG_nodle_size	<- 	factor(df_Abus$MMG_nodle_size,
-                                  levels=c(0,1,2,3,4,5,6),
-                                  labels = c(
-                                    "0"="нет",
-                                    "1"="0,5-1,0",
-                                    "2"="1,1-1,5см",
-                                    "3"="1,6-2,0см",
-                                    "4"="2,1-2,5см",
-                                    "5"="2,6-3,0см",
-                                    "6"="более 3 см"
-                                    
-                                  ))
-
-
-
-df_Abus$MMG_calcifications	<- 	factor(df_Abus$MMG_calcifications,
-                                      levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
-                                      labels = c(
-                                        "0"="нет",
-                                        "1"="полиморфные",
-                                        "2"="единичные мелкие",
-                                        "3"="крупные",
-                                        "4"="диффузные",
-                                        "5"="сгруппированные",
-                                        "6"="микрокальцинаты",
-                                        "7"="разнокалиберные",
-                                        "8"="плеоморфные",
-                                        "9"="глыбчатые",
-                                        "10"="множественные точечные",
-                                        "11"="по типу пудры"
-                                        
-                                        
-                                      ))
-
-df_Abus$MMG_number_formations_visualized	<- 	factor(df_Abus$MMG_number_formations_visualized,
-                                                    levels=c(0,1,2,3,4,5),
-                                                    labels = c(
-                                                      "0"="не определяется",
-                                                      "1"="одно",
-                                                      "2"="два",
-                                                      "3"="три",
-                                                      "4"="четыре",
-                                                      "5"="участок асимметрии"
-                                                    ))
-
-df_Abus$MMG_axillary_lymph_nodes	<- 	factor(df_Abus$MMG_axillary_lymph_nodes,
-                                            levels=c(1,2,3,4,5,6),
-                                            labels = c(
-                                              "1"="не визуализируются",
-                                              "2"="не увеличены",
-                                              "3"="увеличены",
-                                              "4"="мтс. изменены",
-                                              "5"="нет данных",
-                                              "6"="увеличены, жировая инволюция"
-                                              
-                                            ))
-
-df_Abus$conclusion_MMG<- 	factor(df_Abus$conclusion_MMG,
-                                 levels=c(1,2,3,4,5,6,7,8,9),
-                                 labels = c(
-                                   "1"="Диф фам",
-                                   "2"="Susp Ca",
-                                   "3"="Кластер кальцинатов",
-                                   "4"="Лок аденоз",
-                                   "5"="фиброаденома",
-                                   "6"="Киста",
-                                   "7"="Мастит",
-                                   "8"="интраммарные лимфоузлы",
-                                   "9"="образование"
-                                   
-                                   
-                                 ))
-
-df_Abus$US	<- 	factor(df_Abus$US,
+df_Abus$US	<- 	factor(df_Abus$US_skin,
                       levels=c(1,2,3),
                       labels = c(
                         "1"="не изменена",
@@ -806,10 +606,218 @@ df_Abus$US_diagnosis	<- 	factor(df_Abus$US_diagnosis,
                                   "15"= "интрамаммарн.лу",
                                   "16"="цистаденопапиллома"
                                   
-
+                                  
                                 ))
 
-df_Abus$ABUS	<- 	factor(df_Abus$ABUS,
+df_Abus$number_nodles_US	<- 	factor(df_Abus$number_nodles_US,
+                                    levels=c(1,2,3,4,5,6),
+                                    labels = c(
+                                      "1"="не опред",
+                                      "2"="один",
+                                      "3"="два",
+                                      "4"="три",
+                                      "5"="множественные",
+                                      "6"="кисты"
+                                      
+                                    ))
+df_Abus$Category_Birads_Ultrasound	<- 	factor(df_Abus$Category_Birads_Ultrasound,
+                                              levels=c(1,2,3,4,5,6,7,8,9),
+                                              labels = c(
+                                                "1"="Birads 1",
+                                                "2"="Birads 2",
+                                                "3"="Birads 3",
+                                                "4"="Birads 4а",
+                                                "5"="Birads 4b",
+                                                "6"="Birads 4c",
+                                                "7"="Birads 5",
+                                                "8"="Birads 6",
+                                                "9"="Birads 0"
+                                              ))
+
+#####_02_MMG####
+df_Abus$conclusion_MMG_skin	<- 	factor(df_Abus$conclusion_MMG_skin,
+                                       levels=c(0,1,2,3,4,5,6),
+                                       labels = c(
+                                         "0"= "не выполнялась",
+                                         "1"="не изменена",
+                                         "2"="отечна",
+                                         "3"="локальное утолщение",
+                                         "4"="выбухание",
+                                         "5"="диффузное утолщение",
+                                         "6"="диагностическая ММГ"
+                                       ))
+
+df_Abus$MMG_areola	<- 	factor(df_Abus$MMG_areola,
+                              levels=c(1,2,3,4,5,99),
+                              labels = c(
+                                "1"="не изменена",
+                                "2"="подтянута",
+                                "3"="деформирована",
+                                "4"="отечна",
+                                "5"="уплотнена",
+                                "99"="не проводилась"
+                                
+                              ))
+
+df_Abus$MMG_nipple	<- 	factor(df_Abus$MMG_nipple,
+                              levels=c(1,2,3,99),
+                              labels = c(
+                                "1"="не изменен",
+                                "2"="втянут",
+                                "3"="отечен",
+                                "99"="не проводилась"
+                                
+                              ))
+
+df_Abus$MMG_background_breast	<- 	factor(df_Abus$MMG_background_breast,
+                                         levels=c(1,2,3,4,5,99),
+                                         labels = c(
+                                           "1"="нормальная ткань МЖ",
+                                           "2"="диффузная ФКМ",
+                                           "3"="узловая мастопатия",
+                                           "4"="инволюция",
+                                           "5"="железистая ткань",
+                                           "99"="не проводилась"
+                                           
+                                         ))
+
+df_Abus$MMG_nodle 	<- 	factor(df_Abus$MMG_nodle,
+                              levels=c(0,1,2,3,4,5,6,7,8,9),
+                              labels = c(
+                                "0"="нет узла",
+                                "1"="неровный",
+                                "2"="дольчатый",
+                                "3"="лучистый",
+                                "4"="ровный",
+                                "5"="волнистый",
+                                "6"="фокус уплотнения",
+                                "7"="участок нарушения архитектоники",
+                                "8"= "участок уплотнения",
+                                "9"="образование",
+                                "99"="не проводилась"
+                                
+                              ))
+
+df_Abus$MMG_nodle_contour	<- 	factor(df_Abus$MMG_nodle_contour,
+                                     levels=c(0,1,2,3,4,5),
+                                     labels = c(
+                                       "0"="нет",
+                                       "1"="четкий",
+                                       "2"="нечеткий",
+                                       "3"="ровный",
+                                       "4"="размытый",
+                                       "5"="полициклический",
+                                       "99"="не проводилась"
+                                       
+                                     ))
+
+df_Abus$MMG_nodle_size	<- 	factor(df_Abus$MMG_nodle_size,
+                                  levels=c(0,1,2,3,4,5,6),
+                                  labels = c(
+                                    "0"="нет",
+                                    "1"="0,5-1,0",
+                                    "2"="1,1-1,5см",
+                                    "3"="1,6-2,0см",
+                                    "4"="2,1-2,5см",
+                                    "5"="2,6-3,0см",
+                                    "6"="более 3 см",
+                                    "99"="не проводилась"
+                                    
+                                  ))
+
+
+
+df_Abus$MMG_calcifications	<- 	factor(df_Abus$MMG_calcifications,
+                                      levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
+                                      labels = c(
+                                        "0"="нет",
+                                        "1"="полиморфные",
+                                        "2"="единичные мелкие",
+                                        "3"="крупные",
+                                        "4"="диффузные",
+                                        "5"="сгруппированные",
+                                        "6"="микрокальцинаты",
+                                        "7"="разнокалиберные",
+                                        "8"="плеоморфные",
+                                        "9"="глыбчатые",
+                                        "10"="множественные точечные",
+                                        "11"="по типу пудры",
+                                        "99"="не проводилась"
+                                        
+                                        
+                                      ))
+
+df_Abus$MMG_number_formations_visualized	<- 	factor(df_Abus$MMG_number_formations_visualized,
+                                                    levels=c(0,1,2,3,4,5,99),
+                                                    labels = c(
+                                                      "0"="не определяется",
+                                                      "1"="одно",
+                                                      "2"="два",
+                                                      "3"="три",
+                                                      "4"="четыре",
+                                                      "5"="участок асимметрии",
+                                                      "99"="не проводилась"
+                                                    ))
+
+df_Abus$MMG_axillary_lymph_nodes	<- 	factor(df_Abus$MMG_axillary_lymph_nodes,
+                                            levels=c(1,2,3,4,5,6),
+                                            labels = c(
+                                              "1"="не визуализируются",
+                                              "2"="не увеличены",
+                                              "3"="увеличены",
+                                              "4"="мтс. изменены",
+                                              "5"="нет данных",
+                                              "6"="увеличены, жировая инволюция",
+                                              "99"="не проводилась"
+                                              
+                                            ))
+
+df_Abus$conclusion_MMG<- 	factor(df_Abus$conclusion_MMG,
+                                 levels=c(0,1,2,3,4,5,6,7,8,9,10,99),
+                                 labels = c(
+                                   "0"="Без патологии",
+                                   "1"="Диф фам",
+                                   "2"="Susp Ca",
+                                   "3"="Кластер кальцинатов",
+                                   "4"="Лок аденоз",
+                                   "5"="фиброаденома",
+                                   "6"="Киста",
+                                   "7"="Мастит",
+                                   "8"="интраммарные лимфоузлы",
+                                   "9"="образование",
+                                   "99"="не проводилась"
+                                 ))
+
+df_Abus$number_nodles_MMG	<- 	factor(df_Abus$number_nodles_MMG,
+                                     levels=c(1,2,3,4,5,6),
+                                     labels = c(
+                                       "1"="не опред",
+                                       "2"="один",
+                                       "3"="два",
+                                       "4"="три",
+                                       "5"="множественные",
+                                       "6"="ФКМ",
+                                       "99"="не проводилась"
+                                       
+                                     ))
+df_Abus$Category_Birads_MMG	<- 	factor(df_Abus$Category_Birads_MMG,
+                                       levels=c(1,2,3,4,5,6,7,8,9),
+                                       labels = c(
+                                         "1"="Birads 1",
+                                         "2"="Birads 2",
+                                         "3"="Birads 3",
+                                         "4"="Birads 4а",
+                                         "5"="Birads 4b",
+                                         "6"="Birads 4c",
+                                         "7"="Birads 5",
+                                         "8"="Birads 6",
+                                         "9"="Birads 0",
+                                         "99"="не проводилась"
+                                         
+                                       ))
+
+#####_03_ABUS####
+df_Abus$ABUS_skin	<- 	factor(df_Abus$ABUS_skin,
                         levels=c(1,2,3),
                         labels = c(
                           "1"="не изменена",
@@ -828,7 +836,7 @@ df_Abus$ABUS_nodle_size	<- 	factor(df_Abus$ABUS_nodle_size,
                                      "4"="2,1-2,5 см",
                                      "5"= "2,5-3,0 см",
                                      "6"="более 3 см"
-                                     ))
+                                   ))
 
 df_Abus$ABUS_nodle_contours	<- 	factor(df_Abus$ABUS_nodle_contours,
                                        levels=c(0,1,2,3,4,5,6),
@@ -896,6 +904,97 @@ df_Abus$ABUS_diagnosis<- 	factor(df_Abus$ABUS_diagnosis,
                                    
                                  ))
 
+df_Abus$number_nodles_ABUS	<- 	factor(df_Abus$number_nodles_ABUS,
+                                      levels=c(1,2,3,4,5,6),
+                                      labels = c(
+                                        "1"="не опред",
+                                        "2"="один",
+                                        "3"="два",
+                                        "4"="три",
+                                        "5"="множественные",
+                                        "6"="кисты"
+                                        
+                                      ))
+df_Abus$Category_Birads_ABUS	<- 	factor(df_Abus$Category_Birads_ABUS,
+                                        levels=c(1,2,3,4,5,6,7,8,9),
+                                        labels = c(
+                                          "1"="Birads 1",
+                                          "2"="Birads 2",
+                                          "3"="Birads 3",
+                                          "4"="Birads 4а",
+                                          "5"="Birads 4b",
+                                          "6"="Birads 4c",
+                                          "7"="Birads 5",
+                                          "8"="Birads 6",
+                                          "9"="Birads 0"
+                                        ))
+
+
+#####_04_MRSI####
+df_Abus$MRI_data	<- 	factor(df_Abus$MRI_data,
+                            levels=c(1,2),
+                            labels = c(
+                              "1"="интраммарные лу",
+                              "2"="сегментарно-протоковая зона контрастирования"
+                            ))
+
+df_Abus$number_nodles_MRI	<- 	factor(df_Abus$number_nodles_MRI,
+                                     levels=c(1,2,3,4,5),
+                                     labels = c(
+                                       "1"="не опред",
+                                       "2"="один",
+                                       "3"="два",
+                                       "4"="три",
+                                       "5"="множественные",
+                                       "6"="сегментарно-очаговая зона контрастирования"
+                                       
+                                     ))
+                              
+
+#####_05_Tumor####
+
+df_Abus$morphology_structure_tumor	 <- 	factor(df_Abus$morphology_structure_tumor,
+                                       levels=c(1,2,3,4,5,6,7,8,9,10,11,12,13),
+                                       labels = c(
+                                         "1"="инвазивный рак неспециального типа",
+                                         "2"="периканаликулярная фиброаденома",
+                                         "3"="склерозирующий аденоз",
+                                         "4"="фиброз стромы с гиалинозом",
+                                         "5"="фиброаденома",
+                                         "6"="миксоидная фиброаденома",
+                                         "7"="протоковый рак in situ",
+                                         "8"="инвазивный дольковый рак",
+                                         "9"="ткань молочной железы с фиброзом стромы",
+                                         "10" = "интраканаликулярная фиброаденома",
+                                         "11" = "нелактационный мастит",
+                                         "12"="очаговый аденоз",
+                                         "13"= "фиброаденома с гиперплазией флоридного типа"
+                                         ))
+
+
+
+df_Abus$cytological_conclusion	 <- 	factor(df_Abus$cytological_conclusion,
+                                   levels=c(1,2,3,4,5,6),
+                                   labels = c(
+                                     "1"="интрадуктальная папиллома",
+                                     "2"="Цистаденопапиллома",
+                                     "3"="фиброзно-кистозные изменения",
+                                     "4"="белковая субстанция, капли жира",
+                                     "5"="фиброаденома",
+                                     "6"="фиброзно- кистозный характер изменений"
+                                     
+                                   ))
+
+
+
+df_Abus$degree_malignancy <- 	factor(df_Abus$degree_malignancy,
+                             levels=c(0,1,2,3),
+                             labels = c(
+                               "0"= "нет данных",
+                               "1"= "I (низкая 3-5 бал)",
+                               "2"= "II (умеренная 6-7 балов)",
+                               "3"= "III(высокая 8-9 бал)"
+                             ))
 
 
 df_Abus$Receptors	<- 	factor(df_Abus$Receptors,
@@ -915,106 +1014,24 @@ df_Abus$Receptors	<- 	factor(df_Abus$Receptors,
 
 
 
-df_Abus$MRI_data	<- 	factor(df_Abus$MRI_data,
-                            levels=c(1,2),
-                            labels = c(
-                              "1"="интраммарные лу",
-                              "2"="сегментарно-протоковая зона контрастирования"
 
-                           ))
+                           
 
 
 
-df_Abus$number_nodles_MMG	<- 	factor(df_Abus$number_nodles_MMG,
-                                     levels=c(1,2,3,4,5,6),
-                                     labels = c(
-                                       "1"="не опред",
-                                       "2"="один",
-                                       "3"="два",
-                                       "4"="три",
-                                       "5"="множественные",
-                                       "6"="ФКМ"
-                                       
-                                     ))
 
-df_Abus$number_nodles_US	<- 	factor(df_Abus$number_nodles_US,
-                                    levels=c(1,2,3,4,5,6),
-                                    labels = c(
-                                      "1"="не опред",
-                                      "2"="один",
-                                      "3"="два",
-                                      "4"="три",
-                                      "5"="множественные",
-                                      "6"="кисты"
-                                      
-                                    ))
 
-df_Abus$number_nodles_ABUS	<- 	factor(df_Abus$number_nodles_ABUS,
-                                      levels=c(1,2,3,4,5,6),
-                                      labels = c(
-                                        "1"="не опред",
-                                        "2"="один",
-                                        "3"="два",
-                                        "4"="три",
-                                        "5"="множественные",
-                                        "6"="кисты"
-                                        
-                                      ))
 
-df_Abus$number_nodles_MRI	<- 	factor(df_Abus$number_nodles_MRI,
-                                     levels=c(1,2,3,4,5),
-                                     labels = c(
-                                       "1"="не опред",
-                                       "2"="один",
-                                       "3"="два",
-                                       "4"="три",
-                                       "5"="множественные",
-                                       "6"="сегментарно-очаговая зона контрастирования"
-                                       
-                                     ))
 
-df_Abus$Category_Birads_MMG	<- 	factor(df_Abus$Category_Birads_MMG,
-                                       levels=c(1,2,3,4,5,6,7,8,9),
-                                       labels = c(
-                                         "1"="Birads 1",
-                                         "2"="Birads 2",
-                                         "3"="Birads 3",
-                                         "4"="Birads 4а",
-                                         "5"="Birads 4b",
-                                         "6"="Birads 4c",
-                                         "7"="Birads 5",
-                                         "8"="Birads 6",
-                                         "9"="Birads 0"
-                                         
-                                       ))
 
-df_Abus$Category_Birads_Ultrasound	<- 	factor(df_Abus$Category_Birads_Ultrasound,
-                                              levels=c(1,2,3,4,5,6,7,8,9),
-                                              labels = c(
-                                                "1"="Birads 1",
-                                                "2"="Birads 2",
-                                                "3"="Birads 3",
-                                                "4"="Birads 4а",
-                                                "5"="Birads 4b",
-                                                "6"="Birads 4c",
-                                                "7"="Birads 5",
-                                                "8"="Birads 6",
-                                                "9"="Birads 0"
-                                              ))
 
-df_Abus$Category_Birads_ABUS	<- 	factor(df_Abus$Category_Birads_ABUS,
-                                        levels=c(1,2,3,4,5,6,7,8,9),
-                                        labels = c(
-                                          "1"="Birads 1",
-                                          "2"="Birads 2",
-                                          "3"="Birads 3",
-                                          "4"="Birads 4а",
-                                          "5"="Birads 4b",
-                                          "6"="Birads 4c",
-                                          "7"="Birads 5",
-                                          "8"="Birads 6",
-                                          "9"="Birads 0"
-                                        ))
+
+
+
+
+
+
+
 
 df_Abus$ABUS_calcinates	<- 	factor(df_Abus$ABUS_calcinates,
                                    levels=c(0,1,2,3),
