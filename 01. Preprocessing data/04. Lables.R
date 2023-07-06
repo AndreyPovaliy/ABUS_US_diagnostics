@@ -586,7 +586,7 @@ df_Abus$US_region_lymph_nodes	<- 	factor(df_Abus$US_region_lymph_nodes,
                                          ))
 
 df_Abus$US_diagnosis	<- 	factor(df_Abus$US_diagnosis,
-                                levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12),
+                                levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16),
                                 labels = c(
                                   "0"="без патологии",
                                   "1"="ФА единичная",
@@ -773,7 +773,7 @@ df_Abus$MMG_axillary_lymph_nodes	<- 	factor(df_Abus$MMG_axillary_lymph_nodes,
                                             ))
 
 df_Abus$conclusion_MMG<- 	factor(df_Abus$conclusion_MMG,
-                                 levels=c(0,1,2,3,4,5,6,7,8,9,10,99),
+                                 levels=c(0,1,2,3,4,5,6,7,8,9,99),
                                  labels = c(
                                    "0"="Без патологии",
                                    "1"="Диф фам",
@@ -818,16 +818,17 @@ df_Abus$Category_Birads_MMG	<- 	factor(df_Abus$Category_Birads_MMG,
 
 #####_03_ABUS####
 df_Abus$ABUS_skin	<- 	factor(df_Abus$ABUS_skin,
-                        levels=c(1,2,3),
+                        levels=c(1,2,3,99),
                         labels = c(
                           "1"="не изменена",
                           "2"="утолщена",
-                          "3"="другое"
+                          "3"="другое",
+                          "99"="не проводилось исследование"
                           
                         ))
 
 df_Abus$ABUS_nodle_size	<- 	factor(df_Abus$ABUS_nodle_size,
-                                   levels=c(0,1,2,3,4,5),
+                                   levels=c(0,1,2,3,4,5,6,99),
                                    labels = c(
                                      "0"="нет",
                                      "1"="0,5-1,0 см",
@@ -835,11 +836,12 @@ df_Abus$ABUS_nodle_size	<- 	factor(df_Abus$ABUS_nodle_size,
                                      "3"="1,5-2,0 см",
                                      "4"="2,1-2,5 см",
                                      "5"= "2,5-3,0 см",
-                                     "6"="более 3 см"
+                                     "6"="более 3 см",
+                                     "99"="не проводилось исследование"
                                    ))
 
 df_Abus$ABUS_nodle_contours	<- 	factor(df_Abus$ABUS_nodle_contours,
-                                       levels=c(0,1,2,3,4,5,6),
+                                       levels=c(0,1,2,3,4,5,6,7,8,99),
                                        labels = c(
                                          "0"="нет узла",
                                          "1"="ровные",
@@ -849,44 +851,48 @@ df_Abus$ABUS_nodle_contours	<- 	factor(df_Abus$ABUS_nodle_contours,
                                          "5"="нечеткие",
                                          "6"="волнистые",
                                          "7"= "другое",
-                                         "8"= "нарушение архитектоники"
+                                         "8"= "нарушение архитектоники",
+                                         "99"="не проводилось исследование"
                                          
                                        ))
 
 df_Abus$ABUS_echogenicity_formation	<- 	factor(df_Abus$ABUS_echogenicity_formation,
-                                               levels=c(0,1,2,3,4,5),
+                                               levels=c(0,1,2,3,4,5,99),
                                                labels = c(
                                                  "0"="нет узла",
                                                  "1"="гиперэхогенное",
                                                  "2"="гипоэхогенное",
                                                  "3"="изоэхогенное",
                                                  "4"="смешанная",
-                                                 "5"="анэхогенное"
+                                                 "5"="анэхогенное",
+                                                 "99"="не проводилось исследование"
                                                  
                                                ))
 
 df_Abus$ABUS_structure	<- 	factor(df_Abus$ABUS_structure,
-                                  levels=c(0,1,2,3,4,5),
+                                  levels=c(0,1,2,3,4,5,99),
                                   labels = c(
                                     "0"="нет узла",
                                     "1"="однородная",
                                     "2"="неоднородная",
                                     "3"="с жидкостным содержимым",
                                     "4"="с кальцинатами",
-                                    "5"= "наличие внутрикистозных пристен.разрастаний"
+                                    "5"= "наличие внутрикистозных пристен.разрастаний",
+                                    "99"="не проводилось исследование"
                                     
                                   ))
 
 df_Abus$ABUS_symptom_retraction	<- 	factor(df_Abus$ABUS_symptom_retraction,
-                                           levels=c(1,2),
+                                           levels=c(1,2,99),
                                            labels = c(
                                              "1"="есть",
-                                             "2"="нет"
+                                             "2"="нет",
+                                             "99"="не проводилось исследование"
                                              
                                            ))
 
 df_Abus$ABUS_diagnosis<- 	factor(df_Abus$ABUS_diagnosis,
-                                 levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12),
+                                 levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,99),
                                  labels = c(
                                    "0"="без патологии",
                                    "1"="ФА единичная",
@@ -900,23 +906,26 @@ df_Abus$ABUS_diagnosis<- 	factor(df_Abus$ABUS_diagnosis,
                                    "9"="мультицентричны",
                                    "10"="склерозирующий аденоз",
                                    "11"="ФКМ",
-                                   "12"="диф фам"
+                                   "12"="диф фам",
+                                   "13"="Лок Фам",
+                                   "99"="не проводилось исследование"
                                    
                                  ))
 
 df_Abus$number_nodles_ABUS	<- 	factor(df_Abus$number_nodles_ABUS,
-                                      levels=c(1,2,3,4,5,6),
+                                      levels=c(1,2,3,4,5,6,99),
                                       labels = c(
                                         "1"="не опред",
                                         "2"="один",
                                         "3"="два",
                                         "4"="три",
                                         "5"="множественные",
-                                        "6"="кисты"
+                                        "6"="кисты",
+                                        "99"="не проводилось исследование"
                                         
                                       ))
 df_Abus$Category_Birads_ABUS	<- 	factor(df_Abus$Category_Birads_ABUS,
-                                        levels=c(1,2,3,4,5,6,7,8,9),
+                                        levels=c(1,2,3,4,5,6,7,8,9,99),
                                         labels = c(
                                           "1"="Birads 1",
                                           "2"="Birads 2",
@@ -926,8 +935,20 @@ df_Abus$Category_Birads_ABUS	<- 	factor(df_Abus$Category_Birads_ABUS,
                                           "6"="Birads 4c",
                                           "7"="Birads 5",
                                           "8"="Birads 6",
-                                          "9"="Birads 0"
+                                          "9"="Birads 0",
+                                          "99"="не проводилось исследование"
                                         ))
+
+df_Abus$ABUS_calcinates	<- 	factor(df_Abus$ABUS_calcinates,
+                                   levels=c(0,1,2,3,99),
+                                   labels = c(
+                                     "0"="нет",
+                                     "1"="определяются",
+                                     "2"="макрокальцинаты",
+                                     "3"="микрокальцинаты",
+                                     "99"="не проводилось исследование"
+                                     
+                                   ))
 
 
 #####_04_MRSI####
@@ -939,7 +960,7 @@ df_Abus$MRI_data	<- 	factor(df_Abus$MRI_data,
                             ))
 
 df_Abus$number_nodles_MRI	<- 	factor(df_Abus$number_nodles_MRI,
-                                     levels=c(1,2,3,4,5),
+                                     levels=c(1,2,3,4,5,6),
                                      labels = c(
                                        "1"="не опред",
                                        "2"="один",
@@ -1033,15 +1054,7 @@ df_Abus$Receptors	<- 	factor(df_Abus$Receptors,
 
 
 
-df_Abus$ABUS_calcinates	<- 	factor(df_Abus$ABUS_calcinates,
-                                   levels=c(0,1,2,3),
-                                   labels = c(
-                                     "0"="нет",
-                                     "1"="определяются",
-                                     "2"="макрокальцинаты",
-                                     "3"="микрокальцинаты"
-                                     
-                                   ))
+
 
 df_Abus$Calcinates_micro_pure_ultrasound <- 	factor(df_Abus$Calcinates_micro_pure_ultrasound,
                                                     levels=c(0,1,2,3),

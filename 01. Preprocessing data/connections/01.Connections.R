@@ -14,9 +14,9 @@ df_PersonalDiscr <- dbGetQuery(con, "SELECT  *
 FROM      ABUS.PatientDetails.Personal
 LEFT JOIN ABUS.PatientDetails.Discr ON ABUS.PatientDetails.Personal.ID= ABUS.PatientDetails.Discr.IDPatient")
 
-df_PersonalDiagn <- dbGetQuery(con, "SELECT  *
+df_PersonalUSDiscr <- dbGetQuery(con, "SELECT  *
 FROM      ABUS.PatientDetails.Personal
-LEFT JOIN ABUS.PatientDetails.DiagnosisPrimary 
-        ON ABUS.PatientDetails.Personal.ID= ABUS.PatientDetails.DiagnosisPrimary.IDPatient")
+LEFT JOIN ABUS.USDetails.USDiscr
+        ON ABUS.PatientDetails.Personal.ID= ABUS.USDetails.USDiscr.IDPatient")
 
 

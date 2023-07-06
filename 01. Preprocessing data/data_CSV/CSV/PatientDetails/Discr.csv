@@ -1,4 +1,4 @@
-IDDiscr,IDPatient,Side,skin_symptoms,nipple_retraction,nipple_release,type_structure_ACR
+IDDiscr,IDPatient,Side,skinSymptoms,nippleRetraction,nippleRelease,typeRtructureACR
 1,EMC4541406,4,1,1,1,4
 2,EMC4603371,4,1,1,1,3
 3,EMC1101181,2,1,1,1,3
@@ -597,3 +597,14 @@ IDDiscr,IDPatient,Side,skin_symptoms,nipple_retraction,nipple_release,type_struc
 596,EMC4011956,4,1,1,1,4
 597,EMC4683997,3,1,1,1,4
 598,EMC4607535,4,1,1,1,3
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
