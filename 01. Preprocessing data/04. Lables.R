@@ -1,7 +1,7 @@
 #####_01_DescrPart####
 
 #####Personal####
-df_01_DescrPart_Personal$Satus_reproductive	<- factor(df_01_DescrPart_Personal$Satus_reproductive, 
+df_Personal$SatusReproductive	<- factor(df_Personal$SatusReproductive, 
                                      levels=c(1, 2, 3, 4, 5, 6),
                                      labels = c(
                                        "1"="репродуктивный возраст",
@@ -12,14 +12,14 @@ df_01_DescrPart_Personal$Satus_reproductive	<- factor(df_01_DescrPart_Personal$S
                                        "6"="беременность"
                                      ))
 
-df_01_DescrPart_Personal$Breast_Surgery_before <- factor(df_01_DescrPart_Personal$Breast_Surgery_before  , 
+df_Personal$BreastSurgeryBefore <- factor(df_Personal$BreastSurgeryBefore  , 
                                         levels=c(1, 2),
                                         labels = c(
                                           "1"="Не было операций",
                                           "2"="Были операции"
                                         ))
 
-df_01_DescrPart_Personal$hormonal_medications	<- 	factor(df_01_DescrPart_Personal$hormonal_medications,
+df_Personal$hormonalMedications	<- 	factor(df_Personal$hormonalMedications,
                                         levels=c(1,2),
                                         labels = c(
                                           "1"="да",
@@ -27,7 +27,7 @@ df_01_DescrPart_Personal$hormonal_medications	<- 	factor(df_01_DescrPart_Persona
                                           
                                         ))
 
-df_01_DescrPart_Personal$genetics	<- 	factor(df_01_DescrPart_Personal$genetics,
+df_Personal$genetics	<- 	factor(df_Personal$genetics,
                             levels=c(1,2),
                             labels = c(
                               "1"="нет",
@@ -36,7 +36,7 @@ df_01_DescrPart_Personal$genetics	<- 	factor(df_01_DescrPart_Personal$genetics,
                             ))
 
 
-df_01_DescrPart_Personal$Mutation_BRCA <- factor(df_01_DescrPart_Personal$Mutation_BRCA,
+df_Personal$MutationBRCA <- factor(df_Personal$MutationBRCA,
                                 levels=c(0,1,2,3,4,5),
                                 labels = c(
                                   "0"="Оценка не проводилась",
@@ -47,290 +47,11 @@ df_01_DescrPart_Personal$Mutation_BRCA <- factor(df_01_DescrPart_Personal$Mutati
                                   "5" = "ложноположительный результат"))
             
 
-gr1_01_DescrPart_Personal$Satus_reproductive	<- factor(gr1_01_DescrPart_Personal$Satus_reproductive, 
-                                                       levels=c(1, 2, 3, 4,5,6),
-                                                       labels = c(
-                                                         "1"="репродуктивный возраст",
-                                                         "2"="менопауза до 5 лет",
-                                                         "3"="менопауза > 5 лет",
-                                                         "4"="пременопауза",
-                                                         "5"="оперативная менопауза",
-                                                         "6"="беременность"
-                                                       ))
 
-gr1_01_DescrPart_Personal$Breast_Surgery_before <- factor(gr1_01_DescrPart_Personal$Breast_Surgery_before  , 
-                                                          levels=c(1, 2),
-                                                          labels = c(
-                                                            "1"="Не было операций",
-                                                            "2"="Были операции"
-                                                          ))
-
-gr1_01_DescrPart_Personal$hormonal_medications	<- 	factor(gr1_01_DescrPart_Personal$hormonal_medications,
-                                                          levels=c(1,2),
-                                                          labels = c(
-                                                            "1"="да",
-                                                            "2"="нет"
-                                                            
-                                                          ))
-
-gr1_01_DescrPart_Personal$genetics	<- 	factor(gr1_01_DescrPart_Personal$genetics,
-                                              levels=c(1,2),
-                                              labels = c(
-                                                "1"="нет",
-                                                "2"="есть"
-                                                
-                                              ))
-
-
-gr1_01_DescrPart_Personal$Mutation_BRCA <- factor(gr1_01_DescrPart_Personal$Mutation_BRCA,
-                                                  levels=c(0,1,2,3,4,5),
-                                                  labels = c(
-                                                    "0"="Оценка не проводилась",
-                                                    "1"="BRCA1",
-                                                    "2"="мутаций не выявлено",
-                                                    "3"="BRCA2",
-                                                    "4"="образование не визуал на ММГ",
-                                                    "5" = "ложноположительный результат"
-                                                    
-                                                  ))
-
-gr2_01_DescrPart_Personal$Satus_reproductive	<- factor(gr2_01_DescrPart_Personal$Satus_reproductive, 
-                                                       levels=c(1, 2, 3, 4,5,6),
-                                                       labels = c(
-                                                         "1"="репродуктивный возраст",
-                                                         "2"="менопауза до 5 лет",
-                                                         "3"="менопауза > 5 лет",
-                                                         "4"="пременопауза",
-                                                         "5"="оперативная менопауза",
-                                                         "6"="беременность"
-                                                       ))
-
-gr2_01_DescrPart_Personal$Breast_Surgery_before <- factor(gr2_01_DescrPart_Personal$Breast_Surgery_before  , 
-                                                          levels=c(1, 2),
-                                                          labels = c(
-                                                            "1"="Не было операций",
-                                                            "2"="Были операции"
-                                                          ))
-
-gr2_01_DescrPart_Personal$hormonal_medications	<- 	factor(gr2_01_DescrPart_Personal$hormonal_medications,
-                                                          levels=c(1,2),
-                                                          labels = c(
-                                                            "1"="да",
-                                                            "2"="нет"
-                                                            
-                                                          ))
-
-gr2_01_DescrPart_Personal$genetics	<- 	factor(gr2_01_DescrPart_Personal$genetics,
-                                              levels=c(1,2),
-                                              labels = c(
-                                                "1"="нет",
-                                                "2"="есть"
-                                                
-                                              ))
-
-
-gr2_01_DescrPart_Personal$Mutation_BRCA <- factor(gr2_01_DescrPart_Personal$Mutation_BRCA,
-                                                  levels=c(0,1,2,3,4,5),
-                                                  labels = c(
-                                                    "0"="Оценка не проводилась",
-                                                    "1"="BRCA1",
-                                                    "2"="мутаций не выявлено",
-                                                    "3"="BRCA2",
-                                                    "4"="образование не визуал на ММГ",
-                                                    "5" = "ложноположительный результат"
-                                                    
-                                                  ))
-
-gr3_01_DescrPart_Personal$Satus_reproductive	<- factor(gr3_01_DescrPart_Personal$Satus_reproductive, 
-                                                       levels=c(1, 2, 3, 4,5,6),
-                                                       labels = c(
-                                                         "1"="репродуктивный возраст",
-                                                         "2"="менопауза до 5 лет",
-                                                         "3"="менопауза > 5 лет",
-                                                         "4"="пременопауза",
-                                                         "5"="оперативная менопауза",
-                                                         "6"="беременность"
-                                                       ))
-
-gr3_01_DescrPart_Personal$Breast_Surgery_before <- factor(gr3_01_DescrPart_Personal$Breast_Surgery_before  , 
-                                                          levels=c(1, 2),
-                                                          labels = c(
-                                                            "1"="Не было операций",
-                                                            "2"="Были операции"
-                                                          ))
-
-gr3_01_DescrPart_Personal$hormonal_medications	<- 	factor(gr3_01_DescrPart_Personal$hormonal_medications,
-                                                          levels=c(1,2),
-                                                          labels = c(
-                                                            "1"="да",
-                                                            "2"="нет"
-                                                            
-                                                          ))
-
-gr3_01_DescrPart_Personal$genetics	<- 	factor(gr3_01_DescrPart_Personal$genetics,
-                                              levels=c(1,2),
-                                              labels = c(
-                                                "1"="нет",
-                                                "2"="есть"
-                                                
-                                              ))
-
-
-gr3_01_DescrPart_Personal$Mutation_BRCA <- factor(gr3_01_DescrPart_Personal$Mutation_BRCA,
-                                                  levels=c(0,1,2,3,4,5),
-                                                  labels = c(
-                                                    "0"="Оценка не проводилась",
-                                                    "1"="BRCA1",
-                                                    "2"="мутаций не выявлено",
-                                                    "3"="BRCA2",
-                                                    "4"="образование не визуал на ММГ",
-                                                    "5" = "ложноположительный результат"
-                                                    
-                                                  ))
-
-gr4_01_DescrPart_Personal$Satus_reproductive	<- factor(gr4_01_DescrPart_Personal$Satus_reproductive, 
-                                                       levels=c(1, 2, 3, 4,5,6),
-                                                       labels = c(
-                                                         "1"="репродуктивный возраст",
-                                                         "2"="менопауза до 5 лет",
-                                                         "3"="менопауза > 5 лет",
-                                                         "4"="пременопауза",
-                                                         "5"="оперативная менопауза",
-                                                         "6"="беременность"
-                                                       ))
-
-gr4_01_DescrPart_Personal$Breast_Surgery_before <- factor(gr4_01_DescrPart_Personal$Breast_Surgery_before  , 
-                                                          levels=c(1, 2),
-                                                          labels = c(
-                                                            "1"="Не было операций",
-                                                            "2"="Были операции"
-                                                          ))
-
-gr4_01_DescrPart_Personal$hormonal_medications	<- 	factor(gr4_01_DescrPart_Personal$hormonal_medications,
-                                                          levels=c(1,2),
-                                                          labels = c(
-                                                            "1"="да",
-                                                            "2"="нет"
-                                                            
-                                                          ))
-
-gr4_01_DescrPart_Personal$genetics	<- 	factor(gr4_01_DescrPart_Personal$genetics,
-                                              levels=c(1,2),
-                                              labels = c(
-                                                "1"="нет",
-                                                "2"="есть"
-                                                
-                                              ))
-
-
-gr4_01_DescrPart_Personal$Mutation_BRCA <- factor(gr4_01_DescrPart_Personal$Mutation_BRCA,
-                                                  levels=c(0,1,2,3,4,5),
-                                                  labels = c(
-                                                    "0"="Оценка не проводилась",
-                                                    "1"="BRCA1",
-                                                    "2"="мутаций не выявлено",
-                                                    "3"="BRCA2",
-                                                    "4"="образование не визуал на ММГ",
-                                                    "5" = "ложноположительный результат"
-                                                    
-                                                  ))
-
-grJun_01_DescrPart_Personal$Satus_reproductive	<- factor(grJun_01_DescrPart_Personal$Satus_reproductive, 
-                                                         levels=c(1, 2, 3, 4,5,6),
-                                                         labels = c(
-                                                           "1"="репродуктивный возраст",
-                                                           "2"="менопауза до 5 лет",
-                                                           "3"="менопауза > 5 лет",
-                                                           "4"="пременопауза",
-                                                           "5"="оперативная менопауза",
-                                                           "6"="беременность"
-                                                         ))
-
-grJun_01_DescrPart_Personal$Breast_Surgery_before <- factor(grJun_01_DescrPart_Personal$Breast_Surgery_before  , 
-                                                            levels=c(1, 2),
-                                                            labels = c(
-                                                              "1"="Не было операций",
-                                                              "2"="Были операции"
-                                                            ))
-
-grJun_01_DescrPart_Personal$hormonal_medications	<- 	factor(grJun_01_DescrPart_Personal$hormonal_medications,
-                                                            levels=c(1,2),
-                                                            labels = c(
-                                                              "1"="да",
-                                                              "2"="нет"
-                                                              
-                                                            ))
-
-grJun_01_DescrPart_Personal$genetics	<- 	factor(grJun_01_DescrPart_Personal$genetics,
-                                                levels=c(1,2),
-                                                labels = c(
-                                                  "1"="нет",
-                                                  "2"="есть"
-                                                  
-                                                ))
-
-
-grJun_01_DescrPart_Personal$Mutation_BRCA <- factor(grJun_01_DescrPart_Personal$Mutation_BRCA,
-                                                    levels=c(0,1,2,3,4,5),
-                                                    labels = c(
-                                                      "0"="Оценка не проводилась",
-                                                      "1"="BRCA1",
-                                                      "2"="мутаций не выявлено",
-                                                      "3"="BRCA2",
-                                                      "4"="образование не визуал на ММГ",
-                                                      "5" = "ложноположительный результат"
-                                                      
-                                                    ))
-
-grSin_01_DescrPart_Personal$Satus_reproductive	<- factor(grSin_01_DescrPart_Personal$Satus_reproductive, 
-                                                         levels=c(1, 2, 3, 4,5,6),
-                                                         labels = c(
-                                                           "1"="репродуктивный возраст",
-                                                           "2"="менопауза до 5 лет",
-                                                           "3"="менопауза > 5 лет",
-                                                           "4"="пременопауза",
-                                                           "5"="оперативная менопауза",
-                                                           "6"="беременность"
-                                                         ))
-
-grSin_01_DescrPart_Personal$Breast_Surgery_before <- factor(grSin_01_DescrPart_Personal$Breast_Surgery_before  , 
-                                                            levels=c(1, 2),
-                                                            labels = c(
-                                                              "1"="Не было операций",
-                                                              "2"="Были операции"
-                                                            ))
-
-grSin_01_DescrPart_Personal$hormonal_medications	<- 	factor(grSin_01_DescrPart_Personal$hormonal_medications,
-                                                            levels=c(1,2),
-                                                            labels = c(
-                                                              "1"="да",
-                                                              "2"="нет"
-                                                              
-                                                            ))
-
-grSin_01_DescrPart_Personal$genetics	<- 	factor(grSin_01_DescrPart_Personal$genetics,
-                                                levels=c(1,2),
-                                                labels = c(
-                                                  "1"="нет",
-                                                  "2"="есть"
-                                                  
-                                                ))
-
-
-grSin_01_DescrPart_Personal$Mutation_BRCA <- factor(grSin_01_DescrPart_Personal$Mutation_BRCA,
-                                                    levels=c(0,1,2,3,4,5),
-                                                    labels = c(
-                                                      "0"="Оценка не проводилась",
-                                                      "1"="BRCA1",
-                                                      "2"="мутаций не выявлено",
-                                                      "3"="BRCA2",
-                                                      "4"="образование не визуал на ММГ",
-                                                      "5" = "ложноположительный результат"
-                                                    ))
                                                       
 
 #####Diagnosis_primary####
-df_01_DescrPart_Diagnosis_primary$Diagnosis_primary <- factor(df_01_DescrPart_Diagnosis_primary$Diagnosis_primary, 
+df_Diagnosis$DiagnosisPrimary <- factor(df_Diagnosis$DiagnosisPrimary, 
                                     levels=c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11),
                                     labels = c(
                                       "0"="Без патологии",
@@ -347,7 +68,7 @@ df_01_DescrPart_Diagnosis_primary$Diagnosis_primary <- factor(df_01_DescrPart_Di
                                       "11"="Мастит"
                                     ))
 #####Сomplaints####
-df_01_DescrPart_Сomplaints$Сomplaints<- df_01_DescrPart_Сomplaints(df_Abus$Сomplaints, 
+df_Сomplaints$Сomplaints<- factor(df_Сomplaints$Сomplaints, 
                             levels=c(1, 2, 3, 4, 5, 6,7),
                             labels = c(
                               "1"= "нет",
@@ -360,7 +81,7 @@ df_01_DescrPart_Сomplaints$Сomplaints<- df_01_DescrPart_Сomplaints(df_Abus$С
                             ))
 
 #####Discr####
-df_01_DescrPart_Discr$Side <- factor(df_01_DescrPart_Discr$Side, 
+df_PersonalDiscr$Side <- factor(df_PersonalDiscr$Side, 
                        levels=c(1, 2, 3, 4),
                        labels = c(
                          "1"="правая",
@@ -370,7 +91,7 @@ df_01_DescrPart_Discr$Side <- factor(df_01_DescrPart_Discr$Side,
                        ))
 
 
-df_01_DescrPart_Discr$skin_symptoms	<- factor(df_01_DescrPart_Discr$skin_symptoms,
+df_PersonalDiscr$skinSymptoms	<- factor(df_PersonalDiscr$skinSymptoms,
                                 levels=c(1,2,3,4,5,6,7),
                                 labels = c(
                                   "1"="нет",
@@ -382,7 +103,7 @@ df_01_DescrPart_Discr$skin_symptoms	<- factor(df_01_DescrPart_Discr$skin_symptom
                                   "7"= "эрозия"
                                 ))
 
-df_01_DescrPart_Discr$nipple_retraction	<- factor(df_01_DescrPart_Discr$nipple_retraction,
+df_PersonalDiscr$nippleRetraction	<- factor(df_PersonalDiscr$nippleRetraction,
                                     levels=c(1,2),
                                     labels = c(
                                       "1"="нет",
@@ -391,7 +112,7 @@ df_01_DescrPart_Discr$nipple_retraction	<- factor(df_01_DescrPart_Discr$nipple_r
 
 
 
-df_01_DescrPart_Discr$nipple_release <- 	factor(df_01_DescrPart_Discr$nipple_release,
+df_PersonalDiscr$nippleRelease <- 	factor(df_PersonalDiscr$nippleRelease,
                                   levels=c(1,2,3,4),
                                   labels = c(
                                     "1"="нет",
@@ -400,7 +121,7 @@ df_01_DescrPart_Discr$nipple_release <- 	factor(df_01_DescrPart_Discr$nipple_rel
                                     "4"="гноевидные"
                                   ))
 
-df_01_DescrPart_Discr$type_structure_ACR<- 	factor(df_01_DescrPart_Discr$type_structure_ACR,
+df_PersonalDiscr$typeRtructureACR<- 	factor(df_PersonalDiscr$typeRtructureACR,
                                      levels=c(1,2,3,4),
                                      labels = c(
                                        "1"="А",
@@ -410,7 +131,7 @@ df_01_DescrPart_Discr$type_structure_ACR<- 	factor(df_01_DescrPart_Discr$type_st
                                      ))
 
 #####Quadrant####
-df_01_DescrPart_Quadrant$quadrant <- 	factor(df_01_DescrPart_Quadrant$quadrant,
+df_Quadrant$quadrant <- 	factor(df_Quadrant$quadrant,
                             levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
                             labels = c(
                               "0"="нет",

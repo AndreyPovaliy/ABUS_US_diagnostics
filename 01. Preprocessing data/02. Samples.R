@@ -6,59 +6,36 @@ library(psych)
 #подключаем библитеку для работы с ggplot2
 library(ggplot2)
 
+df_Personal <- dbGetQuery(con, "SELECT * FROM [ABUS].[PatientDetails].[Personal]")
+
+df_PersonalDiscr <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.PatientDetails.Discr ON ABUS.PatientDetails.Personal.ID= ABUS.PatientDetails.Discr.IDPatient")
+df_Diagnosis <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.PatientDetails.DiagnosisPrimary ON ABUS.PatientDetails.Personal.ID= ABUS.PatientDetails.DiagnosisPrimary.IDPatient")
+
+df_Сomplaints <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.PatientDetails.Сomplaints ON ABUS.PatientDetails.Personal.ID= ABUS.PatientDetails.Сomplaints.IDPatient")
 
 
-df_Total<- read.xlsx(xlsxFile = WayToData_Total,
-                        sheet = Sheet_Total)
-
-#####_01_DescrPart####
-df_01_DescrPart_Personal<- read.xlsx(xlsxFile = WayToData_01_DescrPart_Personal,
-                          sheet = Sheet_01_DescrPart_Personal)
-df_01_DescrPart_Diagnosis_primary<- read.xlsx(xlsxFile = WayToData_01_DescrPart_Diagnosis_primary,
-                                     sheet = Sheet_01_DescrPart_Diagnosis_primary)
-df_01_DescrPart_Сomplaints<- read.xlsx(xlsxFile = WayToData_01_DescrPart_Сomplaints,
-                                     sheet = Sheet_01_DescrPart_Сomplaints)
-
-df_01_DescrPart_Discr<- read.xlsx(xlsxFile = WayToData_01_DescrPart_Discr,
-                                              sheet = Sheet_01_DescrPart_Discr)
-df_01_DescrPart_Quadrant<- read.xlsx(xlsxFile = WayToData_01_DescrPart_Quadrant,
-                                       sheet = Sheet_01_DescrPart_Quadrant)
+df_Quadrant <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.PatientDetails.Quadrant ON ABUS.PatientDetails.Personal.ID= ABUS.PatientDetails.Quadrant.IDPatient")
 
 
 
-gr1_01_DescrPart_Personal<- subset(df_01_DescrPart_Personal, Group == gr_US)
-gr2_01_DescrPart_Personal<- subset(df_01_DescrPart_Personal, Group == gr_US_MMG)
-gr3_01_DescrPart_Personal<- subset(df_01_DescrPart_Personal, Group == gr_US_ABUS)
-gr4_01_DescrPart_Personal<- subset(df_01_DescrPart_Personal, Group == gr_US_MMG_ABUS)
-grJun_01_DescrPart_Personal<- subset(df_01_DescrPart_Personal, Group == gr_US | Group ==gr_US_ABUS)
-grSin_01_DescrPart_Personal<- subset(df_01_DescrPart_Personal, Group == gr_US_MMG | Group ==gr_US_MMG_ABUS)
 
 
-gr1_01_DescrPart_Diagnosis_primary<- subset(df_01_DescrPart_Diagnosis_primary, Group == gr_US)
-gr2_01_DescrPart_Diagnosis_primary<- subset(df_01_DescrPart_Diagnosis_primary, Group == gr_US_MMG)
-gr3_01_DescrPart_Diagnosis_primary<- subset(df_01_DescrPart_Diagnosis_primary, Group == gr_US_ABUS)
-gr4_01_DescrPart_Diagnosis_primary<- subset(df_01_DescrPart_Diagnosis_primary, Group == gr_US_MMG_ABUS)
-grJun_01_DescrPart_Diagnosis_primary<- subset(df_01_DescrPart_Diagnosis_primary, Group == gr_US | Group ==gr_US_ABUS)
-grSin_01_DescrPart_Diagnosis_primary<- subset(df_01_DescrPart_Diagnosis_primary, Group == gr_US_MMG | Group ==gr_US_MMG_ABUS)
-
-gr1_01_DescrPart_Сomplaints<- subset(df_01_DescrPart_Сomplaints, Group == gr_US)
-gr2_01_DescrPart_Сomplaints<- subset(df_01_DescrPart_Сomplaints, Group == gr_US_MMG)
-gr3_01_DescrPart_Сomplaints<- subset(df_01_DescrPart_Сomplaints, Group == gr_US_ABUS)
-gr4_01_DescrPart_Сomplaints<- subset(df_01_DescrPart_Сomplaints, Group == gr_US_MMG_ABUS)
-grJun_01_DescrPart_Сomplaints<- subset(df_01_DescrPart_Сomplaints, Group == gr_US | Group ==gr_US_ABUS)
-grSin_01_DescrPart_Сomplaints<- subset(df_01_DescrPart_Сomplaints, Group == gr_US_MMG | Group ==gr_US_MMG_ABUS)
-
-gr1_01_DescrPart_Discr<- subset(df_01_DescrPart_Discr, Group == gr_US)
-gr2_01_DescrPart_Discr<- subset(df_01_DescrPart_Discr, Group == gr_US_MMG)
-gr3_01_DescrPart_Discr<- subset(df_01_DescrPart_Discr, Group == gr_US_ABUS)
-gr4_01_DescrPart_Discr<- subset(df_01_DescrPart_Discr, Group == gr_US_MMG_ABUS)
-grJun_01_DescrPart_Discr<- subset(df_01_DescrPart_Discr, Group == gr_US | Group ==gr_US_ABUS)
-grSin_01_DescrPart_Discr<- subset(df_01_DescrPart_Discr, Group == gr_US_MMG | Group ==gr_US_MMG_ABUS)
 
 
-gr1_01_DescrPart_Quadrant<- subset(df_01_DescrPart_Quadrant, Group == gr_US)
-gr2_01_DescrPart_Quadrant<- subset(df_01_DescrPart_Quadrant, Group == gr_US_MMG)
-gr3_01_DescrPart_Quadrant<- subset(df_01_DescrPart_Quadrant, Group == gr_US_ABUS)
-gr4_01_DescrPart_Quadrant<- subset(df_01_DescrPart_Quadrant, Group == gr_US_MMG_ABUS)
-grJun_01_DescrPart_Quadrant<- subset(df_01_DescrPart_Quadrant, Group == gr_US | Group ==gr_US_ABUS)
-grSin_01_DescrPart_Quadrant<- subset(df_01_DescrPart_Quadrant, Group == gr_US_MMG | Group ==gr_US_MMG_ABUS)
+
+df_PersonalUSDiscr <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.USDetails.USDiscr
+        ON ABUS.PatientDetails.Personal.ID= ABUS.USDetails.USDiscr.IDPatient")
+
+
+
+
