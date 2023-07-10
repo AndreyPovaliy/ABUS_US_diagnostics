@@ -10,6 +10,22 @@ library(ggplot2)
 # gr_US
 # gr_US_ABUS
 
+dfUSDiscrJun <- subset(df_USDiscr, Group == gr_US | Group ==gr_US_ABUS)
+USnodleContour
+USbackground
+USformation
+USnodleSize
+USstructure
+USformationBloodFlow
+USelastography
+USdiagnosis
+UScalcinatesMicroPure
+
+
+dfPersonalGr1 <- subset(df_Personal, Group == gr_US)
+
+dfPersonalGr3 <- subset(df_Personal, Group == gr_US_ABUS)
+
 ######General description results US#######
 
 
@@ -46,4 +62,4 @@ library(ggplot2)
 ######gr3_US description results Tumor#######
 
 
-######  #######
+######Comparison#######
