@@ -353,7 +353,7 @@ df_USdiagnosis$Usdiagnosis	<- 	factor(df_USdiagnosis$Usdiagnosis,
                                   "4"="кисты",
                                   "5"="сложная киста",
                                   "6"="образование СА",
-                                  "7"="ВПП",
+                                  "7"="Внутрипротоковая папиллома молочной железы",
                                   "8"="ФКМ",
                                   "9"="Диф фам",
                                   "10"="мультфок са",
@@ -367,7 +367,7 @@ df_USdiagnosis$Usdiagnosis	<- 	factor(df_USdiagnosis$Usdiagnosis,
                                   
                                 ))
 
-
+#####UScalcinatesMicroPure####
 df_UScalcinatesMicroPure$UScalcinatesMicroPure <- 	factor(df_UScalcinatesMicroPure$UScalcinatesMicroPure,
                                                           levels=c(0,1,2,3),
                                                           labels = c(
@@ -377,6 +377,14 @@ df_UScalcinatesMicroPure$UScalcinatesMicroPure <- 	factor(df_UScalcinatesMicroPu
                                                             "3"="микрокальцинаты" 
                                                             
                                                           ))
+
+#####USisTumor####
+df_USisTumor$USisTumor <- 	factor(df_USisTumor$USisTumor,
+                                  levels=c(0,1),
+                                  labels = c(
+                                    "0"="нет",
+                                    "1"="да"
+                                  ))
 
 
 #####_02_MMG####
@@ -558,24 +566,33 @@ df_MMGcalcifications$MMGcalcifications	<- 	factor(df_MMGcalcifications$MMGcalcif
                                         
                                       ))
 
-#####MMGcalcifications####
+#####conclusionMMG####
 df_conclusionMMG$conclusionMMG<- 	factor(df_conclusionMMG$conclusionMMG,
-                                 levels=c(0,1,2,3,4,5,6,7,8,9,99),
-                                 labels = c(
-                                   "0"="Без патологии",
-                                   "1"="Диф фам",
-                                   "2"="Susp Ca",
-                                   "3"="Кластер кальцинатов",
-                                   "4"="Лок аденоз",
-                                   "5"="фиброаденома",
-                                   "6"="Киста",
-                                   "7"="Мастит",
-                                   "8"="интраммарные лимфоузлы",
-                                   "9"="образование",
-                                   "99"="не проводилась"
-                                 ))
+                                         levels=c(0,1,2,3,4,5,6,7,8,9,99),
+                                         labels = c(
+                                           "0"="Без патологии",
+                                           "1"="Диф фам",
+                                           "2"="Susp Ca",
+                                           "3"="Кластер кальцинатов",
+                                           "4"="Лок аденоз",
+                                           "5"="фиброаденома",
+                                           "6"="Киста",
+                                           "7"="Мастит",
+                                           "8"="интраммарные лимфоузлы",
+                                           "9"="образование",
+                                           "99"="не проводилась"
+                                         ))
+
+#####MMGisTumor####
 
 
+df_MMGisTumor$isTumor <- 	factor(df_MMGisTumor$isTumor,
+                                  levels=c(0,1),
+                                  labels = c(
+                                    "0"="нет",
+                                    "1"="да"
+                                    
+                                  ))
 
 
 
@@ -712,7 +729,7 @@ df_ABUSdiagnosis$ABUSdiagnosis<- 	factor(df_ABUSdiagnosis$ABUSdiagnosis,
                                    "6"="образование СА",
                                    "7"="ВПП",
                                    "8"="мультифок са",
-                                   "9"="мультицентричны",
+                                   "9"="мультицентричный са",
                                    "10"="склерозирующий аденоз",
                                    "11"="ФКМ",
                                    "12"="диф фам",
@@ -720,23 +737,32 @@ df_ABUSdiagnosis$ABUSdiagnosis<- 	factor(df_ABUSdiagnosis$ABUSdiagnosis,
                                    "99"="не проводилось исследование"
                                    
                                  ))
-
-
+#####ABUSisTumor####
+df_ABUSisTumor$isTumor <- 	factor(df_ABUSisTumor$isTumor,
+                                  levels=c(0,1),
+                                  labels = c(
+                                    "0"="нет",
+                                    "1"="да"
+                                    
+                                  ))
 
 
 
 
 #####_04_MRSI####
+df_DsMRSI$MRIdata <- replace(df_DsMRSI$MRIdata, is.na(df_DsMRSI$MRIdata), 0)
 df_DsMRSI$MRIdata	<- 	factor(df_DsMRSI$MRIdata,
-                            levels=c(1,2),
+                            levels=c(0,1,2),
                             labels = c(
+                              "0"="не проводилось",
                               "1"="интраммарные лу",
                               "2"="сегментарно-протоковая зона контрастирования"
                             ))
-
+df_DsMRSI$numberNodlesMRI <- replace(df_DsMRSI$numberNodlesMRI, is.na(df_DsMRSI$numberNodlesMRI), 0)
 df_DsMRSI$numberNodlesMRI	<- 	factor(df_DsMRSI$numberNodlesMRI,
-                                     levels=c(1,2,3,4,5,6),
+                                     levels=c(0,1,2,3,4,5,6),
                                      labels = c(
+                                       "0"="не проводилось",
                                        "1"="не опред",
                                        "2"="один",
                                        "3"="два",
@@ -749,21 +775,23 @@ df_DsMRSI$numberNodlesMRI	<- 	factor(df_DsMRSI$numberNodlesMRI,
 
 #####_05_Tumor####
 #####DescrTumor####
-df_DescrTumor$degree_malignancy
-df_DescrTumor$cytological_conclusion
 
+df_DescrTumor$degree_malignancy <- replace(df_DescrTumor$degree_malignancy, is.na(df_DescrTumor$degree_malignancy), 4)
 df_DescrTumor$degree_malignancy <- 	factor(df_DescrTumor$degree_malignancy,
-                                     levels=c(0,1,2,3),
+                                     levels=c(0,1,2,3,4),
                                      labels = c(
                                        "0"= "нет данных",
                                        "1"= "I (низкая 3-5 бал)",
                                        "2"= "II (умеренная 6-7 балов)",
-                                       "3"= "III(высокая 8-9 бал)"
+                                       "3"= "III(высокая 8-9 бал)",
+                                       "4"="не проводилось"
                                      ))
 
+df_DescrTumor$cytological_conclusion <- replace(df_DescrTumor$cytological_conclusion, is.na(df_DescrTumor$cytological_conclusion), 0)
 df_DescrTumor$cytological_conclusion	 <- 	factor(df_DescrTumor$cytological_conclusion,
-                                           levels=c(1,2,3,4,5,6),
+                                           levels=c(0,1,2,3,4,5,6),
                                            labels = c(
+                                             "0"="не проводилось",
                                              "1"="интрадуктальная папиллома",
                                              "2"="Цистаденопапиллома",
                                              "3"="фиброзно-кистозные изменения",
@@ -774,10 +802,12 @@ df_DescrTumor$cytological_conclusion	 <- 	factor(df_DescrTumor$cytological_concl
                                            ))
 
 #####morphologyStructureTumor####
+df_morphologyStructureTumor$morphologyStructureTumor <- replace(df_morphologyStructureTumor$morphologyStructureTumor, is.na(df_morphologyStructureTumor$morphologyStructureTumor), 0)
 
 df_morphologyStructureTumor$morphologyStructureTumor	 <- 	factor(df_morphologyStructureTumor$morphologyStructureTumor,
-                                       levels=c(1,2,3,4,5,6,7,8,9,10,11,12,13),
+                                       levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13),
                                        labels = c(
+                                         "0"="не проводилось",
                                          "1"="инвазивный рак неспециального типа",
                                          "2"="периканаликулярная фиброаденома",
                                          "3"="склерозирующий аденоз",
@@ -799,9 +829,12 @@ df_morphologyStructureTumor$morphologyStructureTumor	 <- 	factor(df_morphologySt
 
 
 #####Receptors####
+df_Receptors$Receptors <- replace(df_Receptors$Receptors, is.na(df_Receptors$Receptors), 0)
+
 df_Receptors$Receptors	<- 	factor(df_Receptors$Receptors,
-                             levels=c(1,2,3,4,5,6,7,8,9),
+                             levels=c(0,1,2,3,4,5,6,7,8,9),
                              labels = c(
+                               "0"="не проводилось",
                                "1"="РЭ",
                                "2"="РП",
                                "3"="Her-2\neu",
@@ -813,12 +846,44 @@ df_Receptors$Receptors	<- 	factor(df_Receptors$Receptors,
                                "9"="РЭ+РП+Her-2\neu негатив"
                                
                              ))
+#####isTumor####
+df_isTumor$isTumor <- 	factor(df_isTumor$isTumor,
+                              levels=c(0,1),
+                              labels = c(
+                                "0"="нет",
+                                "1"="да"
+                              ))
+                                   
+                                 
 
 
 
+#####Add columns####
+df_USdiagnosis$isTumor <- factor(ifelse
+                                (df_USdiagnosis$Usdiagnosis == "образование СА"
+                                  | df_USdiagnosis$Usdiagnosis == "мультфок са"
+                                  | df_USdiagnosis$Usdiagnosis == "мультицентричный са"
+                                  , 1, 0), 
+                                labels = c("Нет", "Да"))
 
-                           
+df_conclusionMMG$isTumor <- factor(ifelse
+                                (df_conclusionMMG$conclusionMMG == "Susp Ca", 1, 0), 
+                                labels = c("Нет", "Да"))
 
+df_ABUSdiagnosis$isTumor <- factor(ifelse
+                                (df_ABUSdiagnosis$ABUSdiagnosis == "образование СА"
+                                  | df_ABUSdiagnosis$ABUSdiagnosis == "мультифок са"
+                                  | df_ABUSdiagnosis$ABUSdiagnosis== "мультицентричный са"
+                                  , 1, 0), 
+                                labels = c("Нет", "Да"))
+
+
+df_morphologyStructureTumor$isTumor <- factor(ifelse
+                                              (df_morphologyStructureTumor$morphologyStructureTumor == "инвазивный рак неспециального типа"
+                                                | df_morphologyStructureTumor$morphologyStructureTumor == "протоковый рак in situ"
+                                                | df_morphologyStructureTumor$morphologyStructureTumor== "инвазивный дольковый рак"
+                                                , 1, 0), 
+                                              labels = c("Нет", "Да"))
 
 
 

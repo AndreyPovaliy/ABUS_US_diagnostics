@@ -88,6 +88,11 @@ FROM      ABUS.PatientDetails.Personal
 LEFT JOIN ABUS.USDetails.UScalcinatesMicroPure
         ON ABUS.PatientDetails.Personal.ID= ABUS.USDetails.UScalcinatesMicroPure.IDPatient")
 
+df_USisTumor<- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.USDetails.USisTumor
+        ON ABUS.PatientDetails.Personal.ID= ABUS.USDetails.USisTumor.ID")
+
 
 # MMGdata -----------------------------------------------------------------
 
@@ -122,6 +127,11 @@ FROM      ABUS.PatientDetails.Personal
 LEFT JOIN ABUS.MMGDetails.conclusionMMG
         ON ABUS.PatientDetails.Personal.ID= ABUS.MMGDetails.conclusionMMG.IDPatient")
 
+df_MMGisTumor <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.MMGDetails.MMGisTumor
+        ON ABUS.PatientDetails.Personal.ID= ABUS.MMGDetails.MMGisTumor.ID")
+
 
 # ABUSdata ----------------------------------------------------------------
 df_ABUSdiscr <- dbGetQuery(con, "SELECT  *
@@ -150,6 +160,11 @@ LEFT JOIN ABUS.ABUSDetails.ABUSdiagnosis
         ON ABUS.PatientDetails.Personal.ID= ABUS.ABUSDetails.ABUSdiagnosis.IDPatient")
 
 
+df_ABUSisTumor <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.ABUSDetails.ABUSisTumor
+        ON ABUS.PatientDetails.Personal.ID= ABUS.ABUSDetails.ABUSisTumor.ID")
+
 
 # MRSIdata ----------------------------------------------------------------
 df_DsMRSI <- dbGetQuery(con, "SELECT  *
@@ -176,3 +191,8 @@ FROM      ABUS.PatientDetails.Personal
 LEFT JOIN ABUS.TumorDetails.Receptors
         ON ABUS.PatientDetails.Personal.ID= ABUS.TumorDetails.Receptors.IDPatient")
 
+
+df_isTumor <- dbGetQuery(con, "SELECT  *
+FROM      ABUS.PatientDetails.Personal
+LEFT JOIN ABUS.TumorDetails.isTumor
+        ON ABUS.PatientDetails.Personal.ID= ABUS.TumorDetails.isTumor.IDPatient")

@@ -238,7 +238,13 @@ Describe_numeric<-function(database,parametr,sample1,mesurement){
  
 }
 
-
+#SSA(df_USisTumorGr1$USisTumor,df_isTumorGr1$isTumor)
+SSA <- function(x,y,colname1,colname2){
+  df<-data.frame(x,y)
+  colnames(df) <- c("A","B")
+  confusionMatrix(table(df$A,df$B),
+                  positive = "да")
+}
 
 
 
