@@ -1,4 +1,5 @@
-FileName <- "~/ABUS_US_diagnostics/Текст_ABUS_US.txt"
+
+FileName <- "~/Статиьи и диссертации/ABUS_US_diagnostics/Текст_ABUS_US.txt"
 
 
 #конт узи (j)

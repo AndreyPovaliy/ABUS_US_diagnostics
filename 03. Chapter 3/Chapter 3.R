@@ -1,3 +1,6 @@
+#source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/scripts/02. Real.R")
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/scripts/01. Model.R")
+
 #####library####
 #подключаем библитеку для чтения exel
 library(openxlsx)
@@ -7,12 +10,6 @@ library(psych)
 library(ggplot2)
 library(caret)
 
-source("~/ABUS_US_diagnostics/01. Preprocessing data/connections/01.Connections.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/01. Links.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/02. Samples.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/03. Lables.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/04. SubSamp.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/functions/func.R")
 
 # gr_US
 # gr_US_ABUS

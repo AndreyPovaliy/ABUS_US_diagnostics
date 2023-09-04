@@ -1,3 +1,6 @@
+#source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/scripts/02. Real.R")
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/scripts/01. Model.R")
+
 #####library####
 #подключаем библитеку для чтения exel
 library(openxlsx)
@@ -5,11 +8,6 @@ library(openxlsx)
 library(psych)
 #подключаем библитеку для работы с ggplot2
 library(ggplot2)
-source("~/ABUS_US_diagnostics/01. Preprocessing data/01. Links.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/02. Samples.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/03. Lables.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/04. SubSamp.R")
-source("~/ABUS_US_diagnostics/01. Preprocessing data/functions/func.R")
 
 
 
@@ -31,10 +29,10 @@ Quantity_discr("Во всей выборке генетическая предр
 Quantity_discr("Во всей выборке было выявлена мутация BRCA ",df_Personal$MutationBRCA)
 
 Quantity_discr("Во всей выборке сторона поражения при осмотре ",df_PersonalDiscr$Side)
-Quantity_discr("Во всей выборке кожные симптомы при осмотре ",df_PersonalDiscr$skinSymptoms)
+Quantity_discr("Во всей выборке кожные симптомы при осмотре ",df_PersonalDiscr$skin_symptoms)
 Quantity_discr("Во всей выборке втягивание соска при осмотре ",df_PersonalDiscr$nippleRetraction)
 Quantity_discr("Во всей выборке выделения из соска при осмотре ",df_PersonalDiscr$nippleRelease)
-Quantity_discr("Во всей выборке тип плотности по ACR при осмотре ",df_PersonalDiscr$typeRtructureACR)
+Quantity_discr("Во всей выборке тип плотности по ACR при осмотре ",df_PersonalDiscr$type_structure_ACR)
 
 Quantity_discr("Во всей выборке квадрант локализации ",df_Quadrant$quadrant)
 
