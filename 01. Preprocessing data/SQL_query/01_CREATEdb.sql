@@ -1,20 +1,21 @@
-CREATE DATABASE ABUS
+/* Microsoft SQL Server */
+CREATE DATABASE abus_real
 ON
 PRIMARY
-( NAME = N'ABUS',
-    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\ABUS.mdf' ,
+( NAME = N'abus_real',
+    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\abus_real.mdf' ,
     SIZE = 3072KB ,
     MAXSIZE = UNLIMITED ,
     FILEGROWTH = 1024KB ),
 FILEGROUP SECONDARY
-( NAME = N'ABUS_act',
-    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\ABUS_act.ndf' ,
+( NAME = N'abus_real_act',
+    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\abus_real_act.ndf' ,
     SIZE = 3072KB ,
     MAXSIZE = UNLIMITED ,
     FILEGROWTH = 1024KB )
 LOG ON
-( NAME = N'ABUS_log',
-    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\ABUS_log.ldf' ,
+( NAME = N'abus_real_log',
+    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\abus_real_log.ldf' ,
     SIZE = 1024KB ,
     MAXSIZE = 2048GB ,
     FILEGROWTH = 10%)

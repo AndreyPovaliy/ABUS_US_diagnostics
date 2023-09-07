@@ -380,7 +380,7 @@ df_UScalcinatesMicroPure$UScalcinatesMicroPure <- 	factor(df_UScalcinatesMicroPu
 
 #####USisTumor####
 df_USisTumor$USisTumor <- 	factor(df_USisTumor$USisTumor,
-                                  levels=c(0,1),
+                                  levels=c(0, 1),
                                   labels = c(
                                     "0"="нет",
                                     "1"="да"

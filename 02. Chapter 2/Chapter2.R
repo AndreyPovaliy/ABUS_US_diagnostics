@@ -61,6 +61,8 @@ escribir ("2.2 Описание пациенток до 40 лет")
 
 How_many(dfPersonalJun$Name,"Пациенток до 40 лет в исследование вошло")
 Describe_numeric (dfPersonalJun$Age, "возраста ","пациенток выборке до 40 лет составил "," лет")
+escribir (paste("Минимальный возраст сотсавил", min(dfPersonalJun$Age), "лет"))
+escribir (paste("Максимальный возраст сотсавил", max(dfPersonalJun$Age), "лет"))
 AgeLimitaionJun <-  subset(dfPersonalJun, Age > 39)
 How_many(AgeLimitaionJun$Name,"Пациенток старше 40 вошли в группу 1 и 3: ")
 
@@ -68,24 +70,25 @@ How_many(AgeLimitaionJun$Name,"Пациенток старше 40 вошли в 
 Describe_numeric (dfPersonalJun$height, "роста ","пациенток выборке до 40 лет составил "," см")
 Describe_numeric (dfPersonalJun$weight, "веса ","пациенток выборке до 40 лет составил "," кг")
 
-Quantity_discr("В выборке до 40 лет были поставлены диагнозы ",dfDiagnosisJun$DiagnosisPrimary)
+Quantity_discr("В выборке до 40 лет были поставлены диагнозы ",dfDiagnosisJun$Diagnosis_primary)
 
-Quantity_discr("В выборке до 40 лет были выялены следующие жалобы ", dfСomplaintsJun$Сomplaints)
+Quantity_discr("В выборке до 40 лет были выялены следующие жалобы ", dfСomplaintsJun$Complaints)
 
-Quantity_discr("В выборке до 40 лет репродуктивный статус был ",dfPersonalJun$SatusReproductive)
-Quantity_discr("В выборке до 40 лет операций на молочной железе в анамнезе ",dfPersonalJun$BreastSurgeryBefore)
-Quantity_discr("В выборке до 40 лет прием гормональных препаратов ",dfPersonalJun$hormonalMedications)
+Quantity_discr("В выборке до 40 лет репродуктивный статус был ",dfPersonalJun$Satus_reproductive)
+Quantity_discr("В выборке до 40 лет операций на молочной железе в анамнезе ",dfPersonalJun$Breast_Surgery_before)
+Quantity_discr("В выборке до 40 лет прием гормональных препаратов ",dfPersonalJun$hormonal_medications)
 Quantity_discr("В выборке до 40 лет генетическая предрасположенность ",dfPersonalJun$genetics)
 Quantity_discr("В выборке до 40 лет было выявлена мутация BRCA ",dfPersonalJun$MutationBRCA)
 
 Quantity_discr("В выборке до 40 лет сторона поражения при осмотре ",dfPersonalDiscrJun$Side)
-Quantity_discr("В выборке до 40 лет кожные симптомы при осмотре ",dfPersonalDiscrJun$skinSymptoms)
-Quantity_discr("В выборке до 40 лет втягивание соска при осмотре ",dfPersonalDiscrJun$nippleRetraction)
-Quantity_discr("В выборке до 40 лет выделения из соска при осмотре ",dfPersonalDiscrJun$nippleRelease)
-Quantity_discr("В выборке до 40 лет тип плотности по ACR при осмотре ",dfPersonalDiscrJun$typeRtructureACR)
+Quantity_discr("В выборке до 40 лет кожные симптомы при осмотре ",dfPersonalDiscrJun$skin_symptoms)
+Quantity_discr("В выборке до 40 лет втягивание соска при осмотре ",dfPersonalDiscrJun$nipple_retraction)
+Quantity_discr("В выборке до 40 лет выделения из соска при осмотре ",dfPersonalDiscrJun$nipple_release)
+Quantity_discr("В выборке до 40 лет тип плотности по ACR при осмотре ",dfPersonalDiscrJun$type_structure_ACR)
 
 Quantity_discr("В выборке до 40 лет квадрант локализации ",dfQuadrantJun$quadrant)
-
+LocaldfQuadrantJun <-  subset(dfQuadrantJun$quadrant, dfQuadrantJun$quadrant != "нет")
+Quantity_discr("В выборке до 40 лет квадрант локализации ",LocaldfQuadrantJun)
 
 pvalueQualitativeText(dfDiagnosisJun$DiagnosisPrimary,dfDiagnosisJun$Group,"по первичному диагнозу в выборке до 40")
 pvalueQualitativeText(dfСomplaintsJun$Сomplaints,dfСomplaintsJun$Group,"по выявленным жалобам в выборке до 40")

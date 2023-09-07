@@ -1,7 +1,7 @@
 #####_01_DescrPart####
 
 #####Personal####
-df_Personal$SatusReproductive	<- factor(df_Personal$SatusReproductive, 
+dfPersonal$satus_reproductive	<- factor(dfPersonal$satus_reproductive, 
                                         levels=c(1, 2, 3, 4, 5, 6),
                                         labels = c(
                                           "1"="репродуктивный возраст",
@@ -12,14 +12,14 @@ df_Personal$SatusReproductive	<- factor(df_Personal$SatusReproductive,
                                           "6"="беременность"
                                         ))
 
-df_Personal$BreastSurgeryBefore <- factor(df_Personal$BreastSurgeryBefore  , 
+dfPersonal$breast_surgery_before <- factor(dfPersonal$breast_surgery_before  , 
                                           levels=c(1, 2),
                                           labels = c(
                                             "1"="Не было операций",
                                             "2"="Были операции"
                                           ))
 
-df_Personal$hormonalMedications	<- 	factor(df_Personal$hormonalMedications,
+dfPersonal$hormonal_medications	<- 	factor(dfPersonal$hormonal_medications,
                                            levels=c(1,2),
                                            labels = c(
                                              "1"="да",
@@ -27,7 +27,7 @@ df_Personal$hormonalMedications	<- 	factor(df_Personal$hormonalMedications,
                                              
                                            ))
 
-df_Personal$genetics	<- 	factor(df_Personal$genetics,
+dfPersonal$genetics	<- 	factor(dfPersonal$genetics,
                                 levels=c(1,2),
                                 labels = c(
                                   "1"="нет",
@@ -36,7 +36,7 @@ df_Personal$genetics	<- 	factor(df_Personal$genetics,
                                 ))
 
 
-df_Personal$MutationBRCA <- factor(df_Personal$MutationBRCA,
+dfPersonal$mutation_brca <- factor(dfPersonal$mutation_brca,
                                    levels=c(0,1,2,3,4,5),
                                    labels = c(
                                      "0"="Оценка не проводилась",
@@ -50,8 +50,8 @@ df_Personal$MutationBRCA <- factor(df_Personal$MutationBRCA,
 
 
 
-#####Diagnosis_primary####
-df_Diagnosis$DiagnosisPrimary <- factor(df_Diagnosis$DiagnosisPrimary, 
+#####DiagnosisPrimary####
+dfDiagnosis$diagnosis_primary <- factor(dfDiagnosis$diagnosis_primary, 
                                         levels=c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11),
                                         labels = c(
                                           "0"="Без патологии",
@@ -68,7 +68,7 @@ df_Diagnosis$DiagnosisPrimary <- factor(df_Diagnosis$DiagnosisPrimary,
                                           "11"="Мастит"
                                         ))
 #####Сomplaints####
-df_Сomplaints$Сomplaints<- factor(df_Сomplaints$Сomplaints, 
+dfСomplaints$complaints <- factor(dfСomplaints$complaints, 
                                   levels=c(1, 2, 3, 4, 5, 6,7),
                                   labels = c(
                                     "1"= "нет",
@@ -80,8 +80,8 @@ df_Сomplaints$Сomplaints<- factor(df_Сomplaints$Сomplaints,
                                     "7"= "гипертермия"
                                   ))
 
-#####Discr####
-df_PersonalDiscr$Side <- factor(df_PersonalDiscr$Side, 
+#####Describe####
+dfPatientDescribe$side <- factor(dfPatientDescribe$side, 
                                 levels=c(1, 2, 3, 4),
                                 labels = c(
                                   "1"="правая",
@@ -91,7 +91,7 @@ df_PersonalDiscr$Side <- factor(df_PersonalDiscr$Side,
                                 ))
 
 
-df_PersonalDiscr$skinSymptoms	<- factor(df_PersonalDiscr$skinSymptoms,
+dfPatientDescribe$skin_symptoms	<- factor(dfPatientDescribe$skin_symptoms,
                                         levels=c(1,2,3,4,5,6,7),
                                         labels = c(
                                           "1"="нет",
@@ -103,7 +103,7 @@ df_PersonalDiscr$skinSymptoms	<- factor(df_PersonalDiscr$skinSymptoms,
                                           "7"= "эрозия"
                                         ))
 
-df_PersonalDiscr$nippleRetraction	<- factor(df_PersonalDiscr$nippleRetraction,
+dfPatientDescribe$nipple_retraction	<- factor(dfPatientDescribe$nipple_retraction,
                                             levels=c(1,2),
                                             labels = c(
                                               "1"="нет",
@@ -112,7 +112,7 @@ df_PersonalDiscr$nippleRetraction	<- factor(df_PersonalDiscr$nippleRetraction,
 
 
 
-df_PersonalDiscr$nippleRelease <- 	factor(df_PersonalDiscr$nippleRelease,
+dfPatientDescribe$nipple_release <- 	factor(dfPatientDescribe$nipple_release,
                                           levels=c(1,2,3,4),
                                           labels = c(
                                             "1"="нет",
@@ -121,7 +121,7 @@ df_PersonalDiscr$nippleRelease <- 	factor(df_PersonalDiscr$nippleRelease,
                                             "4"="гноевидные"
                                           ))
 
-df_PersonalDiscr$typeRtructureACR<- 	factor(df_PersonalDiscr$typeRtructureACR,
+dfPatientDescribe$type_structure_acr<- 	factor(dfPatientDescribe$type_structure_acr,
                                             levels=c(1,2,3,4),
                                             labels = c(
                                               "1"="А",
@@ -131,7 +131,7 @@ df_PersonalDiscr$typeRtructureACR<- 	factor(df_PersonalDiscr$typeRtructureACR,
                                             ))
 
 #####Quadrant####
-df_Quadrant$quadrant <- 	factor(df_Quadrant$quadrant,
+dfQuadrant$quadrant <- 	factor(dfQuadrant$quadrant,
                                 levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
                                 labels = c(
                                   "0"="нет",
@@ -152,8 +152,8 @@ df_Quadrant$quadrant <- 	factor(df_Quadrant$quadrant,
 
 
 #####_01_US####
-#####USDiscr####
-df_USDiscr$USskin	<- 	factor(df_USDiscr$USskin,
+#####UsDescribe####
+dfUsDescribe$us_skin	<- 	factor(dfUsDescribe$us_skin,
                              levels=c(1,2,3),
                              labels = c(
                                "1"="не изменена",
@@ -162,7 +162,7 @@ df_USDiscr$USskin	<- 	factor(df_USDiscr$USskin,
                                
                              ))
 
-df_USDiscr$USducts	<- 	factor(df_USDiscr$USducts,
+dfUsDescribe$us_ducts	<- 	factor(dfUsDescribe$us_ducts,
                               levels=c(1,2),
                               labels = c(
                                 "1"="не расширены",
@@ -170,7 +170,7 @@ df_USDiscr$USducts	<- 	factor(df_USDiscr$USducts,
                                 
                               ))
 
-df_USDiscr$USform	<- 	factor(df_USDiscr$USform,
+dfUsDescribe$us_form<- 	factor(dfUsDescribe$us_form,
                              levels=c(0,1,2,3,4,5),
                              labels = c(
                                "0"="нет узла",
@@ -182,7 +182,7 @@ df_USDiscr$USform	<- 	factor(df_USDiscr$USform,
                                
                              ))
 
-df_USDiscr$USechogenicityFormation	<- 	factor(df_USDiscr$USechogenicityFormation,
+dfUsDescribe$us_echogenicity_formation	<- 	factor(dfUsDescribe$us_echogenicity_formation,
                                               levels=c(0,1,2,3,4,5,6),
                                               labels = c(
                                                 "0"="нет узла",
@@ -198,7 +198,7 @@ df_USDiscr$USechogenicityFormation	<- 	factor(df_USDiscr$USechogenicityFormation
 
 
 
-df_USDiscr$USregionLymphNodes	<- 	factor(df_USDiscr$USregionLymphNodes,
+dfUsDescribe$us_region_lymph_nodes	<- 	factor(dfUsDescribe$us_region_lymph_nodes,
                                          levels=c(0,1,2,3,4,5,6),
                                          labels = c(
                                            "0"="не изменены",
@@ -210,7 +210,7 @@ df_USDiscr$USregionLymphNodes	<- 	factor(df_USDiscr$USregionLymphNodes,
                                            "6"="в лев.подм."
                                          ))
 
-df_USDiscr$numberNodlesUS <- 	factor(df_USDiscr$numberNodlesUS,
+dfUsDescribe$us_number_nodles <- 	factor(dfUsDescribe$us_number_nodles,
                                      levels=c(1,2,3,4,5,6),
                                      labels = c(
                                        "1"="не опред",
@@ -223,7 +223,7 @@ df_USDiscr$numberNodlesUS <- 	factor(df_USDiscr$numberNodlesUS,
                                      ))
 
 
-df_USDiscr$CategoryBiradsUltrasound	<- 	factor(df_USDiscr$CategoryBiradsUltrasound,
+dfUsDescribe$us_category_birads	<- 	factor(dfUsDescribe$us_category_birads,
                                                levels=c(1,2,3,4,5,6,7,8,9),
                                                labels = c(
                                                  "1"="Birads 1",
@@ -238,8 +238,8 @@ df_USDiscr$CategoryBiradsUltrasound	<- 	factor(df_USDiscr$CategoryBiradsUltrasou
                                                ))
 
 
-#####USnodleContour####
-df_USnodleContour$USnodleContour	<- 	factor(df_USnodleContour$USnodleContour,
+#####UsNodleContour####
+dfUsNodleContour$us_nodle_contour	<- 	factor(dfUsNodleContour$us_nodle_contour,
                                             levels=c(0,1,2,3,4,5,6,7),
                                             labels = c(
                                               "0"="нет узла",
@@ -254,8 +254,8 @@ df_USnodleContour$USnodleContour	<- 	factor(df_USnodleContour$USnodleContour,
                                               
                                             ))
 
-#####USbackground####
-df_USbackground$USbackground	<- 	factor(df_USbackground$USbackground,
+#####UsBackground####
+dfUsBackground$us_background	<- 	factor(dfUsBackground$us_background,
                                         levels=c(1,2,3,4,5,6),
                                         labels = c(
                                           "1"="жировая ткань",
@@ -267,8 +267,8 @@ df_USbackground$USbackground	<- 	factor(df_USbackground$USbackground,
                                           
                                         ))
 
-#####USformation####
-df_USformation$USformation	<- 	factor(df_USformation$USformation,
+#####UsFormation####
+dfUsFormation$us_formation	<- 	factor(dfUsFormation$us_formation,
                                       levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
                                       labels = c(
                                         "0"="нет",
@@ -288,7 +288,7 @@ df_USformation$USformation	<- 	factor(df_USformation$USformation,
                                       ))
 
 #####USnodleSize####
-df_USnodleSize$USnodleSize	<- 	factor(df_USnodleSize$USnodleSize,
+dfUsNodleSize$us_nodle_size	<- 	factor(dfUsNodleSize$us_nodle_size,
                                       levels=c(0,1,2,3,4,5,6),
                                       labels = c(
                                         "0"="нет",
@@ -298,12 +298,10 @@ df_USnodleSize$USnodleSize	<- 	factor(df_USnodleSize$USnodleSize,
                                         "4"="2,1-2,5 см",
                                         "5"= "2,5-3,0 см",
                                         "6"= "более 3 см"
-                                        
-                                        
-                                      ))
+                                ))
 
-#####USstructure####
-df_USstructure$USstructure<- 	factor(df_USstructure$USstructure,
+#####UsStructure####
+dfUsStructure$us_structure<- 	factor(dfUsStructure$us_structure,
                                      levels=c(0,1,2,3,4,5,6),
                                      labels = c(
                                        "0"="нет узла",
@@ -316,8 +314,8 @@ df_USstructure$USstructure<- 	factor(df_USstructure$USstructure,
                                        
                                      ))
 
-#####USformationBloodFlow####
-df_USformationBloodFlow$USformationBloodFlow	<- 	factor(df_USformationBloodFlow$USformationBloodFlow,
+#####UsFormationBloodFlow####
+dfUsFormationBloodFlow$us_formation_blood_flow	<- 	factor(dfUsFormationBloodFlow$us_formation_blood_flow,
                                                         levels=c(0,1,2,3,4,5,6),
                                                         labels = c(
                                                           "0"="нет",
@@ -329,8 +327,8 @@ df_USformationBloodFlow$USformationBloodFlow	<- 	factor(df_USformationBloodFlow$
                                                           "6"="смешанный"
                                                           
                                                         ))
-#####USelastography####
-df_USelastography$USelastography	<- 	factor(df_USelastography$USelastography,
+#####UsElastography####
+dfUsElastography$us_elastography	<- 	factor(dfUsElastography$us_elastography,
                                             levels=c(0,1,2,3,4,5),
                                             labels = c(
                                               "1" = "0 эластотип",
@@ -343,7 +341,7 @@ df_USelastography$USelastography	<- 	factor(df_USelastography$USelastography,
 
 
 #####USdiagnosis####
-df_USdiagnosis$Usdiagnosis	<- 	factor(df_USdiagnosis$Usdiagnosis,
+dfUsDiagnosis$us_diagnosis	<- 	factor(dfUsDiagnosis$us_diagnosis,
                                       levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16),
                                       labels = c(
                                         "0"="без патологии",
@@ -367,8 +365,8 @@ df_USdiagnosis$Usdiagnosis	<- 	factor(df_USdiagnosis$Usdiagnosis,
                                         
                                       ))
 
-#####UScalcinatesMicroPure####
-df_UScalcinatesMicroPure$UScalcinatesMicroPure <- 	factor(df_UScalcinatesMicroPure$UScalcinatesMicroPure,
+#####UsCalcinatesMicroPure####
+dfUsCalcinatesMicroPure$us_calcinates_micro_pure <- 	factor(dfUsCalcinatesMicroPure$us_calcinates_micro_pure,
                                                           levels=c(0,1,2,3),
                                                           labels = c(
                                                             "0"="нет",
@@ -378,8 +376,8 @@ df_UScalcinatesMicroPure$UScalcinatesMicroPure <- 	factor(df_UScalcinatesMicroPu
                                                             
                                                           ))
 
-#####USisTumor####
-df_USisTumor$USisTumor <- 	factor(df_USisTumor$USisTumor,
+#####UsIsTumor####
+dfUsIsTumor$us_is_tumor <- 	factor(dfUsIsTumor$us_is_tumor,
                                   levels=c(0,1),
                                   labels = c(
                                     "0"="нет",
@@ -388,8 +386,8 @@ df_USisTumor$USisTumor <- 	factor(df_USisTumor$USisTumor,
 
 
 #####_02_MMG####
-#####df_USDiscr####
-df_MMGDescr$conclusionMMGskin	<- 	factor(df_MMGDescr$conclusionMMGskin,
+#####MmgDescribe####
+dfMmgDescribe$mmg_conclusion_skin	<- 	factor(dfMmgDescribe$mmg_conclusion_skin,
                                          levels=c(0,1,2,3,4,5,6),
                                          labels = c(
                                            "0"= "не выполнялась",
@@ -401,8 +399,8 @@ df_MMGDescr$conclusionMMGskin	<- 	factor(df_MMGDescr$conclusionMMGskin,
                                            "6"="диагностическая ММГ"
                                          ))
 
-df_MMGDescr$MMGareola	<- 	factor(df_MMGDescr$MMGareola,
-                                 levels=c(1,2,3,4,5,99),
+dfMmgDescribe$mmg_areola	<- 	factor(dfMmgDescribe$mmg_areola,
+                                 levels=c(1,2,3,4,5),
                                  labels = c(
                                    "1"="не изменена",
                                    "2"="подтянута",

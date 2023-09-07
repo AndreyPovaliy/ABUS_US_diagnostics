@@ -93,7 +93,6 @@ FROM      ABUSv1.PatientDetails.Personal
 LEFT JOIN ABUSv1.USDetails.USisTumor
         ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USisTumor.ID")
 
-
 # MMGdata -----------------------------------------------------------------
 
 df_MMGDescr<- dbGetQuery(con, "SELECT  *
