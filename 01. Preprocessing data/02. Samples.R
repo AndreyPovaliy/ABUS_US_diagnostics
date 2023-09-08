@@ -1,3 +1,6 @@
+# Name of variable - PascalCase
+# Name of objects database - snake_case
+
 #####library####
 #подключаем библитеку для чтения exel
 library(openxlsx)
@@ -11,188 +14,189 @@ library(ggplot2)
 
 
 
-df_Personal <- dbGetQuery(con, "SELECT * FROM [ABUSv1].[PatientDetails].[Personal]")
+dfPersonal <- dbGetQuery(con, "SELECT * FROM [abus_model].[patient_details].[personal]")
 
-df_PersonalDiscr <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.PatientDetails.Discr ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.PatientDetails.Discr.IDPatient")
-df_Diagnosis <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.PatientDetails.DiagnosisPrimary ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.PatientDetails.DiagnosisPrimary.IDPatient")
+dfPatientDescribe <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.patient_details.describe_patient ON abus_model.patient_details.personal.id_patient= abus_model.patient_details.describe_patient.id_patient")
 
-df_Сomplaints <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.PatientDetails.Сomplaints ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.PatientDetails.Сomplaints.IDPatient")
+dfDiagnosis <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.patient_details.diagnosis_primary ON abus_model.patient_details.personal.id_patient= abus_model.patient_details.diagnosis_primary.id_patient")
 
-
-df_Quadrant <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.PatientDetails.Quadrant ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.PatientDetails.Quadrant.IDPatient")
+dfСomplaints <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.patient_details.complaints ON abus_model.patient_details.personal.id_patient= abus_model.patient_details.complaints.id_patient")
 
 
-
+dfQuadrant <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.patient_details.quadrant ON abus_model.patient_details.personal.id_patient= abus_model.patient_details.quadrant.id_patient")
 
 
 
-# USdata ------------------------------------------------------------------
 
 
-df_USDiscr <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USDiscr
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USDiscr.IDPatient")
+
+# UsData ------------------------------------------------------------------
 
 
-df_USnodleContour<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USnodleContour
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USnodleContour.IDPatient")
-
-df_USbackground<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USbackground
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USbackground.IDPatient")
-
-df_USformation<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USformation
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USformation.IDPatient")
-
-df_USnodleSize<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USnodleSize
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USnodleSize.IDPatient")
-
-df_USstructure<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USstructure
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USstructure.IDPatient")
-
-df_USformationBloodFlow<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USformationBloodFlow
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USformationBloodFlow.IDPatient")
-
-df_USelastography<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USelastography
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USelastography.IDPatient")
-
-df_USdiagnosis<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USdiagnosis
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USdiagnosis.IDPatient")
-
-df_UScalcinatesMicroPure<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.UScalcinatesMicroPure
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.UScalcinatesMicroPure.IDPatient")
-
-df_USisTumor<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.USDetails.USisTumor
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.USDetails.USisTumor.ID")
-
-# MMGdata -----------------------------------------------------------------
-
-df_MMGDescr<- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MMGDetails.MMGDescr
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MMGDetails.MMGDescr.ID")
-
-df_MMGnodle <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MMGDetails.MMGnodle
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MMGDetails.MMGnodle.ID")
-
-df_MMGnodleContour <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MMGDetails.MMGnodleContour
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MMGDetails.MMGnodleContour.ID")
-
-df_MMGnodleSize <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MMGDetails.MMGnodleSize
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MMGDetails.MMGnodleSize.ID")
-
-df_MMGcalcifications <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MMGDetails.MMGcalcifications
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MMGDetails.MMGcalcifications.ID")
+dfUsDescribe <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_describe
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_describe.id_patient")
 
 
-df_conclusionMMG <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MMGDetails.conclusionMMG
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MMGDetails.conclusionMMG.ID")
+dfUsNodleContour<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_nodle_contour
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_nodle_contour.id_patient")
 
-df_MMGisTumor <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MMGDetails.MMGisTumor
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MMGDetails.MMGisTumor.ID")
+dfUsBackground<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_background
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_background.id_patient")
+
+dfUsFormation<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_formation
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_formation.id_patient")
+
+dfUsNodleSize<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_nodle_size
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_nodle_size.id_patient")
+
+dfUsStructure<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_structure
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_structure.id_patient")
+
+dfUsFormationBloodFlow<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_formation_blood_flow
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_formation_blood_flow.id_patient")
+
+dfUsElastography<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_elastography
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_elastography.id_patient")
+
+dfUsDiagnosis<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_diagnosis
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_diagnosis.id_patient")
+
+dfUsCalcinatesMicroPure<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_calcinates_micro_pure
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_calcinates_micro_pure.id_patient")
+
+dfUsIsTumor<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.us_details.us_is_tumor
+        ON abus_model.patient_details.personal.id_patient= abus_model.us_details.us_is_tumor.id_patient")
 
 
-# ABUSdata ----------------------------------------------------------------
-df_ABUSdiscr <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.ABUSDetails.ABUSdiscr
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.ABUSDetails.ABUSdiscr.ID")
+# MmgData -----------------------------------------------------------------
 
-df_ABUSnodleSize <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.ABUSDetails.ABUSnodleSize
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.ABUSDetails.ABUSnodleSize.ID")
+dfMmgDescribe<- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mmg_details.mmg_describe
+        ON abus_model.patient_details.personal.id_patient= abus_model.mmg_details.mmg_describe.id_patient")
 
-df_ABUSnodleContours <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.ABUSDetails.ABUSnodleContours
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.ABUSDetails.ABUSnodleContours.ID")
+dfMmgNodle <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mmg_details.mmg_nodle
+        ON abus_model.patient_details.personal.id_patient= abus_model.mmg_details.mmg_nodle.id_patient")
 
-df_ABUSstructure <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.ABUSDetails.ABUSstructure
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.ABUSDetails.ABUSstructure.ID")
+dfMmgNodleContour <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mmg_details.mmg_nodle_contour
+        ON abus_model.patient_details.personal.id_patient= abus_model.mmg_details.mmg_nodle_contour.id_patient")
 
-df_ABUSdiagnosis <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.ABUSDetails.ABUSdiagnosis
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.ABUSDetails.ABUSdiagnosis.ID")
+dfMmgNodleSize <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mmg_details.mmg_nodle_size
+        ON abus_model.patient_details.personal.id_patient= abus_model.mmg_details.mmg_nodle_size.id_patient")
 
-
-df_ABUSisTumor <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.ABUSDetails.ABUSisTumor
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.ABUSDetails.ABUSisTumor.ID")
+dfMmgCalcifications <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mmg_details.mmg_calcifications
+        ON abus_model.patient_details.personal.id_patient= abus_model.mmg_details.mmg_calcifications.id_patient")
 
 
-# MRSIdata ----------------------------------------------------------------
-df_DsMRSI <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.MRSIDetails.DsMRSI
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.MRSIDetails.DsMRSI.ID")
+dfMmgConclusion <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mmg_details.mmg_conclusion
+        ON abus_model.patient_details.personal.id_patient= abus_model.mmg_details.mmg_conclusion.id_patient")
+
+dfMmgIsTumor <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mmg_details.mmg_is_tumor
+        ON abus_model.patient_details.personal.id_patient= abus_model.mmg_details.mmg_is_tumor.id_patient")
+
+
+# AbusData ----------------------------------------------------------------
+dfAbusDescribe <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.abus_details.abus_describe
+        ON abus_model.patient_details.personal.id_patient= abus_model.abus_details.abus_describe.id_patient")
+
+dfAbusNodleSize <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.abus_details.abus_nodle_size
+        ON abus_model.patient_details.personal.id_patient= abus_model.abus_details.abus_nodle_size.id_patient")
+
+dfAbusNodleContours <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.abus_details.abus_nodle_contours
+        ON abus_model.patient_details.personal.id_patient= abus_model.abus_details.abus_nodle_contours.id_patient")
+
+dfAbusStructure <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.abus_details.abus_structure
+        ON abus_model.patient_details.personal.id_patient= abus_model.abus_details.abus_structure.id_patient")
+
+dfAbusDiagnosis <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.abus_details.abus_diagnosis
+        ON abus_model.patient_details.personal.id_patient= abus_model.abus_details.abus_diagnosis.id_patient")
+
+
+dfAbusIsTumor <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.abus_details.abus_is_tumor
+        ON abus_model.patient_details.personal.id_patient= abus_model.abus_details.abus_is_tumor.id_patient")
+
+
+# MrsiData ----------------------------------------------------------------
+dfMrsiDescribe <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.mrsi_details.mrsi_describe
+        ON abus_model.patient_details.personal.id_patient= abus_model.mrsi_details.mrsi_describe.id_patient")
 
 # Tumor ----------------------------------------------------------------
 
-df_DescrTumor <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.TumorDetails.DescrTumor
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.TumorDetails.DescrTumor.ID")
+dfDescrTumor <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.tumor_details.tumor_describe
+        ON abus_model.patient_details.personal.id_patient= abus_model.tumor_details.tumor_describe.id_patient")
 
 
-df_morphologyStructureTumor <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.TumorDetails.morphologyStructureTumor
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.TumorDetails.morphologyStructureTumor.ID")
+dfMorphologyStructureTumor <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.tumor_details.tumor_morphology_structure
+        ON abus_model.patient_details.personal.id_patient= abus_model.tumor_details.tumor_morphology_structure.id_patient")
 
 
-df_Receptors <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.TumorDetails.Receptors
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.TumorDetails.Receptors.ID")
+dfReceptors <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.tumor_details.tumor_receptors
+        ON abus_model.patient_details.personal.id_patient= abus_model.tumor_details.tumor_receptors.id_patient")
 
 
-df_isTumor <- dbGetQuery(con, "SELECT  *
-FROM      ABUSv1.PatientDetails.Personal
-LEFT JOIN ABUSv1.TumorDetails.isTumor
-        ON ABUSv1.PatientDetails.Personal.ID= ABUSv1.TumorDetails.isTumor.IDPatient")
-
+dfIsTumor <- dbGetQuery(con, "SELECT  *
+FROM      abus_model.patient_details.personal
+LEFT JOIN abus_model.tumor_details.tumor_is
+        ON abus_model.patient_details.personal.id_patient= abus_model.tumor_details.tumor_is.id_patient")

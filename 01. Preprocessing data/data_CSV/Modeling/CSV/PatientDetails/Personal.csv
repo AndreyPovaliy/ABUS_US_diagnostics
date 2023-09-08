@@ -1,4 +1,4 @@
-Name,ID,Date,Group,Age,height,weight,Satus_reproductive,Breast_Surgery_before,hormonal_medications,genetics,MutationBRCA 
+name,id_patient,date,group,age,height,weight,satus_reproductive,breast_surgery_before,hormonal_medications,genetics,mutation_brca 
 Myshinskaya Tatiana Sergeevna,EMC1,2019,3,35,170,65,1,1,1,2,0
 Levestam Tatiana Viktorovna,EMC2,2019,4,68,168,70,3,1,2,1,0
 Aslanyan Alisa Sosoevna,EMC3,2019,2,42,166,57,1,1,2,2,0
@@ -135,7 +135,7 @@ Khibakova Olga Vladimirovna,EMC133,2020,2,42,163,60,1,1,2,1,0
 Polyanskaya Irina Nikolaevna,EMC134,2020,4,50,175,70,2,1,2,1,0
 Pogosova Anna Artemovna,EMC135,2020,1,26,166,58,1,1,2,1,0
 Tumanova Veronika Igorevna,EMC136,2020,3,37,165,60,1,1,2,2,0
-Tovmasyan Ofelya Artakovna,EMC137,2020,1,23,,,4,1,2,1,0
+Tovmasyan Ofelya Artakovna,EMC137,2020,1,23,170,60,4,1,2,1,0
 Grigorieva Darya Alexandrovna,EMC138,2020,3,27,170,57,1,1,1,2,0
 Shlyakhtina Irina Anatolyevna,EMC139,2020,2,50,167,61,2,1,2,1,0
 Zaitseva Olga Mikhailovna,EMC140,2020,4,50,165,62,3,1,1,1,0
@@ -145,7 +145,7 @@ Kostetskaya Olga Vladimirovna,EMC143,2020,1,33,178,63,1,1,2,2,0
 Kochneva Darya Evgenievna,EMC144,2020,3,30,169,55,1,1,2,2,0
 Starostina Alina Alexandrovna,EMC145,2020,1,27,167,70,1,1,2,1,0
 Aliskendarova Regina Zumurdinovna,EMC146,2020,3,32,165,68,1,1,2,2,0
-Nosovitskaya Kira Vladimirovna,EMC147,2020,4,53,,,4,1,2,1,0
+Nosovitskaya Kira Vladimirovna,EMC147,2020,4,53,170,60,4,1,2,1,0
 Kulik Elena Borisovna ,EMC148,2020,2,54,170,70,2,1,2,2,0
 Poshurkova Elena Viktorovna,EMC149,2020,4,53,169,73,3,1,2,1,0
 Korshikova Natalia Viktorovna,EMC150,2020,2,43,164,62,1,1,2,2,0
@@ -162,7 +162,7 @@ Pavlova Marianna Pavlovna,EMC160,2020,3,37,172,64,1,1,2,1,0
 Bichukova Alla Nikolaevna,EMC161,2020,4,40,170,59,1,1,2,1,0
 Subbotina Valentina Valentinovna,EMC162,2020,2,40,169,60,1,1,2,1,0
 Karaban Natalia Evgenievna,EMC163,2020,4,65,158,55,3,1,2,1,0
-Yakovenko Marina Aleksandrovna,EMC164,2020,1,31,168,31,1,1,2,1,0
+Yakovenko Marina Aleksandrovna,EMC164,2020,1,31,168,61,1,1,2,1,0
 Alfinova Alyona Aleksandrovna,EMC165,2020,1,32,175,65,1,1,1,1,0
 Ivanova Tatiana Rufovna,EMC166,2020,4,64,164,76,3,1,2,1,0
 Demina Yulia Yurievna,EMC167,2020,2,49,167,65,4,1,2,2,0
@@ -200,7 +200,7 @@ Zhuravleva Olga Eduardovna,EMC198,2020,4,57,176,90,2,1,2,2,0
 Nirko Galina Borisovna,EMC199,2020,4,65,165,92,3,1,2,2,0
 Nefedova Irina Viktorovna,EMC200,2020,1,36,168,56,1,1,2,1,0
 Skvortsova Olga Vladimirovna,EMC201,2020,4,60,167,65,3,1,2,1,0
-Ginka Olga Alexandrovna,EMC202,2020,2,57,,,3,1,2,1,0
+Ginka Olga Alexandrovna,EMC202,2020,2,57,170,60,3,1,2,1,0
 Kuznetsova Evgeniya Mikhailovna,EMC203,2020,3,31,165,60,1,1,2,2,0
 Kamenskaya Natalia Valeryevna,EMC204,2020,4,50,165,75,4,1,2,1,0
 Luzhitskaya Natalia Viktorovna,EMC205,2020,2,48,169,76,4,1,2,1,0
@@ -285,7 +285,7 @@ Lukyanchikova Olga Vladimirovna ,EMC283,2020,4,47,166,53,4,1,1,2,0
 Ivanova Natalia Olegovna,EMC284,2020,2,44,173,75,1,1,2,2,0
 Stupnikova Svetlana Aleksandrovna,EMC285,2020,4,52,163,67,4,1,1,1,0
 Salnikova Veronika Vladimirovna ,EMC286,2020,4,64,162,82,3,1,2,1,0
-Nesterkina Anastasia Sergeevna ,EMC287,2020,3,35,,,4,1,2,1,0
+Nesterkina Anastasia Sergeevna ,EMC287,2020,3,35,170,60,4,1,2,1,0
 Gnucheva Elizaveta Alexandrovna,EMC288,2020,4,51,156,65,4,1,2,1,0
 Kheifets Marina Semyonovna,EMC289,2020,2,66,165,60,2,1,2,1,0
 Kulbatskaya Natalia Igorevna,EMC290,2020,1,35,170,56,1,1,2,1,0
@@ -668,7 +668,7 @@ Evseeva Anastasia Evgenievna,EMC666,2022,3,32,160,83,1,1,2,1,0
 Shadlovskaya Darya Dmitrievna,EMC667,2022,1,28,174,69,1,1,2,1,0
 Osipova Yulia Mikhailovna,EMC668,2022,3,38,167,55,1,1,2,1,0
 Pogosova Anna Artemovna,EMC669,2022,1,26,166,58,1,1,2,1,0
-Tovmasyan Ofelya Artakovna,EMC670,2022,1,23,,,4,1,2,1,0
+Tovmasyan Ofelya Artakovna,EMC670,2022,1,23,170,60,4,1,2,1,0
 Grigorieva Darya Alexandrovna,EMC671,2022,3,27,170,57,1,1,1,2,0
 Gornikova Tatiana Borisovna,EMC672,2022,1,35,170,62,1,1,1,2,0
 Demidova Svetlana Sergeevna,EMC673,2022,3,29,164,55,1,1,2,2,0
@@ -721,7 +721,7 @@ Satyukova Darya Nikolaevna,EMC719,2022,1,33,165,50,1,1,2,1,0
 Roshchupkina Lyudmila Gennadievna,EMC720,2022,1,32,170,55,1,1,2,1,0
 Chekmezova Maria Vsevolodovna,EMC721,2022,3,31,164,60,1,1,2,2,1
 Patkina Irina Vladimirovna ,EMC722,2022,1,36,178,112,1,1,2,2,0
-Nesterkina Anastasia Sergeevna ,EMC723,2022,3,35,,,4,1,2,1,0
+Nesterkina Anastasia Sergeevna ,EMC723,2022,3,35,170,60,4,1,2,1,0
 Kulbatskaya Natalia Igorevna,EMC724,2022,1,35,170,56,1,1,2,1,0
 Belyakova Nadezhda Pavlovna,EMC725,2022,1,39,167,62,1,1,2,1,0
 Ovchinnikova Victoria Valentinovna,EMC726,2022,1,36,170,63,1,1,2,1,0
@@ -776,7 +776,7 @@ Satyukova Darya Nikolaevna,EMC774,2022,1,33,165,50,1,1,2,1,0
 Roshchupkina Lyudmila Gennadievna,EMC775,2022,1,32,170,55,1,1,2,1,0
 Chekmezova Maria Vsevolodovna,EMC776,2022,3,31,164,60,1,1,2,2,0
 Patkina Irina Vladimirovna ,EMC777,2022,1,36,178,112,1,1,2,2,0
-Nesterkina Anastasia Sergeevna ,EMC778,2022,3,35,,,4,1,2,1,0
+Nesterkina Anastasia Sergeevna ,EMC778,2022,3,35,170,60,4,1,2,1,0
 Kulbatskaya Natalia Igorevna,EMC779,2022,1,35,170,56,1,1,2,1,0
 Belyakova Nadezhda Pavlovna,EMC780,2022,1,39,167,62,1,1,2,1,0
 Ovchinnikova Victoria Valentinovna,EMC781,2022,1,36,170,63,1,1,2,1,0
@@ -868,7 +868,7 @@ Evseeva Anastasia Evgenievna,EMC866,2023,3,32,160,83,1,1,2,1,0
 Shadlovskaya Darya Dmitrievna,EMC867,2023,1,28,174,69,1,1,2,1,0
 Osipova Yulia Mikhailovna,EMC868,2023,3,38,167,55,1,1,2,1,3
 Pogosova Anna Artemovna,EMC869,2023,1,26,166,58,1,1,2,1,0
-Tovmasyan Ofelya Artakovna,EMC870,2023,1,23,,,4,1,2,1,0
+Tovmasyan Ofelya Artakovna,EMC870,2023,1,23,170,60,4,1,2,1,0
 Grigorieva Darya Alexandrovna,EMC871,2023,3,27,170,57,1,1,1,2,0
 Gornikova Tatiana Borisovna,EMC872,2023,1,35,170,62,1,1,1,2,0
 Demidova Svetlana Sergeevna,EMC873,2023,3,29,164,55,1,1,2,2,0
@@ -921,7 +921,7 @@ Satyukova Darya Nikolaevna,EMC919,2023,1,33,165,50,1,1,2,1,0
 Roshchupkina Lyudmila Gennadievna,EMC920,2023,1,32,170,55,1,1,2,1,0
 Chekmezova Maria Vsevolodovna,EMC921,2023,3,31,164,60,1,1,2,2,0
 Patkina Irina Vladimirovna ,EMC922,2023,1,36,178,112,1,1,2,2,0
-Nesterkina Anastasia Sergeevna ,EMC923,2023,3,35,,,4,1,2,1,0
+Nesterkina Anastasia Sergeevna ,EMC923,2023,3,35,170,60,4,1,2,1,0
 Kulbatskaya Natalia Igorevna,EMC924,2023,1,35,170,56,1,1,2,1,0
 Belyakova Nadezhda Pavlovna,EMC925,2023,1,39,167,62,1,1,2,1,0
 Ovchinnikova Victoria Valentinovna,EMC926,2023,1,36,170,63,1,1,2,1,0
@@ -1153,7 +1153,7 @@ Shadlovskaya Darya Dmitrievna,EMC1151,2019,1,28,174,69,1,1,2,1,0
 Osipova Yulia Mikhailovna,EMC1152,2019,3,38,167,55,1,1,2,1,0
 Pogosova Anna Artemovna,EMC1153,2019,1,26,166,58,1,1,2,1,0
 Tumanova Veronika Igorevna,EMC1154,2019,3,37,170,68,1,1,2,2,0
-Tovmasyan Ofelya Artakovna,EMC1155,2019,1,23,,,4,1,2,1,0
+Tovmasyan Ofelya Artakovna,EMC1155,2019,1,23,170,60,4,1,2,1,0
 Grigorieva Darya Alexandrovna,EMC1156,2019,3,27,170,57,1,1,1,2,0
 Gornikova Tatiana Borisovna,EMC1157,2019,1,35,170,62,1,1,1,2,0
 Demidova Svetlana Sergeevna,EMC1158,2019,3,29,164,55,1,1,2,2,0
@@ -1274,7 +1274,7 @@ Evseeva Anastasia Evgenievna,EMC1272,2020,3,32,160,83,1,1,2,1,0
 Shadlovskaya Darya Dmitrievna,EMC1273,2020,1,28,174,69,1,1,2,1,0
 Osipova Yulia Mikhailovna,EMC1274,2020,3,38,167,55,1,1,2,1,0
 Pogosova Anna Artemovna,EMC1275,2020,1,26,166,58,1,1,2,1,0
-Tovmasyan Ofelya Artakovna,EMC1276,2020,1,23,,,4,1,2,1,0
+Tovmasyan Ofelya Artakovna,EMC1276,2020,1,23,170,60,4,1,2,1,0
 Grigorieva Darya Alexandrovna,EMC1277,2020,3,27,170,57,1,1,1,2,0
 Gornikova Tatiana Borisovna,EMC1278,2020,1,35,170,62,1,1,1,2,0
 Demidova Svetlana Sergeevna,EMC1279,2020,3,29,164,55,1,1,2,2,0
@@ -1327,7 +1327,7 @@ Satyukova Darya Nikolaevna,EMC1325,2020,1,33,165,50,1,1,2,1,0
 Roshchupkina Lyudmila Gennadievna,EMC1326,2020,1,32,170,55,1,1,2,1,0
 Chekmezova Maria Vsevolodovna,EMC1327,2020,3,31,164,60,1,1,2,2,0
 Patkina Irina Vladimirovna ,EMC1328,2020,1,36,178,112,1,1,2,2,0
-Nesterkina Anastasia Sergeevna ,EMC1329,2020,3,35,,,4,1,2,1,0
+Nesterkina Anastasia Sergeevna ,EMC1329,2020,3,35,170,60,4,1,2,1,0
 Kulbatskaya Natalia Igorevna,EMC1330,2020,1,35,170,56,1,1,2,1,0
 Belyakova Nadezhda Pavlovna,EMC1331,2020,1,39,167,62,1,1,2,1,0
 Ovchinnikova Victoria Valentinovna,EMC1332,2020,1,36,170,63,1,1,2,1,0
@@ -1357,7 +1357,7 @@ Shadlovskaya Darya Dmitrievna,EMC1355,2020,1,28,174,69,1,1,2,1,0
 Osipova Yulia Mikhailovna,EMC1356,2020,3,38,167,55,1,1,2,1,0
 Pogosova Anna Artemovna,EMC1357,2020,1,26,166,58,1,1,2,1,0
 Tumanova Veronika Igorevna,EMC1358,2020,3,37,165,60,1,1,2,2,0
-Tovmasyan Ofelya Artakovna,EMC1359,2020,1,23,,,4,1,2,1,0
+Tovmasyan Ofelya Artakovna,EMC1359,2020,1,23,170,60,4,1,2,1,0
 Grigorieva Darya Alexandrovna,EMC1360,2020,3,27,170,57,1,1,1,2,0
 Gornikova Tatiana Borisovna,EMC1361,2020,1,35,170,62,1,1,1,2,0
 Demidova Svetlana Sergeevna,EMC1362,2020,3,29,164,55,1,1,2,2,0
@@ -1410,7 +1410,7 @@ Satyukova Darya Nikolaevna,EMC1408,2020,1,33,165,50,1,1,2,1,0
 Roshchupkina Lyudmila Gennadievna,EMC1409,2020,1,32,170,55,1,1,2,1,0
 Chekmezova Maria Vsevolodovna,EMC1410,2021,3,31,164,60,1,1,2,2,0
 Patkina Irina Vladimirovna ,EMC1411,2021,1,36,178,112,1,1,2,2,0
-Nesterkina Anastasia Sergeevna ,EMC1412,2021,3,35,,,4,1,2,1,0
+Nesterkina Anastasia Sergeevna ,EMC1412,2021,3,35,170,60,4,1,2,1,0
 Kulbatskaya Natalia Igorevna,EMC1413,2021,1,35,170,56,1,1,2,1,0
 Belyakova Nadezhda Pavlovna,EMC1414,2021,1,39,167,62,1,1,2,1,0
 Ovchinnikova Victoria Valentinovna,EMC1415,2021,1,36,170,63,1,1,2,1,0
@@ -1604,7 +1604,7 @@ Milutina Yulia Sergeevna,EMC1602,2021,1,28,174,69,1,1,2,1,0
 Zaitseva Oksana Vladimirovna,EMC1603,2021,3,38,167,55,1,1,2,1,0
 Kalinina Valentina Vladimirovna,EMC1604,2021,1,26,166,58,1,1,2,1,0
 Startseva Anna Nikolaevna,EMC1605,2021,3,37,165,65,1,1,2,2,0
-Tatarova Alexandra Vladimirovna,EMC1606,2021,1,23,,,4,1,2,1,0
+Tatarova Alexandra Vladimirovna,EMC1606,2021,1,23,170,60,4,1,2,1,0
 Hristosova Anna Igorevna,EMC1607,2021,3,27,170,57,1,1,1,2,0
 Artemyeva Olga Viktorovna,EMC1608,2021,1,35,170,62,1,1,1,2,0
 Kalinichenko Anastasia Alekseevna,EMC1609,2021,3,29,164,55,1,1,2,2,0
@@ -1657,7 +1657,7 @@ Alyonevskaya Anna Viktorovna,EMC1655,2021,1,33,165,50,1,1,2,1,0
 Savelieva Marianna Gennadievna,EMC1656,2021,1,32,170,55,1,1,2,1,0
 Tikoto Kristina Alimovna,EMC1657,2021,3,31,164,60,1,1,2,2,0
 Vybornova Ksenia Vladimirovna,EMC1658,2021,1,36,178,112,1,1,2,2,0
-Tumanova Veronika Igorevna,EMC1659,2021,3,35,,,4,1,2,1,0
+Tumanova Veronika Igorevna,EMC1659,2021,3,35,170,60,4,1,2,1,0
 Alyonevskaya Anna Viktorovna,EMC1660,2021,1,35,170,56,1,1,2,1,0
 Alyonevskaya Anna Viktorovna,EMC1661,2021,1,39,167,62,1,1,2,1,0
 Novikova Svetlana Evgenievna,EMC1662,2021,1,36,170,63,1,1,2,1,0
@@ -1814,7 +1814,7 @@ Shadlovskaya Darya Dmitrievna,EMC1812,2022,1,28,174,69,1,1,2,1,4
 Osipova Yulia Mikhailovna,EMC1813,2022,3,38,167,55,1,1,2,1,0
 Pogosova Anna Artemovna,EMC1814,2022,1,26,166,58,1,1,2,1,0
 Tumanova Veronika Igorevna,EMC1815,2022,3,37,165,60,1,1,2,2,0
-Tovmasyan Ofelya Artakovna,EMC1816,2022,1,23,,,4,1,2,1,0
+Tovmasyan Ofelya Artakovna,EMC1816,2022,1,23,170,60,4,1,2,1,0
 Grigorieva Darya Alexandrovna,EMC1817,2022,3,27,170,57,1,1,1,2,4
 Gornikova Tatiana Borisovna,EMC1818,2022,1,35,170,62,1,1,1,2,0
 Zasyadvovk Natalia Mikhailovna,EMC1819,2022,4,61,161,75,3,1,2,1,0
@@ -1961,7 +1961,7 @@ Khibakova Olga Vladimirovna,EMC1959,2023,2,42,163,60,1,1,2,1,0
 Polyanskaya Irina Nikolaevna,EMC1960,2023,4,50,175,70,2,1,2,1,0
 Shlyakhtina Irina Anatolyevna,EMC1961,2023,2,50,167,61,2,1,2,1,0
 Zaitseva Olga Mikhailovna,EMC1962,2023,4,50,165,62,3,1,1,1,0
-Nosovitskaya Kira Vladimirovna,EMC1963,2023,4,53,,,4,1,2,1,0
+Nosovitskaya Kira Vladimirovna,EMC1963,2023,4,53,170,60,4,1,2,1,0
 Kulik Elena Borisovna ,EMC1964,2023,2,54,170,70,2,1,2,2,0
 Poshurkova Elena Viktorovna,EMC1965,2023,4,53,169,73,3,1,2,1,0
 Korshikova Natalia Viktorovna,EMC1966,2023,2,43,164,62,1,1,2,2,0
@@ -1971,7 +1971,7 @@ Shaperina Marina Yurievna,EMC1969,2023,4,46,162,53,1,1,1,2,0
 Shapson Marina Viktorovna,EMC1970,2023,2,53,171,65,4,1,1,1,0
 Bichukova Alla Nikolaevna,EMC1971,2023,4,40,170,59,1,1,2,1,0
 Subbotina Valentina Valentinovna,EMC1972,2023,2,40,169,60,1,1,2,1,0
-Yakovenko Marina Aleksandrovna,EMC1973,2023,1,31,168,31,1,1,2,1,0
+Yakovenko Marina Aleksandrovna,EMC1973,2023,1,31,168,61,1,1,2,1,0
 Ivanova Tatiana Rufovna,EMC1974,2023,4,64,164,76,3,1,2,1,0
 Demina Yulia Yurievna,EMC1975,2023,2,49,167,65,4,1,2,2,0
 Pchelkina Elena Anatolyevna,EMC1976,2023,4,53,165,70,2,1,2,1,0
@@ -1994,7 +1994,7 @@ Lotareva Tatiana Vasilyevna,EMC1992,2023,4,69,175,67,3,1,2,1,0
 Kamochkina Olga Yurievna,EMC1993,2023,2,69,165,87,3,1,2,2,0
 Nirko Galina Borisovna,EMC1994,2023,4,65,165,92,3,1,2,2,0
 Skvortsova Olga Vladimirovna,EMC1995,2023,4,60,167,65,3,1,2,1,0
-Ginka Olga Alexandrovna,EMC1996,2023,2,57,,,3,1,2,1,0
+Ginka Olga Alexandrovna,EMC1996,2023,2,57,170,60,3,1,2,1,0
 Kamenskaya Natalia Valeryevna,EMC1997,2023,4,50,165,75,4,1,2,1,0
 Luzhitskaya Natalia Viktorovna,EMC1998,2023,2,48,169,76,4,1,2,1,0
 Orlova Ekaterina Valeryevna,EMC1999,2023,4,46,168,62,4,1,2,1,0
@@ -2321,7 +2321,7 @@ Khibakova Olga Vladimirovna,EMC2319,2020,2,42,163,60,1,1,2,1,0
 Polyanskaya Irina Nikolaevna,EMC2320,2020,4,50,175,70,2,1,2,1,0
 Shlyakhtina Irina Anatolyevna,EMC2321,2020,2,50,167,61,2,1,2,1,0
 Zaitseva Olga Mikhailovna,EMC2322,2020,4,50,165,62,3,1,1,1,0
-Nosovitskaya Kira Vladimirovna,EMC2323,2020,4,53,,,4,1,2,1,0
+Nosovitskaya Kira Vladimirovna,EMC2323,2020,4,53,170,60,4,1,2,1,0
 Kulik Elena Borisovna ,EMC2324,2020,2,54,170,70,2,1,2,2,0
 Poshurkova Elena Viktorovna,EMC2325,2020,4,53,169,73,3,1,2,1,0
 Korshikova Natalia Viktorovna,EMC2326,2020,2,43,164,62,1,1,2,2,0
@@ -2331,7 +2331,7 @@ Shaperina Marina Yurievna,EMC2329,2020,4,46,162,53,1,1,1,2,0
 Shapson Marina Viktorovna,EMC2330,2020,2,53,171,65,4,1,1,1,0
 Bichukova Alla Nikolaevna,EMC2331,2020,4,40,170,59,1,1,2,1,0
 Subbotina Valentina Valentinovna,EMC2332,2020,2,40,169,60,1,1,2,1,0
-Yakovenko Marina Aleksandrovna,EMC2333,2020,1,31,168,31,1,1,2,1,0
+Yakovenko Marina Aleksandrovna,EMC2333,2020,1,31,168,61,1,1,2,1,0
 Ivanova Tatiana Rufovna,EMC2334,2020,4,64,164,76,3,1,2,1,0
 Demina Yulia Yurievna,EMC2335,2020,2,49,167,65,4,1,2,2,0
 Pchelkina Elena Anatolyevna,EMC2336,2020,4,53,165,70,2,1,2,1,0
@@ -2407,7 +2407,7 @@ Khibakova Olga Vladimirovna,EMC2405,2020,2,42,163,60,1,1,2,1,0
 Polyanskaya Irina Nikolaevna,EMC2406,2020,4,50,175,70,2,1,2,1,0
 Shlyakhtina Irina Anatolyevna,EMC2407,2020,2,50,167,61,2,1,2,1,0
 Zaitseva Olga Mikhailovna,EMC2408,2020,4,50,165,62,3,1,1,1,0
-Nosovitskaya Kira Vladimirovna,EMC2409,2020,4,53,,,4,1,2,1,0
+Nosovitskaya Kira Vladimirovna,EMC2409,2020,4,53,170,60,4,1,2,1,0
 Kulik Elena Borisovna ,EMC2410,2020,2,54,170,70,2,1,2,2,4
 Poshurkova Elena Viktorovna,EMC2411,2020,4,53,169,73,3,1,2,1,0
 Korshikova Natalia Viktorovna,EMC2412,2020,2,43,164,62,1,1,2,2,0
@@ -2417,7 +2417,7 @@ Shaperina Marina Yurievna,EMC2415,2020,4,46,162,53,1,1,1,2,4
 Shapson Marina Viktorovna,EMC2416,2020,2,53,171,65,4,1,1,1,0
 Bichukova Alla Nikolaevna,EMC2417,2020,4,40,170,59,1,1,2,1,0
 Subbotina Valentina Valentinovna,EMC2418,2020,2,40,169,60,1,1,2,1,0
-Yakovenko Marina Aleksandrovna,EMC2419,2020,1,31,168,31,1,1,2,1,0
+Yakovenko Marina Aleksandrovna,EMC2419,2020,1,31,168,61,1,1,2,1,0
 Ivanova Tatiana Rufovna,EMC2420,2020,4,64,164,76,3,1,2,1,0
 Demina Yulia Yurievna,EMC2421,2020,2,49,167,65,4,1,2,2,0
 Pchelkina Elena Anatolyevna,EMC2422,2020,4,53,165,70,2,1,2,1,0
@@ -2440,7 +2440,7 @@ Lotareva Tatiana Vasilyevna,EMC2438,2020,4,69,175,67,3,1,2,1,0
 Kamochkina Olga Yurievna,EMC2439,2020,2,69,165,87,3,1,2,2,0
 Nirko Galina Borisovna,EMC2440,2020,4,65,165,92,3,1,2,2,0
 Skvortsova Olga Vladimirovna,EMC2441,2020,4,60,167,65,3,1,2,1,0
-Ginka Olga Alexandrovna,EMC2442,2020,2,57,,,3,1,2,1,0
+Ginka Olga Alexandrovna,EMC2442,2020,2,57,170,60,3,1,2,1,0
 Kamenskaya Natalia Valeryevna,EMC2443,2020,4,50,165,75,4,1,2,1,0
 Luzhitskaya Natalia Viktorovna,EMC2444,2020,2,48,169,76,4,1,2,1,0
 Orlova Ekaterina Valeryevna,EMC2445,2020,4,46,168,62,4,1,2,1,2
@@ -2586,7 +2586,7 @@ Khibakova Olga Vladimirovna,EMC2584,2021,2,42,163,60,1,1,2,1,0
 Polyanskaya Irina Nikolaevna,EMC2585,2021,4,50,175,70,2,1,2,1,0
 Shlyakhtina Irina Anatolyevna,EMC2586,2021,2,50,167,61,2,1,2,1,0
 Zaitseva Olga Mikhailovna,EMC2587,2021,4,50,165,62,3,1,1,1,0
-Nosovitskaya Kira Vladimirovna,EMC2588,2021,4,53,,,4,1,2,1,0
+Nosovitskaya Kira Vladimirovna,EMC2588,2021,4,53,170,60,4,1,2,1,0
 Kulik Elena Borisovna ,EMC2589,2021,2,54,170,70,2,1,2,2,0
 Poshurkova Elena Viktorovna,EMC2590,2021,4,53,169,73,3,1,2,1,0
 Korshikova Natalia Viktorovna,EMC2591,2021,2,43,164,62,1,1,2,2,0
@@ -2596,7 +2596,7 @@ Shaperina Marina Yurievna,EMC2594,2021,4,46,162,53,1,1,1,2,0
 Shapson Marina Viktorovna,EMC2595,2021,2,53,171,65,4,1,1,1,0
 Bichukova Alla Nikolaevna,EMC2596,2021,4,40,170,59,1,1,2,1,0
 Subbotina Valentina Valentinovna,EMC2597,2021,2,40,169,60,1,1,2,1,0
-Yakovenko Marina Aleksandrovna,EMC2598,2021,1,31,168,31,1,1,2,1,0
+Yakovenko Marina Aleksandrovna,EMC2598,2021,1,31,168,61,1,1,2,1,0
 Ivanova Tatiana Rufovna,EMC2599,2021,4,64,164,76,3,1,2,1,0
 Demina Yulia Yurievna,EMC2600,2021,2,49,167,65,4,1,2,2,0
 Pchelkina Elena Anatolyevna,EMC2601,2021,4,53,165,70,2,1,2,1,0
