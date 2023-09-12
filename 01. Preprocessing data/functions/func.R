@@ -238,12 +238,17 @@ Describe_numeric<-function(database,parametr,sample1,mesurement){
  
 }
 
-#SSA(df_USisTumorGr1$USisTumor,df_isTumorGr1$isTumor)
-SSA <- function(x,y,colname1,colname2){
-  df<-data.frame(x,y)
-  colnames(df) <- c("A","B")
-  confusionMatrix(table(df$A,df$B),
-                  positive = "да")
+#SSA(dfUsIsTumorGr1$us_is_tumor,dfIsTumorGr1$tumor_is)
+SSA <- function(expected_value,predicted_value){
+  example <- confusionMatrix(data=predicted_value, reference = expected_value)
+  example
+}
+
+#binary_table (dfUsIsTumorGr1$us_is_tumor)
+binary_table <- function(data){
+  a <- replace(data, data=="не проводилось", "нет")
+  a <- 	factor(a, levels=c("нет","да"), labels = c("нет"="нет","1"="да"))
+  return(a)
 }
 
 

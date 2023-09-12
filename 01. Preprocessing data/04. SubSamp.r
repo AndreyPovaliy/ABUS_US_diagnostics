@@ -9,32 +9,32 @@ dfQuadrantJun <- subset(dfQuadrant, group_separation == gr_US | group_separation
 ## Sin --------------------------------------------------------------
 dfPersonalSnr <- subset(dfPersonal, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
 dfDiagnosisSnr<- subset(dfDiagnosis, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
-dfPersonalDiscrSnr <- subset(dfPatientDescribe, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfPatientDescribeSnr <- subset(dfPatientDescribe, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
 dfСomplaintsSnr <- subset(dfСomplaints, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
 dfQuadrantSnr <- subset(dfQuadrant, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
 
 ## Gr1 --------------------------------------------------------------
 dfPersonalGr1 <- subset(dfPersonal, group_separation == gr_US)
 dfDiagnosisGr1<- subset(dfDiagnosis, group_separation == gr_US)
-dfPersonalDiscrGr1 <- subset(dfPatientDescribe, group_separation == gr_US)
+dfPatientDescribeGr1 <- subset(dfPatientDescribe, group_separation == gr_US)
 dfСomplaintsGr1 <- subset(dfСomplaints, group_separation == gr_US)
 dfQuadrantGr1 <- subset(dfQuadrant, group_separation == gr_US)
 ## Gr2 --------------------------------------------------------------
 dfPersonalGr2 <- subset(dfPersonal, group_separation == gr_US_MMG)
 dfDiagnosisGr2<- subset(dfDiagnosis, group_separation == gr_US_MMG)
-dfPersonalDiscrGr2 <- subset(dfPatientDescribe, group_separation == gr_US_MMG)
+dfPatientDescribeGr2 <- subset(dfPatientDescribe, group_separation == gr_US_MMG)
 dfСomplaintsGr2 <- subset(dfСomplaints, group_separation == gr_US_MMG)
 dfQuadrantGr2 <- subset(dfQuadrant, group_separation == gr_US_MMG)
 ## Gr3 --------------------------------------------------------------
 dfPersonalGr3 <- subset(dfPersonal, group_separation == gr_US_ABUS)
 dfDiagnosisGr3<- subset(dfDiagnosis, group_separation == gr_US_ABUS)
-dfPersonalDiscrGr3 <- subset(dfPatientDescribe, group_separation == gr_US_ABUS)
+dfPatientDescribeGr3 <- subset(dfPatientDescribe, group_separation == gr_US_ABUS)
 dfСomplaintsGr3 <- subset(dfСomplaints, group_separation == gr_US_ABUS)
 dfQuadrantGr3 <- subset(dfQuadrant, group_separation == gr_US_ABUS)
 ## Gr4 --------------------------------------------------------------
 dfPersonalGr4 <- subset(dfPersonal, group_separation == gr_US_MMG_ABUS)
 dfDiagnosisGr4<- subset(dfDiagnosis, group_separation == gr_US_MMG_ABUS)
-dfPersonalDiscrGr4 <- subset(dfPatientDescribe, group_separation == gr_US_MMG_ABUS)
+dfPatientDescribeGr4 <- subset(dfPatientDescribe, group_separation == gr_US_MMG_ABUS)
 dfСomplaintsGr4 <- subset(dfСomplaints, group_separation == gr_US_MMG_ABUS)
 dfQuadrantGr4 <- subset(dfQuadrant, group_separation == gr_US_MMG_ABUS)
 
