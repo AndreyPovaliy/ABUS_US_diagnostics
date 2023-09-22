@@ -1,4 +1,4 @@
-source("~/Статиьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+source("~/Статьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 #####library####
 #подключаем библитеку для чтения exel
@@ -253,7 +253,7 @@ SSA(dfXlsxGr4$mmg_is_tumor,dfXlsxGr4$hist_is_tumor)
 SSA(dfXlsxGr4$abus_is_tumor,dfXlsxGr4$hist_is_tumor)
 
 
-#####Logit regression#######
+#####ROC cruve#######
 library(pROC)
 
 
@@ -264,8 +264,27 @@ pROC_obj_usGr2 <- roc(dfXlsxGr2$hist_is_tumor,dfXlsxGr2$us_probability,
                         plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
                         print.auc=TRUE, show.thres=TRUE)
 
+pROC_obj_mmgGr2 <- roc(dfXlsxGr2$hist_is_tumor,dfXlsxGr2$mmg_probability,
+                      smoothed = TRUE,
+                      ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                      plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                      print.auc=TRUE, show.thres=TRUE)
+
 pROC_obj_usGr4 <- roc(dfXlsxGr4$hist_is_tumor,dfXlsxGr4$us_probability,
                 smoothed = TRUE,
                 ci=TRUE, ci.alpha=0.9, stratified=FALSE,
                 plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
                 print.auc=TRUE, show.thres=TRUE)
+
+pROC_obj_mmgGr4 <- roc(dfXlsxGr4$hist_is_tumor,dfXlsxGr4$mmg_probability,
+                       smoothed = TRUE,
+                       ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                       plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                       print.auc=TRUE, show.thres=TRUE)
+
+
+pROC_obj_abusGr4 <- roc(dfXlsxGr4$hist_is_tumor,dfXlsxGr4$abus_probability,
+                      smoothed = TRUE,
+                      ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                      plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                      print.auc=TRUE, show.thres=TRUE)

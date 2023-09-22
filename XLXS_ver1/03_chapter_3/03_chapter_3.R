@@ -270,6 +270,28 @@ SSA(dfXlsxGr3$abus_is_tumor,dfXlsxGr3$hist_is_tumor)
 
 
 
+#####ROC cruve#######
+library(pROC)
 
+
+
+pROC_obj_usGr1 <- roc(dfXlsxGr1$hist_is_tumor,dfXlsxGr1$us_probability,
+                      smoothed = TRUE,
+                      ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                      plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                      print.auc=TRUE, show.thres=TRUE)
+
+pROC_obj_usGr3 <- roc(dfXlsxGr3$hist_is_tumor,dfXlsxGr3$us_probability,
+                      smoothed = TRUE,
+                      ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                      plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                      print.auc=TRUE, show.thres=TRUE)
+
+
+pROC_obj_abusGr3 <- roc(dfXlsxGr3$hist_is_tumor,dfXlsxGr3$abus_probability,
+                        smoothed = TRUE,
+                        ci=TRUE, ci.alpha=0.9, stratified=FALSE,
+                        plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
+                        print.auc=TRUE, show.thres=TRUE)
 
 

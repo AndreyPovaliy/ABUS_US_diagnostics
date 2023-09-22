@@ -1,14 +1,11 @@
-source("~/Статиьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+source("~/Статьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 # Examination -------------------------------------------------------------
 # dataFrameNeo <- subset(dfXlsx,tumor_morphology_structure != "не проводилось")
 
 fit<- glm (dfXlsx$hist_is_tumor   ~
              age_patient+
-             abus_skin+	
-           abus_nodle_size	+
-           abus_nodle_contours+	
-           abus_echogenicity_formation
+             dfXlsx$mmg_is_tumor
            
                     , dfXlsx, family = "binomial")
             
