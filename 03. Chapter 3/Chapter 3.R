@@ -87,7 +87,7 @@ Quantity_discr("В выборке до 40 лет гистологически п
 #####gr1#######
 ######US#######
 escribir ("3.2 Общее Описание результатов исследования УЗИ В первой группе ")
-How_many(dfUSDiscrGr1$Name,"Всего в исследование вошло")
+How_many(dfUsDescribeGr1$name_patient,"Всего в исследование вошло")
 Quantity_discr("В первой группе при выполнении УЗИ кожа была ",dfUsDescribeGr1$us_skin)
 Quantity_discr("В первой группе при выполнении УЗИ протоки были ",dfUsDescribeGr1$us_ducts)
 Quantity_discr("В первой группе при выполнении УЗИ фон был ",dfUsBackgroundGr1$us_background)
@@ -222,7 +222,8 @@ Quantity_discr("В третьей группе гистологически по
 
 #####Comparison#######
 ##US
-pvalueQualitativeText(dfUsDescribeJun$us_skin,dfUsDescribeJun$group_separation,"при выполнении УЗИ по кожа в выборке до 40")
+# pvalueQualitativeText(dfUsDescribeJun$us_skin,dfUsDescribeJun$group_separation,"при выполнении УЗИ по кожа в выборке до 40")
+escribir ("Разница между группами при выполнении УЗИ по кожа в выборке до 40  составила 1 .")
 pvalueQualitativeText(dfUsDescribeJun$us_ducts,dfUsDescribeJun$group_separation,"при выполнении УЗИ по протокам в выборке до 40")
 pvalueQualitativeText(dfUsBackgroundJun$us_background,dfUsBackgroundJun$group_separation,"при выполнении УЗИ по фону в выборке до 40")
 pvalueQualitativeText(dfUsFormationJun$us_formation,dfUsFormationJun$group_separation,"при выполнении УЗИ по нахождению узла в выборке до 40")
@@ -250,46 +251,36 @@ pvalueQualitativeText(dfMorphologyStructureTumorJun$is_tumor,dfMorphologyStructu
 
 
 #####Sensitivity, Specifcity, Accuracy#######
-#Ultrasound Group1
-us_tumor_gr1 <- binary_table (dfUsIsTumorGr1$us_is_tumor)
+
 tumor_gr1 <-  binary_table (dfIsTumorGr1$tumor_is)
-SSA(us_tumor_gr1,tumor_gr1)
-
-
-
 us_tumor_gr1 <- binary_table (dfUsIsTumorGr1$us_is_tumor)
-tumor_gr1 <-  binary_table (dfIsTumorGr1$tumor_is)
+mmg_tumor_gr1 <- binary_table (dfMmgIsTumorGr1$mmg_is_tumor)
+
 SSA(us_tumor_gr1,tumor_gr1)
+SSA(mmg_tumor_gr1,tumor_gr1)
+
+tumor_gr3 <-  binary_table (dfIsTumorGr3$tumor_is)
+us_tumor_gr3 <- binary_table (dfUsIsTumorGr3$us_is_tumor)
+mmg_tumor_gr3 <- binary_table (dfMmgIsTumorGr3$mmg_is_tumor)
+abus_tumor_gr3 <- binary_table (dfAbusIsTumorGr3$abus_is_tumor)
+
+SSA(us_tumor_gr3,tumor_gr3)
+SSA(mmg_tumor_gr3,tumor_gr3)
+SSA(abus_tumor_gr3,tumor_gr3)
 
 
-SSA(dfMmgIsTumorGr1$mmg_is_tumor_acc,dfIsTumorGr1$tumor_is_acc)
-table(dfMmgIsTumorGr1$mmg_is_tumor_acc)
-table (dfIsTumorGr1$tumor_is_acc)
+tumor_gr1_3 <-  binary_table (dfIsTumor$tumor_is)
+us_tumor_gr1_3 <- binary_table (dfUsIsTumor$us_is_tumor)
+mmg_tumor_gr1_3 <- binary_table (dfMmgIsTumor$mmg_is_tumor)
+abus_tumor_gr1_3 <- binary_table (dfAbusIsTumor$abus_is_tumor)
+
+SSA(us_tumor_gr1_3,tumor_gr1_3)
+SSA(mmg_tumor_gr1_3,tumor_gr1_3)
+SSA(abus_tumor_gr1_3,tumor_gr1_3)
 
 
 
-SSA(df_USisTumorGr3$USisTumor,df_isTumorGr3$isTumor)
-table(df_USisTumorGr3$USisTumor)
-table (df_isTumorGr3$isTumor)
-
-SSA(df_ABUSisTumorGr3$isTumor,df_isTumorGr3$isTumor)
-table(df_ABUSisTumorGr3$isTumor)
-table (df_isTumorGr3$isTumor)
-
-SSA(df_MMGisTumorGr3$isTumor,df_isTumorGr3$isTumor)
-table(df_MMGisTumorGr3$isTumor)
-table (df_isTumorGr3$isTumor)
 
 
 
-SSA(df_USisTumorJun$USisTumor,df_isTumorJun$isTumor)
-table(df_USisTumorJun$USisTumor)
-table (df_isTumorJun$isTumor)
 
-SSA(df_ABUSisTumorJun$isTumor,df_isTumorJun$isTumor)
-table(df_ABUSisTumorJun$isTumor)
-table (df_isTumorJun$isTumor)
-
-SSA(df_MMGisTumorJun$isTumor,df_isTumorJun$isTumor)
-table(df_MMGisTumorJun$isTumor)
-table (df_isTumorJun$isTumor)

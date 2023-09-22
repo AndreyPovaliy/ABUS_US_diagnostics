@@ -229,7 +229,7 @@ dfIsTumorGr3 <- subset(dfIsTumor, group_separation == gr_US_ABUS)
 ## Gr4 --------------------------------------------------------------
 #group_separation == gr_US_MMG_ABUS
 
-dfMMGDescrGr4 <- subset(dfMmgDescribe, group_separation == gr_US_MMG_ABUS)
+dfMmgDescribeGr4 <- subset(dfMmgDescribe, group_separation == gr_US_MMG_ABUS)
 dfMMGnodleGr4 <- subset(dfMmgNodle, group_separation == gr_US_MMG_ABUS)
 dfMMGnodleContourGr4 <- subset(dfMmgNodleContour, group_separation == gr_US_MMG_ABUS)
 dfMMGnodleSizeGr4 <- subset(dfMmgNodleSize, group_separation == gr_US_MMG_ABUS)
@@ -250,17 +250,17 @@ dfUsCalcinatesMicroPureGr4 <- subset(dfUsCalcinatesMicroPure, group_separation =
 dfUsIsTumorGr4 <- subset(dfUsIsTumor, group_separation == gr_US_MMG_ABUS)
 
 
-dfABUSdiscrGr4 <- subset(dfAbusDescribe, group_separation == gr_US_MMG_ABUS)
+dfAbusDescribeGr4 <- subset(dfAbusDescribe, group_separation == gr_US_MMG_ABUS)
 dfABUSnodleSizeGr4 <- subset(dfAbusNodleSize, group_separation == gr_US_MMG_ABUS)
 dfABUSnodleContoursGr4 <- subset(dfAbusNodleContours, group_separation == gr_US_MMG_ABUS)
 dfABUSstructureGr4 <- subset(dfAbusStructure, group_separation == gr_US_MMG_ABUS)
 dfABUSdiagnosisGr4 <- subset(dfAbusDiagnosis, group_separation == gr_US_MMG_ABUS)
 dfAbusIsTumorGr4 <- subset(dfAbusIsTumor, group_separation == gr_US_MMG_ABUS)
 
-dfDsMRSIGr4 <- subset(dfMrsiDescribe, group_separation == gr_US_MMG_ABUS )
+dfMrsiDescribeGr4 <- subset(dfMrsiDescribe, group_separation == gr_US_MMG_ABUS)
 
 dfDescrTumorGr4 <- subset(dfDescrTumor, group_separation == gr_US_MMG_ABUS)
-dfmorphologyStructureTumorGr4 <- subset(dfMorphologyStructureTumor, group_separation == gr_US_MMG_ABUS)
+dfMorphologyStructureTumorGr4 <- subset(dfMorphologyStructureTumor, group_separation == gr_US_MMG_ABUS)
 dfReceptorsGr4 <- subset(dfReceptors, group_separation == gr_US_MMG_ABUS)
 dfIsTumorGr4 <- subset(dfIsTumor, group_separation == gr_US_MMG_ABUS)
 

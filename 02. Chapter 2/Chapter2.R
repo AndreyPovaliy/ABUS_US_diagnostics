@@ -132,11 +132,11 @@ Quantity_discr("В выборке после 40 лет прием гормона
 Quantity_discr("В выборке после 40 лет генетическая предрасположенность ",dfPersonalSnr$genetics)
 Quantity_discr("В выборке после 40 лет было выявлена мутация BRCA ",dfPersonalSnr$mutation_brca)
 
-Quantity_discr("В выборке после 40 лет сторона поражения при осмотре ",dfPersonalDiscrSnr$side)
-Quantity_discr("В выборке после 40 лет кожные симптомы при осмотре ",dfPersonalDiscrSnr$skin_symptoms)
-Quantity_discr("В выборке после 40 лет втягивание соска при осмотре ",dfPersonalDiscrSnr$nipple_retraction)
-Quantity_discr("В выборке после 40 лет выделения из соска при осмотре ",dfPersonalDiscrSnr$nipple_release)
-Quantity_discr("В выборке после 40 лет тип плотности по ACR при осмотре ",dfPersonalDiscrSnr$type_structure_acr)
+Quantity_discr("В выборке после 40 лет сторона поражения при осмотре ",dfPatientDescribeSnr$side)
+Quantity_discr("В выборке после 40 лет кожные симптомы при осмотре ",dfPatientDescribeSnr$skin_symptoms)
+Quantity_discr("В выборке после 40 лет втягивание соска при осмотре ",dfPatientDescribeSnr$nipple_retraction)
+Quantity_discr("В выборке после 40 лет выделения из соска при осмотре ",dfPatientDescribeSnr$nipple_release)
+Quantity_discr("В выборке после 40 лет тип плотности по ACR при осмотре ",dfPatientDescribeSnr$type_structure_acr)
 
 Quantity_discr("В выборке после 40 лет квадрант локализации ",dfQuadrantSnr$quadrant)
 
@@ -149,11 +149,11 @@ pvalueQualitativeText(dfPersonalSnr$hormonal_medications,dfPersonalSnr$group_sep
 pvalueQualitativeText(dfPersonalSnr$genetics,dfPersonalSnr$group_separation,"по генетической предрасположенности в выборке после 40")
 pvalueQualitativeText(dfPersonalSnr$mutation_brca,dfPersonalSnr$group_separation,"по выявлению мутации BRCA в выборке после 40")
 
-pvalueQualitativeText(dfPersonalDiscrSnr$side,dfPersonalDiscrSnr$group_separation,"по стороне поражения в выборке после 40") 
-pvalueQualitativeText(dfPersonalDiscrSnr$skin_symptoms,dfPersonalDiscrSnr$group_separation,"по кожным симптомам в выборке после 40")
-pvalueQualitativeText(dfPersonalDiscrSnr$nipple_retraction,dfPersonalDiscrSnr$group_separation,"по симптому втягивания соска в выборке после 40")
-pvalueQualitativeText(dfPersonalDiscrSnr$nipple_release,dfPersonalDiscrSnr$group_separation,"по симптому выделениям из соска в выборке после 40")
-pvalueQualitativeText(dfPersonalDiscrSnr$type_structure_acr,dfPersonalDiscrSnr$group_separation,"по типу плотности по ACR при осмотре в выборке после 40")
+pvalueQualitativeText(dfPatientDescribeSnr$side,dfPatientDescribeSnr$group_separation,"по стороне поражения в выборке после 40") 
+pvalueQualitativeText(dfPatientDescribeSnr$skin_symptoms,dfPatientDescribeSnr$group_separation,"по кожным симптомам в выборке после 40")
+pvalueQualitativeText(dfPatientDescribeSnr$nipple_retraction,dfPatientDescribeSnr$group_separation,"по симптому втягивания соска в выборке после 40")
+pvalueQualitativeText(dfPatientDescribeSnr$nipple_release,dfPatientDescribeSnr$group_separation,"по симптому выделениям из соска в выборке после 40")
+pvalueQualitativeText(dfPatientDescribeSnr$type_structure_acr,dfPatientDescribeSnr$group_separation,"по типу плотности по ACR при осмотре в выборке после 40")
 
 pvalueQualitativeText(dfQuadrantSnr$quadrant,dfQuadrantSnr$group_separation,"по квадранту локализации в выборке после 40")
 

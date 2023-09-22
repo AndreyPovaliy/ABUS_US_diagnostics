@@ -239,7 +239,7 @@ Describe_numeric<-function(database,parametr,sample1,mesurement){
 }
 
 #SSA(dfUsIsTumorGr1$us_is_tumor,dfIsTumorGr1$tumor_is)
-SSA <- function(expected_value,predicted_value){
+SSA <- function(predicted_value, expected_value){
   example <- confusionMatrix(data=predicted_value, reference = expected_value)
   example
 }

@@ -200,3 +200,77 @@ dfIsTumor <- dbGetQuery(con, "SELECT  *
 FROM      abus_real.patient_details.personal
 LEFT JOIN abus_real.tumor_details.tumor_is
         ON abus_real.patient_details.personal.id_patient= abus_real.tumor_details.tumor_is.id_patient")
+
+
+
+# All ----------------------------------------------------------------
+dataFrameAll <- dbGetQuery(con, 
+                           "SELECT  *
+FROM      abus_real.patient_details.personal
+LEFT JOIN abus_real.patient_details.describe_patient 
+        ON abus_real.patient_details.personal.id_patient= abus_real.patient_details.describe_patient.id_patient
+LEFT JOIN abus_real.patient_details.complaints 
+        ON abus_real.patient_details.personal.id_patient= abus_real.patient_details.complaints.id_patient
+LEFT JOIN abus_real.patient_details.diagnosis_primary 
+        ON abus_real.patient_details.personal.id_patient= abus_real.patient_details.diagnosis_primary.id_patient
+LEFT JOIN abus_real.patient_details.quadrant 
+        ON abus_real.patient_details.personal.id_patient= abus_real.patient_details.quadrant.id_patient
+LEFT JOIN abus_real.us_details.us_describe
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_describe.id_patient
+LEFT JOIN abus_real.us_details.us_nodle_contour
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_nodle_contour.id_patient
+LEFT JOIN abus_real.us_details.us_background
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_background.id_patient
+LEFT JOIN abus_real.us_details.us_formation
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_formation.id_patient
+LEFT JOIN abus_real.us_details.us_nodle_size
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_nodle_size.id_patient
+LEFT JOIN abus_real.us_details.us_structure
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_structure.id_patient
+LEFT JOIN abus_real.us_details.us_formation_blood_flow
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_formation_blood_flow.id_patient
+LEFT JOIN abus_real.us_details.us_elastography
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_elastography.id_patient
+LEFT JOIN abus_real.us_details.us_diagnosis
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_diagnosis.id_patient
+LEFT JOIN abus_real.us_details.us_calcinates_micro_pure
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_calcinates_micro_pure.id_patient
+LEFT JOIN abus_real.us_details.us_is_tumor
+        ON abus_real.patient_details.personal.id_patient= abus_real.us_details.us_is_tumor.id_patient
+LEFT JOIN abus_real.mmg_details.mmg_describe
+        ON abus_real.patient_details.personal.id_patient= abus_real.mmg_details.mmg_describe.id_patient
+LEFT JOIN abus_real.mmg_details.mmg_nodle
+        ON abus_real.patient_details.personal.id_patient= abus_real.mmg_details.mmg_nodle.id_patient
+LEFT JOIN abus_real.mmg_details.mmg_nodle_contour
+        ON abus_real.patient_details.personal.id_patient= abus_real.mmg_details.mmg_nodle_contour.id_patient
+LEFT JOIN abus_real.mmg_details.mmg_nodle_size
+        ON abus_real.patient_details.personal.id_patient= abus_real.mmg_details.mmg_nodle_size.id_patient
+LEFT JOIN abus_real.mmg_details.mmg_calcifications
+        ON abus_real.patient_details.personal.id_patient= abus_real.mmg_details.mmg_calcifications.id_patient
+LEFT JOIN abus_real.mmg_details.mmg_conclusion
+        ON abus_real.patient_details.personal.id_patient= abus_real.mmg_details.mmg_conclusion.id_patient
+LEFT JOIN abus_real.mmg_details.mmg_is_tumor
+        ON abus_real.patient_details.personal.id_patient= abus_real.mmg_details.mmg_is_tumor.id_patient
+LEFT JOIN abus_real.abus_details.abus_describe
+        ON abus_real.patient_details.personal.id_patient= abus_real.abus_details.abus_describe.id_patient
+LEFT JOIN abus_real.abus_details.abus_nodle_size
+        ON abus_real.patient_details.personal.id_patient= abus_real.abus_details.abus_nodle_size.id_patient
+LEFT JOIN abus_real.abus_details.abus_nodle_contours
+        ON abus_real.patient_details.personal.id_patient= abus_real.abus_details.abus_nodle_contours.id_patient
+LEFT JOIN abus_real.abus_details.abus_structure
+        ON abus_real.patient_details.personal.id_patient= abus_real.abus_details.abus_structure.id_patient
+LEFT JOIN abus_real.abus_details.abus_diagnosis
+        ON abus_real.patient_details.personal.id_patient= abus_real.abus_details.abus_diagnosis.id_patient
+LEFT JOIN abus_real.abus_details.abus_is_tumor
+        ON abus_real.patient_details.personal.id_patient= abus_real.abus_details.abus_is_tumor.id_patient
+LEFT JOIN abus_real.mrsi_details.mrsi_describe
+        ON abus_real.patient_details.personal.id_patient= abus_real.mrsi_details.mrsi_describe.id_patient
+LEFT JOIN abus_real.tumor_details.tumor_describe
+        ON abus_real.patient_details.personal.id_patient= abus_real.tumor_details.tumor_describe.id_patient
+LEFT JOIN abus_real.tumor_details.tumor_morphology_structure
+        ON abus_real.patient_details.personal.id_patient= abus_real.tumor_details.tumor_morphology_structure.id_patient
+LEFT JOIN abus_real.tumor_details.tumor_receptors
+        ON abus_real.patient_details.personal.id_patient= abus_real.tumor_details.tumor_receptors.id_patient
+LEFT JOIN abus_real.tumor_details.tumor_is
+        ON abus_real.patient_details.personal.id_patient= abus_real.tumor_details.tumor_is.id_patient")
+

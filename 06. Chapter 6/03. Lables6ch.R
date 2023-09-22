@@ -1,7 +1,7 @@
 #####_01_DescrPart####
 
 #####Personal####
-dfPersonal$satus_reproductive	<- factor(dfPersonal$satus_reproductive, 
+dataFrameAll$satus_reproductive	<- factor(dataFrameAll$satus_reproductive, 
                                         levels=c(1, 2, 3, 4, 5, 6),
                                         labels = c(
                                           "1"="репродуктивный возраст",
@@ -12,22 +12,23 @@ dfPersonal$satus_reproductive	<- factor(dfPersonal$satus_reproductive,
                                           "6"="беременность"
                                         ))
 
-dfPersonal$breast_surgery_before <- factor(dfPersonal$breast_surgery_before  , 
+dataFrameAll$breast_surgery_before <- factor(dataFrameAll$breast_surgery_before  , 
                                            levels=c(1, 2),
                                            labels = c(
                                              "1"="Не было операций",
                                              "2"="Были операции"
                                            ))
 
-dfPersonal$hormonal_medications	<- 	factor(dfPersonal$hormonal_medications,
-                                           levels=c(1,2),
+dataFrameAll$hormonal_medications <- replace(dataFrameAll$hormonal_medications, dataFrameAll$hormonal_medications == 1, 3)
+dataFrameAll$hormonal_medications	<- 	factor(dataFrameAll$hormonal_medications,
+                                           levels=c(2,3),
                                            labels = c(
-                                             "1"="да",
-                                             "2"="нет"
+                                             "2"="нет",
+                                             "3"="да"
                                              
                                            ))
 
-dfPersonal$genetics	<- 	factor(dfPersonal$genetics,
+dataFrameAll$genetics	<- 	factor(dataFrameAll$genetics,
                                levels=c(1,2),
                                labels = c(
                                  "1"="нет",
@@ -36,7 +37,7 @@ dfPersonal$genetics	<- 	factor(dfPersonal$genetics,
                                ))
 
 
-dfPersonal$mutation_brca <- factor(dfPersonal$mutation_brca,
+dataFrameAll$mutation_brca <- factor(dataFrameAll$mutation_brca,
                                    levels=c(0,1,2,3,4,5),
                                    labels = c(
                                      "0"="Оценка не проводилась",
@@ -51,7 +52,7 @@ dfPersonal$mutation_brca <- factor(dfPersonal$mutation_brca,
 
 
 #####Diagnosis_primary####
-dfDiagnosis$diagnosis_primary <- factor(dfDiagnosis$diagnosis_primary, 
+dataFrameAll$diagnosis_primary <- factor(dataFrameAll$diagnosis_primary, 
                                         levels=c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11),
                                         labels = c(
                                           "0"="Без патологии",
@@ -68,7 +69,7 @@ dfDiagnosis$diagnosis_primary <- factor(dfDiagnosis$diagnosis_primary,
                                           "11"="Мастит"
                                         ))
 #####Complaints####
-dfСomplaints$complaints<- factor(dfСomplaints$complaints, 
+dataFrameAll$complaints<- factor(dataFrameAll$complaints, 
                                  levels=c(1, 2, 3, 4, 5, 6,7),
                                  labels = c(
                                    "1"= "нет",
@@ -81,7 +82,7 @@ dfСomplaints$complaints<- factor(dfСomplaints$complaints,
                                  ))
 
 #####Describe####
-dfPatientDescribe$side <- factor(dfPatientDescribe$side, 
+dataFrameAll$side <- factor(dataFrameAll$side, 
                                  levels=c(1, 2, 3, 4),
                                  labels = c(
                                    "1"="правая",
@@ -91,7 +92,7 @@ dfPatientDescribe$side <- factor(dfPatientDescribe$side,
                                  ))
 
 
-dfPatientDescribe$skin_symptoms	<- factor(dfPatientDescribe$skin_symptoms,
+dataFrameAll$skin_symptoms	<- factor(dataFrameAll$skin_symptoms,
                                           levels=c(1,2,3,4,5,6,7),
                                           labels = c(
                                             "1"="нет",
@@ -103,7 +104,7 @@ dfPatientDescribe$skin_symptoms	<- factor(dfPatientDescribe$skin_symptoms,
                                             "7"= "эрозия"
                                           ))
 
-dfPatientDescribe$nipple_retraction	<- factor(dfPatientDescribe$nipple_retraction,
+dataFrameAll$nipple_retraction	<- factor(dataFrameAll$nipple_retraction,
                                               levels=c(1,2),
                                               labels = c(
                                                 "1"="нет",
@@ -112,7 +113,7 @@ dfPatientDescribe$nipple_retraction	<- factor(dfPatientDescribe$nipple_retractio
 
 
 
-dfPatientDescribe$nipple_release <- 	factor(dfPatientDescribe$nipple_release,
+dataFrameAll$nipple_release <- 	factor(dataFrameAll$nipple_release,
                                             levels=c(1,2,3,4),
                                             labels = c(
                                               "1"="нет",
@@ -121,7 +122,7 @@ dfPatientDescribe$nipple_release <- 	factor(dfPatientDescribe$nipple_release,
                                               "4"="гноевидные"
                                             ))
 
-dfPatientDescribe$type_structure_acr<- 	factor(dfPatientDescribe$type_structure_acr,
+dataFrameAll$type_structure_acr<- 	factor(dataFrameAll$type_structure_acr,
                                                levels=c(1,2,3,4),
                                                labels = c(
                                                  "1"="А",
@@ -131,7 +132,7 @@ dfPatientDescribe$type_structure_acr<- 	factor(dfPatientDescribe$type_structure_
                                                ))
 
 #####Quadrant####
-dfQuadrant$quadrant <- 	factor(dfQuadrant$quadrant,
+dataFrameAll$quadrant <- 	factor(dataFrameAll$quadrant,
                                levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
                                labels = c(
                                  "0"="нет",
@@ -153,7 +154,7 @@ dfQuadrant$quadrant <- 	factor(dfQuadrant$quadrant,
 
 #####_01_US####
 #####USDiscr####
-dfUsDescribe$us_skin	<- 	factor(dfUsDescribe$us_skin,
+dataFrameAll$us_skin	<- 	factor(dataFrameAll$us_skin,
                                 levels=c(1,2,3),
                                 labels = c(
                                   "1"="не изменена",
@@ -162,7 +163,7 @@ dfUsDescribe$us_skin	<- 	factor(dfUsDescribe$us_skin,
                                   
                                 ))
 
-dfUsDescribe$USducts	<- 	factor(dfUsDescribe$us_ducts,
+dataFrameAll$us_ducts	<- 	factor(dataFrameAll$us_ducts,
                                 levels=c(1,2),
                                 labels = c(
                                   "1"="не расширены",
@@ -170,7 +171,7 @@ dfUsDescribe$USducts	<- 	factor(dfUsDescribe$us_ducts,
                                   
                                 ))
 
-dfUsDescribe$USform	<- 	factor(dfUsDescribe$us_form,
+dataFrameAll$us_form	<- 	factor(dataFrameAll$us_form,
                                levels=c(0,1,2,3,4,5),
                                labels = c(
                                  "0"="нет узла",
@@ -182,7 +183,7 @@ dfUsDescribe$USform	<- 	factor(dfUsDescribe$us_form,
                                  
                                ))
 
-dfUsDescribe$USechogenicityFormation	<- 	factor(dfUsDescribe$us_echogenicity_formation,
+dataFrameAll$us_echogenicity_formation	<- 	factor(dataFrameAll$us_echogenicity_formation,
                                                 levels=c(0,1,2,3,4,5,6),
                                                 labels = c(
                                                   "0"="нет узла",
@@ -198,7 +199,7 @@ dfUsDescribe$USechogenicityFormation	<- 	factor(dfUsDescribe$us_echogenicity_for
 
 
 
-dfUsDescribe$us_region_lymph_nodes	<- 	factor(dfUsDescribe$us_region_lymph_nodes,
+dataFrameAll$us_region_lymph_nodes	<- 	factor(dataFrameAll$us_region_lymph_nodes,
                                               levels=c(0,1,2,3,4,5,6),
                                               labels = c(
                                                 "0"="не изменены",
@@ -210,7 +211,7 @@ dfUsDescribe$us_region_lymph_nodes	<- 	factor(dfUsDescribe$us_region_lymph_nodes
                                                 "6"="в лев.подм."
                                               ))
 
-dfUsDescribe$us_number_nodles <- 	factor(dfUsDescribe$us_number_nodles,
+dataFrameAll$us_number_nodles <- 	factor(dataFrameAll$us_number_nodles,
                                          levels=c(1,2,3,4,5,6),
                                          labels = c(
                                            "1"="не опред",
@@ -223,7 +224,7 @@ dfUsDescribe$us_number_nodles <- 	factor(dfUsDescribe$us_number_nodles,
                                          ))
 
 
-dfUsDescribe$us_category_birads	<- 	factor(dfUsDescribe$us_category_birads,
+dataFrameAll$us_category_birads	<- 	factor(dataFrameAll$us_category_birads,
                                            levels=c(1,2,3,4,5,6,7,8,9),
                                            labels = c(
                                              "1"="Birads 1",
@@ -239,7 +240,7 @@ dfUsDescribe$us_category_birads	<- 	factor(dfUsDescribe$us_category_birads,
 
 
 #####USnodleContour####
-dfUsNodleContour$us_nodle_contour	<- 	factor(dfUsNodleContour$us_nodle_contour,
+dataFrameAll$us_nodle_contour	<- 	factor(dataFrameAll$us_nodle_contour,
                                              levels=c(0,1,2,3,4,5,6,7),
                                              labels = c(
                                                "0"="нет узла",
@@ -255,7 +256,7 @@ dfUsNodleContour$us_nodle_contour	<- 	factor(dfUsNodleContour$us_nodle_contour,
                                              ))
 
 #####USbackground####
-dfUsBackground$us_background	<- 	factor(dfUsBackground$us_background,
+dataFrameAll$us_background	<- 	factor(dataFrameAll$us_background,
                                         levels=c(1,2,3,4,5,6),
                                         labels = c(
                                           "1"="жировая ткань",
@@ -268,7 +269,7 @@ dfUsBackground$us_background	<- 	factor(dfUsBackground$us_background,
                                         ))
 
 #####USformation####
-dfUsFormation$us_formation	<- 	factor(dfUsFormation$us_formation,
+dataFrameAll$us_formation	<- 	factor(dataFrameAll$us_formation,
                                       levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
                                       labels = c(
                                         "0"="нет",
@@ -288,7 +289,7 @@ dfUsFormation$us_formation	<- 	factor(dfUsFormation$us_formation,
                                       ))
 
 #####USnodleSize####
-dfUsNodleSize$us_nodle_size	<- 	factor(dfUsNodleSize$us_nodle_size,
+dataFrameAll$us_nodle_size	<- 	factor(dataFrameAll$us_nodle_size,
                                        levels=c(0,1,2,3,4,5,6),
                                        labels = c(
                                          "0"="нет",
@@ -303,7 +304,7 @@ dfUsNodleSize$us_nodle_size	<- 	factor(dfUsNodleSize$us_nodle_size,
                                        ))
 
 #####USstructure####
-dfUsStructure$us_structure<- 	factor(dfUsStructure$us_structure,
+dataFrameAll$us_structure <- 	factor(dataFrameAll$us_structure,
                                      levels=c(0,1,2,3,4,5,6),
                                      labels = c(
                                        "0"="нет узла",
@@ -317,7 +318,7 @@ dfUsStructure$us_structure<- 	factor(dfUsStructure$us_structure,
                                      ))
 
 #####USformationBloodFlow####
-dfUsFormationBloodFlow$us_formation_blood_flow	<- 	factor(dfUsFormationBloodFlow$us_formation_blood_flow,
+dataFrameAll$us_formation_blood_flow	<- 	factor(dataFrameAll$us_formation_blood_flow,
                                                           levels=c(0,1,2,3,4,5,6),
                                                           labels = c(
                                                             "0"="нет",
@@ -330,7 +331,7 @@ dfUsFormationBloodFlow$us_formation_blood_flow	<- 	factor(dfUsFormationBloodFlow
                                                             
                                                           ))
 #####USelastography####
-dfUsElastography$us_elastography	<- 	factor(dfUsElastography$us_elastography,
+dataFrameAll$us_elastography	<- 	factor(dataFrameAll$us_elastography,
                                             levels=c(0,1,2,3,4,5),
                                             labels = c(
                                               "1" = "0 эластотип",
@@ -343,7 +344,7 @@ dfUsElastography$us_elastography	<- 	factor(dfUsElastography$us_elastography,
 
 
 #####USdiagnosis####
-dfUsDiagnosis$us_diagnosis	<- 	factor(dfUsDiagnosis$us_diagnosis,
+dataFrameAll$us_diagnosis	<- 	factor(dataFrameAll$us_diagnosis,
                                       levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16),
                                       labels = c(
                                         "0"="без патологии",
@@ -368,7 +369,7 @@ dfUsDiagnosis$us_diagnosis	<- 	factor(dfUsDiagnosis$us_diagnosis,
                                       ))
 
 #####UScalcinatesMicroPure####
-dfUsCalcinatesMicroPure$us_calcinates_micro_pure <- 	factor(dfUsCalcinatesMicroPure$us_calcinates_micro_pure,
+dataFrameAll$us_calcinates_micro_pure <- 	factor(dataFrameAll$us_calcinates_micro_pure,
                                                             levels=c(0,1,2,3),
                                                             labels = c(
                                                               "0"="нет",
@@ -379,11 +380,11 @@ dfUsCalcinatesMicroPure$us_calcinates_micro_pure <- 	factor(dfUsCalcinatesMicroP
                                                             ))
 
 #####USisTumor####
-dfUsIsTumor$us_is_tumor <- replace(dfUsIsTumor$us_is_tumor, is.na(dfUsIsTumor$us_is_tumor), 2)
+dataFrameAll$us_is_tumor <- replace(dataFrameAll$us_is_tumor, is.na(dataFrameAll$us_is_tumor), 2)
 
 
 
-dfUsIsTumor$us_is_tumor <- 	factor(dfUsIsTumor$us_is_tumor,
+dataFrameAll$us_is_tumor <- 	factor(dataFrameAll$us_is_tumor,
                                    levels=c(0,1,2),
                                    labels = c(
                                      "0"="нет",
@@ -400,8 +401,8 @@ dfUsIsTumor$us_is_tumor <- 	factor(dfUsIsTumor$us_is_tumor,
 #####_02_MMG####
 #####df_USDiscr####
 
-dfMmgDescribe$mmg_conclusion_skin <- replace(dfMmgDescribe$mmg_conclusion_skin, is.na(dfMmgDescribe$mmg_conclusion_skin), 0)
-dfMmgDescribe$mmg_conclusion_skin	<- 	factor(dfMmgDescribe$mmg_conclusion_skin,
+dataFrameAll$mmg_conclusion_skin <- replace(dataFrameAll$mmg_conclusion_skin, is.na(dataFrameAll$mmg_conclusion_skin), 0)
+dataFrameAll$mmg_conclusion_skin	<- 	factor(dataFrameAll$mmg_conclusion_skin,
                                              levels=c(0,1,2,3,4,5,6),
                                              labels = c(
                                                "0"= "не выполнялась",
@@ -413,8 +414,8 @@ dfMmgDescribe$mmg_conclusion_skin	<- 	factor(dfMmgDescribe$mmg_conclusion_skin,
                                                "6"="диагностическая ММГ"
                                              ))
 
-dfMmgDescribe$mmg_areola <- replace(dfMmgDescribe$MMGareola, is.na(dfMmgDescribe$mmg_areola), 0)
-dfMmgDescribe$mmg_areola	<- 	factor(dfMmgDescribe$mmg_areola,
+dataFrameAll$mmg_areola <- replace(dataFrameAll$MMGareola, is.na(dataFrameAll$mmg_areola), 0)
+dataFrameAll$mmg_areola	<- 	factor(dataFrameAll$mmg_areola,
                                     levels=c(0,1,2,3,4,5),
                                     labels = c(
                                       "0"="не проводилось",
@@ -427,8 +428,8 @@ dfMmgDescribe$mmg_areola	<- 	factor(dfMmgDescribe$mmg_areola,
                                       
                                     ))
 
-dfMmgDescribe$mmg_nipple <- replace(dfMmgDescribe$mmg_nipple, is.na(dfMmgDescribe$mmg_nipple), 0)
-dfMmgDescribe$mmg_nipple	<- 	factor(dfMmgDescribe$mmg_nipple,
+dataFrameAll$mmg_nipple <- replace(dataFrameAll$mmg_nipple, is.na(dataFrameAll$mmg_nipple), 0)
+dataFrameAll$mmg_nipple	<- 	factor(dataFrameAll$mmg_nipple,
                                     levels=c(0,1,2,3),
                                     labels = c(
                                       "0"="не проводилось",
@@ -437,8 +438,8 @@ dfMmgDescribe$mmg_nipple	<- 	factor(dfMmgDescribe$mmg_nipple,
                                       "3"="отечен"
                                       
                                     ))
-dfMmgDescribe$mmg_background_breast <- replace(dfMmgDescribe$mmg_background_breast, is.na(dfMmgDescribe$mmg_background_breast), 0)
-dfMmgDescribe$mmg_background_breast	<- 	factor(dfMmgDescribe$mmg_background_breast,
+dataFrameAll$mmg_background_breast <- replace(dataFrameAll$mmg_background_breast, is.na(dataFrameAll$mmg_background_breast), 0)
+dataFrameAll$mmg_background_breast	<- 	factor(dataFrameAll$mmg_background_breast,
                                                levels=c(0,1,2,3,4,5),
                                                labels = c(
                                                  "0"="не проводилось",
@@ -453,10 +454,10 @@ dfMmgDescribe$mmg_background_breast	<- 	factor(dfMmgDescribe$mmg_background_brea
 
 
 
-dfMmgDescribe$mmg_number_formations_visualized <- replace(
-  dfMmgDescribe$mmg_number_formations_visualized, 
-  is.na(dfMmgDescribe$mmg_number_formations_visualized), 6)
-dfMmgDescribe$mmg_number_formations_visualized	<- 	factor(dfMmgDescribe$mmg_number_formations_visualized,
+dataFrameAll$mmg_number_formations_visualized <- replace(
+  dataFrameAll$mmg_number_formations_visualized, 
+  is.na(dataFrameAll$mmg_number_formations_visualized), 6)
+dataFrameAll$mmg_number_formations_visualized	<- 	factor(dataFrameAll$mmg_number_formations_visualized,
                                                           levels=c(0,1,2,3,4,5,6),
                                                           labels = c(
                                                             "0"="не определяется",
@@ -469,8 +470,8 @@ dfMmgDescribe$mmg_number_formations_visualized	<- 	factor(dfMmgDescribe$mmg_numb
                                                             
                                                           ))
 
-dfMmgDescribe$mmg_axillary_lymph_nodes <- replace(dfMmgDescribe$mmg_axillary_lymph_nodes, is.na(dfMmgDescribe$mmg_axillary_lymph_nodes), 0)
-dfMmgDescribe$mmg_axillary_lymph_nodes	<- 	factor(dfMmgDescribe$mmg_axillary_lymph_nodes,
+dataFrameAll$mmg_axillary_lymph_nodes <- replace(dataFrameAll$mmg_axillary_lymph_nodes, is.na(dataFrameAll$mmg_axillary_lymph_nodes), 0)
+dataFrameAll$mmg_axillary_lymph_nodes	<- 	factor(dataFrameAll$mmg_axillary_lymph_nodes,
                                                   levels=c(0,1,2,3,4,5,6),
                                                   labels = c(
                                                     "0"="не проводилось",
@@ -484,9 +485,9 @@ dfMmgDescribe$mmg_axillary_lymph_nodes	<- 	factor(dfMmgDescribe$mmg_axillary_lym
                                                   ))
 
 
-dfMmgDescribe$mmg_number_nodles <- replace(dfMmgDescribe$mmg_number_nodles, is.na(dfMmgDescribe$mmg_number_nodles), 0)
+dataFrameAll$mmg_number_nodles <- replace(dataFrameAll$mmg_number_nodles, is.na(dataFrameAll$mmg_number_nodles), 0)
 
-dfMmgDescribe$mmg_number_nodles	<- 	factor(dfMmgDescribe$mmg_number_nodles,
+dataFrameAll$mmg_number_nodles	<- 	factor(dataFrameAll$mmg_number_nodles,
                                            levels=c(0,1,2,3,4,5,6),
                                            labels = c(
                                              "0"="не проводилось",
@@ -500,8 +501,8 @@ dfMmgDescribe$mmg_number_nodles	<- 	factor(dfMmgDescribe$mmg_number_nodles,
                                              
                                            ))
 
-dfMmgDescribe$mmg_category_birads <- replace(dfMmgDescribe$mmg_category_birads, is.na(dfMmgDescribe$mmg_category_birads), 0)
-dfMmgDescribe$mmg_category_birads	<- 	factor(dfMmgDescribe$mmg_category_birads	,
+dataFrameAll$mmg_category_birads <- replace(dataFrameAll$mmg_category_birads, is.na(dataFrameAll$mmg_category_birads), 0)
+dataFrameAll$mmg_category_birads	<- 	factor(dataFrameAll$mmg_category_birads	,
                                              levels=c(0,1,2,3,4,5,6,7,8,9),
                                              labels = c(
                                                "0"="не проводилось",
@@ -520,8 +521,8 @@ dfMmgDescribe$mmg_category_birads	<- 	factor(dfMmgDescribe$mmg_category_birads	,
 
 
 #####MMGnodle####
-dfMmgNodle$mmg_nodle <- replace(dfMmgNodle$mmg_nodle, is.na(dfMmgNodle$mmg_nodle), 10)
-dfMmgNodle$mmg_nodle 	<- 	factor(dfMmgNodle$mmg_nodle,
+dataFrameAll$mmg_nodle <- replace(dataFrameAll$mmg_nodle, is.na(dataFrameAll$mmg_nodle), 10)
+dataFrameAll$mmg_nodle 	<- 	factor(dataFrameAll$mmg_nodle,
                                  levels=c(0,1,2,3,4,5,6,7,8,9,10),
                                  labels = c(
                                    "0"="нет узла",
@@ -539,8 +540,8 @@ dfMmgNodle$mmg_nodle 	<- 	factor(dfMmgNodle$mmg_nodle,
                                  ))
 
 #####MMGnodle####
-dfMmgNodleContour$mmg_nodle_contour <- replace(dfMmgNodleContour$mmg_nodle_contour, is.na(dfMmgNodleContour$mmg_nodle_contour), 10)
-dfMmgNodleContour$mmg_nodle_contour	<- 	factor(dfMmgNodleContour$mmg_nodle_contour,
+dataFrameAll$mmg_nodle_contour <- replace(dataFrameAll$mmg_nodle_contour, is.na(dataFrameAll$mmg_nodle_contour), 10)
+dataFrameAll$mmg_nodle_contour	<- 	factor(dataFrameAll$mmg_nodle_contour,
                                                levels=c(0,1,2,3,4,5,10),
                                                labels = c(
                                                  "0"="нет",
@@ -555,8 +556,8 @@ dfMmgNodleContour$mmg_nodle_contour	<- 	factor(dfMmgNodleContour$mmg_nodle_conto
 
 
 #####MMGnodleSize####
-dfMmgNodleSize$mmg_nodle_size <- replace(dfMmgNodleSize$mmg_nodle_size, is.na(dfMmgNodleSize$mmg_nodle_size), 10)
-dfMmgNodleSize$mmg_nodle_size	<- 	factor(dfMmgNodleSize$mmg_nodle_size,
+dataFrameAll$mmg_nodle_size <- replace(dataFrameAll$mmg_nodle_size, is.na(dataFrameAll$mmg_nodle_size), 10)
+dataFrameAll$mmg_nodle_size	<- 	factor(dataFrameAll$mmg_nodle_size,
                                          levels=c(0,1,2,3,4,5,6,10),
                                          labels = c(
                                            "0"="нет",
@@ -571,8 +572,8 @@ dfMmgNodleSize$mmg_nodle_size	<- 	factor(dfMmgNodleSize$mmg_nodle_size,
                                          ))
 
 #####MMGcalcifications####
-dfMmgCalcifications$mmg_calcifications <- replace(dfMmgCalcifications$mmg_calcifications, is.na(dfMmgCalcifications$mmg_calcifications), 12)
-dfMmgCalcifications$mmg_calcifications	<- 	factor(dfMmgCalcifications$mmg_calcifications ,
+dataFrameAll$mmg_calcifications <- replace(dataFrameAll$mmg_calcifications, is.na(dataFrameAll$mmg_calcifications), 12)
+dataFrameAll$mmg_calcifications	<- 	factor(dataFrameAll$mmg_calcifications ,
                                                   levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12),
                                                   labels = c(
                                                     "0"="нет",
@@ -592,8 +593,8 @@ dfMmgCalcifications$mmg_calcifications	<- 	factor(dfMmgCalcifications$mmg_calcif
                                                   ))
 
 #####conclusionMMG####
-dfMmgConclusion$mmg_conclusion<- replace(dfMmgConclusion$mmg_conclusion, is.na(dfMmgConclusion$mmg_conclusion), 10)
-dfMmgConclusion$mmg_conclusion<- 	factor(dfMmgConclusion$mmg_conclusion,
+dataFrameAll$mmg_conclusion<- replace(dataFrameAll$mmg_conclusion, is.na(dataFrameAll$mmg_conclusion), 10)
+dataFrameAll$mmg_conclusion<- 	factor(dataFrameAll$mmg_conclusion,
                                          levels=c(0,1,2,3,4,5,6,7,8,9,10),
                                          labels = c(
                                            "0"="Без патологии",
@@ -611,12 +612,12 @@ dfMmgConclusion$mmg_conclusion<- 	factor(dfMmgConclusion$mmg_conclusion,
 
 #####MMGisTumor####
 
-dfMmgIsTumor$mmg_is_tumor <- replace(dfMmgIsTumor$mmg_is_tumor, is.na(dfMmgIsTumor$mmg_is_tumor), 2)
+dataFrameAll$mmg_is_tumor <- replace(dataFrameAll$mmg_is_tumor, is.na(dataFrameAll$mmg_is_tumor), 2)
 
 
+                                
 
-
-dfMmgIsTumor$mmg_is_tumor <- 	factor(dfMmgIsTumor$mmg_is_tumor,
+dataFrameAll$mmg_is_tumor <- 	factor(dataFrameAll$mmg_is_tumor,
                                      levels=c(0,1,2),
                                      labels = c(
                                        "0"="нет",
@@ -629,8 +630,8 @@ dfMmgIsTumor$mmg_is_tumor <- 	factor(dfMmgIsTumor$mmg_is_tumor,
 
 #####_03_ABUS####
 #####ABUSdiscr####
-dfAbusDescribe$abus_skin <- replace(dfAbusDescribe$abus_skin, is.na(dfAbusDescribe$abus_skin), 0)
-dfAbusDescribe$abus_skin	<- 	factor(dfAbusDescribe$abus_skin,
+dataFrameAll$abus_skin <- replace(dataFrameAll$abus_skin, is.na(dataFrameAll$abus_skin), 0)
+dataFrameAll$abus_skin	<- 	factor(dataFrameAll$abus_skin,
                                     levels=c(0,1,2,3),
                                     labels = c(
                                       "0"="не проводилось",
@@ -639,8 +640,8 @@ dfAbusDescribe$abus_skin	<- 	factor(dfAbusDescribe$abus_skin,
                                       "3"="другое"
                                       
                                     ))
-dfAbusDescribe$abus_echogenicity_formation <- replace(dfAbusDescribe$abus_echogenicity_formation, is.na(dfAbusDescribe$abus_echogenicity_formation), 10)
-dfAbusDescribe$abus_echogenicity_formation	<- 	factor(dfAbusDescribe$abus_echogenicity_formation,
+dataFrameAll$abus_echogenicity_formation <- replace(dataFrameAll$abus_echogenicity_formation, is.na(dataFrameAll$abus_echogenicity_formation), 10)
+dataFrameAll$abus_echogenicity_formation	<- 	factor(dataFrameAll$abus_echogenicity_formation,
                                                       levels=c(0,1,2,3,4,5,10),
                                                       labels = c(
                                                         "0"="нет узла",
@@ -654,8 +655,8 @@ dfAbusDescribe$abus_echogenicity_formation	<- 	factor(dfAbusDescribe$abus_echoge
                                                       ))
 
 
-dfAbusDescribe$abus_symptom_retraction <- replace(dfAbusDescribe$abus_symptom_retraction, is.na(dfAbusDescribe$abus_symptom_retraction), 0)
-dfAbusDescribe$abus_symptom_retraction	<- 	factor(dfAbusDescribe$abus_symptom_retraction,
+dataFrameAll$abus_symptom_retraction <- replace(dataFrameAll$abus_symptom_retraction, is.na(dataFrameAll$abus_symptom_retraction), 0)
+dataFrameAll$abus_symptom_retraction	<- 	factor(dataFrameAll$abus_symptom_retraction,
                                                   levels=c(0,1,2),
                                                   labels = c(
                                                     "0"="не проводилось",
@@ -665,8 +666,8 @@ dfAbusDescribe$abus_symptom_retraction	<- 	factor(dfAbusDescribe$abus_symptom_re
                                                   ))
 
 
-dfAbusDescribe$abus_number_nodles <- replace(dfAbusDescribe$abus_number_nodles, is.na(dfAbusDescribe$abus_number_nodles), 0)
-dfAbusDescribe$abus_number_nodles	<- 	factor(dfAbusDescribe$abus_number_nodles,
+dataFrameAll$abus_number_nodles <- replace(dataFrameAll$abus_number_nodles, is.na(dataFrameAll$abus_number_nodles), 0)
+dataFrameAll$abus_number_nodles	<- 	factor(dataFrameAll$abus_number_nodles,
                                              levels=c(0,1,2,3,4,5,6),
                                              labels = c(
                                                "0"="не проводилось",
@@ -679,8 +680,8 @@ dfAbusDescribe$abus_number_nodles	<- 	factor(dfAbusDescribe$abus_number_nodles,
                                                
                                              ))
 
-dfAbusDescribe$abus_category_birads <- replace(dfAbusDescribe$abus_category_birads, is.na(dfAbusDescribe$abus_category_birads), 0)
-dfAbusDescribe$abus_category_birads	<- 	factor(dfAbusDescribe$abus_category_birads,
+dataFrameAll$abus_category_birads <- replace(dataFrameAll$abus_category_birads, is.na(dataFrameAll$abus_category_birads), 0)
+dataFrameAll$abus_category_birads	<- 	factor(dataFrameAll$abus_category_birads,
                                                levels=c(0,1,2,3,4,5,6,7,8,9),
                                                labels = c(
                                                  "0"="не проводилось",
@@ -695,8 +696,8 @@ dfAbusDescribe$abus_category_birads	<- 	factor(dfAbusDescribe$abus_category_bira
                                                  "9"="Birads 0"
                                                ))
 
-dfAbusDescribe$abus_calcinates <- replace(dfAbusDescribe$abus_calcinates, is.na(dfAbusDescribe$abus_calcinates), 4)
-dfAbusDescribe$abus_calcinates	<- 	factor(dfAbusDescribe$abus_calcinates,
+dataFrameAll$abus_calcinates <- replace(dataFrameAll$abus_calcinates, is.na(dataFrameAll$abus_calcinates), 4)
+dataFrameAll$abus_calcinates	<- 	factor(dataFrameAll$abus_calcinates,
                                           levels=c(0,1,2,3,4),
                                           labels = c(
                                             "0"="нет",
@@ -709,9 +710,9 @@ dfAbusDescribe$abus_calcinates	<- 	factor(dfAbusDescribe$abus_calcinates,
 
 
 #####ABUSnodleSize####
-dfAbusNodleSize$abus_nodle_size <- replace(dfAbusNodleSize$abus_nodle_size, is.na(dfAbusNodleSize$abus_nodle_size), 7)
+dataFrameAll$abus_nodle_size <- replace(dataFrameAll$abus_nodle_size, is.na(dataFrameAll$abus_nodle_size), 7)
 
-dfAbusNodleSize$abus_nodle_size	<- 	factor(dfAbusNodleSize$abus_nodle_size,
+dataFrameAll$abus_nodle_size	<- 	factor(dataFrameAll$abus_nodle_size,
                                            levels=c(0,1,2,3,4,5,6,7),
                                            labels = c(
                                              "0"="нет",
@@ -725,8 +726,8 @@ dfAbusNodleSize$abus_nodle_size	<- 	factor(dfAbusNodleSize$abus_nodle_size,
                                            ))
 
 #####ABUSnodleContours####
-dfAbusNodleContours$abus_nodle_contours <- replace(dfAbusNodleContours$abus_nodle_contours, is.na(dfAbusNodleContours$abus_nodle_contours), 9)
-dfAbusNodleContours$abus_nodle_contours	<- 	factor(dfAbusNodleContours$abus_nodle_contours,
+dataFrameAll$abus_nodle_contours <- replace(dataFrameAll$abus_nodle_contours, is.na(dataFrameAll$abus_nodle_contours), 9)
+dataFrameAll$abus_nodle_contours	<- 	factor(dataFrameAll$abus_nodle_contours,
                                                    levels=c(0,1,2,3,4,5,6,7,8,9),
                                                    labels = c(
                                                      "0"="нет узла",
@@ -742,8 +743,8 @@ dfAbusNodleContours$abus_nodle_contours	<- 	factor(dfAbusNodleContours$abus_nodl
                                                      
                                                    ))
 #####ABUSstructure####
-dfAbusStructure$abus_structure <- replace(dfAbusStructure$abus_structure, is.na(dfAbusStructure$abus_structure), 6)
-dfAbusStructure$abus_structure	<- 	factor(dfAbusStructure$abus_structure,
+dataFrameAll$abus_structure <- replace(dataFrameAll$abus_structure, is.na(dataFrameAll$abus_structure), 6)
+dataFrameAll$abus_structure	<- 	factor(dataFrameAll$abus_structure,
                                           levels=c(0,1,2,3,4,5,6),
                                           labels = c(
                                             "0"="нет узла",
@@ -757,9 +758,9 @@ dfAbusStructure$abus_structure	<- 	factor(dfAbusStructure$abus_structure,
                                           ))
 
 #####ABUSdiagnosis####
-dfAbusDiagnosis$abus_diagnosis <- replace(dfAbusDiagnosis$abus_diagnosis, is.na(dfAbusDiagnosis$abus_diagnosis), 14)
+dataFrameAll$abus_diagnosis <- replace(dataFrameAll$abus_diagnosis, is.na(dataFrameAll$abus_diagnosis), 14)
 
-dfAbusDiagnosis$abus_diagnosis<- 	factor(dfAbusDiagnosis$abus_diagnosis,
+dataFrameAll$abus_diagnosis<- 	factor(dataFrameAll$abus_diagnosis,
                                          levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14),
                                          labels = c(
                                            "0"="без патологии",
@@ -780,10 +781,10 @@ dfAbusDiagnosis$abus_diagnosis<- 	factor(dfAbusDiagnosis$abus_diagnosis,
                                            
                                          ))
 #####ABUSisTumor####
-dfAbusIsTumor$abus_is_tumor <- replace(dfAbusIsTumor$abus_is_tumor, is.na(dfAbusIsTumor$abus_is_tumor), 2)
+dataFrameAll$abus_is_tumor <- replace(dataFrameAll$abus_is_tumor, is.na(dataFrameAll$abus_is_tumor), 2)
 
 
-dfAbusIsTumor$abus_is_tumor <- 	factor(dfAbusIsTumor$abus_is_tumor,
+dataFrameAll$abus_is_tumor <- 	factor(dataFrameAll$abus_is_tumor,
                                        levels=c(0,1,2),
                                        labels = c(
                                          "0"="нет",
@@ -796,16 +797,16 @@ dfAbusIsTumor$abus_is_tumor <- 	factor(dfAbusIsTumor$abus_is_tumor,
 
 
 #####_04_MRSI####
-dfMrsiDescribe$mrsi_data<- replace(dfMrsiDescribe$mrsi_data, is.na(dfMrsiDescribe$mrsi_data), 0)
-dfMrsiDescribe$mrsi_data	<- 	factor(dfMrsiDescribe$mrsi_data,
+dataFrameAll$mrsi_data<- replace(dataFrameAll$mrsi_data, is.na(dataFrameAll$mrsi_data), 0)
+dataFrameAll$mrsi_data	<- 	factor(dataFrameAll$mrsi_data,
                                     levels=c(0,1,2),
                                     labels = c(
                                       "0"="не проводилось",
                                       "1"="интраммарные лу",
                                       "2"="сегментарно-протоковая зона контрастирования"
                                     ))
-dfMrsiDescribe$mrsi_number_nodles <- replace(dfMrsiDescribe$mrsi_number_nodles, is.na(dfMrsiDescribe$mrsi_number_nodles), 0)
-dfMrsiDescribe$mrsi_number_nodles	<- 	factor(dfMrsiDescribe$mrsi_number_nodles,
+dataFrameAll$mrsi_number_nodles <- replace(dataFrameAll$mrsi_number_nodles, is.na(dataFrameAll$mrsi_number_nodles), 0)
+dataFrameAll$mrsi_number_nodles	<- 	factor(dataFrameAll$mrsi_number_nodles,
                                              levels=c(0,1,2,3,4,5,6),
                                              labels = c(
                                                "0"="не проводилось",
@@ -822,8 +823,8 @@ dfMrsiDescribe$mrsi_number_nodles	<- 	factor(dfMrsiDescribe$mrsi_number_nodles,
 #####_05_Tumor####
 #####DescrTumor####
 
-dfDescrTumor$degree_malignancy <- replace(dfDescrTumor$degree_malignancy, is.na(dfDescrTumor$degree_malignancy), 4)
-dfDescrTumor$degree_malignancy <- 	factor(dfDescrTumor$degree_malignancy,
+dataFrameAll$degree_malignancy <- replace(dataFrameAll$degree_malignancy, is.na(dataFrameAll$degree_malignancy), 4)
+dataFrameAll$degree_malignancy <- 	factor(dataFrameAll$degree_malignancy,
                                           levels=c(0,1,2,3,4),
                                           labels = c(
                                             "0"= "нет данных",
@@ -833,8 +834,8 @@ dfDescrTumor$degree_malignancy <- 	factor(dfDescrTumor$degree_malignancy,
                                             "4"="не проводилось"
                                           ))
 
-dfDescrTumor$cytological_conclusion <- replace(dfDescrTumor$cytological_conclusion, is.na(dfDescrTumor$cytological_conclusion), 0)
-dfDescrTumor$cytological_conclusion	 <- 	factor(dfDescrTumor$cytological_conclusion,
+dataFrameAll$cytological_conclusion <- replace(dataFrameAll$cytological_conclusion, is.na(dataFrameAll$cytological_conclusion), 0)
+dataFrameAll$cytological_conclusion	 <- 	factor(dataFrameAll$cytological_conclusion,
                                                 levels=c(0,1,2,3,4,5,6),
                                                 labels = c(
                                                   "0"="не проводилось",
@@ -848,9 +849,9 @@ dfDescrTumor$cytological_conclusion	 <- 	factor(dfDescrTumor$cytological_conclus
                                                 ))
 
 #####morphologyStructureTumor####
-dfMorphologyStructureTumor$tumor_morphology_structure <- replace(dfMorphologyStructureTumor$tumor_morphology_structure, is.na(dfMorphologyStructureTumor$tumor_morphology_structure), 0)
+dataFrameAll$tumor_morphology_structure <- replace(dataFrameAll$tumor_morphology_structure, is.na(dataFrameAll$tumor_morphology_structure), 0)
 
-dfMorphologyStructureTumor$tumor_morphology_structure	 <- 	factor(dfMorphologyStructureTumor$tumor_morphology_structure,
+dataFrameAll$tumor_morphology_structure	 <- 	factor(dataFrameAll$tumor_morphology_structure,
                                                                   levels=c(0,1,2,3,4,5,6,7,8,9,10,11,12,13),
                                                                   labels = c(
                                                                     "0"="не проводилось",
@@ -875,9 +876,9 @@ dfMorphologyStructureTumor$tumor_morphology_structure	 <- 	factor(dfMorphologySt
 
 
 ####Receptors####
-dfReceptors$tumor_receptors <- replace(dfReceptors$tumor_receptors, is.na(dfReceptors$tumor_receptors), 0)
+dataFrameAll$tumor_receptors <- replace(dataFrameAll$tumor_receptors, is.na(dataFrameAll$tumor_receptors), 0)
 
-dfReceptors$tumor_receptors	<- 	factor(dfReceptors$tumor_receptors,
+dataFrameAll$tumor_receptors	<- 	factor(dataFrameAll$tumor_receptors,
                                        levels=c(0,1,2,3,4,5,6,7,8,9),
                                        labels = c(
                                          "0"="не проводилось",
@@ -893,11 +894,11 @@ dfReceptors$tumor_receptors	<- 	factor(dfReceptors$tumor_receptors,
                                          
                                        ))
 #####isTumor####
-dfIsTumor$tumor_is <- replace(dfIsTumor$tumor_is, is.na(dfIsTumor$tumor_is), 2)
+dataFrameAll$tumor_is <- replace(dataFrameAll$tumor_is, is.na(dataFrameAll$tumor_is), 2)
 
 
-
-dfIsTumor$tumor_is <- 	factor(dfIsTumor$tumor_is,
+  
+dataFrameAll$tumor_is <- 	factor(dataFrameAll$tumor_is,
                               levels=c(0,1,2),
                               labels = c(
                                 "0"="нет",
@@ -910,33 +911,32 @@ dfIsTumor$tumor_is <- 	factor(dfIsTumor$tumor_is,
 
 
 #####Add columns####
-dfUsDiagnosis$is_tumor <- factor(ifelse
-                                 (dfUsDiagnosis$us_diagnosis == "образование СА"
-                                   | dfUsDiagnosis$us_diagnosis == "мультфок са"
-                                   | dfUsDiagnosis$us_diagnosis == "мультицентричный са"
+dataFrameAll$is_tumor_us <- factor(ifelse
+                                 (dataFrameAll$us_diagnosis == "образование СА"
+                                   | dataFrameAll$us_diagnosis == "мультфок са"
+                                   | dataFrameAll$us_diagnosis == "мультицентричный са"
                                    , 1, 0),
                                  labels = c("Нет", "Да"))
 
-dfMmgConclusion$is_tumor <- factor(ifelse
-                                   (dfMmgConclusion$mmg_conclusion == "Susp Ca", 1, 0),
+dataFrameAll$is_tumor_mmg <- factor(ifelse
+                                   (dataFrameAll$mmg_conclusion == "Susp Ca", 1, 0),
                                    labels = c("Нет", "Да"))
 
-dfAbusDiagnosis$is_tumor <- factor(ifelse
-                                   (dfAbusDiagnosis$abus_diagnosis == "образование СА"
-                                     | dfAbusDiagnosis$abus_diagnosis == "мультифок са"
-                                     | dfAbusDiagnosis$abus_diagnosis== "мультицентричный са"
+
+dataFrameAll$is_tumor_abus <- factor(ifelse
+                                   (dataFrameAll$abus_diagnosis == "образование СА"
+                                     | dataFrameAll$abus_diagnosis == "мультифок са"
+                                     | dataFrameAll$abus_diagnosis== "мультицентричный са"
                                      , 1, 0),
                                    labels = c("Нет", "Да"))
 
 
-dfMorphologyStructureTumor$is_tumor <- factor(ifelse
-                                              (dfMorphologyStructureTumor$tumor_morphology_structure == "инвазивный рак неспециального типа"
-                                                | dfMorphologyStructureTumor$tumor_morphology_structure == "протоковый рак in situ"
-                                                | dfMorphologyStructureTumor$tumor_morphology_structure== "инвазивный дольковый рак"
+dataFrameAll$is_tumor_histology <- factor(ifelse
+                                              (dataFrameAll$tumor_morphology_structure == "инвазивный рак неспециального типа"
+                                                | dataFrameAll$tumor_morphology_structure == "протоковый рак in situ"
+                                                | dataFrameAll$tumor_morphology_structure== "инвазивный дольковый рак"
                                                 , 1, 0),
                                               labels = c("Нет", "Да"))
-
-
 
 
 

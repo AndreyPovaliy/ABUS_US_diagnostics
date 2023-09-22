@@ -1,12 +1,16 @@
-# Examination -------------------------------------------------------------
-dataFrameNeo <- subset(dataFrameAll,tumor_morphology_structure != "не проводилось")
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
-fit<- glm (dataFrameNeo$is_tumor_histology   ~
-             age_patient*
-             dataFrameNeo$genetics*
-             dataFrameNeo$satus_reproductive+
-             dataFrameNeo$nipple_retraction
-                    , dataFrameNeo, family = "binomial")
+# Examination -------------------------------------------------------------
+# dataFrameNeo <- subset(dfXlsx,tumor_morphology_structure != "не проводилось")
+
+fit<- glm (dfXlsx$hist_is_tumor   ~
+             age_patient+
+             abus_skin+	
+           abus_nodle_size	+
+           abus_nodle_contours+	
+           abus_echogenicity_formation
+           
+                    , dfXlsx, family = "binomial")
             
             
 summary(fit)
@@ -24,12 +28,12 @@ head(predict(object = fit))
 head(predict(object = fit, type = "response"))
 
 #вывести предсказание в дата фрейм
-dataFrameNeo$probability  <- predict(object = fit, type = "response")
-
+dfXlsx$probability  <- predict(object = fit, type = "response")
+# write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_neo.xlsx")
 
 library(ROCR)
 #предсказанные и полученные
-pred_fit <- prediction(dataFrameNeo$probability , dataFrameNeo$is_tumor_histology )
+pred_fit <- prediction(dfXlsx$probability , dfXlsx$hist_is_tumor )
 perf_fit <- performance(pred_fit,"tpr","fpr")
 plot(perf_fit, colorize=T , print.cutoffs.at = seq(0,1,by=0.1))
 
