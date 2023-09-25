@@ -275,7 +275,7 @@ SSA(dfXlsxGr3$abus_is_tumor,dfXlsxGr3$hist_is_tumor)
 
 #####ROC cruve#######
 library(pROC)
-
+source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 
 pROC_obj_usGr1 <- roc(dfXlsxGr1$hist_is_tumor,dfXlsxGr1$us_probability,
