@@ -2,7 +2,7 @@
 #source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/scripts/01. Model.R")
 
 #####library####
-#подключаем библитеку для чтения exel1s
+#подключаем библитеку для чтения exel
 library(openxlsx)
 #подключаем библитеку для работы со статистическими данными
 library(psych)
