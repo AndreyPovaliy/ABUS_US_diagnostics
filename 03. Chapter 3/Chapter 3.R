@@ -1,6 +1,10 @@
 #source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/scripts/02. Real.R")
 #source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/scripts/01. Model.R")
 
+
+
+
+
 #####library####
 #подключаем библитеку для чтения exel
 library(openxlsx)

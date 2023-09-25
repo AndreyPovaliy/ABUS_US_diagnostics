@@ -1,7 +1,11 @@
+# FileName <- "~/Статьи и диссертации/ABUS_US_diagnostics/Текст_ABUS_US.txt"
+# 
+# XlxsWay <- "~/Статьи и диссертации/ABUS_US_diagnostics/ABUS_US_MG_WXLS.xlsx"
 
-FileName <- "~/Статьи и диссертации/ABUS_US_diagnostics/Текст_ABUS_US.txt"
 
-XlxsWay <- "~/Статьи и диссертации/ABUS_US_diagnostics/ABUS_US_MG_WXLS.xlsx"
+FileName <- "~/Documents/ABUS_US_diagnostics/Текст_ABUS_US.txt"
+
+XlxsWay <- "~/Documents/ABUS_US_diagnostics/ABUS_US_MG_WXLS.xlsx"
 
 #конт узи (j)
 gr_US <- "1"

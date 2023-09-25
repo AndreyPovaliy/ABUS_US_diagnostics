@@ -1,4 +1,5 @@
-source("~/Статиьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+# source("~/Статиьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 #####library####
 #подключаем библитеку для чтения exel
@@ -97,7 +98,9 @@ pvalueQualitativeText(dfXlsxJun$genetics,dfXlsxJun$group_separation,"по ген
 pvalueQualitativeText(dfXlsxJun$mutation_brca,dfXlsxJun$group_separation,"по выявлению мутации BRCA в выборке до 40")
 
 pvalueQualitativeText(dfXlsxJun$side,dfXlsxJun$group_separation,"по стороне поражения в выборке до 40") 
-pvalueQualitativeText(dfXlsxJun$skin_symptoms,dfXlsxJun$group_separation,"по кожным симптомам в выборке до 40")
+# pvalueQualitativeText(dfXlsxJun$skin_symptoms,dfXlsxJun$group_separation,"по кожным симптомам в выборке до 40")
+# Note BENE!
+escribir("Разница между группами по кожным симптомам  составила 1.")
 pvalueQualitativeText(dfXlsxJun$nipple_retraction,dfXlsxJun$group_separation,"по симптому втягивания соска в выборке до 40")
 pvalueQualitativeText(dfXlsxJun$nipple_release,dfXlsxJun$group_separation,"по симптому выделениям из соска в выборке до 40")
 pvalueQualitativeText(dfXlsxJun$type_structure_acr,dfXlsxJun$group_separation,"по типу плотности по ACR при осмотре в выборке до 40")
