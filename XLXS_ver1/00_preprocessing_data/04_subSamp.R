@@ -19,4 +19,11 @@ dfXlsxGr3 <- subset(dfXlsx, group_separation == gr_US_ABUS)
 dfXlsxGr4 <- subset(dfXlsx, group_separation == gr_US_MMG_ABUS)
 
 
+#####Write Xlsx####
+setwd("~/Documents/ABUS_US_diagnostics")
+write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
+
+dfXlsx <- read.xlsx(xlsxFile = XlxsWayLab,
+                    sheet = 'Data')
+
 

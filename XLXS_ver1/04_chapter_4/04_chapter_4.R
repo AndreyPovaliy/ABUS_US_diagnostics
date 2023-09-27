@@ -258,6 +258,7 @@ SSA(dfXlsxGr4$abus_is_tumor,dfXlsxGr4$hist_is_tumor)
 
 #####ROC cruve#######
 library(pROC)
+source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 
 

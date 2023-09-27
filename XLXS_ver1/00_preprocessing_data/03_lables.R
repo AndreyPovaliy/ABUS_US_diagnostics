@@ -929,7 +929,7 @@ dfXlsx$hist_is_tumor <- factor(ifelse
 #####Add probability####
 
 fit_us<- glm (dfXlsx$hist_is_tumor   ~
-             dfXlsx$us_is_tumor*
+             dfXlsx$us_is_tumor+
                dfXlsx$age_patient
            , dfXlsx, family = "binomial")
 #вывести предсказание в дата фрейм
@@ -951,12 +951,6 @@ fit_mmg<- glm (dfXlsx$hist_is_tumor   ~
 dfXlsx$mmg_probability  <- predict(object = fit_mmg, type = "response")
 
 
-#####Write Xlsx####
-setwd("~/Documents/ABUS_US_diagnostics")
-write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
-
-dfXlsx <- read.xlsx(xlsxFile = XlxsWayLab,
-                    sheet = 'Data')
 
 
 

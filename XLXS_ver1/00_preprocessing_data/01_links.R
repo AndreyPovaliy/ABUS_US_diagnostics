@@ -5,8 +5,9 @@
 
 FileName <- "~/Documents/ABUS_US_diagnostics/Текст_ABUS_US.txt"
 
-XlxsWay <- "~/Documents/ABUS_US_diagnostics/ABUS_US_MG_WXLS.xlsx"
+#XlxsWay <- "~/Documents/ABUS_US_diagnostics/ABUS_US_MG_WXLS.xlsx"
 
+XlxsWay <- "~/Documents/ABUS_US_diagnostics/ABUS_US_MG_WXLS_mod.xlsx"
 
 XlxsWayLab <- "~/Documents/ABUS_US_diagnostics/ABUS_US_MG_WXLS_lab.xlsx"
 
