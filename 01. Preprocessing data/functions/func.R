@@ -120,8 +120,10 @@ Quantity_discr<-function(parametr,database){
 }
 
 
-#Quantity_table("Группа",df_Abus$Group) (p-value???)
+#Quantity_table("Диагноз",dfXlsxJun$diagnosis_primary)
 Quantity_table<-function(parametr,database){
+
+  
   n <- length(data.frame(table(database), row.names = TRUE )$Freq)
   Descr<-print(paste(parametr,"*Процентная доля*ДИ*","p-value
     "))
@@ -130,7 +132,7 @@ Quantity_table<-function(parametr,database){
   while (i<n){
     Descr<-print(paste(data.frame(table(database))[i+1,1],
                        "*",
-                       data.frame(round(prop.table(table(database)),2))[i+1,2],
+                       data.frame(round(prop.table(table(database)),5))[i+1,2]*100,
                        "% (", 
                        data.frame(table(database))[i+1,2],
                        "/",length(database),
@@ -139,7 +141,7 @@ Quantity_table<-function(parametr,database){
                        round(prop.test(table(database)[i+1], length(database))$conf.int[1],2),
                        ";",
                        round(prop.test(table(database)[i+1], length(database))$conf.int[2],2),
-                       "]."
+                       "]"
     ))
     write.table(Descr, FileName, sep="*", append = TRUE)
     i<-i+1

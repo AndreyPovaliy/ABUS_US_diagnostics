@@ -12,3 +12,4 @@ source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/03_lable
 source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/04_subSamp.R")
 
 source("~/Documents/ABUS_US_diagnostics/01. Preprocessing data/functions/func.R")
+source("~/Documents/ABUS_US_diagnostics/01. Preprocessing data/functions/plots.R")
