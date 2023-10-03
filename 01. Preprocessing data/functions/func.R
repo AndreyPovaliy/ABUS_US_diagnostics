@@ -120,30 +120,44 @@ Quantity_discr<-function(parametr,database){
 }
 
 
-#Quantity_table("Диагноз",dfXlsxJun$diagnosis_primary)
-Quantity_table<-function(parametr,database){
+#Quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary,dfXlsxGr3$diagnosis_primary)
+Quantity_table<-function(parametr,database1,database2){
 
   
-  n <- length(data.frame(table(database), row.names = TRUE )$Freq)
-  Descr<-print(paste(parametr,"*Процентная доля*ДИ*","p-value
-    "))
-  write.table(Descr, FileName, sep="*", append = TRUE)
+  n <- length(data.frame(table(database1), row.names = TRUE )$Freq)
+  Descr<-print(paste(parametr,"|Процентная доля|95% ДИ|",parametr,"|Процентная доля|95% ДИ |","p-value|
+|------|------|------|------|------|------|------|
+                     "))
+  write.table(Descr, FileName, sep="|", append = TRUE)
   i<-0
   while (i<n){
-    Descr<-print(paste(data.frame(table(database))[i+1,1],
-                       "*",
-                       data.frame(round(prop.table(table(database)),5))[i+1,2]*100,
+    Descr<-print(paste(data.frame(table(database1))[i+1,1],
+                       "|",
+                       data.frame(round(prop.table(table(database1)),5))[i+1,2]*100,
                        "% (", 
-                       data.frame(table(database))[i+1,2],
-                       "/",length(database),
-                       "случаев)*",
-                       "[95% ДИ",
-                       round(prop.test(table(database)[i+1], length(database))$conf.int[1],2),
+                       data.frame(table(database1))[i+1,2],
+                       "/",length(database1),
+                       "случаев)|",
+                       "[",
+                       round(prop.test(table(database1)[i+1], length(database1))$conf.int[1],2),
                        ";",
-                       round(prop.test(table(database)[i+1], length(database))$conf.int[2],2),
+                       round(prop.test(table(database1)[i+1], length(database1))$conf.int[2],2),
+                       "]|",
+                       data.frame(table(database2))[i+1,1],
+                       "|",
+                       data.frame(round(prop.table(table(database2)),5))[i+1,2]*100,
+                       "% (", 
+                       data.frame(table(database2))[i+1,2],
+                       "/",length(database2),
+                       "случаев)|",
+                       "[",
+                       round(prop.test(table(database2)[i+1], length(database2))$conf.int[1],2),
+                       ";",
+                       round(prop.test(table(database2)[i+1], length(database2))$conf.int[2],2),
                        "]"
+                       
     ))
-    write.table(Descr, FileName, sep="*", append = TRUE)
+    write.table(Descr, FileName, sep="|", append = TRUE)
     i<-i+1
     
   }
@@ -253,5 +267,56 @@ binary_table <- function(data){
   return(a)
 }
 
+# chapter_3_4_text("Нахождение узла при выполнении УЗИ",
+#                   "В группе A ",
+#                  "В группе B ",
+#                  dfXlsxGr1$us_formation,
+#                  dfXlsxGr3$us_formation,
+#                  dfXlsxJun$us_formation,
+#                  dfXlsxJun$group_separation)
+# GeomBar(dfXlsxJun,dfXlsxJun$us_formation,dfXlsxJun$group_separation,"Нахождение узла при выполнении УЗИ")
+
+chapter_3_4_text <- function(text, in_group1, in_group2, vector1, vector2, vectorSum, separation){
+  escribir (text)
+  Quantity_discr(in_group1,vector1)
+  Quantity_discr(in_group2,vector2)
+  
+  Quantity_table(text,vector1,vector2)
+  pvalueQualitativeText(vectorSum,separation,text)
+  
+}
+
+
+# SSA_text(dfXlsxJun$us_is_tumor,dfXlsxJun$hist_is_tumor, "УЗИ в группе А")
+SSA_text <- function(predicted_value, expected_value, method){
+  x <- SSA(predicted_value, expected_value)
+  Описание<-print(paste("При оценке ", method," количество истинно верно определенных образований как злокачественные было ",x[["table"]][4], 
+                        ",  количество верно опредленных образований как доброкачественные было", x[["table"]][1],
+                        ", количество  неверно определенных образований как злокачественные было ", x[["table"]][2],
+                        " и количество  неопределенных злокачественных образований как злокачественные было ",x[["table"]][3], ".",
+                        "Точность метода составила", round(x[["overall"]][["Accuracy"]],2),
+                        "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),",",round(x[["overall"]][["AccuracyUpper"]],2) ,"].",
+                        "P-Value модели составил",round(x[["overall"]][["AccuracyPValue"]],2), 
+                        "что означает, что модель отличается от точности нулевой гипотезы.",
+                        "Коэфициент Kappa составил", round(x[["overall"]][["Kappa"]],2),
+                        " показывает, что метод не имеет существенно отличную от контрольного метода частоту верно определенных результатов",
+                        "(количество  истино положительных и отрицательных результатов).",
+                        "Тест Макнемара составил", round(x[["overall"]][["McnemarPValue"]],2),
+                        " показывает, что метод не имеет существенно отличную от контрольного метода частоту ошибок",
+                        "(количество ложноположительных и ложноотрицательных результатов).",
+                        "Чувствительность метода составила", round(x[["byClass"]][["Sensitivity"]],2),
+                        ". Спецефичность метода составила", round(x[["byClass"]][["Specificity"]],2),
+                        ". Доля положительных прогнозов составила", round(x[["byClass"]][["Pos Pred Value"]],2),
+                        ". Доля отрицательных прогнозов составила", round(x[["byClass"]][["Neg Pred Value"]],2),
+                        ". Доля истинно положительных случаев в наборе данных составила", round(x[["byClass"]][["Prevalence"]],2),
+                        ". Доля истинно положительных случаев, правильно определнный методом составила", round(x[["byClass"]][["Detection Rate"]],2),
+                        ". Отбалансированная точность метода составила", round(x[["byClass"]][["Balanced Accuracy"]],2)
+
+                        
+                        ))
+  
+  write.table(Описание, FileName, sep="*", append = TRUE)
+  
+}
 
 

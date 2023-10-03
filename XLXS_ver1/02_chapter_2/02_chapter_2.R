@@ -89,27 +89,6 @@ Quantity_discr("В выборке до 40 лет квадрант локализ
 
 
 
-pvalueQualitativeText(dfXlsxJun$diagnosis_primary,dfXlsxJun$group_separation,"по первичному диагнозу в выборке до 40")
-# prop.table(table(dfXlsxGr1$diagnosis_primary))*100
-# prop.table(table(dfXlsxGr3$diagnosis_primary))*100
-pvalueQualitativeText(dfXlsxJun$complaints,dfXlsxJun$group_separation,"по выявленным жалобам в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$satus_reproductive,dfXlsxJun$group_separation,"по репродуктивному статусу в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$breast_surgery_before,dfXlsxJun$group_separation,"по операциям в анамнезе в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$hormonal_medications,dfXlsxJun$group_separation,"по приему гормональных препаратов в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$genetics,dfXlsxJun$group_separation,"по генетической предрасположенности в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$mutation_brca,dfXlsxJun$group_separation,"по выявлению мутации BRCA в выборке до 40")
-
-
-pvalueQualitativeText(dfXlsxJun$side,dfXlsxJun$group_separation,"по стороне поражения в выборке до 40") 
-
-# pvalueQualitativeText(dfXlsxJun$skin_symptoms,dfXlsxJun$group_separation,"по кожным симптомам в выборке до 40")
-# Note BENE!
-escribir("Разница между группами по кожным симптомам  составила 1.")
-pvalueQualitativeText(dfXlsxJun$nipple_retraction,dfXlsxJun$group_separation,"по симптому втягивания соска в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$nipple_release,dfXlsxJun$group_separation,"по симптому выделениям из соска в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$type_structure_acr,dfXlsxJun$group_separation,"по типу плотности по ACR при осмотре в выборке до 40")
-
-pvalueQualitativeText(dfXlsxJun$quadrant,dfXlsxJun$group_separation,"по квадранту локализации в выборке до 40")
 
 
 ######Description older group#######
@@ -147,22 +126,6 @@ Quantity_discr("В выборке после 40 лет тип плотности
 Quantity_discr("В выборке после 40 лет квадрант локализации ",dfXlsxSnr$quadrant)
 
 
-pvalueQualitativeText(dfXlsxSnr$diagnosis_primary,dfXlsxSnr$group_separation,"по первичному диагнозу в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$complaints,dfXlsxSnr$group_separation,"по выявленным жалобам в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$satus_reproductive,dfXlsxSnr$group_separation,"по репродуктивному статусу в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$breast_surgery_before,dfXlsxSnr$group_separation,"по операциям в анамнезе в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$hormonal_medications,dfXlsxSnr$group_separation,"по приему гормональных препаратов в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$genetics,dfXlsxSnr$group_separation,"по генетической предрасположенности в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$mutation_brca,dfXlsxSnr$group_separation,"по выявлению мутации BRCA в выборке после 40")
-
-pvalueQualitativeText(dfXlsxSnr$side,dfXlsxSnr$group_separation,"по стороне поражения в выборке после 40") 
-pvalueQualitativeText(dfXlsxSnr$skin_symptoms,dfXlsxSnr$group_separation,"по кожным симптомам в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$nipple_retraction,dfXlsxSnr$group_separation,"по симптому втягивания соска в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$nipple_release,dfXlsxSnr$group_separation,"по симптому выделениям из соска в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$type_structure_acr,dfXlsxSnr$group_separation,"по типу плотности по ACR при осмотре в выборке после 40")
-
-pvalueQualitativeText(dfXlsxSnr$quadrant,dfXlsxSnr$group_separation,"по квадранту локализации в выборке после 40")
-
 
 
 ######Description 1st group#######
@@ -175,33 +138,7 @@ escribir (paste("Максимальный возраст сотсавил", max(
 Describe_numeric (dfXlsxGr1$height_patient, "роста ","пациенток выборке в первой группе составил "," см")
 Describe_numeric (dfXlsxGr1$weight_patient, "веса ","пациенток выборке в первой группе составил "," кг")
 
-Quantity_discr("В выборке в первой группе были поставлены диагнозы ",dfXlsxGr1$diagnosis_primary)
-Quantity_discr("В выборке в первой группе были выялены следующие жалобы ", dfXlsxGr1$complaints)
-Quantity_discr("В выборке в первой группе репродуктивный статус был ",dfXlsxGr1$satus_reproductive)
-Quantity_discr("В выборке в первой группе операций на молочной железе в анамнезе ",dfXlsxGr1$breast_surgery_before)
-Quantity_discr("В выборке в первой группе прием гормональных препаратов ",dfXlsxGr1$hormonal_medications)
-Quantity_discr("В выборке в первой группе генетическая предрасположенность ",dfXlsxGr1$genetics)
-Quantity_discr("В выборке в первой группе было выявлена мутация BRCA ",dfXlsxGr1$mutation_brca)
-Quantity_discr("В выборке в первой группе сторона поражения при осмотре ",dfXlsxGr1$side)
-Quantity_discr("В выборке в первой группе кожные симптомы при осмотре ",dfXlsxGr1$skin_symptoms)
-Quantity_discr("В выборке в первой группе втягивание соска при осмотре ",dfXlsxGr1$nipple_retraction)
-Quantity_discr("В выборке в первой группе выделения из соска при осмотре ",dfXlsxGr1$nipple_release)
-Quantity_discr("В выборке в первой группе тип плотности по ACR при осмотре ",dfXlsxGr1$type_structure_acr)
-Quantity_discr("В выборке в первой группе квадрант локализации ",dfXlsxGr1$quadrant)
 
-Quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary)
-Quantity_table("Жалобы",dfXlsxGr1$complaints)
-Quantity_table("Репродуктивный статус",dfXlsxGr1$satus_reproductive)
-Quantity_table("Операции на молочной железе",dfXlsxGr1$breast_surgery_before)
-Quantity_table("Гормональные препараты",dfXlsxGr1$hormonal_medications)
-Quantity_table("Генетическая предрасположенность",dfXlsxGr1$genetics)
-Quantity_table("Выявленные мутации",dfXlsxGr1$mutation_brca)
-Quantity_table("Пораженная сторона",dfXlsxGr1$side)
-Quantity_table("Кожные сиптомы",dfXlsxGr1$skin_symptoms)
-Quantity_table("Втягивание соска",dfXlsxGr1$nipple_retraction)
-Quantity_table("Выделения из соска",dfXlsxGr1$nipple_release)
-Quantity_table("Тип плотности",dfXlsxGr1$type_structure_acr)
-Quantity_table("Квандрант локализации",dfXlsxGr1$quadrant)
 
 ######Description 2nd group#######
 escribir ("2.5 Описание пациенток во второй группе")
@@ -228,19 +165,7 @@ Quantity_discr("В выборке в второй группе тип плотн
 Quantity_discr("В выборке в второй группе квадрант локализации ",dfXlsxGr2$quadrant)
 
 
-Quantity_table("Диагноз",dfXlsxGr2$diagnosis_primary)
-Quantity_table("Жалобы",dfXlsxGr2$complaints)
-Quantity_table("Репродуктивный статус",dfXlsxGr2$satus_reproductive)
-Quantity_table("Операции на молочной железе",dfXlsxGr2$breast_surgery_before)
-Quantity_table("Гормональные препараты",dfXlsxGr2$hormonal_medications)
-Quantity_table("Генетическая предрасположенность",dfXlsxGr2$genetics)
-Quantity_table("Выявленные мутации",dfXlsxGr2$mutation_brca)
-Quantity_table("Пораженная сторона",dfXlsxGr2$side)
-Quantity_table("Кожные сиптомы",dfXlsxGr2$skin_symptoms)
-Quantity_table("Втягивание соска",dfXlsxGr2$nipple_retraction)
-Quantity_table("Выделения из соска",dfXlsxGr2$nipple_release)
-Quantity_table("Тип плотности",dfXlsxGr2$type_structure_acr)
-Quantity_table("Квандрант локализации",dfXlsxGr2$quadrant)
+
 
 ######Description 3rd group#######
 escribir ("2.6 Описание пациенток в третьей группе")
@@ -271,19 +196,6 @@ Quantity_discr("В выборке в третьей группе тип плот
 
 Quantity_discr("В выборке в третьей группе квадрант локализации ",dfXlsxGr3$quadrant)
 
-Quantity_table("Диагноз",dfXlsxGr3$diagnosis_primary)
-Quantity_table("Жалобы",dfXlsxGr3$complaints)
-Quantity_table("Репродуктивный статус",dfXlsxGr3$satus_reproductive)
-Quantity_table("Операции на молочной железе",dfXlsxGr3$breast_surgery_before)
-Quantity_table("Гормональные препараты",dfXlsxGr3$hormonal_medications)
-Quantity_table("Генетическая предрасположенность",dfXlsxGr3$genetics)
-Quantity_table("Выявленные мутации",dfXlsxGr3$mutation_brca)
-Quantity_table("Пораженная сторона",dfXlsxGr3$side)
-Quantity_table("Кожные сиптомы",dfXlsxGr3$skin_symptoms)
-Quantity_table("Втягивание соска",dfXlsxGr3$nipple_retraction)
-Quantity_table("Выделения из соска",dfXlsxGr3$nipple_release)
-Quantity_table("Тип плотности",dfXlsxGr3$type_structure_acr)
-Quantity_table("Квандрант локализации",dfXlsxGr3$quadrant)
 
 ######Description 4th group#######
 escribir ("2.7 Описание пациенток в четвертой группе")
@@ -313,28 +225,122 @@ Quantity_discr("В выборке в четвертой группе тип пл
 
 Quantity_discr("В выборке в четвертой группе квадрант локализации ",dfXlsxGr4$quadrant)
 
-Quantity_table("Диагноз",dfXlsxGr4$diagnosis_primary)
-Quantity_table("Жалобы",dfXlsxGr4$complaints)
-Quantity_table("Репродуктивный статус",dfXlsxGr4$satus_reproductive)
-Quantity_table("Операции на молочной железе",dfXlsxGr4$breast_surgery_before)
-Quantity_table("Гормональные препараты",dfXlsxGr4$hormonal_medications)
-Quantity_table("Генетическая предрасположенность",dfXlsxGr4$genetics)
-Quantity_table("Выявленные мутации",dfXlsxGr4$mutation_brca)
-Quantity_table("Пораженная сторона",dfXlsxGr4$side)
-Quantity_table("Кожные сиптомы",dfXlsxGr4$skin_symptoms)
-Quantity_table("Втягивание соска",dfXlsxGr4$nipple_retraction)
-Quantity_table("Выделения из соска",dfXlsxGr4$nipple_release)
-Quantity_table("Тип плотности",dfXlsxGr4$type_structure_acr)
-Quantity_table("Квандрант локализации",dfXlsxGr4$quadrant)
 
 
 
 
 
+# Tables|Plots|Compare -------------------------------------------------------------------
+
+######Compare younger group#######
+
+pvalueParaWxText(dfXlsxJun,dfXlsxJun$age_patient,dfXlsxJun$group_separation,"по возрасту")
+
+# dfXlsxJun_variable <- subset(dfXlsxJun,
+#                              dfXlsxJun$diagnosis_primary =="Рак"|
+#                                dfXlsxJun$diagnosis_primary =="Без патологии"
+#                              )
+# 
+# 
+# pvalueQualitativeText(dfXlsxJun_variable$diagnosis_primary,dfXlsxJun_variable$group_separation,"по первичному диагнозу в выборке до 40")
+
+pvalueQualitativeText(dfXlsxJun$diagnosis_primary,dfXlsxJun$group_separation,"по первичному диагнозу в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$complaints,dfXlsxJun$group_separation,"по выявленным жалобам в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$satus_reproductive,dfXlsxJun$group_separation,"по репродуктивному статусу в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$breast_surgery_before,dfXlsxJun$group_separation,"по операциям в анамнезе в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$hormonal_medications,dfXlsxJun$group_separation,"по приему гормональных препаратов в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$genetics,dfXlsxJun$group_separation,"по генетической предрасположенности в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$mutation_brca,dfXlsxJun$group_separation,"по выявлению мутации BRCA в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$side,dfXlsxJun$group_separation,"по стороне поражения в выборке до 40") 
+# pvalueQualitativeText(dfXlsxJun$skin_symptoms,dfXlsxJun$group_separation,"по кожным симптомам в выборке до 40")
+# Note BENE!
+escribir("Разница между группами по кожным симптомам  составила 1.")
+pvalueQualitativeText(dfXlsxJun$nipple_retraction,dfXlsxJun$group_separation,"по симптому втягивания соска в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$nipple_release,dfXlsxJun$group_separation,"по симптому выделениям из соска в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$type_structure_acr,dfXlsxJun$group_separation,"по типу плотности по ACR при осмотре в выборке до 40")
+pvalueQualitativeText(dfXlsxJun$quadrant,dfXlsxJun$group_separation,"по квадранту локализации в выборке до 40")
 
 
+GeomBar(dfXlsxJun,dfXlsxJun$diagnosis_primary,dfXlsxJun$group_separation,"Диагноз")
+GeomBar(dfXlsxJun,dfXlsxJun$complaints,dfXlsxJun$group_separation,"Жалобы")
+GeomBar(dfXlsxJun,dfXlsxJun$satus_reproductive,dfXlsxJun$group_separation,"Репродуктивный статус")
+GeomBar(dfXlsxJun,dfXlsxJun$breast_surgery_before,dfXlsxJun$group_separation,"Операции на МЖ")
+GeomBar(dfXlsxJun,dfXlsxJun$hormonal_medications,dfXlsxJun$group_separation,"Гормональные препараты")
+GeomBar(dfXlsxJun,dfXlsxJun$genetics,dfXlsxJun$group_separation,"Генетическая предрасположенность")
+dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$mutation_brca !="Оценка не проводилась")
+GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$mutation_brca,dfXlsxJun_variable$group_separation,"Мутация BRCA")
+dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$side !="не пальпируются")
+GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$side,dfXlsxJun_variable$group_separation,"Сторона поражения")
+# dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$skin_symptoms !="нет")
+# GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$skin_symptoms,dfXlsxJun_variable$group_separation,"Кожные симптомы")
+# Note BENE!
+GeomBar(dfXlsxJun,dfXlsxJun$nipple_retraction,dfXlsxJun$group_separation,"Втягивание соска")
+dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$nipple_release !="нет")
+GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$nipple_release,dfXlsxJun_variable$group_separation,"Выделения из соска")
+GeomBar(dfXlsxJun,dfXlsxJun$type_structure_acr,dfXlsxJun$group_separation,"Структрура ACR")
+dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$quadrant !="нет")
+GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$quadrant,dfXlsxJun_variable$group_separation,"Квадрант")
+
+Quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary,dfXlsxGr3$diagnosis_primary)
+Quantity_table("Жалобы",dfXlsxGr1$complaints,dfXlsxGr3$complaints)
+Quantity_table("Репродуктивный статус",dfXlsxGr1$satus_reproductive,dfXlsxGr3$satus_reproductive)
+Quantity_table("Операции на МЖ",dfXlsxGr1$breast_surgery_before,dfXlsxGr3$breast_surgery_before)
+Quantity_table("Гормональные препараты",dfXlsxGr1$hormonal_medications,dfXlsxGr3$hormonal_medications)
+Quantity_table("Генетическая предрасположенность",dfXlsxGr1$genetics,dfXlsxGr3$genetics)
+Quantity_table("Мутация BRCA",dfXlsxGr1$mutation_brca,dfXlsxGr3$mutation_brca)
+Quantity_table("Сторона поражения",dfXlsxGr1$side,dfXlsxGr3$side)
+#Quantity_table("Кожные симптомы",dfXlsxGr1$skin_symptoms,dfXlsxGr3$skin_symptoms)
+Quantity_table("Втягивание соска",dfXlsxGr1$nipple_retraction,dfXlsxGr3$nipple_retraction)
+Quantity_table("Выделения из соска",dfXlsxGr1$nipple_release,dfXlsxGr3$nipple_release)
+Quantity_table("Структрура ACR",dfXlsxGr1$type_structure_acr,dfXlsxGr3$type_structure_acr)
+Quantity_table("Квадрант",dfXlsxGr1$quadrant,dfXlsxGr3$quadrant)
+
+######Compare older group#######
+
+pvalueQualitativeText(dfXlsxSnr$diagnosis_primary,dfXlsxSnr$group_separation,"по первичному диагнозу в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$complaints,dfXlsxSnr$group_separation,"по выявленным жалобам в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$satus_reproductive,dfXlsxSnr$group_separation,"по репродуктивному статусу в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$breast_surgery_before,dfXlsxSnr$group_separation,"по операциям в анамнезе в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$hormonal_medications,dfXlsxSnr$group_separation,"по приему гормональных препаратов в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$genetics,dfXlsxSnr$group_separation,"по генетической предрасположенности в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$mutation_brca,dfXlsxSnr$group_separation,"по выявлению мутации BRCA в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$side,dfXlsxSnr$group_separation,"по стороне поражения в выборке после 40") 
+pvalueQualitativeText(dfXlsxSnr$skin_symptoms,dfXlsxSnr$group_separation,"по кожным симптомам в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$nipple_retraction,dfXlsxSnr$group_separation,"по симптому втягивания соска в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$nipple_release,dfXlsxSnr$group_separation,"по симптому выделениям из соска в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$type_structure_acr,dfXlsxSnr$group_separation,"по типу плотности по ACR при осмотре в выборке после 40")
+pvalueQualitativeText(dfXlsxSnr$quadrant,dfXlsxSnr$group_separation,"по квадранту локализации в выборке после 40")
+
+GeomBar(dfXlsxSnr,dfXlsxSnr$diagnosis_primary,dfXlsxSnr$group_separation,"Диагноз")
+GeomBar(dfXlsxSnr,dfXlsxSnr$complaints,dfXlsxSnr$group_separation,"Жалобы")
+GeomBar(dfXlsxSnr,dfXlsxSnr$satus_reproductive,dfXlsxSnr$group_separation,"Репродуктивный статус")
+GeomBar(dfXlsxSnr,dfXlsxSnr$breast_surgery_before,dfXlsxSnr$group_separation,"Операции на МЖ")
+GeomBar(dfXlsxSnr,dfXlsxSnr$hormonal_medications,dfXlsxSnr$group_separation,"Гормональные препараты")
+GeomBar(dfXlsxSnr,dfXlsxSnr$genetics,dfXlsxSnr$group_separation,"Генетическая предрасположенность")
+dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$mutation_brca !="Оценка не проводилась")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$mutation_brca,dfXlsxSnr_variable$group_separation,"Мутация BRCA")
+dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$side !="не пальпируются")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$side,dfXlsxSnr_variable$group_separation,"Сторона поражения")
+dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$skin_symptoms !="нет")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$skin_symptoms,dfXlsxSnr_variable$group_separation,"Кожные симптомы")
+GeomBar(dfXlsxSnr,dfXlsxSnr$nipple_retraction,dfXlsxSnr$group_separation,"Втягивание соска")
+dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$nipple_release !="нет")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$nipple_release,dfXlsxSnr_variable$group_separation,"Выделения из соска")
+GeomBar(dfXlsxSnr,dfXlsxSnr$type_structure_acr,dfXlsxSnr$group_separation,"Структрура ACR")
+dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$quadrant !="нет")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$quadrant,dfXlsxSnr_variable$group_separation,"Квадрант")
 
 
-# Plots -------------------------------------------------------------------
-
-
+Quantity_table("Диагноз",dfXlsxGr2$diagnosis_primary,dfXlsxGr4$diagnosis_primary)
+Quantity_table("Жалобы",dfXlsxGr2$complaints,dfXlsxGr4$complaints)
+Quantity_table("Репродуктивный статус",dfXlsxGr2$satus_reproductive,dfXlsxGr4$satus_reproductive)
+Quantity_table("Операции на МЖ",dfXlsxGr2$breast_surgery_before,dfXlsxGr4$breast_surgery_before)
+Quantity_table("Гормональные препараты",dfXlsxGr2$hormonal_medications,dfXlsxGr4$hormonal_medications)
+Quantity_table("Генетическая предрасположенность",dfXlsxGr2$genetics,dfXlsxGr4$genetics)
+Quantity_table("Мутация BRCA",dfXlsxGr2$mutation_brca,dfXlsxGr4$mutation_brca)
+Quantity_table("Сторона поражения",dfXlsxGr2$side,dfXlsxGr4$side)
+Quantity_table("Кожные симптомы",dfXlsxGr2$skin_symptoms,dfXlsxGr4$skin_symptoms)
+Quantity_table("Втягивание соска",dfXlsxGr2$nipple_retraction,dfXlsxGr4$nipple_retraction)
+Quantity_table("Выделения из соска",dfXlsxGr2$nipple_release,dfXlsxGr4$nipple_release)
+Quantity_table("Структрура ACR",dfXlsxGr2$type_structure_acr,dfXlsxGr4$type_structure_acr)
+Quantity_table("Квадрант",dfXlsxGr2$quadrant,dfXlsxGr4$quadrant)
