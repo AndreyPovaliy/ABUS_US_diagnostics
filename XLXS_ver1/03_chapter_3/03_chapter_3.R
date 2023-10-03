@@ -76,7 +76,7 @@ Quantity_discr("В выборке до 40 лет при выполнении ABU
 
 ######MRSI#######
 Quantity_discr("В выборке до 40 лет при выполнении МРТ были  ",dfXlsxJun$mrsi_data)
-Quantity_discr("В выборке до 40 лет при выполнении МРТ были  ",dfXlsxJun$mrsi_number_nodles)
+Quantity_discr("В выборке до 40 лет при выполнении МРТ количество узлов  ",dfXlsxJun$mrsi_number_nodles)
 
 ######Tumor#######
 Quantity_discr("В выборке до 40 лет была морфологическая структура  ",dfXlsxJun$tumor_morphology_structure)
@@ -476,8 +476,8 @@ SSA_text(dfXlsxGr1$us_is_tumor,dfXlsxGr1$hist_is_tumor, "УЗИ в группе 
 SSA_text(dfXlsxGr3$us_is_tumor,dfXlsxGr3$hist_is_tumor, "УЗИ в группе B")
 SSA_text(dfXlsxGr3$abus_is_tumor,dfXlsxGr3$hist_is_tumor, "ABUS в группе B")
 
-SSA_text(dfXlsxJun$us_is_tumor,dfXlsxJun$hist_is_tumor, "УЗИ в группе B")
-SSA_text(dfXlsxJun$abus_is_tumor,dfXlsxJun$hist_is_tumor, "ABUS в группе B")
+SSA_text(dfXlsxJun$us_is_tumor,dfXlsxJun$hist_is_tumor, "УЗИ в выборке пациенток до 40 лет")
+SSA_text(dfXlsxJun$abus_is_tumor,dfXlsxJun$hist_is_tumor, "ABUS в выборке пациенток до 40 лет")
 
 
 
@@ -517,7 +517,7 @@ pROC_obj_abusGr3 <- roc(dfXlsxGr3$hist_is_tumor,dfXlsxGr3$abus_probability,
 escribir ("ROC-кривая предсказательной модели для метода УЗИ, по данным полученным в выборке пациенток до 40 лет представлена на рисунке № х.х. 
           Площадь под кривой (AUC- area under cruve) составила: "
 )
-pROC_obj_usJun <- roc(dfXlsxGr3$hist_is_tumor,dfXlsxGr3$us_probability,
+pROC_obj_usJun <- roc(dfXlsxJun$hist_is_tumor,dfXlsxJun$us_probability,
                       smoothed = TRUE,
                       ci=TRUE, ci.alpha=0.9, stratified=FALSE,
                       plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
@@ -526,7 +526,7 @@ pROC_obj_usJun <- roc(dfXlsxGr3$hist_is_tumor,dfXlsxGr3$us_probability,
 escribir ("ROC-кривая предсказательной модели для метода ABUS, по данным полученным в выборке пациенток до 40 лет представлена на рисунке № х.х. 
           Площадь под кривой (AUC- area under cruve) составила: "
 )
-pROC_obj_abusJun <- roc(dfXlsxGr3$hist_is_tumor,dfXlsxGr3$abus_probability,
+pROC_obj_abusJun <- roc(dfXlsxJun$hist_is_tumor,dfXlsxJun$abus_probability,
                         smoothed = TRUE,
                         ci=TRUE, ci.alpha=0.9, stratified=FALSE,
                         plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
