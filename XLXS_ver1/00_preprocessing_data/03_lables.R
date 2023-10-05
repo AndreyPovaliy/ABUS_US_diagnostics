@@ -911,6 +911,26 @@ dfXlsx$tumor_receptors	<- 	factor(dfXlsx$tumor_receptors,
 
 
 #####Add columns####
+
+dfXlsx$mmg_is_calc <- factor(ifelse
+                             (dfXlsx$mmg_calcifications == "нет"
+                               | dfXlsx$mmg_calcifications == "не проводилось"
+                               , 0, 1),
+                             labels = c("Нет", "Да"))
+
+dfXlsx$us_is_calc <- factor(ifelse
+                             (dfXlsx$us_calcinates_micro_pure == "нет"
+                            
+                               , 0, 1),
+                             labels = c("Нет", "Да"))
+
+dfXlsx$abus_is_calc <- factor(ifelse
+                            (dfXlsx$abus_calcinates == "нет"
+                              | dfXlsx$abus_calcinates == "не проводилось"
+                              , 0, 1),
+                            labels = c("Нет", "Да"))
+
+
 dfXlsx$us_is_tumor <- factor(ifelse
                                  (dfXlsx$us_diagnosis == "образование Ca"
                                    | dfXlsx$us_diagnosis == "мультфококальный рак"
@@ -945,14 +965,12 @@ fit_us<- glm (dfXlsx$hist_is_tumor   ~
              dfXlsx$us_is_tumor+
                dfXlsx$age_patient
            , dfXlsx, family = "binomial")
-#вывести предсказание в дата фрейм
 dfXlsx$us_probability  <- predict(object = fit_us, type = "response")
 
 fit_abus<- glm (dfXlsx$hist_is_tumor   ~
              dfXlsx$abus_is_tumor*
                dfXlsx$age_patient
            , dfXlsx, family = "binomial")
-#вывести предсказание в дата фрейм
 dfXlsx$abus_probability  <- predict(object = fit_abus, type = "response")
 
 
@@ -960,7 +978,6 @@ fit_mmg<- glm (dfXlsx$hist_is_tumor   ~
                   dfXlsx$mmg_is_tumor*
                  dfXlsx$age_patient
                 , dfXlsx, family = "binomial")
-#вывести предсказание в дата фрейм
 dfXlsx$mmg_probability  <- predict(object = fit_mmg, type = "response")
 
 
