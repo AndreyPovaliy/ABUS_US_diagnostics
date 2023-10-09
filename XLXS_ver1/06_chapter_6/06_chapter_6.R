@@ -1,4 +1,4 @@
-source("~/Статьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 
 escribir ("##6.1 Оценка метододов по временной характеристике и зависимость от специалиста ")

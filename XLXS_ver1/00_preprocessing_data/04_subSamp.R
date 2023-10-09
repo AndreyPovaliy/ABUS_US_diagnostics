@@ -56,9 +56,9 @@ dfXlsxCalcGr4 <- subset(dfXlsxCalc, group_separation == gr_US_MMG_ABUS)
 
 
 #####Add dataframe####
-nJ <- length(dfXlsxGr3$us_calcinates_micro_pure)
-type_exam_1 <- as.factor(rep(1,n))
-type_exam_2 <- as.factor(rep(2,n))
+num_Jun <- length(dfXlsxGr3$us_calcinates_micro_pure)
+type_exam_1 <- as.factor(rep(1,num_Jun))
+type_exam_2 <- as.factor(rep(2,num_Jun))
 type_exam <- c(type_exam_1, type_exam_2)
 calcinates_micro_pure <- c(dfXlsxGr3$us_calcinates_micro_pure, dfXlsxGr3$abus_calcinates_micro_pure)
 df_calcinates_micro_pureJun <- data.frame(cbind(type_exam,calcinates_micro_pure))
@@ -79,9 +79,9 @@ df_calcinates_micro_pureJun$calcinates_micro_pure <- 	factor(df_calcinates_micro
 
 
 
-nS <- length(dfXlsxGr4$us_calcinates_micro_pure)
-type_exam_1 <- as.factor(rep(1,n))
-type_exam_2 <- as.factor(rep(2,n))
+num_Sin <- length(dfXlsxGr4$us_calcinates_micro_pure)
+type_exam_1 <- as.factor(rep(1,num_Sin))
+type_exam_2 <- as.factor(rep(2,num_Sin))
 type_exam <- c(type_exam_1, type_exam_2)
 calcinates_micro_pure <- c(dfXlsxGr4$us_calcinates_micro_pure, dfXlsxGr4$abus_calcinates_micro_pure)
 df_calcinates_micro_pureSnr <- data.frame(cbind(type_exam,calcinates_micro_pure))
