@@ -965,32 +965,32 @@ fit_usCalc <- glm (dfXlsx$mmg_is_calc   ~
                      dfXlsx$us_is_calc+
                      dfXlsx$age_patient
                    , dfXlsx, family = "binomial")
-dfXlsx$us_probabilityCalc  <- predict(object = fit_us, type = "response")
+dfXlsx$us_probabilityCalc  <- predict(object = fit_usCalc, type = "response")
 
 fit_abusCalc <-  glm (dfXlsx$mmg_is_calc   ~
                         dfXlsx$abus_is_calc*
                         dfXlsx$age_patient
                       , dfXlsx, family = "binomial")
-dfXlsx$abus_probabilityCalc <- predict(object = fit_abus, type = "response")
+dfXlsx$abus_probabilityCalc <- predict(object = fit_abusCalc, type = "response")
 
 fit_usNeoCa<- glm (dfXlsx$hist_is_tumor   ~
              dfXlsx$us_is_tumor+
                dfXlsx$age_patient
            , dfXlsx, family = "binomial")
-dfXlsx$us_probabilityNeoCa  <- predict(object = fit_us, type = "response")
+dfXlsx$us_probabilityNeoCa  <- predict(object = fit_usNeoCa, type = "response")
 
 fit_abusNeoCa<- glm (dfXlsx$hist_is_tumor   ~
              dfXlsx$abus_is_tumor*
                dfXlsx$age_patient
            , dfXlsx, family = "binomial")
-dfXlsx$abus_probabilityNeoCa  <- predict(object = fit_abus, type = "response")
+dfXlsx$abus_probabilityNeoCa  <- predict(object = fit_abusNeoCa, type = "response")
 
 
 fit_mmgNeoCa<- glm (dfXlsx$hist_is_tumor   ~
                   dfXlsx$mmg_is_tumor*
                  dfXlsx$age_patient
                 , dfXlsx, family = "binomial")
-dfXlsx$mmg_probabilityNeoCa  <- predict(object = fit_mmg, type = "response")
+dfXlsx$mmg_probabilityNeoCa  <- predict(object = fit_mmgNeoCa, type = "response")
 
 
 

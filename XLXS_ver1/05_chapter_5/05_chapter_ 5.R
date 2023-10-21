@@ -1,7 +1,7 @@
 #source("~/Статьи и диссертации/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 
-source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+source("~/Documents/Science/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 
 escribir ("##5.1 Возможности нахождения микрокальцинатов при исследования УЗИ в выборке до 40 лет")
@@ -86,7 +86,7 @@ SSA_text(dfXlsxSnr$abus_is_tumor,dfXlsxSnr$mmg_is_calc, "ABUS в выборке 
 
 #####ROC curve#######
 library(pROC)
-#source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+#source("~/Documents/Science/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 
 escribir ("На основании полученных данных, пыла построена предсказательная модель изучаемых методов."
 )

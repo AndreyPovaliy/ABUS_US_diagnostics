@@ -12,7 +12,7 @@ library(ggplot2)
 
 
 ######General description#######
-escribir ("2.1 Общее Описание пациенток, вошедших в исследование")
+escribir ("x.x Общее Описание пациенток, вошедших в исследование")
 How_many(dfXlsx$name_patient,"Всего в исследование вошло")
 Describe_numeric (dfXlsx$age_patient, "возраста ","пациентов по всей выборке составил "," лет")
 Describe_numeric (dfXlsx$height_patient, "роста ","пациентов по всей выборке составил "," см")
@@ -57,7 +57,7 @@ pvalueQualitativeText(dfXlsx$quadrant,dfXlsx$group_separation,"по квадра
 
 
 ######Description younger group#######
-escribir ("2.2 Описание пациенток до 40 лет")
+escribir ("### 2.5.1 Общее описание выборки пациенток до 40 лет")
 
 How_many(dfXlsxJun$name_patient,"Пациенток до 40 лет в исследование вошло")
 Describe_numeric (dfXlsxJun$age_patient, "возраста ","пациенток выборке до 40 лет составил "," лет")
@@ -88,14 +88,138 @@ Quantity_discr("В выборке до 40 лет тип плотности по 
 Quantity_discr("В выборке до 40 лет квадрант локализации ",dfXlsxJun$quadrant)
 
 
+escribir ("### 2.5.2 Описание групп в выборке пациенток до 40 лет")
+How_many(dfXlsxGr1$name_patient,"В группу A")
+How_many(dfXlsxGr3$name_patient,"В группу B")
+
+chapter_3_4_text("Первичный диагноз ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$diagnosis_primary,
+                 dfXlsxGr3$diagnosis_primary,
+                 dfXlsxJun$diagnosis_primary,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$diagnosis_primary,dfXlsxJun$group_separation,"Первичный диагноз ")
+
+chapter_3_4_text("Осложнение ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$complaints,
+                 dfXlsxGr3$complaints,
+                 dfXlsxJun$complaints,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$complaints,dfXlsxJun$group_separation,"Осложнение ")
+
+chapter_3_4_text("Репродуктивный статус ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$satus_reproductive,
+                 dfXlsxGr3$satus_reproductive,
+                 dfXlsxJun$satus_reproductive,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$satus_reproductive,dfXlsxJun$group_separation,"Репродуктивный статус ")
+
+chapter_3_4_text("Операции на молочной железе ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$breast_surgery_before,
+                 dfXlsxGr3$breast_surgery_before,
+                 dfXlsxJun$breast_surgery_before,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$breast_surgery_before,dfXlsxJun$group_separation,"Операции на молочной железе")
+
+chapter_3_4_text("Прием гормональных препаратов ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$hormonal_medications,
+                 dfXlsxGr3$hormonal_medications,
+                 dfXlsxJun$hormonal_medications,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$hormonal_medications,dfXlsxJun$group_separation,"Прием гормональных препаратов ")
+
+chapter_3_4_text("Генетика ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$genetics,
+                 dfXlsxGr3$genetics,
+                 dfXlsxJun$genetics,
+                 dfXlsxJun$group_separation)
+
+GeomBar(dfXlsxJun,dfXlsxJun$genetics,dfXlsxJun$group_separation,"Генетика ")
+
+chapter_3_4_text("Мутация BRCA ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$mutation_brca,
+                 dfXlsxGr3$mutation_brca,
+                 dfXlsxJun$mutation_brca,
+                 dfXlsxJun$group_separation)
+dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$mutation_brca !="Оценка не проводилась")
+GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$mutation_brca,dfXlsxJun_variable$group_separation,"Мутация BRCA ")
+
+chapter_3_4_text("Сторона ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$side,
+                 dfXlsxGr3$side,
+                 dfXlsxJun$side,
+                 dfXlsxJun$group_separation)
+dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$side !="не пальпируются")
+GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$side,dfXlsxJun_variable$group_separation,"Сторона ")
+
+
+chapter_3_4_text("Кожные симптомы ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$skin_symptoms,
+                 dfXlsxGr3$skin_symptoms,
+                 dfXlsxJun$skin_symptoms,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$skin_symptoms,dfXlsxJun$group_separation,"Кожные симптомы ")
+
+
+chapter_3_4_text("Симптом втягивания соска ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$nipple_retraction,
+                 dfXlsxGr3$nipple_retraction,
+                 dfXlsxJun$nipple_retraction,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$nipple_retraction,dfXlsxJun$group_separation,"Симптом втягивания соска ")
+
+chapter_3_4_text("Симптом выделения из соска ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$nipple_release,
+                 dfXlsxGr3$nipple_release,
+                 dfXlsxJun$nipple_release,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$nipple_release,dfXlsxJun$group_separation,"Симптом выделения из соска ")
+
+chapter_3_4_text("Тип структуры ACR ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$type_structure_acr,
+                 dfXlsxGr3$type_structure_acr,
+                 dfXlsxJun$type_structure_acr,
+                 dfXlsxJun$group_separation)
+GeomBar(dfXlsxJun,dfXlsxJun$type_structure_acr,dfXlsxJun$group_separation,"Тип структуры ACR ")
+
+chapter_3_4_text("Квадрант ",
+                 "В группе A ",
+                 "В группе B ",
+                 dfXlsxGr1$quadrant,
+                 dfXlsxGr3$quadrant,
+                 dfXlsxJun$quadrant,
+                 dfXlsxJun$group_separation)
+dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$quadrant !="нет")
+GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$quadrant,dfXlsxJun_variable$group_separation,"Квадрант ")
+
 
 
 
 ######Description older group#######
-escribir ("2.3 Описание пациенток после 40 лет")
-
-
-
+escribir ("2.5.3 Общее описание выборки пациенток 40 лет и старше")
 
 How_many(dfXlsxSnr$name_patient,"Пациенток после 40 лет в исследование вошло")
 
@@ -127,220 +251,138 @@ Quantity_discr("В выборке после 40 лет квадрант лока
 
 
 
+escribir ("### 2.5.4 Описание групп в выборке пациенток 40 лет с старше")
+How_many(dfXlsxGr1$name_patient,"В группу C")
+How_many(dfXlsxGr3$name_patient,"В группу D")
 
-######Description 1st group#######
-escribir ("2.4 Описание пациенток в первой группе")
+chapter_3_4_text("Первичный диагноз ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$diagnosis_primary,
+                 dfXlsxGr4$diagnosis_primary,
+                 dfXlsxSnr$diagnosis_primary,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$diagnosis_primary,dfXlsxSnr$group_separation,"Первичный диагноз ")
 
-How_many(dfXlsxGr1$name_patient,"Пациенток в первой группе в исследование вошло")
-Describe_numeric (dfXlsxGr1$age_patient, "возраста ","пациенток выборке в первой группе составил "," лет")
-escribir (paste("Минимальный возраст сотсавил", min(dfXlsxGr1$age_patient), "лет"))
-escribir (paste("Максимальный возраст сотсавил", max(dfXlsxGr1$age_patient), "лет"))
-Describe_numeric (dfXlsxGr1$height_patient, "роста ","пациенток выборке в первой группе составил "," см")
-Describe_numeric (dfXlsxGr1$weight_patient, "веса ","пациенток выборке в первой группе составил "," кг")
+chapter_3_4_text("Осложнение ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$complaints,
+                 dfXlsxGr4$complaints,
+                 dfXlsxSnr$complaints,
+                 dfXlsxSnr$group_separation)
 
+GeomBar(dfXlsxSnr,dfXlsxSnr$complaints,dfXlsxSnr$group_separation,"Осложнение ")
 
+chapter_3_4_text("Репродуктивный статус ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$satus_reproductive,
+                 dfXlsxGr4$satus_reproductive,
+                 dfXlsxSnr$satus_reproductive,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$satus_reproductive,dfXlsxSnr$group_separation,"Репродуктивный статус ")
 
-######Description 2nd group#######
-escribir ("2.5 Описание пациенток во второй группе")
+chapter_3_4_text("Операции на молочной железе ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$breast_surgery_before,
+                 dfXlsxGr4$breast_surgery_before,
+                 dfXlsxSnr$breast_surgery_before,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$breast_surgery_before,dfXlsxSnr$group_separation,"Операции на молочной железе")
 
-How_many(dfXlsxGr2$name_patient,"Пациенток в второй группе в исследование вошло")
-Describe_numeric (dfXlsxGr2$age_patient, "возраста ","пациенток выборке в второй группе составил "," лет")
-escribir (paste("Минимальный возраст сотсавил", min(dfXlsxGr2$age_patient), "лет"))
-escribir (paste("Максимальный возраст сотсавил", max(dfXlsxGr2$age_patient), "лет"))
-Describe_numeric (dfXlsxGr2$height_patient, "роста ","пациенток выборке в второй группе составил "," см")
-Describe_numeric (dfXlsxGr2$weight_patient, "веса ","пациенток выборке в второй группе составил "," кг")
+chapter_3_4_text("Прием гормональных препаратов ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$hormonal_medications,
+                 dfXlsxGr4$hormonal_medications,
+                 dfXlsxSnr$hormonal_medications,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$hormonal_medications,dfXlsxSnr$group_separation,"Прием гормональных препаратов ")
 
-Quantity_discr("В выборке в второй группе были поставлены диагнозы ",dfXlsxGr2$diagnosis_primary)
-Quantity_discr("В выборке в второй группе были выялены следующие жалобы ", dfXlsxGr2$complaints)
-Quantity_discr("В выборке в второй группе репродуктивный статус был ",dfXlsxGr2$satus_reproductive)
-Quantity_discr("В выборке в второй группе операций на молочной железе в анамнезе ",dfXlsxGr2$breast_surgery_before)
-Quantity_discr("В выборке в второй группе прием гормональных препаратов ",dfXlsxGr2$hormonal_medications)
-Quantity_discr("В выборке в второй группе генетическая предрасположенность ",dfXlsxGr2$genetics)
-Quantity_discr("В выборке в второй группе было выявлена мутация BRCA ",dfXlsxGr2$mutation_brca)
-Quantity_discr("В выборке в второй группе сторона поражения при осмотре ",dfXlsxGr2$side)
-Quantity_discr("В выборке в второй группе кожные симптомы при осмотре ",dfXlsxGr2$skin_symptoms)
-Quantity_discr("В выборке в второй группе втягивание соска при осмотре ",dfXlsxGr2$nipple_retraction)
-Quantity_discr("В выборке в второй группе выделения из соска при осмотре ",dfXlsxGr2$nipple_release)
-Quantity_discr("В выборке в второй группе тип плотности по ACR при осмотре ",dfXlsxGr2$type_structure_acr)
-Quantity_discr("В выборке в второй группе квадрант локализации ",dfXlsxGr2$quadrant)
+chapter_3_4_text("Генетика ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$genetics,
+                 dfXlsxGr4$genetics,
+                 dfXlsxSnr$genetics,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$genetics,dfXlsxSnr$group_separation,"Генетика ")
 
-
-
-
-######Description 3rd group#######
-escribir ("2.6 Описание пациенток в третьей группе")
-
-
-How_many(dfXlsxGr3$name_patient,"Пациенток в третьей группе в исследование вошло")
-Describe_numeric (dfXlsxGr3$age_patient, "возраста ","пациенток выборке в третьей группе составил "," лет")
-escribir (paste("Минимальный возраст сотсавил", min(dfXlsxGr3$age_patient), "лет"))
-escribir (paste("Максимальный возраст сотсавил", max(dfXlsxGr3$age_patient), "лет"))
-Describe_numeric (dfXlsxGr3$height_patient, "роста ","пациенток выборке в третьей группе составил "," см")
-Describe_numeric (dfXlsxGr3$weight_patient, "веса ","пациенток выборке в третьей группе составил "," кг")
-
-Quantity_discr("В выборке в третьей группе были поставлены диагнозы ",dfXlsxGr3$diagnosis_primary)
-
-Quantity_discr("В выборке в третьей группе были выялены следующие жалобы ", dfXlsxGr3$complaints)
-
-Quantity_discr("В выборке в третьей группе репродуктивный статус был ",dfXlsxGr3$satus_reproductive)
-Quantity_discr("В выборке в третьей группе операций на молочной железе в анамнезе ",dfXlsxGr3$breast_surgery_before)
-Quantity_discr("В выборке в третьей группе прием гормональных препаратов ",dfXlsxGr3$hormonal_medications)
-Quantity_discr("В выборке в третьей группе генетическая предрасположенность ",dfXlsxGr3$genetics)
-Quantity_discr("В выборке в третьей группе было выявлена мутация BRCA ",dfXlsxGr3$mutation_brca)
-
-Quantity_discr("В выборке в третьей группе сторона поражения при осмотре ",dfXlsxGr3$side)
-Quantity_discr("В выборке в третьей группе кожные симптомы при осмотре ",dfXlsxGr3$skin_symptoms)
-Quantity_discr("В выборке в третьей группе втягивание соска при осмотре ",dfXlsxGr3$nipple_retraction)
-Quantity_discr("В выборке в третьей группе выделения из соска при осмотре ",dfXlsxGr3$nipple_release)
-Quantity_discr("В выборке в третьей группе тип плотности по ACR при осмотре ",dfXlsxGr3$type_structure_acr)
-
-Quantity_discr("В выборке в третьей группе квадрант локализации ",dfXlsxGr3$quadrant)
-
-
-######Description 4th group#######
-escribir ("2.7 Описание пациенток в четвертой группе")
-
-How_many(dfXlsxGr4$name_patient,"Пациенток в четвертой группе в исследование вошло")
-Describe_numeric (dfXlsxGr4$age_patient, "возраста ","пациенток выборке в четвертой группе составил "," лет")
-escribir (paste("Минимальный возраст сотсавил", min(dfXlsxGr4$age_patient), "лет"))
-escribir (paste("Максимальный возраст сотсавил", max(dfXlsxGr4$age_patient), "лет"))
-Describe_numeric (dfXlsxGr4$height_patient, "роста ","пациенток выборке в четвертой группе составил "," см")
-Describe_numeric (dfXlsxGr4$weight_patient, "веса ","пациенток выборке в четвертой группе составил "," кг")
-
-Quantity_discr("В выборке в четвертой группе были поставлены диагнозы ",dfXlsxGr4$diagnosis_primary)
-
-Quantity_discr("В выборке в четвертой группе были выялены следующие жалобы ", dfXlsxGr4$complaints)
-
-Quantity_discr("В выборке в четвертой группе репродуктивный статус был ",dfXlsxGr4$satus_reproductive)
-Quantity_discr("В выборке в четвертой группе операций на молочной железе в анамнезе ",dfXlsxGr4$breast_surgery_before)
-Quantity_discr("В выборке в четвертой группе прием гормональных препаратов ",dfXlsxGr4$hormonal_medications)
-Quantity_discr("В выборке в четвертой группе генетическая предрасположенность ",dfXlsxGr4$genetics)
-Quantity_discr("В выборке в четвертой группе было выявлена мутация BRCA ",dfXlsxGr4$mutation_brca)
-
-Quantity_discr("В выборке в четвертой группе сторона поражения при осмотре ",dfXlsxGr4$side)
-Quantity_discr("В выборке в четвертой группе кожные симптомы при осмотре ",dfXlsxGr4$skin_symptoms)
-Quantity_discr("В выборке в четвертой группе втягивание соска при осмотре ",dfXlsxGr4$nipple_retraction)
-Quantity_discr("В выборке в четвертой группе выделения из соска при осмотре ",dfXlsxGr4$nipple_release)
-Quantity_discr("В выборке в четвертой группе тип плотности по ACR при осмотре ",dfXlsxGr4$type_structure_acr)
-
-Quantity_discr("В выборке в четвертой группе квадрант локализации ",dfXlsxGr4$quadrant)
-
-
-
-
-
-
-# Tables|Plots|Compare -------------------------------------------------------------------
-
-######Compare younger group#######
-
-pvalueParaWxText(dfXlsxJun,dfXlsxJun$age_patient,dfXlsxJun$group_separation,"по возрасту")
-
-# dfXlsxJun_variable <- subset(dfXlsxJun,
-#                              dfXlsxJun$diagnosis_primary =="Рак"|
-#                                dfXlsxJun$diagnosis_primary =="Без патологии"
-#                              )
-# 
-# 
-# pvalueQualitativeText(dfXlsxJun_variable$diagnosis_primary,dfXlsxJun_variable$group_separation,"по первичному диагнозу в выборке до 40")
-
-pvalueQualitativeText(dfXlsxJun$diagnosis_primary,dfXlsxJun$group_separation,"по первичному диагнозу в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$complaints,dfXlsxJun$group_separation,"по выявленным жалобам в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$satus_reproductive,dfXlsxJun$group_separation,"по репродуктивному статусу в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$breast_surgery_before,dfXlsxJun$group_separation,"по операциям в анамнезе в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$hormonal_medications,dfXlsxJun$group_separation,"по приему гормональных препаратов в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$genetics,dfXlsxJun$group_separation,"по генетической предрасположенности в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$mutation_brca,dfXlsxJun$group_separation,"по выявлению мутации BRCA в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$side,dfXlsxJun$group_separation,"по стороне поражения в выборке до 40") 
-# pvalueQualitativeText(dfXlsxJun$skin_symptoms,dfXlsxJun$group_separation,"по кожным симптомам в выборке до 40")
-# Note BENE!
-escribir("Разница между группами по кожным симптомам  составила 1.")
-pvalueQualitativeText(dfXlsxJun$nipple_retraction,dfXlsxJun$group_separation,"по симптому втягивания соска в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$nipple_release,dfXlsxJun$group_separation,"по симптому выделениям из соска в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$type_structure_acr,dfXlsxJun$group_separation,"по типу плотности по ACR при осмотре в выборке до 40")
-pvalueQualitativeText(dfXlsxJun$quadrant,dfXlsxJun$group_separation,"по квадранту локализации в выборке до 40")
-
-
-GeomBar(dfXlsxJun,dfXlsxJun$diagnosis_primary,dfXlsxJun$group_separation,"Диагноз")
-GeomBar(dfXlsxJun,dfXlsxJun$complaints,dfXlsxJun$group_separation,"Жалобы")
-GeomBar(dfXlsxJun,dfXlsxJun$satus_reproductive,dfXlsxJun$group_separation,"Репродуктивный статус")
-GeomBar(dfXlsxJun,dfXlsxJun$breast_surgery_before,dfXlsxJun$group_separation,"Операции на МЖ")
-GeomBar(dfXlsxJun,dfXlsxJun$hormonal_medications,dfXlsxJun$group_separation,"Гормональные препараты")
-GeomBar(dfXlsxJun,dfXlsxJun$genetics,dfXlsxJun$group_separation,"Генетическая предрасположенность")
-dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$mutation_brca !="Оценка не проводилась")
-GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$mutation_brca,dfXlsxJun_variable$group_separation,"Мутация BRCA")
-dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$side !="не пальпируются")
-GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$side,dfXlsxJun_variable$group_separation,"Сторона поражения")
-# dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$skin_symptoms !="нет")
-# GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$skin_symptoms,dfXlsxJun_variable$group_separation,"Кожные симптомы")
-# Note BENE!
-GeomBar(dfXlsxJun,dfXlsxJun$nipple_retraction,dfXlsxJun$group_separation,"Втягивание соска")
-dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$nipple_release !="нет")
-GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$nipple_release,dfXlsxJun_variable$group_separation,"Выделения из соска")
-GeomBar(dfXlsxJun,dfXlsxJun$type_structure_acr,dfXlsxJun$group_separation,"Структрура ACR")
-dfXlsxJun_variable <- subset(dfXlsxJun,dfXlsxJun$quadrant !="нет")
-GeomBar(dfXlsxJun_variable,dfXlsxJun_variable$quadrant,dfXlsxJun_variable$group_separation,"Квадрант")
-
-Quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary,dfXlsxGr3$diagnosis_primary)
-Quantity_table("Жалобы",dfXlsxGr1$complaints,dfXlsxGr3$complaints)
-Quantity_table("Репродуктивный статус",dfXlsxGr1$satus_reproductive,dfXlsxGr3$satus_reproductive)
-Quantity_table("Операции на МЖ",dfXlsxGr1$breast_surgery_before,dfXlsxGr3$breast_surgery_before)
-Quantity_table("Гормональные препараты",dfXlsxGr1$hormonal_medications,dfXlsxGr3$hormonal_medications)
-Quantity_table("Генетическая предрасположенность",dfXlsxGr1$genetics,dfXlsxGr3$genetics)
-Quantity_table("Мутация BRCA",dfXlsxGr1$mutation_brca,dfXlsxGr3$mutation_brca)
-Quantity_table("Сторона поражения",dfXlsxGr1$side,dfXlsxGr3$side)
-#Quantity_table("Кожные симптомы",dfXlsxGr1$skin_symptoms,dfXlsxGr3$skin_symptoms)
-Quantity_table("Втягивание соска",dfXlsxGr1$nipple_retraction,dfXlsxGr3$nipple_retraction)
-Quantity_table("Выделения из соска",dfXlsxGr1$nipple_release,dfXlsxGr3$nipple_release)
-Quantity_table("Структрура ACR",dfXlsxGr1$type_structure_acr,dfXlsxGr3$type_structure_acr)
-Quantity_table("Квадрант",dfXlsxGr1$quadrant,dfXlsxGr3$quadrant)
-
-######Compare older group#######
-
-pvalueQualitativeText(dfXlsxSnr$diagnosis_primary,dfXlsxSnr$group_separation,"по первичному диагнозу в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$complaints,dfXlsxSnr$group_separation,"по выявленным жалобам в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$satus_reproductive,dfXlsxSnr$group_separation,"по репродуктивному статусу в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$breast_surgery_before,dfXlsxSnr$group_separation,"по операциям в анамнезе в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$hormonal_medications,dfXlsxSnr$group_separation,"по приему гормональных препаратов в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$genetics,dfXlsxSnr$group_separation,"по генетической предрасположенности в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$mutation_brca,dfXlsxSnr$group_separation,"по выявлению мутации BRCA в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$side,dfXlsxSnr$group_separation,"по стороне поражения в выборке после 40") 
-pvalueQualitativeText(dfXlsxSnr$skin_symptoms,dfXlsxSnr$group_separation,"по кожным симптомам в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$nipple_retraction,dfXlsxSnr$group_separation,"по симптому втягивания соска в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$nipple_release,dfXlsxSnr$group_separation,"по симптому выделениям из соска в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$type_structure_acr,dfXlsxSnr$group_separation,"по типу плотности по ACR при осмотре в выборке после 40")
-pvalueQualitativeText(dfXlsxSnr$quadrant,dfXlsxSnr$group_separation,"по квадранту локализации в выборке после 40")
-
-GeomBar(dfXlsxSnr,dfXlsxSnr$diagnosis_primary,dfXlsxSnr$group_separation,"Диагноз")
-GeomBar(dfXlsxSnr,dfXlsxSnr$complaints,dfXlsxSnr$group_separation,"Жалобы")
-GeomBar(dfXlsxSnr,dfXlsxSnr$satus_reproductive,dfXlsxSnr$group_separation,"Репродуктивный статус")
-GeomBar(dfXlsxSnr,dfXlsxSnr$breast_surgery_before,dfXlsxSnr$group_separation,"Операции на МЖ")
-GeomBar(dfXlsxSnr,dfXlsxSnr$hormonal_medications,dfXlsxSnr$group_separation,"Гормональные препараты")
-GeomBar(dfXlsxSnr,dfXlsxSnr$genetics,dfXlsxSnr$group_separation,"Генетическая предрасположенность")
+chapter_3_4_text("Мутация BRCA ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$mutation_brca,
+                 dfXlsxGr4$mutation_brca,
+                 dfXlsxSnr$mutation_brca,
+                 dfXlsxSnr$group_separation)
 dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$mutation_brca !="Оценка не проводилась")
-GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$mutation_brca,dfXlsxSnr_variable$group_separation,"Мутация BRCA")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$mutation_brca,dfXlsxSnr_variable$group_separation,"Мутация BRCA ")
+
+chapter_3_4_text("Сторона ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$side,
+                 dfXlsxGr4$side,
+                 dfXlsxSnr$side,
+                 dfXlsxSnr$group_separation)
 dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$side !="не пальпируются")
-GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$side,dfXlsxSnr_variable$group_separation,"Сторона поражения")
-dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$skin_symptoms !="нет")
-GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$skin_symptoms,dfXlsxSnr_variable$group_separation,"Кожные симптомы")
-GeomBar(dfXlsxSnr,dfXlsxSnr$nipple_retraction,dfXlsxSnr$group_separation,"Втягивание соска")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$side,dfXlsxSnr_variable$group_separation,"Сторона ")
+
+
+chapter_3_4_text("Кожные симптомы ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$skin_symptoms,
+                 dfXlsxGr4$skin_symptoms,
+                 dfXlsxSnr$skin_symptoms,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$skin_symptoms,dfXlsxSnr$group_separation,"Кожные симптомы ")
+
+
+chapter_3_4_text("Симптом втягивания соска ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$nipple_retraction,
+                 dfXlsxGr4$nipple_retraction,
+                 dfXlsxSnr$nipple_retraction,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$nipple_retraction,dfXlsxSnr$group_separation,"Симптом втягивания соска ")
+
+chapter_3_4_text("Симптом выделения из соска ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$nipple_release,
+                 dfXlsxGr4$nipple_release,
+                 dfXlsxSnr$nipple_release,
+                 dfXlsxSnr$group_separation)
 dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$nipple_release !="нет")
-GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$nipple_release,dfXlsxSnr_variable$group_separation,"Выделения из соска")
-GeomBar(dfXlsxSnr,dfXlsxSnr$type_structure_acr,dfXlsxSnr$group_separation,"Структрура ACR")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$nipple_release,dfXlsxSnr_variable$group_separation,"Симптом выделения из соска ")
+
+chapter_3_4_text("Тип структуры ACR ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$type_structure_acr,
+                 dfXlsxGr4$type_structure_acr,
+                 dfXlsxSnr$type_structure_acr,
+                 dfXlsxSnr$group_separation)
+GeomBar(dfXlsxSnr,dfXlsxSnr$type_structure_acr,dfXlsxSnr$group_separation,"Тип структуры ACR ")
+
+chapter_3_4_text("Квадрант ",
+                 "В группе C ",
+                 "В группе D ",
+                 dfXlsxGr2$quadrant,
+                 dfXlsxGr4$quadrant,
+                 dfXlsxSnr$quadrant,
+                 dfXlsxSnr$group_separation)
 dfXlsxSnr_variable <- subset(dfXlsxSnr,dfXlsxSnr$quadrant !="нет")
-GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$quadrant,dfXlsxSnr_variable$group_separation,"Квадрант")
+GeomBar(dfXlsxSnr_variable,dfXlsxSnr_variable$quadrant,dfXlsxSnr_variable$group_separation,"Квадрант ")
 
 
-Quantity_table("Диагноз",dfXlsxGr2$diagnosis_primary,dfXlsxGr4$diagnosis_primary)
-Quantity_table("Жалобы",dfXlsxGr2$complaints,dfXlsxGr4$complaints)
-Quantity_table("Репродуктивный статус",dfXlsxGr2$satus_reproductive,dfXlsxGr4$satus_reproductive)
-Quantity_table("Операции на МЖ",dfXlsxGr2$breast_surgery_before,dfXlsxGr4$breast_surgery_before)
-Quantity_table("Гормональные препараты",dfXlsxGr2$hormonal_medications,dfXlsxGr4$hormonal_medications)
-Quantity_table("Генетическая предрасположенность",dfXlsxGr2$genetics,dfXlsxGr4$genetics)
-Quantity_table("Мутация BRCA",dfXlsxGr2$mutation_brca,dfXlsxGr4$mutation_brca)
-Quantity_table("Сторона поражения",dfXlsxGr2$side,dfXlsxGr4$side)
-Quantity_table("Кожные симптомы",dfXlsxGr2$skin_symptoms,dfXlsxGr4$skin_symptoms)
-Quantity_table("Втягивание соска",dfXlsxGr2$nipple_retraction,dfXlsxGr4$nipple_retraction)
-Quantity_table("Выделения из соска",dfXlsxGr2$nipple_release,dfXlsxGr4$nipple_release)
-Quantity_table("Структрура ACR",dfXlsxGr2$type_structure_acr,dfXlsxGr4$type_structure_acr)
-Quantity_table("Квадрант",dfXlsxGr2$quadrant,dfXlsxGr4$quadrant)
+
+
+
+
+
+

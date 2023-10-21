@@ -96,12 +96,13 @@ Table_numericKr<-function(parametr,database,dev )
 
 #Quantity_discr("В группе",df_Abus$Group)
 Quantity_discr<-function(parametr,database){
+  write.table(parametr, FileName, sep="*", append = TRUE)
   n <- length(data.frame(table(database), row.names = TRUE )$Freq)
   i<-0
   while (i<n){
-    Descr<-print(paste(parametr,
+    Descr<-print(paste(
                        data.frame(table(database))[i+1,1],
-                       " было ",
+                       " в ",
                        data.frame(round(prop.table(table(database))*100,2))[i+1,2],
                        "% (", 
                        data.frame(table(database))[i+1,2],
@@ -154,7 +155,7 @@ Quantity_table<-function(parametr,database1,database2){
                        round(prop.test(table(database2)[i+1], length(database2))$conf.int[1],2),
                        ";",
                        round(prop.test(table(database2)[i+1], length(database2))$conf.int[2],2),
-                       "]"
+                       "]|"
                        
     ))
     write.table(Descr, FileName, sep="|", append = TRUE)
