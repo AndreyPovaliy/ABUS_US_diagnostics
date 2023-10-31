@@ -26,7 +26,123 @@ write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
 dfXlsx <- read.xlsx(xlsxFile = XlxsWayLab,
                     sheet = 'Data')
 
+# Mmg/Abus/Mrsi/Hist_subset_block --------------------------------------------------------------
+dfXlsxSubsetMmg <- subset(dfXlsx,dfXlsx$is_mmg == "Да")
+dfXlsxSubsetAbus <- subset(dfXlsx,dfXlsx$is_abus == "Да")
 
+dfXlsxSubsetMrsi <- subset(dfXlsx,dfXlsx$is_Mrsi == "Да")
+dfXlsxSubsetMorphology <- subset(dfXlsx,dfXlsx$is_Morphology == "Да")
+dfXlsxSubsetCytological <- subset(dfXlsx,dfXlsx$is_Cytological == "Да")
+dfXlsxSubsetMalignancy <- subset(dfXlsx,dfXlsx$is_GradeMalignancy== "Да")
+dfXlsxSubsetReceptors <- subset(dfXlsx,dfXlsx$is_Receptors == "Да")
+
+
+## Jun --------------------------------------------------------------
+
+dfXlsxSubsetMmgJun <- subset(dfXlsxSubsetMmg, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxSubsetAbusJun <- subset(dfXlsxSubsetAbus, group_separation == gr_US | group_separation ==gr_US_ABUS)
+
+dfXlsxSubsetMrsiJun <- subset(dfXlsxSubsetMrsi, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxSubsetMorphologyJun <- subset(dfXlsxSubsetMorphology, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxSubsetCytologicalJun <- subset(dfXlsxSubsetCytological, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxSubsetMalignancyJun <- subset(dfXlsxSubsetMalignancy, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxSubsetReceptorsJun <- subset(dfXlsxSubsetReceptors, group_separation == gr_US | group_separation ==gr_US_ABUS)
+
+
+## Sin --------------------------------------------------------------
+
+dfXlsxSubsetMmgSnr <- subset(dfXlsxSubsetMmg, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfXlsxSubsetAbusSnr <- subset(dfXlsxSubsetAbus, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+
+dfXlsxSubsetMrsiSnr <- subset(dfXlsxSubsetMrsi, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfXlsxSubsetMorphologySnr <- subset(dfXlsxSubsetMorphology, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfXlsxSubsetCytologicalSnr <- subset(dfXlsxSubsetCytological, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfXlsxSubsetMalignancySnr <- subset(dfXlsxSubsetMalignancy, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfXlsxSubsetReceptorsSnr <- subset(dfXlsxSubsetReceptors, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+
+
+## Gr1 --------------------------------------------------------------
+dfXlsxSubsetMmgGr1 <- subset(dfXlsxSubsetMmg, group_separation == gr_US)
+dfXlsxSubsetAbusGr1 <- subset(dfXlsxSubsetAbus, group_separation == gr_US)
+
+dfXlsxSubsetMrsiGr1 <- subset(dfXlsxSubsetMrsi, group_separation == gr_US)
+dfXlsxSubsetMorphologyGr1 <- subset(dfXlsxSubsetMorphology, group_separation == gr_US)
+dfXlsxSubsetCytologicalGr1 <- subset(dfXlsxSubsetCytological, group_separation == gr_US)
+dfXlsxSubsetMalignancyGr1 <- subset(dfXlsxSubsetMalignancy, group_separation == gr_US)
+dfXlsxSubsetReceptorsGr1 <- subset(dfXlsxSubsetReceptors, group_separation == gr_US)
+
+## Gr2 --------------------------------------------------------------
+
+dfXlsxSubsetMmgGr2 <- subset(dfXlsxSubsetMmg, group_separation == gr_US_MMG)
+dfXlsxSubsetAbusGr2 <- subset(dfXlsxSubsetAbus, group_separation == gr_US_MMG)
+
+dfXlsxSubsetMrsiGr2 <- subset(dfXlsxSubsetMrsi, group_separation == gr_US_MMG)
+dfXlsxSubsetMorphologyGr2 <- subset(dfXlsxSubsetMorphology, group_separation == gr_US_MMG)
+dfXlsxSubsetCytologicalGr2 <- subset(dfXlsxSubsetCytological, group_separation == gr_US_MMG)
+dfXlsxSubsetMalignancyGr2 <- subset(dfXlsxSubsetMalignancy, group_separation == gr_US_MMG)
+dfXlsxSubsetReceptorsGr2 <- subset(dfXlsxSubsetReceptors, group_separation == gr_US_MMG)
+
+## Gr3 --------------------------------------------------------------
+
+dfXlsxSubsetMmgGr3 <- subset(dfXlsxSubsetMmg, group_separation == gr_US_ABUS)
+dfXlsxSubsetAbusGr3 <- subset(dfXlsxSubsetAbus, group_separation == gr_US_ABUS)
+
+dfXlsxSubsetMrsiGr3 <- subset(dfXlsxSubsetMrsi, group_separation == gr_US_ABUS)
+dfXlsxSubsetMorphologyGr3 <- subset(dfXlsxSubsetMorphology, group_separation == gr_US_ABUS)
+dfXlsxSubsetCytologicalGr3 <- subset(dfXlsxSubsetCytological, group_separation == gr_US_ABUS)
+dfXlsxSubsetMalignancyGr3 <- subset(dfXlsxSubsetMalignancy, group_separation == gr_US_ABUS)
+dfXlsxSubsetReceptorsGr3 <- subset(dfXlsxSubsetReceptors, group_separation == gr_US_ABUS)
+
+
+## Gr4 --------------------------------------------------------------
+
+dfXlsxSubsetMmgGr4 <- subset(dfXlsxSubsetMmg, group_separation == gr_US_MMG_ABUS)
+dfXlsxSubsetAbusGr4 <- subset(dfXlsxSubsetAbus, group_separation == gr_US_MMG_ABUS)
+
+dfXlsxSubsetMrsiGr4 <- subset(dfXlsxSubsetMrsi, group_separation == gr_US_MMG_ABUS)
+dfXlsxSubsetMorphologyGr4 <- subset(dfXlsxSubsetMorphology, group_separation == gr_US_MMG_ABUS)
+dfXlsxSubsetCytologicalGr4 <- subset(dfXlsxSubsetCytological, group_separation == gr_US_MMG_ABUS)
+dfXlsxSubsetMalignancyGr4 <- subset(dfXlsxSubsetMalignancy, group_separation == gr_US_MMG_ABUS)
+dfXlsxSubsetReceptorsGr4 <- subset(dfXlsxSubsetReceptors, group_separation == gr_US_MMG_ABUS)
+
+
+
+
+# Nodle_block --------------------------------------------------------------
+dfXlsxNodleUs <- subset(dfXlsx,dfXlsx$us_is_nodle == "Да")
+dfXlsxNodleMmg <- subset(dfXlsx,dfXlsx$mmg_is_nodle == "Да")
+dfXlsxNodleAbus <- subset(dfXlsx,dfXlsx$abus_is_nodle == "Да")
+
+## Jun --------------------------------------------------------------
+dfXlsxNodleUsJun <- subset(dfXlsxNodleUs, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxNodleMmgJun <- subset(dfXlsxNodleMmg, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxNodleAbusJun <- subset(dfXlsxNodleAbus, group_separation == gr_US | group_separation ==gr_US_ABUS)
+
+## Sin --------------------------------------------------------------
+dfXlsxNodleUsSnr <- subset(dfXlsxNodleUs, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfXlsxNodleMmgSnr <- subset(dfXlsxNodleMmg, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+dfXlsxNodleAbusSnr <- subset(dfXlsxNodleAbus, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+
+## Gr1 --------------------------------------------------------------
+dfXlsxNodleUsGr1 <- subset(dfXlsxNodleUs, group_separation == gr_US)
+dfXlsxNodleMmgGr1 <- subset(dfXlsxNodleMmg, group_separation == gr_US)
+dfXlsxNodleAbusGr1 <- subset(dfXlsxNodleAbus, group_separation == gr_US)
+## Gr2 --------------------------------------------------------------
+dfXlsxNodleUsGr2 <- subset(dfXlsxNodleUs, group_separation == gr_US_MMG)
+dfXlsxNodleMmgGr2 <- subset(dfXlsxNodleMmg, group_separation == gr_US_MMG)
+dfXlsxNodleAbusGr2 <- subset(dfXlsxNodleAbus, group_separation == gr_US_MMG)
+
+
+
+## Gr3 --------------------------------------------------------------
+dfXlsxNodleUsGr3 <- subset(dfXlsxNodleUs, group_separation == gr_US_ABUS)
+dfXlsxNodleMmgGr3 <- subset(dfXlsxNodleMmg, group_separation == gr_US_ABUS)
+dfXlsxNodleAbusGr3 <- subset(dfXlsxNodleAbus, group_separation == gr_US_ABUS)
+
+## Gr4 --------------------------------------------------------------
+dfXlsxNodleUsGr4 <- subset(dfXlsxNodleUs, group_separation == gr_US_MMG_ABUS)
+dfXlsxNodleMmgGr4 <- subset(dfXlsxNodleMmg, group_separation == gr_US_MMG_ABUS)
+dfXlsxNodleAbusGr4 <- subset(dfXlsxNodleAbus, group_separation == gr_US_MMG_ABUS)
 
 
 # Calc_block --------------------------------------------------------------

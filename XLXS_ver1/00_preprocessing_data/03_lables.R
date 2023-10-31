@@ -897,20 +897,61 @@ dfXlsx$tumor_receptors	<- 	factor(dfXlsx$tumor_receptors,
                                          "0"="не проводилось",
                                          "1"="РЭ",
                                          "2"="РП",
-                                         "3"="Her-2\neu",
+                                         "3"="Her-2_neu",
                                          "4"= "РЭ+РП",
-                                         "5"="РЭ+Her2\neu",
-                                         "6"= "РП+Her2\neu",
-                                         "7"="РЭ+РП+Her-2\neu",
+                                         "5"="РЭ+Her2_neu",
+                                         "6"= "РП+Her2_neu",
+                                         "7"="РЭ+РП+Her-2_neu",
                                          "8"="негатив",
-                                         "9"="РЭ+РП+Her-2\neu негатив"
+                                         "9"="РЭ+РП+Her-2_neu негатив"
                                          
                                        ))
 
 
 
+# Add columns -------------------------------------------------------------
 
-#####Add columns####
+
+dfXlsx$is_mmg <- factor(ifelse
+                              (dfXlsx$mmg_conclusion_skin == "не выполнялась", 0, 1),
+                              labels = c("Нет", "Да"))
+dfXlsx$is_abus <- factor(ifelse
+                        (dfXlsx$abus_skin == "не проводилось", 0, 1),
+                        labels = c("Нет", "Да"))
+
+dfXlsx$is_Mrsi <- factor(ifelse
+                         (dfXlsx$mrsi_data == "не проводилось", 0, 1),
+                         labels = c("Нет", "Да"))
+
+dfXlsx$is_Morphology <- factor(ifelse
+                        (dfXlsx$tumor_morphology_structure == "не проводилось", 0, 1),
+                        labels = c("Нет", "Да"))
+
+dfXlsx$is_Cytological <- factor(ifelse
+                         (dfXlsx$cytological_conclusion == "не проводилось", 0, 1),
+                         labels = c("Нет", "Да"))
+
+dfXlsx$is_GradeMalignancy <- factor(ifelse
+                             (dfXlsx$degree_malignancy == "не проводилось"| dfXlsx$mmg_nodle == "нет узла", 0, 1),
+                             labels = c("Нет", "Да"))
+
+dfXlsx$is_Receptors <- factor(ifelse
+                                    (dfXlsx$tumor_receptors == "не проводилось"| dfXlsx$mmg_nodle == "нет узла", 0, 1),
+                                    labels = c("Нет", "Да"))
+
+
+dfXlsx$us_is_nodle <- factor(ifelse
+                            (dfXlsx$us_formation == "нет", 0, 1),
+                            labels = c("Нет", "Да"))
+
+dfXlsx$abus_is_nodle <- factor(ifelse
+                              (dfXlsx$abus_nodle_size == "не проводилось"| dfXlsx$abus_nodle_size == "нет", 0, 1),
+                              labels = c("Нет", "Да"))
+
+dfXlsx$mmg_is_nodle <- factor(ifelse
+                               (dfXlsx$mmg_nodle == "не проводилось"| dfXlsx$mmg_nodle == "нет узла", 0, 1),
+                               labels = c("Нет", "Да"))
+
 
 dfXlsx$mmg_is_calc <- factor(ifelse
                              (dfXlsx$mmg_calcifications == "нет"
