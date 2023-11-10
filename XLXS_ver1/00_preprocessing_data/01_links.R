@@ -4,6 +4,7 @@
 
 
 FileName <- "~/Documents/Science/ABUS_US_diagnostics/Текст_ABUS_US.txt"
+FileName1 <- "~/Documents/Science/ABUS_US_diagnostics/Текст_ABUS_US.csv"
 
 #XlxsWay <- "~/Documents/Science/ABUS_US_diagnostics/ABUS_US_MG_WXLS.xlsx"
 

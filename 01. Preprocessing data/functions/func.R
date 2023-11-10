@@ -94,7 +94,7 @@ Table_numericKr<-function(parametr,database,dev )
 
 
 
-#Quantity_discr("В группе",df_Abus$Group)
+# Quantity_discr("Кожа была ",dfXlsxJun$us_skin)
 Quantity_discr<-function(parametr,database){
   write.table(parametr, FileName, sep="*", append = TRUE)
   n <- length(data.frame(table(database), row.names = TRUE )$Freq)
@@ -114,11 +114,14 @@ Quantity_discr<-function(parametr,database){
                        round(prop.test(table(database)[i+1], length(database))$conf.int[2],2),
                        "]."
                        , sep=""))
-    write.table(Descr, FileName, sep="*", append = TRUE)
-    i<-i+1
     
+    i<-i+1
+    write.table(Descr, FileName, sep="*", append = TRUE)
+   
   }
 }
+
+
 
 
 #Quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary,dfXlsxGr3$diagnosis_primary)
@@ -126,9 +129,10 @@ Quantity_table<-function(parametr,database1,database2){
 
   
   n <- length(data.frame(table(database1), row.names = TRUE )$Freq)
-  Descr<-print(paste(parametr,"|Процентная доля|95% ДИ|",parametr,"|Процентная доля|95% ДИ |","p-value|
-|------|------|------|------|------|------|------|
-                     "))
+  Descr<-print(paste(parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
+|------|------|------|------|------|
+|Группы|Группа X|------|Группа Y|------|
+"))
   write.table(Descr, FileName, sep="|", append = TRUE)
   i<-0
   while (i<n){
@@ -144,8 +148,6 @@ Quantity_table<-function(parametr,database1,database2){
                        ";",
                        round(prop.test(table(database1)[i+1], length(database1))$conf.int[2],2),
                        "]|",
-                       data.frame(table(database2))[i+1,1],
-                       "|",
                        data.frame(round(prop.table(table(database2)),5))[i+1,2]*100,
                        "% (", 
                        data.frame(table(database2))[i+1,2],
@@ -292,29 +294,87 @@ chapter_3_4_text <- function(text, in_group1, in_group2, vector1, vector2, vecto
 SSA_text <- function(predicted_value, expected_value, method){
   x <- SSA(predicted_value, expected_value)
   Описание<-print(paste("При оценке ", method," количество истинно верно определенных образований как злокачественные было ",x[["table"]][4], 
-                        ",  количество верно опредленных образований как доброкачественные было", x[["table"]][1],
-                        ", количество  неверно определенных образований как злокачественные было ", x[["table"]][2],
-                        " и количество  неопределенных злокачественных образований как злокачественные было ",x[["table"]][3], ".",
+                        ",  количество верно определённых образований как доброкачественные было", x[["table"]][1],
+                        ", количество неверно определенных образований как злокачественные было ", x[["table"]][2],
+                        " и количество неопределенных злокачественных образований как злокачественные было ",x[["table"]][3], ".",
                         "Точность метода составила", round(x[["overall"]][["Accuracy"]],2),
                         "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),",",round(x[["overall"]][["AccuracyUpper"]],2) ,"].",
                         "P-Value модели составил",round(x[["overall"]][["AccuracyPValue"]],2), 
                         "что означает, что модель отличается от точности нулевой гипотезы.",
                         "Коэфициент Kappa составил", round(x[["overall"]][["Kappa"]],2),
                         " показывает, что метод не имеет существенно отличную от контрольного метода частоту верно определенных результатов",
-                        "(количество  истино положительных и отрицательных результатов).",
+                        "(количество  истинно положительных и отрицательных результатов).",
                         "Тест Макнемара составил", round(x[["overall"]][["McnemarPValue"]],2),
                         " показывает, что метод не имеет существенно отличную от контрольного метода частоту ошибок",
                         "(количество ложноположительных и ложноотрицательных результатов).",
                         "Чувствительность метода составила", round(x[["byClass"]][["Sensitivity"]],2),
-                        ". Спецефичность метода составила", round(x[["byClass"]][["Specificity"]],2),
+                        ". Специфичность метода составила", round(x[["byClass"]][["Specificity"]],2),
                         ". Доля положительных прогнозов составила", round(x[["byClass"]][["Pos Pred Value"]],2),
                         ". Доля отрицательных прогнозов составила", round(x[["byClass"]][["Neg Pred Value"]],2),
                         ". Доля истинно положительных случаев в наборе данных составила", round(x[["byClass"]][["Prevalence"]],2),
-                        ". Доля истинно положительных случаев, правильно определнный методом составила", round(x[["byClass"]][["Detection Rate"]],2),
-                        ". Отбалансированная точность метода составила", round(x[["byClass"]][["Balanced Accuracy"]],2)
+                        ". Доля истинно положительных случаев, правильно определённых методом составила", round(x[["byClass"]][["Detection Rate"]],2),
+                        ". Отбалансированная точность метода составила", round(x[["byClass"]][["Balanced Accuracy"]],2),"
+
+                        (Т -Точность, P - P-Value, КК - Коэффициент Kappa, ТМ -Тест Макнемара, Ч-Чувствительность, Сп -Специфичность, ОТ- Отбалансированная точность)
+                        | Метод | Т       |P       | КК | ТМ  |  Ч  | Сп | ОТ|
+                        |",method ,"|"
+                        , round(x[["overall"]][["Accuracy"]],2),
+                        "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),",",round(x[["overall"]][["AccuracyUpper"]],2) ,"].","|"
+                        ,round(x[["overall"]][["AccuracyPValue"]],2),"|"
+                        ,round(x[["overall"]][["Kappa"]],2),"|"
+                        ,round(x[["overall"]][["McnemarPValue"]],2),"|"
+                        ,round(x[["byClass"]][["Sensitivity"]],2),"|"
+                        ,round(x[["byClass"]][["Specificity"]],2),"|"
+                        ,round(x[["byClass"]][["Balanced Accuracy"]],2),"|"
 
                         
                         ))
+  
+  write.table(Описание, FileName, sep="*", append = TRUE)
+  
+}
+
+
+# SSA_textClac(dfXlsxJun$us_is_tumor,dfXlsxJun$hist_is_tumor, "УЗИ в группе А")
+SSA_textClac <- function(predicted_value, expected_value, method){
+  x <- SSA(predicted_value, expected_value)
+  Описание<-print(paste("При оценке ", method," количество истинно верно определенных образований как отсутствие кальцината было ",x[["table"]][4], 
+                        ",  количество верно определённых образований как наличие кальцината было", x[["table"]][1],
+                        ", количество неверно определенных кальцинатов как отсутствие кальцината было ", x[["table"]][2],
+                        " и количество определенных истинно отсутствовавших кальциантов как найденное было ",x[["table"]][3], ".",
+                        "Точность метода составила", round(x[["overall"]][["Accuracy"]],2),
+                        "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),",",round(x[["overall"]][["AccuracyUpper"]],2) ,"].",
+                        "P-Value модели составил",round(x[["overall"]][["AccuracyPValue"]],2), 
+                        "что означает, что модель отличается от точности нулевой гипотезы.",
+                        "Коэфициент Kappa составил", round(x[["overall"]][["Kappa"]],2),
+                        " показывает, что метод не имеет существенно отличную от контрольного метода частоту верно определенных результатов",
+                        "(количество  истинно положительных и отрицательных результатов).",
+                        "Тест Макнемара составил", round(x[["overall"]][["McnemarPValue"]],2),
+                        " показывает, что метод не имеет существенно отличную от контрольного метода частоту ошибок",
+                        "(количество ложноположительных и ложноотрицательных результатов).",
+                        "Чувствительность метода составила", round(x[["byClass"]][["Sensitivity"]],2),
+                        ". Специфичность метода составила", round(x[["byClass"]][["Specificity"]],2),
+                        ". Доля положительных прогнозов составила", round(x[["byClass"]][["Pos Pred Value"]],2),
+                        ". Доля отрицательных прогнозов составила", round(x[["byClass"]][["Neg Pred Value"]],2),
+                        ". Доля истинно положительных случаев в наборе данных составила", round(x[["byClass"]][["Prevalence"]],2),
+                        ". Доля истинно положительных случаев, правильно определённых методом составила", round(x[["byClass"]][["Detection Rate"]],2),
+                        ". Отбалансированная точность метода составила", round(x[["byClass"]][["Balanced Accuracy"]],2),"
+
+                        (Т -Точность, P - P-Value, КК - Коэффициент Kappa, ТМ -Тест Макнемара, Ч-Чувствительность, Сп -Специфичность, ОТ- Отбалансированная точность)
+                        | Метод | Т       |P       | КК | ТМ  |  Ч  | Сп | ОТ|
+                        |------------|------------|------------|------------|------------|------------|------------|------------|
+                        |",method ,"|"
+                        , round(x[["overall"]][["Accuracy"]],2),
+                        "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),",",round(x[["overall"]][["AccuracyUpper"]],2) ,"].","|"
+                        ,round(x[["overall"]][["AccuracyPValue"]],2),"|"
+                        ,round(x[["overall"]][["Kappa"]],2),"|"
+                        ,round(x[["overall"]][["McnemarPValue"]],2),"|"
+                        ,round(x[["byClass"]][["Sensitivity"]],2),"|"
+                        ,round(x[["byClass"]][["Specificity"]],2),"|"
+                        ,round(x[["byClass"]][["Balanced Accuracy"]],2),"|"
+                        
+                        
+  ))
   
   write.table(Описание, FileName, sep="*", append = TRUE)
   

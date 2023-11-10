@@ -1,3 +1,131 @@
+#####Write Xlsx####
+setwd("~/Documents/Science/ABUS_US_diagnostics")
+write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
+
+dfXlsx <- read.xlsx(xlsxFile = XlxsWayLab,
+                    sheet = 'Data')
+## to factor --------------------------------------------------------------
+dfXlsx$group_separation <- as.factor(dfXlsx$group_separation)
+dfXlsx$diagnosis_primary <- as.factor(dfXlsx$diagnosis_primary)
+dfXlsx$side <- as.factor(dfXlsx$side)
+dfXlsx$satus_reproductive <- as.factor(dfXlsx$satus_reproductive)
+dfXlsx$complaints <- as.factor(dfXlsx$complaints)
+dfXlsx$breast_surgery_before <- as.factor(dfXlsx$breast_surgery_before)
+dfXlsx$skin_symptoms <- as.factor(dfXlsx$skin_symptoms)
+dfXlsx$nipple_retraction <- as.factor(dfXlsx$nipple_retraction)
+dfXlsx$nipple_release <- as.factor(dfXlsx$nipple_release)
+dfXlsx$quadrant <- as.factor(dfXlsx$quadrant)
+dfXlsx$genetics <- as.factor(dfXlsx$genetics)
+dfXlsx$hormonal_medications <- as.factor(dfXlsx$hormonal_medications)
+dfXlsx$us_skin <- as.factor(dfXlsx$us_skin)             
+dfXlsx$us_nodle_contour <- as.factor(dfXlsx$us_nodle_contour) 
+dfXlsx$us_ducts <- as.factor(dfXlsx$us_ducts) 
+dfXlsx$us_background <- as.factor(dfXlsx$us_background) 
+dfXlsx$us_formation <- as.factor(dfXlsx$us_formation) 
+dfXlsx$us_form <- as.factor(dfXlsx$us_form) 
+dfXlsx$us_nodle_size <- as.factor(dfXlsx$us_nodle_size) 
+dfXlsx$us_echogenicity_formation <- as.factor(dfXlsx$us_echogenicity_formation)
+dfXlsx$us_structure <- as.factor(dfXlsx$us_structure)
+dfXlsx$us_formation_blood_flow <- as.factor(dfXlsx$us_formation_blood_flow)
+dfXlsx$us_elastography <- as.factor(dfXlsx$us_elastography) 
+dfXlsx$us_region_lymph_nodes <- as.factor(dfXlsx$us_region_lymph_nodes) 
+dfXlsx$us_diagnosis <- as.factor(dfXlsx$us_diagnosis)
+dfXlsx$us_doctor <- as.factor(dfXlsx$us_doctor)
+dfXlsx$us_number_nodles <- as.factor(dfXlsx$us_number_nodles)
+dfXlsx$us_category_birads <- as.factor(dfXlsx$us_category_birads)
+dfXlsx$mmg_conclusion_skin <- as.factor(dfXlsx$mmg_conclusion_skin) 
+dfXlsx$mmg_areola <- as.factor(dfXlsx$mmg_areola) 
+dfXlsx$mmg_nipple <- as.factor(dfXlsx$mmg_nipple)
+dfXlsx$mmg_background_breast <- as.factor(dfXlsx$mmg_background_breast)
+dfXlsx$mmg_nodle <- as.factor(dfXlsx$mmg_nodle)
+dfXlsx$mmg_nodle_contour <- as.factor(dfXlsx$mmg_nodle_contour) 
+dfXlsx$mmg_nodle_size <- as.factor(dfXlsx$mmg_nodle_size) 
+dfXlsx$mmg_calcifications <- as.factor(dfXlsx$mmg_calcifications)
+dfXlsx$mmg_number_formations_visualized <- as.factor(dfXlsx$mmg_number_formations_visualized)
+dfXlsx$mmg_axillary_lymph_nodes <- as.factor(dfXlsx$mmg_axillary_lymph_nodes)
+dfXlsx$mmg_conclusion <- as.factor(dfXlsx$mmg_conclusion)
+dfXlsx$type_structure_acr <- as.factor(dfXlsx$type_structure_acr)
+dfXlsx$mmg_number_nodles <- as.factor(dfXlsx$mmg_number_nodles)
+dfXlsx$mmg_category_birads <- as.factor(dfXlsx$mmg_category_birads)
+dfXlsx$us_calcinates_micro_pure <- as.factor(dfXlsx$us_calcinates_micro_pure)
+dfXlsx$abus_skin <- as.factor(dfXlsx$abus_skin)
+dfXlsx$abus_nodle_size <- as.factor(dfXlsx$abus_nodle_size)
+dfXlsx$abus_nodle_contours <- as.factor(dfXlsx$abus_nodle_contours)
+dfXlsx$abus_echogenicity_formation <- as.factor(dfXlsx$abus_echogenicity_formation)
+dfXlsx$abus_structure <- as.factor(dfXlsx$abus_structure)
+dfXlsx$abus_symptom_retraction <- as.factor(dfXlsx$abus_symptom_retraction)
+dfXlsx$abus_diagnosis <- as.factor(dfXlsx$abus_diagnosis)
+dfXlsx$abus_number_nodles <- as.factor(dfXlsx$abus_number_nodles)
+dfXlsx$abus_category_birads <- as.factor(dfXlsx$abus_category_birads)
+dfXlsx$abus_calcinates <- as.factor(dfXlsx$abus_calcinates)
+dfXlsx$mrsi_data <- as.factor(dfXlsx$mrsi_data)
+dfXlsx$mrsi_number_nodles <- as.factor(dfXlsx$mrsi_number_nodles)
+dfXlsx$tumor_morphology_structure <- as.factor(dfXlsx$tumor_morphology_structure)
+dfXlsx$cytological_conclusion <- as.factor(dfXlsx$cytological_conclusion)
+dfXlsx$degree_malignancy <- as.factor(dfXlsx$degree_malignancy)
+dfXlsx$mutation_brca <- as.factor(dfXlsx$mutation_brca)
+dfXlsx$tumor_receptors <- as.factor(dfXlsx$tumor_receptors)
+dfXlsx$is_mmg <- as.factor(dfXlsx$is_mmg)
+dfXlsx$is_abus <- as.factor(dfXlsx$is_abus)
+dfXlsx$is_Mrsi <- as.factor(dfXlsx$is_Mrsi)
+dfXlsx$is_Morphology <- as.factor(dfXlsx$is_Morphology)
+dfXlsx$is_Cytological <- as.factor(dfXlsx$is_Cytological)
+dfXlsx$is_GradeMalignancy <- as.factor(dfXlsx$is_GradeMalignancy)
+dfXlsx$is_Receptors <- as.factor(dfXlsx$is_Receptors)
+dfXlsx$us_is_nodle <- as.factor(dfXlsx$us_is_nodle)
+dfXlsx$abus_is_nodle <- as.factor(dfXlsx$abus_is_nodle)
+dfXlsx$mmg_is_nodle <- as.factor(dfXlsx$mmg_is_nodle)
+dfXlsx$mmg_is_calc <- as.factor(dfXlsx$mmg_is_calc)
+dfXlsx$us_is_calc <- as.factor(dfXlsx$us_is_calc)
+dfXlsx$abus_is_calc <- as.factor(dfXlsx$abus_is_calc)
+dfXlsx$us_is_tumor <- as.factor(dfXlsx$us_is_tumor)
+dfXlsx$mmg_is_tumor <- as.factor(dfXlsx$mmg_is_tumor)
+dfXlsx$abus_is_tumor <- as.factor(dfXlsx$abus_is_tumor)
+dfXlsx$hist_is_tumor <- as.factor(dfXlsx$hist_is_tumor)
+
+#####Add dataframe####
+nUs3 <- length(dfXlsxGr3$us_nodle_contour)
+nUs4 <-  length(dfXlsxGr4$us_nodle_contour)
+
+groupSep <- c(rep("jun",nUs3),rep("snr",nUs4),rep("jun",nUs3),rep("snr",nUs4))
+methodsVizualisation <- c(rep("us",nUs3),rep("us",nUs4),rep("abus",nUs3),rep("abus",nUs4))
+nodleContour <- c(dfXlsxGr3$us_nodle_contour,dfXlsxGr4$us_nodle_contour,dfXlsxGr3$abus_nodle_contours,dfXlsxGr4$abus_nodle_contours)
+nodleSize <- c(dfXlsxGr3$us_nodle_size,dfXlsxGr4$us_nodle_size,dfXlsxGr3$abus_nodle_size,dfXlsxGr4$abus_nodle_size)
+echogenicityFormation <- c(dfXlsxGr3$us_echogenicity_formation,dfXlsxGr4$us_echogenicity_formation,dfXlsxGr3$abus_echogenicity_formation,dfXlsxGr4$abus_echogenicity_formation)
+structure <- c(dfXlsxGr3$us_structure,dfXlsxGr4$us_structure,dfXlsxGr3$abus_structure,dfXlsxGr4$abus_structure)
+diagnosis <- c(dfXlsxGr3$us_diagnosis,dfXlsxGr4$us_diagnosis,dfXlsxGr3$abus_diagnosis,dfXlsxGr4$abus_diagnosis)
+time <- c(dfXlsxGr3$us_time,dfXlsxGr4$us_time,dfXlsxGr3$abus_time,dfXlsxGr4$abus_time)
+numberNodles <- c(dfXlsxGr3$us_number_nodles,dfXlsxGr4$us_number_nodles,dfXlsxGr3$abus_number_nodles,dfXlsxGr4$abus_number_nodles)
+categoryBirads	<- c(dfXlsxGr3$us_category_birads,dfXlsxGr4$us_category_birads,dfXlsxGr3$abus_category_birads,dfXlsxGr4$abus_category_birads)
+calcinates <- c(dfXlsxGr3$us_calcinates_micro_pure,dfXlsxGr4$us_calcinates_micro_pure,dfXlsxGr3$abus_calcinates	,dfXlsxGr4$abus_calcinates)
+location <- c(dfXlsxGr3$us_formation,dfXlsxGr4$us_formation,dfXlsxGr3$abus_formation,dfXlsxGr4$abus_formation)
+
+dfXlsxMetComp <- data.frame("groupSep" = groupSep, 
+                            "methodsVizualisation" = methodsVizualisation, 
+                            "nodleContour" = nodleContour,
+                            "nodleSize" = nodleSize,
+                            "echogenicityFormation" = echogenicityFormation,
+                            "structure" = structure,
+                            "diagnosis"= diagnosis,
+                            "time"=time,
+                            "numberNodles"=numberNodles,
+                            "categoryBirads"=categoryBirads,
+                            "calcinates"=calcinates,
+                            "location"=location
+)
+
+dfXlsxMetComp <- subset(dfXlsxMetComp, nodleContour !="нет узла")
+write.xlsx(dfXlsxMetComp, "ABUSvsUS_lab.xlsx", sheetName = "Data")
+
+dfXlsxMetCompJun <- subset(dfXlsxMetComp, groupSep == "jun")
+dfXlsxMetCompJunUs <- subset(dfXlsxMetCompJun, methodsVizualisation == "us")
+dfXlsxMetCompJunAbus <- subset(dfXlsxMetCompJun, methodsVizualisation == "abus")
+
+
+dfXlsxMetCompSnr <- subset(dfXlsxMetComp, groupSep == "snr")
+dfXlsxMetCompSnrUs <- subset(dfXlsxMetCompSnr, methodsVizualisation == "us")
+dfXlsxMetCompSnrAbus <- subset(dfXlsxMetCompSnr, methodsVizualisation == "abus")
+
 # Mathirials -----------------------------------------------------------------
 ## Jun --------------------------------------------------------------
 dfXlsxJun <- subset(dfXlsx, group_separation == gr_US | group_separation ==gr_US_ABUS)
@@ -19,12 +147,9 @@ dfXlsxGr3 <- subset(dfXlsx, group_separation == gr_US_ABUS)
 dfXlsxGr4 <- subset(dfXlsx, group_separation == gr_US_MMG_ABUS)
 
 
-#####Write Xlsx####
-setwd("~/Documents/Science/ABUS_US_diagnostics")
-write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
 
-dfXlsx <- read.xlsx(xlsxFile = XlxsWayLab,
-                    sheet = 'Data')
+
+
 
 # Mmg/Abus/Mrsi/Hist_subset_block --------------------------------------------------------------
 dfXlsxSubsetMmg <- subset(dfXlsx,dfXlsx$is_mmg == "Да")
@@ -171,49 +296,8 @@ dfXlsxCalcGr4 <- subset(dfXlsxCalc, group_separation == gr_US_MMG_ABUS)
 
 
 
-#####Add dataframe####
-num_Jun <- length(dfXlsxGr3$us_calcinates_micro_pure)
-type_exam_1 <- as.factor(rep(1,num_Jun))
-type_exam_2 <- as.factor(rep(2,num_Jun))
-type_exam <- c(type_exam_1, type_exam_2)
-calcinates_micro_pure <- c(dfXlsxGr3$us_calcinates_micro_pure, dfXlsxGr3$abus_calcinates_micro_pure)
-df_calcinates_micro_pureJun <- data.frame(cbind(type_exam,calcinates_micro_pure))
-df_calcinates_micro_pureJun$type_exam	<- 	factor(df_calcinates_micro_pureJun$type_exam,
-                                              levels=c(1,2),
-                                              labels = c(
-                                                "1"="УЗИ",
-                                                "2"="ABUS"))
-df_calcinates_micro_pureJun$calcinates_micro_pure <- 	factor(df_calcinates_micro_pureJun$calcinates_micro_pure,
-                                           levels=c(1,2,3,4),
-                                           labels = c(
-                                             "1"="нет",
-                                             "2"="определяются",
-                                             "3"="макрокальцинаты",
-                                             "4"="микрокальцинаты" 
-                                             
-                                           ))
 
 
 
-num_Sin <- length(dfXlsxGr4$us_calcinates_micro_pure)
-type_exam_1 <- as.factor(rep(1,num_Sin))
-type_exam_2 <- as.factor(rep(2,num_Sin))
-type_exam <- c(type_exam_1, type_exam_2)
-calcinates_micro_pure <- c(dfXlsxGr4$us_calcinates_micro_pure, dfXlsxGr4$abus_calcinates_micro_pure)
-df_calcinates_micro_pureSnr <- data.frame(cbind(type_exam,calcinates_micro_pure))
-df_calcinates_micro_pureSnr$type_exam	<- 	factor(df_calcinates_micro_pureSnr$type_exam,
-                                                 levels=c(1,2),
-                                                 labels = c(
-                                                   "1"="УЗИ",
-                                                   "2"="ABUS"))
-df_calcinates_micro_pureSnr$calcinates_micro_pure <- 	factor(df_calcinates_micro_pureSnr$calcinates_micro_pure,
-                                                             levels=c(1,2,3,4),
-                                                             labels = c(
-                                                               "1"="нет",
-                                                               "2"="определяются",
-                                                               "3"="макрокальцинаты",
-                                                               "4"="микрокальцинаты" 
-                                                               
-                                                             ))
 
 

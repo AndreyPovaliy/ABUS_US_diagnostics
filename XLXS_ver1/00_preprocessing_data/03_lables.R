@@ -264,7 +264,7 @@ dfXlsx$us_category_birads	<- 	factor(dfXlsx$us_category_birads,
 
 #####USnodleContour####
 dfXlsx$us_nodle_contour	<- 	factor(dfXlsx$us_nodle_contour,
-                                             levels=c(0,1,2,3,4,5,6,7),
+                                             levels=c(0,1,2,3,4,5,6,7,8),
                                              labels = c(
                                                "0"="нет узла",
                                                "1"="ровные",
@@ -273,7 +273,8 @@ dfXlsx$us_nodle_contour	<- 	factor(dfXlsx$us_nodle_contour,
                                                "4"="звездчатые",
                                                "5"="единичные тяжи по одному из контуров",
                                                "6"= "другое",
-                                               "7"="волнистые"
+                                               "7"="волнистые",
+                                               "8"= "нарушение архитектоники"
                                               
                                              ))
 
@@ -415,10 +416,13 @@ dfXlsx$us_calcinates_micro_pure <- 	factor(dfXlsx$us_calcinates_micro_pure,
                                                             ))
 
 
-
-
-
-
+#####us_doctor####
+dfXlsx$us_doctor <- 	factor(dfXlsx$us_doctor,
+                                           levels=c(1,2),
+                                           labels = c(
+                                             "1"="врач с опытом более 10 лет",
+                                             "2"="врач с опытом 3 года"
+                                             ))
 
 
 #####_02_MMG####
@@ -691,7 +695,7 @@ dfXlsx$abus_number_nodles	<- 	factor(dfXlsx$abus_number_nodles,
                                              levels=c(0,1,2,3,4,5,6),
                                              labels = c(
                                                "0"="не проводилось",
-                                               "1"="не опред",
+                                               "1"="не определяется",
                                                "2"="один",
                                                "3"="два",
                                                "4"="три",
@@ -755,8 +759,8 @@ dfXlsx$abus_nodle_contours	<- 	factor(dfXlsx$abus_nodle_contours,
                                                      "1"="ровные",
                                                      "2"="неровные",
                                                      "3"="полициклические",
-                                                     "4"="четкие",
-                                                     "5"="нечеткие",
+                                                     "4"="ровные",
+                                                     "5"="звездчатые",
                                                      "6"="волнистые",
                                                      "7"= "другое",
                                                      "8"= "нарушение архитектоники",
@@ -822,7 +826,7 @@ dfXlsx$mrsi_number_nodles	<- 	factor(dfXlsx$mrsi_number_nodles,
                                              levels=c(0,1,2,3,4,5,6),
                                              labels = c(
                                                "0"="не проводилось",
-                                               "1"="не определены",
+                                               "1"="не определяется",
                                                "2"="один",
                                                "3"="два",
                                                "4"="три",
