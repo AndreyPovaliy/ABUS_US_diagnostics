@@ -760,6 +760,7 @@ ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter3/imag
 escribir ("## 3.3 Определение чувствительности, спецефичности и точности методов")
 
 SSA_text(dfXlsxGr1$us_is_tumor,dfXlsxGr1$hist_is_tumor, "УЗИ в группе А")
+
 # SSA_text(dfXlsxGr1$mmg_is_tumor,dfXlsxGr1$hist_is_tumor, "ММГ в группе А")
 
 SSA_text(dfXlsxGr3$us_is_tumor,dfXlsxGr3$hist_is_tumor, "УЗИ в группе B")
