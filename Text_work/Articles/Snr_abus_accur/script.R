@@ -2,7 +2,7 @@ source("~/Documents/Science/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/
 library(ggplot2)
 library(ggpie)
 library(caret)
-
+library(pROC)
 
 
 # Matherials --------------------------------------------------------------
@@ -166,7 +166,7 @@ article_text("по результатам выполнения УЗИ ",
              dfXlsxSnr$group_separation)
 escribir ("![](img/us_category_birads.png)")
 SnrPlot_us_category_birads<-GeomBar(dfXlsxSnr,dfXlsxSnr$us_category_birads,dfXlsxSnr$group_separation,"Категория BI-RADS")
-ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Snrior_Abus_Accur/img/us_category_birads.png", 
+ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Snr_Abus_Accur/img/us_category_birads.png", 
        plot = SnrPlot_us_category_birads, units = "in", width = 14, height = 8)
 
 article_text("по результатам выполнения гистологическкого исследования был поставлен дигноз злокачественного образования ",
@@ -181,14 +181,14 @@ escribir ("* Определение чувствительности, спеце
 
 SSA_text(dfXlsxGr2$us_is_tumor,dfXlsxGr2$hist_is_tumor, "УЗИ в группе А")
 
-# SSA_text(dfXlsxGr2$mmg_is_tumor,dfXlsxGr2$hist_is_tumor, "ММГ в группе А")
+SSA_text(dfXlsxGr2$mmg_is_tumor,dfXlsxGr2$hist_is_tumor, "ММГ в группе А")
 
 SSA_text(dfXlsxGr4$us_is_tumor,dfXlsxGr4$hist_is_tumor, "УЗИ в группе B")
-# SSA_text(dfXlsxGr4$mmg_is_tumor,dfXlsxGr2$hist_is_tumor, "ММГ в группе B")
+SSA_text(dfXlsxGr4$mmg_is_tumor,dfXlsxGr4$hist_is_tumor, "ММГ в группе B")
 SSA_text(dfXlsxGr4$abus_is_tumor,dfXlsxGr4$hist_is_tumor, "ABUS в группе B")
 
 SSA_text(dfXlsxSnr$us_is_tumor,dfXlsxSnr$hist_is_tumor, "УЗИ в выборке пациенток до 40 лет")
-# SSA_text(dfXlsxSnr$mmg_is_tumor,dfXlsxSnr$hist_is_tumor, "ММГ в выборке пациенток до 40 лет")
+SSA_text(dfXlsxSnr$mmg_is_tumor,dfXlsxSnr$hist_is_tumor, "ММГ в выборке пациенток до 40 лет")
 # SSA_text(dfXlsxSnr$abus_is_tumor,dfXlsxSnr$hist_is_tumor, "ABUS в выборке пациенток до 40 лет")
 
 escribir ("(Таблица №2)")
@@ -196,7 +196,7 @@ escribir ("Таблица №2.
 Определение точности, P-уровня значимости модели, коэфициент Kappa, Тест Макнемара, чувствительности, специфичности и отбалансированной точности в группах А и B.")
 
 
-library(pROC)
+
 #source("~/Documents/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
 escribir ("* Прогностическая оценка методов *")
 escribir ("На основании полученных данных, пыла построена предсказательная модель изучаемых методов."
