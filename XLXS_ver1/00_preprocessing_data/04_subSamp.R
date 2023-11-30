@@ -83,9 +83,31 @@ dfXlsx$mmg_is_tumor <- as.factor(dfXlsx$mmg_is_tumor)
 dfXlsx$abus_is_tumor <- as.factor(dfXlsx$abus_is_tumor)
 dfXlsx$hist_is_tumor <- as.factor(dfXlsx$hist_is_tumor)
 
+# Mathirials -----------------------------------------------------------------
+## Jun --------------------------------------------------------------
+dfXlsxJun <- subset(dfXlsx, group_separation == gr_US | group_separation ==gr_US_ABUS)
+
+## Sin --------------------------------------------------------------
+dfXlsxSnr <- subset(dfXlsx, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
+
+## Gr1 --------------------------------------------------------------
+dfXlsxGr1 <- subset(dfXlsx, group_separation == gr_US)
+
+## Gr2 --------------------------------------------------------------
+dfXlsxGr2 <- subset(dfXlsx, group_separation == gr_US_MMG)
+
+
+## Gr3 --------------------------------------------------------------
+dfXlsxGr3 <- subset(dfXlsx, group_separation == gr_US_ABUS)
+
+## Gr4 --------------------------------------------------------------
+dfXlsxGr4 <- subset(dfXlsx, group_separation == gr_US_MMG_ABUS)
+
 #####Add dataframe####
 nUs3 <- length(dfXlsxGr3$us_nodle_contour)
 nUs4 <-  length(dfXlsxGr4$us_nodle_contour)
+
+
 
 groupSep <- c(rep("jun",nUs3),rep("snr",nUs4),rep("jun",nUs3),rep("snr",nUs4))
 methodsVizualisation <- c(rep("us",nUs3),rep("us",nUs4),rep("abus",nUs3),rep("abus",nUs4))
@@ -114,7 +136,7 @@ dfXlsxMetComp <- data.frame("groupSep" = groupSep,
                             "location"=location
 )
 
-dfXlsxMetComp <- subset(dfXlsxMetComp, nodleContour !="нет узла")
+dfXlsxMetCompNodle <- subset(dfXlsxMetComp, nodleContour !="нет узла")
 write.xlsx(dfXlsxMetComp, "ABUSvsUS_lab.xlsx", sheetName = "Data")
 
 dfXlsxMetCompJun <- subset(dfXlsxMetComp, groupSep == "jun")
@@ -126,25 +148,7 @@ dfXlsxMetCompSnr <- subset(dfXlsxMetComp, groupSep == "snr")
 dfXlsxMetCompSnrUs <- subset(dfXlsxMetCompSnr, methodsVizualisation == "us")
 dfXlsxMetCompSnrAbus <- subset(dfXlsxMetCompSnr, methodsVizualisation == "abus")
 
-# Mathirials -----------------------------------------------------------------
-## Jun --------------------------------------------------------------
-dfXlsxJun <- subset(dfXlsx, group_separation == gr_US | group_separation ==gr_US_ABUS)
 
-## Sin --------------------------------------------------------------
-dfXlsxSnr <- subset(dfXlsx, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
-
-## Gr1 --------------------------------------------------------------
-dfXlsxGr1 <- subset(dfXlsx, group_separation == gr_US)
-
-## Gr2 --------------------------------------------------------------
-dfXlsxGr2 <- subset(dfXlsx, group_separation == gr_US_MMG)
-
-
-## Gr3 --------------------------------------------------------------
-dfXlsxGr3 <- subset(dfXlsx, group_separation == gr_US_ABUS)
-
-## Gr4 --------------------------------------------------------------
-dfXlsxGr4 <- subset(dfXlsx, group_separation == gr_US_MMG_ABUS)
 
 
 

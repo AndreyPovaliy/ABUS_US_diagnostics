@@ -59,12 +59,11 @@ chapter_3_4_text("Кальцинаты",
                  dfXlsxMetCompSnr$methodsVizualisation)
 escribir ("(Таблица 5.16, Рисунок 5.16).")
 escribir ("Таблица №5.16. Сравнение методов УЗИ и ABUS по показателю \"Кальцинаты\" в группе D.")
-escribir ("![](images5/Snr/calcinates.png)")
+escribir ("![](img/calcinates.png)")
 escribir ("Рисунок №5.16. Сравнение методов УЗИ и ABUS по показателю \"Кальцинаты\" в группе D.")
 CompPlot_calcinates <- GeomBar(dfXlsxMetCompSnr,dfXlsxMetCompSnr$calcinates,dfXlsxMetCompSnr$methodsVizualisation,"Кальцинаты")
 ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Calc_abus_accur/img/calcinates.png", 
        plot = CompPlot_calcinates, units = "in", width = 14, height = 8)
-
 
 
 
@@ -79,7 +78,7 @@ chapter_3_4_text("Категория BIRADS",
 escribir ("(Таблица 5.18, Рисунок 5.18).")
 escribir ("Таблица №5.18. 
           Сравнение методов УЗИ и ABUS по показателю \"Категория BIRADS\" в группе D.")
-escribir ("![](images5/Snr/categoryBirads.png)")
+escribir ("![](img/categoryBirads.png)")
 escribir ("Таблица №5.18. Сравнение методов УЗИ и ABUS по показателю \"Категория BIRADS\" в группе D.")
 CompPlot_categoryBirads <- GeomBar(dfXlsxMetCompSnr,dfXlsxMetCompSnr$categoryBirads,dfXlsxMetCompSnr$methodsVizualisation,"Категория BIRADS")
 ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Calc_abus_accur/img/categoryBirads.png", 
@@ -88,10 +87,10 @@ ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Calc_abus_acc
 # results -----------------------------------------------------------------
 
 
-SSA_textClac(dfXlsxGr2$us_is_calc,dfXlsxGr2$mmg_is_calc, "УЗИ в группе C")
+
 SSA_textClac(dfXlsxGr4$us_is_calc,dfXlsxGr4$mmg_is_calc, "УЗИ в группе D")
 SSA_textClac(dfXlsxGr4$abus_is_calc,dfXlsxGr4$mmg_is_calc, "ABUS в группе D")
-SSA_textClac(dfXlsxSnr$us_is_calc,dfXlsxSnr$mmg_is_calc, "УЗИ в выборке пациенток 40 лет и старше")
+
 
 escribir ("(Таблица №5.19)")
 escribir ("Таблица №5.19.

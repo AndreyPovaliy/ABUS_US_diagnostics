@@ -784,6 +784,27 @@ dfXlsx$abus_structure	<- 	factor(dfXlsx$abus_structure,
                                             
                                           ))
 
+#####ABUSformation####
+dfXlsx$abus_formation	<- 	factor(dfXlsx$abus_formation,
+                               levels=c(0,1,2,3,4,5,6,7,8,9,10,11),
+                               labels = c(
+                                 "0"="нет",
+                                 "1"= "граница",
+                                 "2"="верхне-наружный",
+                                 "3"="верхне-внутренний",
+                                 "4"="нижне-наружный",
+                                 "5"="нижне-внутренний",
+                                 "6"="центральный отдел",
+                                 "7"="вся железа",
+                                 "8"="граница верхних",
+                                 "9"="граница нижних",
+                                 "10"="граница внутренних",
+                                 "11"= "граница наружных"
+                                 
+                                 
+                               ))
+
+
 #####ABUSdiagnosis####
 dfXlsx$abus_diagnosis <- replace(dfXlsx$abus_diagnosis, is.na(dfXlsx$abus_diagnosis), 14)
 dfXlsx$abus_diagnosis<- 	factor(dfXlsx$abus_diagnosis,
