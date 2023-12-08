@@ -46,7 +46,25 @@ GeomBar<-function(database, sample1, sample2, parametr1)
   
 }
 
-
+#приемер: GeomBarNoLegendDiag(dfXlsxSnr,dfXlsxSnr$diagnosis_primary,dfXlsxSnr$group_separation,"Диагноз")
+GeomBarNoLegendDiag<-function(database, sample1, sample2, parametr1)
+{
+  ggplot(database, aes(x = sample2, fill = factor(sample1))) +
+    geom_bar(position = "dodge", color="black") +
+    theme(legend.position = "none")+
+    xlab("Группа")+
+    ylab("Количество пациентов")+
+    scale_fill_discrete(name=parametr1)+
+    theme(
+      axis.title.y = element_text(size = rel(1.3)),
+      axis.title.x = element_text(size = rel(1.3)),
+      axis.text.x = element_text(angle = 20, hjust = 1, size=10),
+      axis.text = element_text(size = rel(1.3)),
+      legend.text = element_text(size = rel(1.3)),
+      legend.title=element_text(size = rel(1.3)))+
+    scale_y_continuous(breaks= pretty_breaks())
+  
+}
 
 
 #приемер: Violinplot(dfRad, dfRad$Age, dfRad$Group, "Возраст", "Group")
