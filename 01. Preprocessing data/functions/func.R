@@ -382,7 +382,7 @@ article_text <- function(text, in_group1, in_group2, vector1, vector2, vectorSum
   Quantity_discr_short(in_group2,vector2)
   
   Quantity_table(text,vector1,vector2)
-  
+  pvalueQualitativeText(vectorSum,separation,text)
 }
 
 # SSA_text(dfXlsxJun$us_is_tumor,dfXlsxJun$hist_is_tumor, "УЗИ в группе А")
@@ -410,14 +410,17 @@ SSA_text <- function(predicted_value, expected_value, method){
                         ". Доля истинно положительных случаев, правильно определённых методом составила", round(x[["byClass"]][["Detection Rate"]],2),
                         ". Отбалансированная точность метода составила", round(x[["byClass"]][["Balanced Accuracy"]],2),"
 
-                        (Т -Точность, P - P-Value, КК - Коэффициент Kappa, ТМ -Тест Макнемара, Ч-Чувствительность, Сп -Специфичность, ОТ- Отбалансированная точность)
-                        | Метод | Т       |P       | КК | ТМ  |  Ч  | Сп | ОТ|
+                        (Т -Точность, P - P-Value, КК - Коэффициент Kappa, ТМ -Тест Макнемара, ППЦ - положительная прогностическая ценность, ОПЦ - отрицательная прогностическая ценность,  Ч-Чувствительность, Сп -Специфичность, ОТ- Отбалансированная точность)
+                        | Метод | Т       |P       | КК | ТМ  |  ППЦ  | ОПЦ |  Ч  | Сп | ОТ|
                         |",method ,"|"
                         , round(x[["overall"]][["Accuracy"]],2),
-                        "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),",",round(x[["overall"]][["AccuracyUpper"]],2) ,"].","|"
+                        "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),","
+                     ,round(x[["overall"]][["AccuracyUpper"]],2) ,"].","|"
                         ,round(x[["overall"]][["AccuracyPValue"]],2),"|"
                         ,round(x[["overall"]][["Kappa"]],2),"|"
                         ,round(x[["overall"]][["McnemarPValue"]],2),"|"
+                        ,round(x[["byClass"]][["Pos Pred Value"]],2),"|"
+                        ,round(x[["byClass"]][["Neg Pred Value"]],2),"|"
                         ,round(x[["byClass"]][["Sensitivity"]],2),"|"
                         ,round(x[["byClass"]][["Specificity"]],2),"|"
                         ,round(x[["byClass"]][["Balanced Accuracy"]],2),"|"
