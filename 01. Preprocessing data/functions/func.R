@@ -8,6 +8,16 @@ escribir <- function(a) {
   
 }
 
+#escribir_rT("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Calc_abus_accur/decomp/txt/Материалы.txt")
+escribir_rT <- function (way_to_text){
+  rT <- read.table(way_to_text,sep = "_")
+  for (i in 1:nrow(rT)) {
+    escribir(paste(rT$V1[i],
+                   "\n\n"))
+    
+  }
+}
+
 #приемер: escribirPaste ("Запись2")
 escribirPaste <- function(a) {
   
@@ -203,6 +213,59 @@ Quantity_table<-function(parametr,database1,database2){
 }
 
 
+Quantity_table_3<-function(parametr,database1,database2,database3){
+  
+  
+  n <- length(data.frame(table(database1), row.names = TRUE )$Freq)
+  Descr<-print(paste(parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
+|------|------|------|------|------|------|------|
+|Группы|Группа X|------|Группа Y|------|Группа Z|------|
+"))
+  a <- paste(Descr,"\n")
+  cat(a, file = FileName, append = TRUE)
+  i<-0
+  while (i<n){
+    Descr<-print(paste(data.frame(table(database1))[i+1,1],
+                       "|",
+                       data.frame(round(prop.table(table(database1)),5))[i+1,2]*100,
+                       "% (", 
+                       data.frame(table(database1))[i+1,2],
+                       "/",length(database1),
+                       "случаев)|",
+                       "[",
+                       round(prop.test(table(database1)[i+1], length(database1))$conf.int[1],2),
+                       ";",
+                       round(prop.test(table(database1)[i+1], length(database1))$conf.int[2],2),
+                       "]|",
+                       data.frame(round(prop.table(table(database2)),5))[i+1,2]*100,
+                       "% (", 
+                       data.frame(table(database2))[i+1,2],
+                       "/",length(database2),
+                       "случаев)|",
+                       "[",
+                       round(prop.test(table(database2)[i+1], length(database2))$conf.int[1],2),
+                       ";",
+                       round(prop.test(table(database2)[i+1], length(database2))$conf.int[2],2),
+                       "]|",
+                       data.frame(round(prop.table(table(database3)),5))[i+1,2]*100,
+                       "% (", 
+                       data.frame(table(database3))[i+1,2],
+                       "/",length(database3),
+                       "случаев)|",
+                       "[",
+                       round(prop.test(table(database3)[i+1], length(database3))$conf.int[1],2),
+                       ";",
+                       round(prop.test(table(database3)[i+1], length(database3))$conf.int[2],2),
+                       "]|"
+                       
+    ))
+    a <- paste(Descr,"\n")
+    cat(a, file = FileName, append = TRUE)
+    i<-i+1
+    
+  }
+}
+
 
 #Quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary,dfXlsxGr3$diagnosis_primary)
 Quantity_table<-function(parametr,database1,database2){
@@ -375,6 +438,19 @@ chapter_3_4_text <- function(text, in_group1, in_group2, vector1, vector2, vecto
   
 }
 
+chapter_5_text <- function(text, 
+                           in_group1, in_group2,  in_group3,
+                           vector1, vector2, vector3,
+                           vectorSum, separation){
+  escribir (text)
+  Quantity_discr(in_group1,vector1)
+  Quantity_discr(in_group2,vector2)
+  Quantity_discr(in_group3,vector3)
+  Quantity_table_3(text,vector1,vector2,vector3)
+  pvalueQualitativeText(vectorSum,separation,text)
+  
+}
+
 
 article_text <- function(text, in_group1, in_group2, vector1, vector2, vectorSum, separation){
   escribir (text)
@@ -459,9 +535,9 @@ SSA_textClac <- function(predicted_value, expected_value, method){
                         ". Доля истинно положительных случаев, правильно определённых методом составила", round(x[["byClass"]][["Detection Rate"]],2),
                         ". Отбалансированная точность метода составила", round(x[["byClass"]][["Balanced Accuracy"]],2),"
 
-                        (Т -Точность, P - P-Value, КК - Коэффициент Kappa, ТМ -Тест Макнемара, Ч-Чувствительность, Сп -Специфичность, ОТ- Отбалансированная точность)
-                        | Метод | Т       |P       | КК | ТМ  |  Ч  | Сп | ОТ|
-                        |------------|------------|------------|------------|------------|------------|------------|------------|
+                        (Т -Точность, P - P-Value, КК - Коэффициент Kappa, ТМ -Тест Макнемара, Ч-Чувствительность, Сп -Специфичность, ППЦ - положительная прогностическая ценность, ОПЦ - отрицательная прогностическая ценность, ОТ- Отбалансированная точность)
+                        | Метод | Т       |P       | КК | ТМ  |  Ч  | Сп | ППЦ | ОПЦ | ОТ |
+                        |------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|
                         |",method ,"|"
                         , round(x[["overall"]][["Accuracy"]],2),
                         "[95% ДИ:",round(x[["overall"]][["AccuracyLower"]],2),",",round(x[["overall"]][["AccuracyUpper"]],2) ,"].","|"
@@ -470,6 +546,8 @@ SSA_textClac <- function(predicted_value, expected_value, method){
                         ,round(x[["overall"]][["McnemarPValue"]],2),"|"
                         ,round(x[["byClass"]][["Sensitivity"]],2),"|"
                         ,round(x[["byClass"]][["Specificity"]],2),"|"
+                        ,round(x[["byClass"]][["Pos Pred Value"]],2),"|"
+                        ,round(x[["byClass"]][["Neg Pred Value"]],2),"|"
                         ,round(x[["byClass"]][["Balanced Accuracy"]],2),"|"
                         
                         

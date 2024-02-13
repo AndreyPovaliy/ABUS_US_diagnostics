@@ -109,20 +109,20 @@ ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/imag
 # location
 escribir ("ТУТ БУДЕТ БЛОК ПРО ЛОКАЛИЗАЦИЮ!")
 
-escribir ("* Кальцинаты *")
-chapter_3_4_text("Кальцинаты",
+escribir ("* Микрокальцинаты *")
+chapter_3_4_text("Микрокальцинаты",
                  "По результатам УЗИ ",
                  "По результатам ABUS ",
-                 dfXlsxMetCompJunUs$calcinates,
-                 dfXlsxMetCompJunAbus$calcinates,
-                 dfXlsxMetCompJun$calcinates,
+                 dfXlsxMetCompJunUs$isMicroCalc,
+                 dfXlsxMetCompJunAbus$isMicroCalc,
+                 dfXlsxMetCompJun$isMicroCalc,
                  dfXlsxMetCompJun$methodsVizualisation)
 escribir ("(Таблица 5.7, Рисунок 5.7).")
-escribir ("Таблица №5.7. Сравнение методов УЗИ и ABUS по показателю \"Кальцинаты\" в группе B.")
-escribir ("![](images5/Jun/calcinates.png)")
-escribir ("Рисунок №5.7. Сравнение методов УЗИ и ABUS по показателю \"Кальцинаты\" в группе B.")
-CompPlot_calcinates <- GeomBar(dfXlsxMetCompJun,dfXlsxMetCompJun$calcinates,dfXlsxMetCompJun$methodsVizualisation,"Кальцинаты")
-ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/images5/Jun/calcinates.png", 
+escribir ("Таблица №5.7. Сравнение методов УЗИ и ABUS по показателю \"Микрокальцинаты\" в группе B.")
+escribir ("![](images5/Jun/isMicroCalc.png)")
+escribir ("Рисунок №5.7. Сравнение методов УЗИ и ABUS по показателю \"Микрокальцинаты\" в группе B.")
+CompPlot_calcinates <- GeomBar(dfXlsxMetCompJun,dfXlsxMetCompJun$isMicroCalc,dfXlsxMetCompJun$methodsVizualisation,"Микрокальцинаты")
+ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/images5/Jun/isMicroCalc.png", 
        plot = CompPlot_calcinates, units = "in", width = 14, height = 8)
 
 
@@ -258,20 +258,20 @@ ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/imag
 # location
 escribir ("ТУТ БУДЕТ БЛОК ПРО ЛОКАЛИЗАЦИЮ!")
 
-escribir ("* Кальцинаты *")
-chapter_3_4_text("Кальцинаты",
+escribir ("* Микрокальцинаты *")
+chapter_3_4_text("Микрокальцинаты",
                  "По результатам УЗИ ",
                  "По результатам ABUS ",
-                 dfXlsxMetCompSnrUs$calcinates,
-                 dfXlsxMetCompSnrAbus$calcinates,
-                 dfXlsxMetCompSnr$calcinates,
+                 dfXlsxMetCompSnrUs$isMicroCalc,
+                 dfXlsxMetCompSnrAbus$isMicroCalc,
+                 dfXlsxMetCompSnr$isMicroCalc,
                  dfXlsxMetCompSnr$methodsVizualisation)
 escribir ("(Таблица 5.16, Рисунок 5.16).")
-escribir ("Таблица №5.16. Сравнение методов УЗИ и ABUS по показателю \"Кальцинаты\" в группе D.")
-escribir ("![](images5/Snr/calcinates.png)")
-escribir ("Рисунок №5.16. Сравнение методов УЗИ и ABUS по показателю \"Кальцинаты\" в группе D.")
-CompPlot_calcinates <- GeomBar(dfXlsxMetCompSnr,dfXlsxMetCompSnr$calcinates,dfXlsxMetCompSnr$methodsVizualisation,"Кальцинаты")
-ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/images5/Snr/calcinates.png", 
+escribir ("Таблица №5.16. Сравнение методов УЗИ и ABUS по показателю \"Микрокальцинаты\" в группе D.")
+escribir ("![](images5/Snr/isMicroCalc.png)")
+escribir ("Рисунок №5.16. Сравнение методов УЗИ и ABUS по показателю \"Микрокальцинаты\" в группе D.")
+CompPlot_calcinates <- GeomBar(dfXlsxMetCompSnr,dfXlsxMetCompSnr$isMicroCalc,dfXlsxMetCompSnr$methodsVizualisation,"Микрокальцинаты")
+ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/images5/Snr/isMicroCalc.png", 
        plot = CompPlot_calcinates, units = "in", width = 14, height = 8)
 
 

@@ -409,7 +409,7 @@ dfXlsx$us_calcinates_micro_pure <- 	factor(dfXlsx$us_calcinates_micro_pure,
                                                             levels=c(0,1,2,3),
                                                             labels = c(
                                                               "0"="нет",
-                                                              "1"="определяются",
+                                                              "1"="макрокальцинаты",
                                                               "2"="макрокальцинаты",
                                                               "3"="микрокальцинаты" 
                                                               
@@ -726,7 +726,7 @@ dfXlsx$abus_calcinates	<- 	factor(dfXlsx$abus_calcinates,
                                           levels=c(0,1,2,3,4),
                                           labels = c(
                                             "0"="нет",
-                                            "1"="определяются",
+                                            "1"="макрокальцинаты",
                                             "2"="макрокальцинаты",
                                             "3"="микрокальцинаты",
                                             "4"="не проводилось"
@@ -920,10 +920,10 @@ dfXlsx$tumor_receptors	<- 	factor(dfXlsx$tumor_receptors,
                                        levels=c(0,1,2,3,4,5,6,7,8,9),
                                        labels = c(
                                          "0"="не проводилось",
-                                         "1"="РЭ",
+                                         "1"="РЭ+РП+Her-2_neu",
                                          "2"="РП",
                                          "3"="Her-2_neu",
-                                         "4"= "РЭ+РП",
+                                         "4"= "РЭ+РП+Her-2_neu негатив",
                                          "5"="РЭ+Her2_neu",
                                          "6"= "РП+Her2_neu",
                                          "7"="РЭ+РП+Her-2_neu",
@@ -997,6 +997,34 @@ dfXlsx$abus_is_calc <- factor(ifelse
                             labels = c("Нет", "Да"))
 
 
+# Полиморфные-микро
+# "микрокальцинаты",
+# "плеоморфные микро
+# "множественные точечные"- микро
+# "по типу пудры"- микро
+
+
+
+dfXlsx$mmg_is_microCalc <- factor(ifelse
+                             (dfXlsx$mmg_calcifications == "микрокальцинаты"|
+                                 dfXlsx$mmg_calcifications == "полиморфные"|
+                                 dfXlsx$mmg_calcifications == "по типу пудры"|
+                                 dfXlsx$mmg_calcifications == "плеоморфные"|
+                                 dfXlsx$mmg_calcifications == "полиморфные"
+                               , 0, 1),
+                             labels = c("Да", "Нет"))
+
+dfXlsx$us_is_microCalc <- factor(ifelse
+                            (dfXlsx$us_calcinates_micro_pure == "микрокальцинаты"
+                              , 0, 1),
+                            labels = c("Да", "Нет"))
+
+dfXlsx$abus_is_microCalc <- factor(ifelse
+                              (dfXlsx$abus_calcinates == "микрокальцинаты"
+                                , 0, 1),
+                              labels = c("Да", "Нет"))
+
+
 dfXlsx$us_is_tumor <- factor(ifelse
                                  (dfXlsx$us_diagnosis == "образование Ca"
                                    | dfXlsx$us_diagnosis == "мультфококальный рак"
@@ -1033,11 +1061,23 @@ fit_usCalc <- glm (dfXlsx$mmg_is_calc   ~
                    , dfXlsx, family = "binomial")
 dfXlsx$us_probabilityCalc  <- predict(object = fit_usCalc, type = "response")
 
+fit_usMicroCalc <- glm (dfXlsx$mmg_is_microCalc   ~
+                     dfXlsx$us_is_microCalc+
+                     dfXlsx$age_patient
+                   , dfXlsx, family = "binomial")
+dfXlsx$us_probabilityMicroCalc  <- predict(object = fit_usMicroCalc, type = "response")
+
 fit_abusCalc <-  glm (dfXlsx$mmg_is_calc   ~
                         dfXlsx$abus_is_calc*
                         dfXlsx$age_patient
                       , dfXlsx, family = "binomial")
 dfXlsx$abus_probabilityCalc <- predict(object = fit_abusCalc, type = "response")
+
+fit_abusMicroCalc <-  glm (dfXlsx$mmg_is_microCalc   ~
+                        dfXlsx$abus_is_microCalc*
+                        dfXlsx$age_patient
+                      , dfXlsx, family = "binomial")
+dfXlsx$abus_probabilityMicroCalc <- predict(object = fit_abusMicroCalc, type = "response")
 
 fit_usNeoCa<- glm (dfXlsx$hist_is_tumor   ~
              dfXlsx$us_is_tumor+

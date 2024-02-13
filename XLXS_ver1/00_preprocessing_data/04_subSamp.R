@@ -82,7 +82,9 @@ dfXlsx$us_is_tumor <- as.factor(dfXlsx$us_is_tumor)
 dfXlsx$mmg_is_tumor <- as.factor(dfXlsx$mmg_is_tumor)
 dfXlsx$abus_is_tumor <- as.factor(dfXlsx$abus_is_tumor)
 dfXlsx$hist_is_tumor <- as.factor(dfXlsx$hist_is_tumor)
-
+dfXlsx$us_is_microCalc <- as.factor(dfXlsx$us_is_microCalc)
+dfXlsx$abus_is_microCalc <- as.factor(dfXlsx$abus_is_microCalc)
+dfXlsx$mmg_is_microCalc <- as.factor(dfXlsx$mmg_is_microCalc)
 # Mathirials -----------------------------------------------------------------
 ## Jun --------------------------------------------------------------
 dfXlsxJun <- subset(dfXlsx, group_separation == gr_US | group_separation ==gr_US_ABUS)
@@ -109,18 +111,96 @@ nUs4 <-  length(dfXlsxGr4$us_nodle_contour)
 
 
 
-groupSep <- c(rep("jun",nUs3),rep("snr",nUs4),rep("jun",nUs3),rep("snr",nUs4))
-methodsVizualisation <- c(rep("us",nUs3),rep("us",nUs4),rep("abus",nUs3),rep("abus",nUs4))
-nodleContour <- c(dfXlsxGr3$us_nodle_contour,dfXlsxGr4$us_nodle_contour,dfXlsxGr3$abus_nodle_contours,dfXlsxGr4$abus_nodle_contours)
-nodleSize <- c(dfXlsxGr3$us_nodle_size,dfXlsxGr4$us_nodle_size,dfXlsxGr3$abus_nodle_size,dfXlsxGr4$abus_nodle_size)
-echogenicityFormation <- c(dfXlsxGr3$us_echogenicity_formation,dfXlsxGr4$us_echogenicity_formation,dfXlsxGr3$abus_echogenicity_formation,dfXlsxGr4$abus_echogenicity_formation)
-structure <- c(dfXlsxGr3$us_structure,dfXlsxGr4$us_structure,dfXlsxGr3$abus_structure,dfXlsxGr4$abus_structure)
-diagnosis <- c(dfXlsxGr3$us_diagnosis,dfXlsxGr4$us_diagnosis,dfXlsxGr3$abus_diagnosis,dfXlsxGr4$abus_diagnosis)
-time <- c(dfXlsxGr3$us_time,dfXlsxGr4$us_time,dfXlsxGr3$abus_time,dfXlsxGr4$abus_time)
-numberNodles <- c(dfXlsxGr3$us_number_nodles,dfXlsxGr4$us_number_nodles,dfXlsxGr3$abus_number_nodles,dfXlsxGr4$abus_number_nodles)
-categoryBirads	<- c(dfXlsxGr3$us_category_birads,dfXlsxGr4$us_category_birads,dfXlsxGr3$abus_category_birads,dfXlsxGr4$abus_category_birads)
-calcinates <- c(dfXlsxGr3$us_calcinates_micro_pure,dfXlsxGr4$us_calcinates_micro_pure,dfXlsxGr3$abus_calcinates	,dfXlsxGr4$abus_calcinates)
-location <- c(dfXlsxGr3$us_formation,dfXlsxGr4$us_formation,dfXlsxGr3$abus_formation,dfXlsxGr4$abus_formation)
+groupSep <- c(rep("jun",nUs3),
+              rep("snr",nUs4),
+              rep("jun",nUs3),
+              rep("snr",nUs4),
+              rep("jun",nUs3),
+              rep("snr",nUs4))
+methodsVizualisation <- c(rep("us",nUs3),
+                          rep("us",nUs4),
+                          rep("abus",nUs3),
+                          rep("abus",nUs4),
+                          rep("mmg",nUs3),
+                          rep("mmg",nUs4))
+nodleContour <- c(dfXlsxGr3$us_nodle_contour,
+                  dfXlsxGr4$us_nodle_contour,
+                  dfXlsxGr3$abus_nodle_contours,
+                  dfXlsxGr4$abus_nodle_contours,
+                  dfXlsxGr3$mmg_nodle_contour,
+                  dfXlsxGr4$mmg_nodle_contour)
+nodleSize <- c(dfXlsxGr3$us_nodle_size,
+               dfXlsxGr4$us_nodle_size,
+               dfXlsxGr3$abus_nodle_size,
+               dfXlsxGr4$abus_nodle_size,
+               dfXlsxGr3$mmg_nodle_size,
+               dfXlsxGr4$mmg_nodle_size)
+echogenicityFormation <- c(dfXlsxGr3$us_echogenicity_formation,
+                           dfXlsxGr4$us_echogenicity_formation,
+                           dfXlsxGr3$abus_echogenicity_formation,
+                           dfXlsxGr4$abus_echogenicity_formation,
+                           rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
+                           rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+structure <- c(dfXlsxGr3$us_structure,
+               dfXlsxGr4$us_structure,
+               dfXlsxGr3$abus_structure,
+               dfXlsxGr4$abus_structure,
+               rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
+               rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+diagnosis <- c(dfXlsxGr3$us_diagnosis,
+               dfXlsxGr4$us_diagnosis,
+               dfXlsxGr3$abus_diagnosis,
+               dfXlsxGr4$abus_diagnosis,
+               dfXlsxGr3$mmg_conclusion,
+               dfXlsxGr4$mmg_conclusion)
+time <- c(dfXlsxGr3$us_time,
+          dfXlsxGr4$us_time,
+          dfXlsxGr3$abus_time,
+          dfXlsxGr4$abus_time,
+          rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
+          rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+numberNodles <- c(dfXlsxGr3$us_number_nodles,
+                  dfXlsxGr4$us_number_nodles,
+                  dfXlsxGr3$abus_number_nodles,
+                  dfXlsxGr4$abus_number_nodles,
+                  dfXlsxGr3$mmg_number_nodles,
+                  dfXlsxGr4$mmg_number_nodles)
+categoryBirads	<- c(dfXlsxGr3$us_category_birads,
+                    dfXlsxGr4$us_category_birads,
+                    dfXlsxGr3$abus_category_birads,
+                    dfXlsxGr4$abus_category_birads,
+                    dfXlsxGr3$mmg_category_birads,
+                    dfXlsxGr4$mmg_category_birads)
+calcinates <- c(dfXlsxGr3$us_calcinates_micro_pure,
+                dfXlsxGr4$us_calcinates_micro_pure,
+                dfXlsxGr3$abus_calcinates,
+                dfXlsxGr4$abus_calcinates,
+                dfXlsxGr3$mmg_calcifications,
+                dfXlsxGr4$mmg_calcifications)
+location <- c(dfXlsxGr3$us_formation,
+              dfXlsxGr4$us_formation,
+              dfXlsxGr3$abus_formation,
+              dfXlsxGr4$abus_formation,
+              rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
+              rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+isCalc <- c(dfXlsxGr3$us_is_calc,
+                 dfXlsxGr4$us_is_calc,
+                 dfXlsxGr3$abus_is_calc,
+                 dfXlsxGr4$abus_is_calc,
+                 dfXlsxGr3$mmg_is_calc,
+                 dfXlsxGr4$mmg_is_calc)
+isMicroCalc <- c(dfXlsxGr3$us_is_microCalc,
+              dfXlsxGr4$us_is_microCalc,
+              dfXlsxGr3$abus_is_microCalc,
+              dfXlsxGr4$abus_is_microCalc,
+              dfXlsxGr3$mmg_is_microCalc,
+              dfXlsxGr4$mmg_is_microCalc)
+isCancer <- c(dfXlsxGr3$hist_is_tumor,
+              dfXlsxGr4$hist_is_tumor,
+              dfXlsxGr3$hist_is_tumor,
+              dfXlsxGr4$hist_is_tumor,
+              dfXlsxGr3$hist_is_tumor,
+              dfXlsxGr4$hist_is_tumor)
 
 dfXlsxMetComp <- data.frame("groupSep" = groupSep, 
                             "methodsVizualisation" = methodsVizualisation, 
@@ -133,21 +213,43 @@ dfXlsxMetComp <- data.frame("groupSep" = groupSep,
                             "numberNodles"=numberNodles,
                             "categoryBirads"=categoryBirads,
                             "calcinates"=calcinates,
-                            "location"=location
+                            "location"=location,
+                            "isCalc"= isCalc,
+                            "isMicroCalc"= isMicroCalc,
+                            "isCancer"= isCancer
 )
+
+
+dfXlsxMetComp$metod_is_tumor <- factor(ifelse
+                              (dfXlsxMetComp$diagnosis == "Susp Ca"
+                                | dfXlsxMetComp$diagnosis == "образование Ca"
+                                | dfXlsxMetComp$diagnosis == "мультифокальный рак"
+                                | dfXlsxMetComp$diagnosis== "мультицентричный рак"
+                                , 1, 0),
+                              labels = c("Нет", "Да"))
+
+dfXlsxMetCompUsAbus <- subset(dfXlsxMetComp, dfXlsxMetComp$methodsVizualisation !="mmg")
+dfXlsxMetCompUsMmg <- subset(dfXlsxMetComp, dfXlsxMetComp$methodsVizualisation !="abus")
+dfXlsxMetCompAbusMmg <- subset(dfXlsxMetComp, dfXlsxMetComp$methodsVizualisation !="us")
 
 dfXlsxMetCompNodle <- subset(dfXlsxMetComp, nodleContour !="нет узла")
 write.xlsx(dfXlsxMetComp, "ABUSvsUS_lab.xlsx", sheetName = "Data")
 
 dfXlsxMetCompJun <- subset(dfXlsxMetComp, groupSep == "jun")
+dfXlsxMetCompJunUsAbus <- subset(dfXlsxMetCompUsAbus, groupSep == "jun")
+dfXlsxMetCompJunUsMmg <- subset(dfXlsxMetCompUsMmg, groupSep == "jun")
+dfXlsxMetCompJunAbusMmg <- subset(dfXlsxMetCompAbusMmg, groupSep == "jun")
 dfXlsxMetCompJunUs <- subset(dfXlsxMetCompJun, methodsVizualisation == "us")
 dfXlsxMetCompJunAbus <- subset(dfXlsxMetCompJun, methodsVizualisation == "abus")
 
 
 dfXlsxMetCompSnr <- subset(dfXlsxMetComp, groupSep == "snr")
+dfXlsxMetCompSnrUsAbus <- subset(dfXlsxMetCompUsAbus, groupSep == "snr")
+dfXlsxMetCompSnrUsMmg <- subset(dfXlsxMetCompUsMmg, groupSep == "snr")
+dfXlsxMetCompSnrAbusMmg <- subset(dfXlsxMetCompAbusMmg, groupSep == "snr")
 dfXlsxMetCompSnrUs <- subset(dfXlsxMetCompSnr, methodsVizualisation == "us")
 dfXlsxMetCompSnrAbus <- subset(dfXlsxMetCompSnr, methodsVizualisation == "abus")
-
+dfXlsxMetCompSnrMmg<- subset(dfXlsxMetCompSnr, methodsVizualisation == "mmg")
 
 
 
@@ -299,6 +401,26 @@ dfXlsxCalcGr3 <- subset(dfXlsxCalc, group_separation == gr_US_ABUS)
 dfXlsxCalcGr4 <- subset(dfXlsxCalc, group_separation == gr_US_MMG_ABUS)
 
 
+
+
+
+
+# 4article ----------------------------------------------------------------
+
+dfXlsxSnr_SubsetQuadrant <- subset(dfXlsxSnr,dfXlsxSnr$quadrant !="нет")
+dfXlsxSnrHist <- subset(dfXlsxSnr, dfXlsxSnr$hist_is_tumor =="Да")
+dfXlsxGr2Hist <- subset(dfXlsxGr2, dfXlsxGr2$hist_is_tumor =="Да")
+dfXlsxGr4Hist <- subset(dfXlsxGr4, dfXlsxGr4$hist_is_tumor =="Да")
+dfXlsxSnrIsHist <- subset(dfXlsxSnr, dfXlsxSnr$tumor_morphology_structure !="не проводилось")
+
+dfXlsxGr4_usHasFound <- subset(dfXlsxGr4, dfXlsxGr4$us_is_tumor == "Да")
+dfXlsxGr4_abusHasFound <- subset(dfXlsxGr4, dfXlsxGr4$abus_is_tumor == "Да")
+dfXlsxGr4_mmgHasFound <- subset(dfXlsxGr4, dfXlsxGr4$mmg_is_tumor == "Да")
+
+
+dfXlsxGr4_cancerFromUsHasFound <- subset(dfXlsxGr4_usHasFound, dfXlsxGr4_usHasFound$hist_is_tumor == "Да")
+dfXlsxGr4_cancerFromAbusHasFound <- subset(dfXlsxGr4_abusHasFound, dfXlsxGr4_abusHasFound$hist_is_tumor == "Да")
+dfXlsxGr4_cancerFromMmgHasFound <- subset(dfXlsxGr4_mmgHasFound, dfXlsxGr4_mmgHasFound$hist_is_tumor == "Да")
 
 
 
