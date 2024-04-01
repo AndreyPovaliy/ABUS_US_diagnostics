@@ -226,15 +226,15 @@ dfUsDescribe$us_number_nodles <- 	factor(dfUsDescribe$us_number_nodles,
 dfUsDescribe$us_category_birads	<- 	factor(dfUsDescribe$us_category_birads,
                                            levels=c(1,2,3,4,5,6,7,8,9),
                                            labels = c(
-                                             "1"="Birads 1",
-                                             "2"="Birads 2",
-                                             "3"="Birads 3",
-                                             "4"="Birads 4а",
-                                             "5"="Birads 4b",
-                                             "6"="Birads 4c",
-                                             "7"="Birads 5",
-                                             "8"="Birads 6",
-                                             "9"="Birads 0"
+                                             "1"="BI-RADS 1",
+                                             "2"="BI-RADS 2",
+                                             "3"="BI-RADS 3",
+                                             "4"="BI-RADS 4а",
+                                             "5"="BI-RADS 4b",
+                                             "6"="BI-RADS 4c",
+                                             "7"="BI-RADS 5",
+                                             "8"="BI-RADS 6",
+                                             "9"="BI-RADS 0"
                                            ))
 
 
@@ -505,15 +505,15 @@ dfMmgDescribe$mmg_category_birads	<- 	factor(dfMmgDescribe$mmg_category_birads	,
                                              levels=c(0,1,2,3,4,5,6,7,8,9),
                                              labels = c(
                                                "0"="не проводилось",
-                                               "1"="Birads 1",
-                                               "2"="Birads 2",
-                                               "3"="Birads 3",
-                                               "4"="Birads 4а",
-                                               "5"="Birads 4b",
-                                               "6"="Birads 4c",
-                                               "7"="Birads 5",
-                                               "8"="Birads 6",
-                                               "9"="Birads 0"
+                                               "1"="BI-RADS 1",
+                                               "2"="BI-RADS 2",
+                                               "3"="BI-RADS 3",
+                                               "4"="BI-RADS 4а",
+                                               "5"="BI-RADS 4b",
+                                               "6"="BI-RADS 4c",
+                                               "7"="BI-RADS 5",
+                                               "8"="BI-RADS 6",
+                                               "9"="BI-RADS 0"
                                                
                                              ))
 
@@ -684,15 +684,15 @@ dfAbusDescribe$abus_category_birads	<- 	factor(dfAbusDescribe$abus_category_bira
                                                levels=c(0,1,2,3,4,5,6,7,8,9),
                                                labels = c(
                                                  "0"="не проводилось",
-                                                 "1"="Birads 1",
-                                                 "2"="Birads 2",
-                                                 "3"="Birads 3",
-                                                 "4"="Birads 4а",
-                                                 "5"="Birads 4b",
-                                                 "6"="Birads 4c",
-                                                 "7"="Birads 5",
-                                                 "8"="Birads 6",
-                                                 "9"="Birads 0"
+                                                 "1"="BI-RADS 1",
+                                                 "2"="BI-RADS 2",
+                                                 "3"="BI-RADS 3",
+                                                 "4"="BI-RADS 4а",
+                                                 "5"="BI-RADS 4b",
+                                                 "6"="BI-RADS 4c",
+                                                 "7"="BI-RADS 5",
+                                                 "8"="BI-RADS 6",
+                                                 "9"="BI-RADS 0"
                                                ))
 
 dfAbusDescribe$abus_calcinates <- replace(dfAbusDescribe$abus_calcinates, is.na(dfAbusDescribe$abus_calcinates), 4)

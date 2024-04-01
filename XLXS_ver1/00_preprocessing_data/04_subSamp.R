@@ -228,6 +228,8 @@ dfXlsxMetComp$metod_is_tumor <- factor(ifelse
                                 , 1, 0),
                               labels = c("Нет", "Да"))
 
+
+dfXlsxMetComp$methodsVizualisation <-  as.factor(dfXlsxMetComp$methodsVizualisation )
 dfXlsxMetCompUsAbus <- subset(dfXlsxMetComp, dfXlsxMetComp$methodsVizualisation !="mmg")
 dfXlsxMetCompUsMmg <- subset(dfXlsxMetComp, dfXlsxMetComp$methodsVizualisation !="abus")
 dfXlsxMetCompAbusMmg <- subset(dfXlsxMetComp, dfXlsxMetComp$methodsVizualisation !="us")

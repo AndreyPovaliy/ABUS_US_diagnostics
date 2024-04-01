@@ -4,7 +4,7 @@ library(ggpie)
 library(caret)
 library(pROC)
 
-
+dfXlsxSnr$group_separation <- ifelse(dfXlsxSnr$group_separation=="C","A/A","Б/B")
 # Matherials --------------------------------------------------------------
 
 
