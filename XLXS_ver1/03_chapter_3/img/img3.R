@@ -587,8 +587,19 @@ figure1
 ggsave("./XLXS_ver1/03_chapter_3/img/US/us_region_lymph_nodes.png",figure1)
 rm(figure1)
 ## Определение категории BI-RADS  --------------------------------------------------------------------
+dfXlsxJun_BIRADS <- dfXlsxJun
+dfXlsxJun_BIRADS$us_category_birads <- factor(dfXlsxJun_BIRADS$us_category_birads, order=TRUE,
+                                                levels=c("Birads 1",
+                                                         "Birads 2",
+                                                         "Birads 3",
+                                                         "Birads 4а",
+                                                         "Birads 4b",
+                                                         "Birads 4c",
+                                                         "Birads 5",
+                                                         "Birads 6",
+                                                         "Birads 0"))
 
-figure1 <- ggplot(dfXlsxJun, aes(x=group_separation, fill = us_category_birads))+
+figure1 <- ggplot(dfXlsxJun_BIRADS, aes(x=group_separation, fill = us_category_birads))+
   geom_bar(position = "dodge")+
   labs(
     x= "Группа",
