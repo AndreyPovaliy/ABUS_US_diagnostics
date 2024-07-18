@@ -106,8 +106,22 @@ ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/imag
        plot = CompPlot_numberNodles, units = "in", width = 14, height = 8)
 
 
-# location
-escribir ("ТУТ БУДЕТ БЛОК ПРО ЛОКАЛИЗАЦИЮ!")
+escribir ("* Локализация *")
+chapter_3_4_text("Локализация",
+                 "По результатам УЗИ ",
+                 "По результатам ABUS ",
+                 dfXlsxMetCompJunUs$location,
+                 dfXlsxMetCompJunAbus$location,
+                 dfXlsxMetCompJun$location,
+                 dfXlsxMetCompJun$methodsVizualisation)
+escribir ("(Таблица 5.5, Рисунок 5.5).")
+escribir ("Таблица №5.5. 
+          Сравнение методов УЗИ и ABUS по показателю \"Локализация\" в группе B.")
+escribir ("![](images5/Jun/location.png)")
+escribir ("Таблица №5.5. Сравнение методов УЗИ и ABUS по показателю \"Локализация\" в группе B.")
+CompPlot_numberNodles <- GeomBar(dfXlsxMetCompJun,dfXlsxMetCompJun$location,dfXlsxMetCompJun$methodsVizualisation,"Количество узлов")
+ggsave("~/Documents/Science/ABUS_US_diagnostics/Text_work/Chapters/Chapter5/images5/Jun/location.png", 
+       plot = CompPlot_numberNodles, units = "in", width = 14, height = 8)
 
 escribir ("* Микрокальцинаты *")
 chapter_3_4_text("Микрокальцинаты",
