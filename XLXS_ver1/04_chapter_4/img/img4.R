@@ -228,6 +228,106 @@ figure1 <- ggplot(dfXlsxGr4, aes(x=abus_is_tumor, fill = abus_is_tumor))+
 figure1
 ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_is_tumor.png",figure1)
 rm(figure1)
+# MMG ----------------------------------------------------------------------
+## ММГ-фон  --------------------------------------------------------------------
+dfXlsxSnr_mmg_background_breasT <- dfXlsxSnr
+
+
+
+dfXlsxSnr_mmg_background_breasT$mmg_background_breast <- factor(dfXlsxSnr_mmg_background_breasT$mmg_background_breast, 
+                                              order=TRUE,
+                                              levels=c("нормальная ткань МЖ",
+                                                       "диффузная ФКМ",
+                                                       "узловая мастопатия",
+                                                       "инволюция",
+                                                       "железистая ткань"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_background_breasT, aes(x=group_separation, fill = mmg_background_breast))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "ММГ-фон "
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(1.0)),
+        legend.title=element_text(size = rel(1.3)))
+
+rm(dfXlsxSnr_mmg_background_breasT)
+
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_background_breast.png",figure1)
+rm(figure1)
+
+## Форма узла  --------------------------------------------------------------------
+dfXlsxSnr_mmg_nodleT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_nodle!="нет узла")
+dfXlsxSnr_mmg_nodleT$mmg_nodle <- factor(dfXlsxSnr_mmg_nodleT$mmg_nodle, 
+                                                                order=TRUE,
+                                                                levels=c("неровный",
+                                                                         "дольчатый",
+                                                                         "лучистый",
+                                                                         "ровный",
+                                                                         "волнистый",
+                                                                         "фокус уплотнения",
+                                                                         "участок нарушения архитектоники",
+                                                                         "участок уплотнения",
+                                                                         "образование"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_nodleT, aes(x=group_separation, fill = mmg_nodle))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "Форма узла"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(1.0)),
+        legend.title=element_text(size = rel(1.3)))
+
+rm(dfXlsxSnr_mmg_nodleT)
+
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle.png",figure1)
+rm(figure1)
+
+## Края узлов  --------------------------------------------------------------------
+dfXlsxSnr_mmg_nodle_contourT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_nodle_contour!="нет")
+dfXlsxSnr_mmg_nodle_contourT$mmg_nodle_contour <- factor(dfXlsxSnr_mmg_nodle_contourT$mmg_nodle_contour, 
+                                         order=TRUE,
+                                         levels=c("четкий",
+                                                  "нечеткий",
+                                                  "ровный",
+                                                  "размытый",
+                                                  "полициклический"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_nodle_contourT, aes(x=group_separation, fill = mmg_nodle_contour))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "Края узлов"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(1.0)),
+        legend.title=element_text(size = rel(1.3)))
+
+rm(dfXlsxSnr_mmg_nodle_contourT)
+
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle_contour.png",figure1)
+rm(figure1)
 # US ----------------------------------------------------------------------
 ## УЗ-фон  --------------------------------------------------------------------
 dfXlsxSnr_backgroundT <- dfXlsxSnr
