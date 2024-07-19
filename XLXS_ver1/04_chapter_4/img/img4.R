@@ -328,6 +328,137 @@ rm(dfXlsxSnr_mmg_nodle_contourT)
 figure1
 ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle_contour.png",figure1)
 rm(figure1)
+
+## Размер узлов --------------------------------------------------------------------
+dfXlsxSnr_mmg_nodle_sizeT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_nodle_size!="нет")
+dfXlsxSnr_mmg_nodle_sizeT$mmg_nodle_size <- factor(dfXlsxSnr_mmg_nodle_sizeT$mmg_nodle_size, 
+                                                         order=TRUE,
+                                                         levels=c("0,5-1,0 см",
+                                                                  "1,1-1,5 см",
+                                                                  "1,5-2,0 см",
+                                                                  "2,1-2,5 см",
+                                                                  "2,5-3,0 см",
+                                                                  "более 3 см"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_nodle_sizeT, aes(x=group_separation, fill = mmg_nodle_size))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "Размер узлов"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(1.0)),
+        legend.title=element_text(size = rel(1.3)))
+
+rm(dfXlsxSnr_mmg_nodle_sizeT)
+
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle_size.png",figure1)
+rm(figure1)
+
+
+## количество визуализируемых образований --------------------------------------------------------------------
+dfXlsxSnr_mmg_number_formations_visualizedT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_number_formations_visualized!="не определяется")
+dfXlsxSnr_mmg_number_formations_visualizedT$mmg_number_formations_visualized <- factor(dfXlsxSnr_mmg_number_formations_visualizedT$mmg_number_formations_visualized, 
+                                                   order=TRUE,
+                                                   levels=c("одно",
+                                                            "два",
+                                                            "три",
+                                                            "четыре",
+                                                            "участок асимметрии"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_number_formations_visualizedT, aes(x=group_separation, fill = mmg_number_formations_visualized))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "количество визуализируемых образований"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(1.0)),
+        legend.title=element_text(size = rel(1.3)))
+
+rm(dfXlsxSnr_mmg_number_formations_visualizedT)
+
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_number_formations_visualized.png",figure1)
+rm(figure1)
+
+## количество узлов --------------------------------------------------------------------
+dfXlsxSnr_mmg_number_nodlesT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_number_nodles!="не определяется")
+dfXlsxSnr_mmg_number_nodlesT$mmg_number_nodles <- factor(dfXlsxSnr_mmg_number_nodlesT$mmg_number_nodles, 
+                                                                                       order=TRUE,
+                                                                                       levels=c("один",
+                                                                                                "два",
+                                                                                                "три",
+                                                                                                "множественные",
+                                                                                                "фиброзно-кистозная мастопатия"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_number_nodlesT, aes(x=group_separation, fill = mmg_number_nodles))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "количество узлов"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(1.0)),
+        legend.title=element_text(size = rel(1.3)))
+
+rm(dfXlsxSnr_mmg_number_nodlesT)
+
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_number_nodles.png",figure1)
+rm(figure1)
+## Кальцификаты --------------------------------------------------------------------
+dfXlsxSnr_mmg_calcificationsT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_calcifications!="нет")
+dfXlsxSnr_mmg_calcificationsT$mmg_calcifications <- factor(dfXlsxSnr_mmg_calcificationsT$mmg_calcifications, 
+                                                         order=TRUE,
+                                                         levels=c("полиморфные",
+                                                                  "единичные мелкие",
+                                                                  "крупные",
+                                                                  "диффузные",
+                                                                  "сгруппированные",
+                                                                  "микрокальцинаты",
+                                                                  "разнокалиберные",
+                                                                  "плеоморфные",
+                                                                  "глыбчатые",
+                                                                  "множественные точечные",
+                                                                  "по типу пудры"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_calcificationsT, aes(x=group_separation, fill = mmg_numbmmg_calcificationser_nodles))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "Кальцификаты"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(1.0)),
+        legend.title=element_text(size = rel(1.3)))
+
+rm(dfXlsxSnr_mmg_calcificationsT)
+
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_calcifications.png",figure1)
+rm(figure1)
 # US ----------------------------------------------------------------------
 ## УЗ-фон  --------------------------------------------------------------------
 dfXlsxSnr_backgroundT <- dfXlsxSnr

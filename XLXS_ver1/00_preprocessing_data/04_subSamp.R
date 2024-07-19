@@ -135,18 +135,22 @@ nodleSize <- c(dfXlsxGr3$us_nodle_size,
                dfXlsxGr4$abus_nodle_size,
                dfXlsxGr3$mmg_nodle_size,
                dfXlsxGr4$mmg_nodle_size)
+
+no_data1 <- as.factor(rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)))
+no_data2 <- as.factor(rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+
 echogenicityFormation <- c(dfXlsxGr3$us_echogenicity_formation,
                            dfXlsxGr4$us_echogenicity_formation,
                            dfXlsxGr3$abus_echogenicity_formation,
                            dfXlsxGr4$abus_echogenicity_formation,
-                           rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
-                           rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+                           no_data1,
+                           no_data2)
 structure <- c(dfXlsxGr3$us_structure,
                dfXlsxGr4$us_structure,
                dfXlsxGr3$abus_structure,
                dfXlsxGr4$abus_structure,
-               rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
-               rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+               no_data1,
+               no_data2)
 diagnosis <- c(dfXlsxGr3$us_diagnosis,
                dfXlsxGr4$us_diagnosis,
                dfXlsxGr3$abus_diagnosis,
@@ -157,8 +161,8 @@ time <- c(dfXlsxGr3$us_time,
           dfXlsxGr4$us_time,
           dfXlsxGr3$abus_time,
           dfXlsxGr4$abus_time,
-          rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
-          rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+          no_data1,
+          no_data2)
 numberNodles <- c(dfXlsxGr3$us_number_nodles,
                   dfXlsxGr4$us_number_nodles,
                   dfXlsxGr3$abus_number_nodles,
@@ -181,8 +185,8 @@ location <- c(dfXlsxGr3$us_formation,
               dfXlsxGr4$us_formation,
               dfXlsxGr3$abus_formation,
               dfXlsxGr4$abus_formation,
-              rep("нет данных",length(dfXlsxGr3$mmg_nodle_size)),
-              rep("нет данных",length(dfXlsxGr4$mmg_nodle_size)))
+              no_data1,
+              no_data2)
 isCalc <- c(dfXlsxGr3$us_is_calc,
                  dfXlsxGr4$us_is_calc,
                  dfXlsxGr3$abus_is_calc,
