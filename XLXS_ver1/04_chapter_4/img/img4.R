@@ -20,7 +20,7 @@ figure1 <- ggplot(dfXlsxGr4, aes(x=abus_symptom_retraction, fill = abus_symptom_
         legend.text = element_text(size = rel(1.3)),
         legend.title=element_text(size = rel(1.3)))
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_symptom_retraction.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_symptom_retraction.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Размеры узлов  --------------------------------------------------------------------
 dfXlsxGr4_isNode <- subset(dfXlsxGr4,dfXlsxGr4$abus_nodle_size!="нет")
@@ -42,7 +42,7 @@ figure1 <- ggplot(dfXlsxGr4_isNode, aes(x=abus_nodle_size, fill = abus_nodle_siz
         legend.title=element_text(size = rel(1.3)))
 # rm(dfXlsxGr4_isNode)
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_nodle_size.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_nodle_size.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Контуры узлов  --------------------------------------------------------------------
 dfXlsxGr4_isNode <- subset(dfXlsxGr4,dfXlsxGr4$abus_nodle_contours!="нет узла")
@@ -69,7 +69,7 @@ figure1 <- ggplot(dfXlsxGr4_isNode, aes(x=abus_nodle_contours, fill = abus_nodle
         legend.text = element_text(size = rel(1.0)),
         legend.title=element_text(size = rel(1.3)))
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_nodle_contours.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_nodle_contours.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Эхогенность --------------------------------------------------------------------
 dfXlsxGr4_isNode <- subset(dfXlsxGr4,dfXlsxGr4$abus_echogenicity_formation!="нет узла")
@@ -94,7 +94,7 @@ figure1 <- ggplot(dfXlsxGr4_isNode, aes(x=abus_echogenicity_formation, fill = ab
         legend.text = element_text(size = rel(1.0)),
         legend.title=element_text(size = rel(1.3)))
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_echogenicity_formation.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_echogenicity_formation.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Структура узлов  --------------------------------------------------------------------
 dfXlsxGr4_isNode <- subset(dfXlsxGr4,dfXlsxGr4$abus_structure!="нет узла")
@@ -119,7 +119,7 @@ figure1 <- ggplot(dfXlsxGr4_isNode, aes(x=abus_structure, fill = abus_structure)
         legend.text = element_text(size = 10),
         legend.title=element_text(size = 13))
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_structure.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_structure.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## Количество --------------------------------------------------------------------
@@ -142,7 +142,7 @@ figure1 <- ggplot(dfXlsxGr4_isNode, aes(x=abus_number_nodles, fill = abus_number
         legend.title=element_text(size = rel(1.3)))
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_number_nodles.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_number_nodles.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## категория BIRADS --------------------------------------------------------------------
@@ -172,7 +172,7 @@ figure1 <- ggplot(dfXlsxGr4_BIRADS, aes(x=abus_category_birads, fill = abus_cate
         legend.text = element_text(size = rel(1.0)),
         legend.title=element_text(size = rel(1.3)))
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_category_birads.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_category_birads.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## диагноз  --------------------------------------------------------------------
 # ggplot(dfXlsxGr4, aes(x=abus_diagnosis, fill = abus_diagnosis))+
@@ -208,7 +208,7 @@ figure1 <- ggplot(dfXlsxGr4_calc, aes(x=abus_calcinates, fill = abus_calcinates)
         legend.title=element_text(size = rel(1.3)))
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_calcinates.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_calcinates.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## рак --------------------------------------------------------------------
 figure1 <- ggplot(dfXlsxGr4, aes(x=abus_is_tumor, fill = abus_is_tumor))+
@@ -226,9 +226,36 @@ figure1 <- ggplot(dfXlsxGr4, aes(x=abus_is_tumor, fill = abus_is_tumor))+
         legend.text = element_text(size = rel(1.0)),
         legend.title=element_text(size = rel(1.3)))
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_is_tumor.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_is_tumor.png",figure1,width = 8,height = 5)
 rm(figure1)
 # MMG ----------------------------------------------------------------------
+## Наличие узла  --------------------------------------------------------------------
+dfXlsxSnr_mmg_mmg_is_nodleT <- dfXlsxSnr
+
+dfXlsxSnr_mmg_mmg_is_nodleT$mmg_is_nodle <- factor(dfXlsxSnr_mmg_mmg_is_nodleT$mmg_is_nodle, 
+                                                                order=TRUE,
+                                                                levels=c("Да",
+                                                                         "Нет"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_mmg_is_nodleT, aes(x=group_separation, fill = mmg_is_nodle))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "Наличие узла"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
+
+rm(dfXlsxSnr_mmg_mmg_is_nodleT)
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_is_nodle.png",figure1,width = 8,height = 5)
+rm(figure1)
 ## ММГ-фон  --------------------------------------------------------------------
 dfXlsxSnr_mmg_background_breasT <- dfXlsxSnr
 
@@ -254,13 +281,13 @@ figure1 <- ggplot(dfXlsxSnr_mmg_background_breasT, aes(x=group_separation, fill 
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
 
 rm(dfXlsxSnr_mmg_background_breasT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_background_breast.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_background_breast.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## Форма узла  --------------------------------------------------------------------
@@ -289,13 +316,13 @@ figure1 <- ggplot(dfXlsxSnr_mmg_nodleT, aes(x=group_separation, fill = mmg_nodle
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
 
 rm(dfXlsxSnr_mmg_nodleT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## Края узлов  --------------------------------------------------------------------
@@ -320,13 +347,13 @@ figure1 <- ggplot(dfXlsxSnr_mmg_nodle_contourT, aes(x=group_separation, fill = m
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
 
 rm(dfXlsxSnr_mmg_nodle_contourT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle_contour.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle_contour.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## Размер узлов --------------------------------------------------------------------
@@ -352,13 +379,13 @@ figure1 <- ggplot(dfXlsxSnr_mmg_nodle_sizeT, aes(x=group_separation, fill = mmg_
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
 
 rm(dfXlsxSnr_mmg_nodle_sizeT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle_size.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_nodle_size.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 
@@ -384,17 +411,18 @@ figure1 <- ggplot(dfXlsxSnr_mmg_number_formations_visualizedT, aes(x=group_separ
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
 
 rm(dfXlsxSnr_mmg_number_formations_visualizedT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_number_formations_visualized.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_number_formations_visualized.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## количество узлов --------------------------------------------------------------------
-dfXlsxSnr_mmg_number_nodlesT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_number_nodles!="не определяется")
+dfXlsxSnr_mmg_number_nodlesT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_number_nodles!="не определяется"&
+                                         dfXlsxSnr$mmg_number_nodles!="не проводилось")
 dfXlsxSnr_mmg_number_nodlesT$mmg_number_nodles <- factor(dfXlsxSnr_mmg_number_nodlesT$mmg_number_nodles, 
                                                                                        order=TRUE,
                                                                                        levels=c("один",
@@ -408,20 +436,19 @@ figure1 <- ggplot(dfXlsxSnr_mmg_number_nodlesT, aes(x=group_separation, fill = m
   labs(
     x= "Группа",
     y = "Количество",
-    fill = "количество узлов"
+    fill = "Количество узлов"
     
   )+
   theme(legend.position="top",
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
 
 rm(dfXlsxSnr_mmg_number_nodlesT)
-
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_number_nodles.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_number_nodles.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Кальцификаты --------------------------------------------------------------------
 dfXlsxSnr_mmg_calcificationsT <- subset(dfXlsxSnr,dfXlsxSnr$mmg_calcifications!="нет")
@@ -451,13 +478,48 @@ figure1 <- ggplot(dfXlsxSnr_mmg_calcificationsT, aes(x=group_separation, fill = 
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
 
 rm(dfXlsxSnr_mmg_calcificationsT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_calcifications.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_calcifications.png",figure1,width = 8,height = 5)
+rm(figure1)
+
+## категория BIRADS  --------------------------------------------------------------------
+dfXlsxSnr_mmg_category_biradsT <- dfXlsxSnr
+
+dfXlsxSnr_mmg_category_biradsT$mmg_category_birads <- factor(dfXlsxSnr_mmg_category_biradsT$mmg_category_birads, 
+                                                   order=TRUE,
+                                                   levels=c("Birads 1",
+                                                            "Birads 2",
+                                                            "Birads 3",
+                                                            "Birads 4а",
+                                                            "Birads 4b",
+                                                            "Birads 4c",
+                                                            "Birads 5",
+                                                            "Birads 6",
+                                                            "Birads 0"))
+
+figure1 <- ggplot(dfXlsxSnr_mmg_category_biradsT, aes(x=group_separation, fill = mmg_category_birads))+
+  geom_bar(position = "dodge")+
+  labs(
+    x= "Группа",
+    y = "Количество",
+    fill = "Категория BIRADS"
+    
+  )+
+  theme(legend.position="top",
+        axis.title.y = element_text(size = rel(1.3)),
+        axis.title.x = element_text(size = rel(1.3)),
+        axis.text = element_text(size = rel(1.3)),
+        legend.text = element_text(size = rel(0.7)),
+        legend.title=element_text(size = rel(1.0)))
+
+rm(dfXlsxSnr_mmg_category_biradsT)
+figure1
+ggsave("./XLXS_ver1/04_chapter_4/img/MMG/mmg_category_birads.png",figure1,width = 8,height = 5)
 rm(figure1)
 # US ----------------------------------------------------------------------
 ## УЗ-фон  --------------------------------------------------------------------
@@ -489,7 +551,7 @@ figure1 <- ggplot(dfXlsxSnr_backgroundT, aes(x=group_separation, fill = us_backg
 rm(dfXlsxSnr_backgroundT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_background.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_background.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Расположение образования  --------------------------------------------------------------------
 
@@ -530,7 +592,7 @@ rm(dfXlsxSnr_formationT)
 
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_formation.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_formation.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Форма образования  --------------------------------------------------------------------
 
@@ -562,7 +624,7 @@ figure1 <- ggplot(dfXlsxSnr_formT, aes(x=group_separation, fill = us_form))+
 rm(dfXlsxSnr_formT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_form.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_form.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Размер образования --------------------------------------------------------------------
 
@@ -594,7 +656,7 @@ figure1 <- ggplot(dfXlsxSnr_sizeT, aes(x=group_separation, fill = us_nodle_size)
 rm(dfXlsxSnr_sizeT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_nodle_size.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_nodle_size.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Края образования  --------------------------------------------------------------------
 
@@ -628,7 +690,7 @@ figure1 <- ggplot(dfXlsxSnr_contourT, aes(x=group_separation, fill = us_nodle_co
 rm(dfXlsxSnr_contourT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_nodle_contour.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_nodle_contour.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Эхогенность образования --------------------------------------------------------------------
 dfXlsxSnr_echogenicityT <- subset(dfXlsxSnr,dfXlsxSnr$us_echogenicity_formation != "нет узла")
@@ -659,7 +721,7 @@ figure1 <- ggplot(dfXlsxSnr_echogenicityT, aes(x=group_separation, fill = us_ech
 rm(dfXlsxSnr_echogenicityT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_echogenicity_formation.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_echogenicity_formation.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## УЗ-структура образования --------------------------------------------------------------------
 
@@ -691,7 +753,7 @@ figure1 <- ggplot(dfXlsxSnr_structureT, aes(x=group_separation, fill = us_struct
 rm(dfXlsxSnr_structureT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_structure.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_structure.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Количество узлов --------------------------------------------------------------------
 dfXlsxSnr_numberT <- subset(dfXlsxSnr,dfXlsxSnr$us_number_nodles != "не определяется")
@@ -721,7 +783,7 @@ figure1 <- ggplot(dfXlsxSnr_numberT, aes(x=group_separation, fill = us_number_no
 rm(dfXlsxSnr_numberT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_number_nodles.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_number_nodles.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Кровоток в образовании  --------------------------------------------------------------------
 
@@ -753,7 +815,7 @@ figure1 <- ggplot(dfXlsxSnr_bloodT, aes(x=group_separation, fill = us_formation_
 rm(dfXlsxSnr_bloodT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_formation_blood_flow.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_formation_blood_flow.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## Эластография  --------------------------------------------------------------------
@@ -787,11 +849,11 @@ figure1 <- ggplot(dfXlsxSnr_elastT, aes(x=group_separation, fill = us_elastograp
 rm(dfXlsxSnr_elastT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_elastography.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_elastography.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 ## Регионарные лимфоузлы  --------------------------------------------------------------------
-dfXlsxSnr_lymphT <- dfXlsxSnr
+dfXlsxSnr_lymphT <- subset(dfXlsxSnr,dfXlsxSnr$us_region_lymph_nodes != "не изменены")
 dfXlsxSnr_lymphT$us_region_lymph_nodes <- factor(dfXlsxSnr_lymphT$us_region_lymph_nodes, 
                                                  order=TRUE,
                                                  levels=c("не изменены",
@@ -813,13 +875,13 @@ figure1 <- ggplot(dfXlsxSnr_lymphT, aes(x=group_separation, fill = us_region_lym
         axis.title.y = element_text(size = rel(1.3)),
         axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = rel(1.3)),
-        legend.text = element_text(size = rel(1.0)),
-        legend.title=element_text(size = rel(1.3)))
+        legend.text = element_text(size = rel(0.5)),
+        legend.title=element_text(size = rel(0.7)))
 
 rm(dfXlsxSnr_lymphT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_region_lymph_nodes.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_region_lymph_nodes.png",figure1,width = 9,height = 6)
 rm(figure1)
 ## Определение категории BI-RADS  --------------------------------------------------------------------
 dfXlsxSnr_BIRADS <- dfXlsxSnr
@@ -850,7 +912,7 @@ figure1 <- ggplot(dfXlsxSnr_BIRADS, aes(x=group_separation, fill = us_category_b
         legend.title=element_text(size = rel(1.3)))
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_category_birads.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_category_birads.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Кальциаты  --------------------------------------------------------------------
 
@@ -876,7 +938,7 @@ figure1 <- ggplot(dfXlsxSnr_calcT, aes(x=group_separation, fill = us_calcinates_
 rm(dfXlsxSnr_calcT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_calcinates_micro_pure.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_calcinates_micro_pure.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## рак --------------------------------------------------------------------
 figure1 <- ggplot(dfXlsxSnr, aes(x=us_is_tumor, fill = us_is_tumor))+
@@ -895,7 +957,7 @@ figure1 <- ggplot(dfXlsxSnr, aes(x=us_is_tumor, fill = us_is_tumor))+
         legend.title=element_text(size = rel(1.3)))
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/US/us_is_tumor.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/US/us_is_tumor.png",figure1,width = 8,height = 5)
 rm(figure1)
 
 # MRSI --------------------------------------------------------------------
@@ -924,7 +986,7 @@ figure1 <- ggplot(dfXlsxSnr_mrsi_dataT, aes(x=group_separation, fill = mrsi_data
 rm(dfXlsxSnr_mrsi_dataT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MRSI/mrsi_data.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MRSI/mrsi_data.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Количество узлов на МРТ --------------------------------------------------------------------
 
@@ -956,7 +1018,7 @@ figure1 <- ggplot(dfXlsxSnr_mrsi_nodlesT, aes(x=group_separation, fill = mrsi_nu
 rm(dfXlsxSnr_mrsi_nodlesT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/MRSI/mrsi_number_nodles.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/MRSI/mrsi_number_nodles.png",figure1,width = 8,height = 5)
 rm(figure1)
 # Hist --------------------------------------------------------------------
 
@@ -996,7 +1058,7 @@ figure1 <- ggplot(dfXlsxSnr_morf, aes(x=group_separation, fill = tumor_morpholog
 rm(dfXlsxSnr_morf)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/Hist/tumor_morphology_structure.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/Hist/tumor_morphology_structure.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Цитологическое заключение --------------------------------------------------------------------
 dfXlsxSnr_cyt<-  subset(dfXlsxSnr,dfXlsxSnr$cytological_conclusion !="не проводилось")
@@ -1024,7 +1086,7 @@ figure1 <- ggplot(dfXlsxSnr_cyt, aes(x=group_separation, fill = cytological_conc
 
 rm(dfXlsxSnr_cyt)
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/Hist/cytological_conclusion.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/Hist/cytological_conclusion.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Рецепторы опухоли --------------------------------------------------------------------
 dfXlsxSnr_tumor_receptorsT <- subset(dfXlsxSnr,dfXlsxSnr$tumor_receptors !="не проводилось")
@@ -1054,7 +1116,7 @@ figure1 <- ggplot(dfXlsxSnr_tumor_receptorsT, aes(x=group_separation, fill = tum
 rm(dfXlsxSnr_tumor_receptorsT)
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/Hist/tumor_receptors.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/Hist/tumor_receptors.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Гистологическое поддтверждение злокачественного новообразования --------------------------------------------------------------------
 
@@ -1074,7 +1136,7 @@ figure1 <- ggplot(dfXlsxSnr, aes(x=group_separation, fill = hist_is_tumor))+
         legend.title=element_text(size = rel(1.3)))
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/Hist/hist_is_tumor.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/Hist/hist_is_tumor.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## Определение злокачественности новообразования --------------------------------------------------------------------
 
@@ -1104,5 +1166,5 @@ rm(dfXlsxSnr_tumor_malignancyT)
 
 
 figure1
-ggsave("./XLXS_ver1/04_chapter_4/img/Hist/degree_malignancy.png",figure1)
+ggsave("./XLXS_ver1/04_chapter_4/img/Hist/degree_malignancy.png",figure1,width = 8,height = 5)
 rm(figure1)
