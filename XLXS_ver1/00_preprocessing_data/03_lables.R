@@ -409,9 +409,9 @@ dfXlsx$us_calcinates_micro_pure <- 	factor(dfXlsx$us_calcinates_micro_pure,
                                                             levels=c(0,1,2,3),
                                                             labels = c(
                                                               "0"="нет",
-                                                              "1"="макрокальцинаты",
-                                                              "2"="макрокальцинаты",
-                                                              "3"="микрокальцинаты" 
+                                                              "1"="кальцинаты",
+                                                              "2"="кальцинаты",
+                                                              "3"="кальцинаты" 
                                                               
                                                             ))
 
@@ -726,9 +726,9 @@ dfXlsx$abus_calcinates	<- 	factor(dfXlsx$abus_calcinates,
                                           levels=c(0,1,2,3,4),
                                           labels = c(
                                             "0"="нет",
-                                            "1"="макрокальцинаты",
-                                            "2"="макрокальцинаты",
-                                            "3"="микрокальцинаты",
+                                            "1"="кальцинаты",
+                                            "2"="кальцинаты",
+                                            "3"="кальцинаты",
                                             "4"="не проводилось"
                                             
                                           ))
@@ -1015,12 +1015,12 @@ dfXlsx$mmg_is_microCalc <- factor(ifelse
                              labels = c("Да", "Нет"))
 
 dfXlsx$us_is_microCalc <- factor(ifelse
-                            (dfXlsx$us_calcinates_micro_pure == "микрокальцинаты"
+                            (dfXlsx$us_calcinates_micro_pure == "кальцинаты"
                               , 0, 1),
                             labels = c("Да", "Нет"))
 
 dfXlsx$abus_is_microCalc <- factor(ifelse
-                              (dfXlsx$abus_calcinates == "микрокальцинаты"
+                              (dfXlsx$abus_calcinates == "кальцинаты"
                                 , 0, 1),
                               labels = c("Да", "Нет"))
 
