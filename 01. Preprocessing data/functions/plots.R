@@ -42,6 +42,7 @@ GeomBar<-function(database, sample1, sample2, parametr1)
           axis.text = element_text(size = rel(1.3)),
           legend.text = element_text(size = rel(1.3)),
           legend.title=element_text(size = rel(1.3)))+
+    theme_bw()+
     scale_y_continuous(breaks= pretty_breaks())
   
 }

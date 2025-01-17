@@ -48,22 +48,17 @@ figure1 <- ggplot(dfXlsxJun_diagnosis_primaryT, aes(x=group_separation, fill = d
             colour = "brown")+
   labs(
     x= "Группа
-1 - Без патологии, 2 - Рак,
-3 - Саркома, 4 - Фиброаденома,
-5 - Фиброзно-кистозная болезнь,
-6 - Киста, 7 - Листовидная опухоль,
-8 - Внутрипротоковая папиллома,
-9 - Гиперплазия,
-10 - Диффузный фиброаденоматоз,
-11 - Локализованный фиброаденоматоз,
-12 - Мастит",
+1 - Без патологии, 2 - Рак, 3 - Саркома, 4 - Фиброаденома,
+5 - Фиброзно-кистозная болезнь, 6 - Киста, 7 - Листовидная опухоль,
+8 - Внутрипротоковая папиллома, 9 - Гиперплазия, 10 - Диффузный фиброаденоматоз,
+11 - Локализованный фиброаденоматоз, 12 - Мастит",
     y = "Количество",
     fill = "Первичный диагноз"
     
   )+
   theme(legend.position="none",
         axis.title.y = element_text(size = rel(1.3)),
-        axis.title.x = element_text(size = rel(2)),
+        axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = 20),
         legend.text = element_text(size = 6.5),
         legend.title=element_text(size = rel(1.3)))
@@ -71,7 +66,7 @@ figure1 <- ggplot(dfXlsxJun_diagnosis_primaryT, aes(x=group_separation, fill = d
 rm(dfXlsxJun_diagnosis_primaryT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/diagnosis_primary.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/diagnosis_primary.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (б) жалобы -----------------------------------------------------------------------
@@ -127,7 +122,7 @@ figure1 <- ggplot(dfXlsxJun_complaintsT, aes(x=group_separation, fill = complain
 rm(dfXlsxJun_complaintsT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/complaints.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/complaints.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (в) репродуктивный статус -----------------------------------------------------------------------
@@ -165,7 +160,8 @@ figure1 <- ggplot(dfXlsxJun_satus_reproductiveT, aes(x=group_separation, fill = 
             colour = "brown")+
   labs(
     x= "Группа
-1 - репродуктивный возраст, 2 - менопауза до 5 лет,
+1 - репродуктивный возраст, 
+2 - менопауза до 5 лет,
 3 - менопауза более 5 лет, 4 - пременопауза,
 5 - оперативная менопауза, 6 - беременность",
     y = "Количество",
@@ -174,7 +170,7 @@ figure1 <- ggplot(dfXlsxJun_satus_reproductiveT, aes(x=group_separation, fill = 
   )+
   theme(legend.position="none",
         axis.title.y = element_text(size = rel(1.3)),
-        axis.title.x = element_text(size = rel(2)),
+        axis.title.x = element_text(size = rel(1.5)),
         axis.text = element_text(size = 20),
         legend.text = element_text(size = 6.5),
         legend.title=element_text(size = rel(1.3)))
@@ -182,7 +178,7 @@ figure1 <- ggplot(dfXlsxJun_satus_reproductiveT, aes(x=group_separation, fill = 
 rm(dfXlsxJun_satus_reproductiveT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/satus_reproductive.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/satus_reproductive.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (г) операции на молочной железе----------------------------------------------------------------------- 
@@ -230,7 +226,7 @@ figure1 <- ggplot(dfXlsxJun_breast_surgery_beforeT, aes(x=group_separation, fill
 rm(dfXlsxJun_breast_surgery_beforeT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/breast_surgery_before.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/breast_surgery_before.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (д) прием гормональных препаратов ----------------------------------------------------------------------- 
@@ -276,7 +272,7 @@ figure1 <- ggplot(dfXlsxJun_hormonal_medicationsT, aes(x=group_separation, fill 
 rm(dfXlsxJun_hormonal_medicationsT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/hormonal_medications.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/hormonal_medications.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (е) Наследственная предрасположенность ----------------------------------------------------------------------- 
 
@@ -321,7 +317,7 @@ figure1 <- ggplot(dfXlsxJun_geneticsT, aes(x=group_separation, fill = genetics))
 rm(dfXlsxJun_geneticsT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/genetics.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/genetics.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (а) мутация BRCA ----------------------------------------------------------------------- 
 
@@ -376,7 +372,7 @@ figure1 <- ggplot(dfXlsxJun_mutation_brcaT, aes(x=group_separation, fill = mutat
 rm(dfXlsxJun_mutation_brcaT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/mutation_brca.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/mutation_brca.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (б) сторона поражения при осмотре ----------------------------------------------------------------------- 
 
@@ -426,7 +422,7 @@ figure1 <- ggplot(dfXlsxJun_sideT, aes(x=group_separation, fill = side))+
 rm(dfXlsxJun_sideT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/side.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/side.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (в) Симптом втягивания соска----------------------------------------------------------------------- 
 
@@ -471,7 +467,7 @@ figure1 <- ggplot(dfXlsxJun_nipple_retractionT, aes(x=group_separation, fill = n
 rm(dfXlsxJun_nipple_retractionT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/nipple_retraction.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/nipple_retraction.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (г) симптом выделения  ----------------------------------------------------------------------- 
@@ -521,7 +517,7 @@ figure1 <- ggplot(dfXlsxJun_nipple_retractionT, aes(x=group_separation, fill = n
 rm(dfXlsxJun_nipple_retractionT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/nipple_release.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/nipple_release.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (д) тип структуры ACR   ----------------------------------------------------------------------- 
@@ -573,7 +569,7 @@ figure1 <- ggplot(dfXlsxJun_type_structure_acrT, aes(x=group_separation, fill = 
 rm(dfXlsxJun_type_structure_acrT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/type_structure_acr.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/type_structure_acr.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (е) квадрант локализации   ----------------------------------------------------------------------- 
@@ -642,7 +638,7 @@ figure1 <- ggplot(dfXlsxJun_quadrantT, aes(x=group_separation, fill = quadrant))
 rm(dfXlsxJun_quadrantT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/quadrant.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Jun/quadrant.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 # Snr -----------------------------------------------------------------------
@@ -693,22 +689,17 @@ figure1 <- ggplot(dfXlsxSnr_diagnosis_primaryT, aes(x=group_separation, fill = d
             colour = "brown")+
   labs(
     x= "Группа
-1 - Без патологии, 2 - Рак,
-3 - Саркома, 4 - Фиброаденома,
-5 - Фиброзно-кистозная болезнь,
-6 - Киста, 7 - Листовидная опухоль,
-8 - Внутрипротоковая папиллома,
-9 - Гиперплазия,
-10 - Диффузный фиброаденоматоз,
-11 - Локализованный фиброаденоматоз,
-12 - Мастит",
+1 - Без патологии, 2 - Рак, 3 - Саркома, 4 - Фиброаденома,
+5 - Фиброзно-кистозная болезнь, 6 - Киста, 7 - Листовидная опухоль,
+8 - Внутрипротоковая папиллома, 9 - Гиперплазия, 10 - Диффузный фиброаденоматоз,
+11 - Локализованный фиброаденоматоз, 12 - Мастит",
     y = "Количество",
     fill = "Первичный диагноз"
     
   )+
   theme(legend.position="none",
         axis.title.y = element_text(size = rel(1.3)),
-        axis.title.x = element_text(size = rel(2)),
+        axis.title.x = element_text(size = rel(1.3)),
         axis.text = element_text(size = 20),
         legend.text = element_text(size = 6.5),
         legend.title=element_text(size = rel(1.3)))
@@ -716,7 +707,7 @@ figure1 <- ggplot(dfXlsxSnr_diagnosis_primaryT, aes(x=group_separation, fill = d
 rm(dfXlsxSnr_diagnosis_primaryT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/diagnosis_primary.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/diagnosis_primary.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (б) жалобы -----------------------------------------------------------------------
@@ -772,7 +763,7 @@ figure1 <- ggplot(dfXlsxSnr_complaintsT, aes(x=group_separation, fill = complain
 rm(dfXlsxSnr_complaintsT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/complaints.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/complaints.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (в) репродуктивный статус -----------------------------------------------------------------------
@@ -827,7 +818,7 @@ figure1 <- ggplot(dfXlsxSnr_satus_reproductiveT, aes(x=group_separation, fill = 
 rm(dfXlsxSnr_satus_reproductiveT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/satus_reproductive.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/satus_reproductive.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (г) операции на молочной железе----------------------------------------------------------------------- 
@@ -875,7 +866,7 @@ figure1 <- ggplot(dfXlsxSnr_breast_surgery_beforeT, aes(x=group_separation, fill
 rm(dfXlsxSnr_breast_surgery_beforeT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/breast_surgery_before.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/breast_surgery_before.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (д) прием гормональных препаратов ----------------------------------------------------------------------- 
@@ -921,7 +912,7 @@ figure1 <- ggplot(dfXlsxSnr_hormonal_medicationsT, aes(x=group_separation, fill 
 rm(dfXlsxSnr_hormonal_medicationsT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/hormonal_medications.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/hormonal_medications.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (е) Наследственная предрасположенность ----------------------------------------------------------------------- 
 
@@ -966,7 +957,7 @@ figure1 <- ggplot(dfXlsxSnr_geneticsT, aes(x=group_separation, fill = genetics))
 rm(dfXlsxSnr_geneticsT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/genetics.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/genetics.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (а) мутация BRCA ----------------------------------------------------------------------- 
 
@@ -1021,7 +1012,7 @@ figure1 <- ggplot(dfXlsxSnr_mutation_brcaT, aes(x=group_separation, fill = mutat
 rm(dfXlsxSnr_mutation_brcaT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/mutation_brca.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/mutation_brca.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (б) сторона поражения при осмотре ----------------------------------------------------------------------- 
 
@@ -1071,7 +1062,7 @@ figure1 <- ggplot(dfXlsxSnr_sideT, aes(x=group_separation, fill = side))+
 rm(dfXlsxSnr_sideT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/side.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/side.png",figure1,width = 8,height = 6)
 rm(figure1)
 ## (в) Симптом втягивания соска----------------------------------------------------------------------- 
 
@@ -1116,7 +1107,7 @@ figure1 <- ggplot(dfXlsxSnr_nipple_retractionT, aes(x=group_separation, fill = n
 rm(dfXlsxSnr_nipple_retractionT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/nipple_retraction.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/nipple_retraction.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (г) симптом выделения  ----------------------------------------------------------------------- 
@@ -1166,7 +1157,7 @@ figure1 <- ggplot(dfXlsxSnr_nipple_retractionT, aes(x=group_separation, fill = n
 rm(dfXlsxSnr_nipple_retractionT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/nipple_release.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/nipple_release.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (д) тип структуры ACR   ----------------------------------------------------------------------- 
@@ -1218,7 +1209,7 @@ figure1 <- ggplot(dfXlsxSnr_type_structure_acrT, aes(x=group_separation, fill = 
 rm(dfXlsxSnr_type_structure_acrT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/type_structure_acr.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/type_structure_acr.png",figure1,width = 8,height = 6)
 rm(figure1)
 
 ## (е) квадрант локализации   ----------------------------------------------------------------------- 
@@ -1287,5 +1278,5 @@ figure1 <- ggplot(dfXlsxSnr_quadrantT, aes(x=group_separation, fill = quadrant))
 rm(dfXlsxSnr_quadrantT)
 
 figure1
-ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/quadrant.png",figure1,width = 8,height = 5)
+ggsave("./XLXS_ver1/02_chapter_2/img/intro_Snr/quadrant.png",figure1,width = 8,height = 6)
 rm(figure1)

@@ -78,6 +78,7 @@ figure1
 ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_nodle_size.png",figure1)
 rm(figure1)
 ## Контуры узлов  --------------------------------------------------------------------
+dfXlsxGr4_isNode <- subset(dfXlsxGr4,dfXlsxGr4$abus_nodle_contours!="нет узла")
 dfXlsxGr4_isNode$abus_nodle_contours <- factor(dfXlsxGr4_isNode$abus_nodle_contours, order=TRUE,
                                                levels=c("ровные",
                                                         "неровные",
@@ -85,14 +86,16 @@ dfXlsxGr4_isNode$abus_nodle_contours <- factor(dfXlsxGr4_isNode$abus_nodle_conto
                                                         "четкие",
                                                         "нечеткие",
                                                         "волнистые",
+                                                        "звездчатые",
                                                         "нарушение архитектоники"),
                                                labels = c("ровные" = "1",
                                                           "неровные" = "2",
                                                           "полициклические" = "3",
                                                           "четкие" = "4",
                                                           "нечеткие" = "5",
-                                                          "волнистые" = "6",
-                                                          "нарушение архитектоники" = "7"))
+                                                          "звездчатые" = "6",
+                                                          "волнистые" = "7",
+                                                          "нарушение архитектоники" = "8"))
 figure1 <- ggplot(dfXlsxGr4_isNode, aes(x=abus_nodle_contours, fill = abus_nodle_contours))+
   geom_bar(position = "dodge")+   
   geom_text(     
@@ -105,7 +108,8 @@ figure1 <- ggplot(dfXlsxGr4_isNode, aes(x=abus_nodle_contours, fill = abus_nodle
     x= "Контуры
     1 = ровные, 2 = неровные,
     3 = полициклические, 4 = четкие,
-    5 = нечеткие, 6 = волнистые,
+    5 = нечеткие, 7 = звезчатые,
+    6 = волнистые,
     7 = нарушение архитектоники",
     y = "Количество",
     fill = "Контур"
@@ -121,7 +125,7 @@ figure1
 ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_nodle_contours.png",figure1)
 rm(figure1)
 ## Эхогенность --------------------------------------------------------------------
-
+dfXlsxGr4_isNode <- subset(dfXlsxGr4,dfXlsxGr4$abus_echogenicity_formation!="нет узла")
 dfXlsxGr4_isNode$abus_echogenicity_formation <- factor(dfXlsxGr4_isNode$abus_echogenicity_formation, order=TRUE,
                                                        levels=c("гиперэхогенное",
                                                                 "гипоэхогенное",
@@ -160,6 +164,7 @@ figure1
 ggsave("./XLXS_ver1/04_chapter_4/img/ABUS/abus_echogenicity_formation.png",figure1)
 rm(figure1)
 ## Структура узлов  --------------------------------------------------------------------
+dfXlsxGr4_isNode <- subset(dfXlsxGr4,dfXlsxGr4$abus_structure!="нет узла")
 dfXlsxGr4_isNode$abus_structure <- factor(dfXlsxGr4_isNode$abus_structure, order=TRUE,
                                           levels=c("однородная",
                                                    "неоднородная",

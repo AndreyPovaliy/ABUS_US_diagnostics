@@ -8,7 +8,9 @@ FileName1 <- "~/Documents/Science/ABUS_US_diagnostics/Текст_ABUS_US.csv"
 
 #XlxsWay <- "~/Documents/Science/ABUS_US_diagnostics/ABUS_US_MG_WXLS.xlsx"
 
-XlxsWay <- "~/Documents/Science/ABUS_US_diagnostics/ABUS_US_MG_WXLS_mod.xlsx"
+# выполнено копирование данных для исправления Эластотипа
+# XlxsWay <- "~/Documents/Science/ABUS_US_diagnostics/ABUS_US_MG_WXLS_mod.xlsx"
+XlxsWay <- "~/Documents/Science/ABUS_US_diagnostics/ABUS_US_MG_WXLS_mod1.xlsx"
 
 XlxsWayLab <- "~/Documents/Science/ABUS_US_diagnostics/ABUS_US_MG_WXLS_lab.xlsx"
 

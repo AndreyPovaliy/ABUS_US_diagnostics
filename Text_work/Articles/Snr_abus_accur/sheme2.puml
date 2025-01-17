@@ -1,17 +1,41 @@
 @startuml
-(Всего/Total \n N = 1283) --> ( BI-RADS 1 \n N = 29)
-(Всего/Total \n N = 1283) --> ( BI-RADS 2 \n N = 942)
-(Всего/Total \n N = 1283) --> (BI-RADS 3 \n N = 122)
-(Всего/Total \n N = 1283) --> ( BI-RADS 4a \n N = 52)
-(Всего/Total \n N = 1283) --> ( BI-RADS 4b \n N = 37)
-(Всего/Total \n N = 1283) --> ( BI-RADS 4c \n N = 28)
-(Всего/Total \n N = 1283) --> ( BI-RADS 5 \n N = 73)
-(BI-RADS 3 \n N = 122) --> (МРТ/MRSI)
-(МРТ/MRSI)--> (BI-RADS 2 \n N = 78)
-(МРТ/MRSI)--> (BI-RADS 4а \n N = 44)
-(BI-RADS 4а \n N = 44) --> (Core биопсия/\nСтереотаксическая биопсия/\nПункционная биопсия/\n Core biopsy/\nStereotactic biopsy/\nNeedle biopsy\n N = 234)
-( BI-RADS 4a \n N = 52) --> (Core биопсия/\nСтереотаксическая биопсия/\nПункционная биопсия/\n Core biopsy/\nStereotactic biopsy/\nNeedle biopsy\n N = 234)
-( BI-RADS 4b \n N = 37) --> (Core биопсия/\nСтереотаксическая биопсия/\nПункционная биопсия/\n Core biopsy/\nStereotactic biopsy/\nNeedle biopsy\n N = 234)
-( BI-RADS 4c \n N = 28) --> (Core биопсия/\nСтереотаксическая биопсия/\nПункционная биопсия/\n Core biopsy/\nStereotactic biopsy/\nNeedle biopsy\n N = 234)
-( BI-RADS 5 \n N = 73) --> (Core биопсия/\nСтереотаксическая биопсия/\nПункционная биопсия/\n Core biopsy/\nStereotactic biopsy/\nNeedle biopsy\n N = 234)
+start
+:Консультация гинеколога или онколога;
+group <b>1. Преддиагностический этап</b>
+:Сбор жалоб;
+:Сбор анамнеза;
+:Визуальный осмотр и пальпация;
+#Orchid:Проведение дигностической маммографии;
+end group
+group <b>2. Согласие на исследование</b>
+:Пациентка подписывает согласие на исследование;
+end group
+
+group <b>3.  Клиническое исследование </b>
+if (Распределение в группу ) then (А)
+#Orchid:Проведение 2D УЗИ;
+
+
+
+
+else(Б)
+
+#Orchid:Проведение 2D УЗИ;
+
+#Orchid:Проведение 3D УЗИ;
+
+endif
+
+if (BI-RADS 1 и 2 \nпо результату УЗИ) then (да)
+#palegreen:Дальнейшее наблюдение;
+stop
+else(нет)
+if  (BI-RADS 3 \nпо результату УЗИ) then (да)
+#PeachPuff:Наблюдение 3-6 мес \n или МРТ с КУ;
+#salmon:Core биопсия/\nСтереотаксическая биопсия/\nПункционная биопсия;
+stop
+else(нет)
+:BI-RADS 4 и 5;
+#salmon:Core биопсия/\nСтереотаксическая биопсия/\nПункционная биопсия;
+stop
 @endumll

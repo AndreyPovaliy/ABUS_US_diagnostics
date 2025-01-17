@@ -159,7 +159,19 @@ pROC_obj_preDiagJun <- roc(dfXlsxJun$hist_is_tumor,dfXlsxJun$preDiagJun,
                        plot=TRUE, auc.polygon=TRUE, max.auc.polygon=TRUE, grid=TRUE,
                        print.auc=TRUE, show.thres=TRUE)
 
+perf3Jun  <- performance(pred_fitJun, x.measure = "cutoff", measure = "spec")
+perf4Jun <- performance(pred_fitJun, x.measure = "cutoff", measure = "sens")
+perf5Jun  <- performance(pred_fitJun, x.measure = "cutoff", measure = "acc")
 
+plot(perf3Jun, col = "red", lwd =2)
+plot(add=T, perf4Jun , col = 'blue', lwd =2)
+plot(add=T, perf5Jun, lwd =2,col = 'green')
+
+legend(x = 0.6,y = 0.3, c("Специфичность", "Чувствительность", "Точность"), 
+       lty = 1, col =c('red', 'blue', 'green'), bty = 'n', cex = 1, lwd = 2)
+
+abline_vJun <- 0.920
+abline(v= abline_vJun, lwd = 4)
 
 escribir (paste("Были расчитаны предикторные коэфициенты на основании пердставленной модели и построек график ROC- кривой качества модели (Рисунок 6.4).",
                 "Площадь под кривой составила", round(aucJun@y.values[[1]],4),
@@ -251,10 +263,10 @@ dfXlsxSnr$preDiagSnr <- predict(object = fit_preDiagSnr, type = "response")
 
 pred_fitSnr <- prediction(dfXlsxSnr$preDiagSnr , dfXlsxSnr$hist_is_tumor)
 perf_fitSnr <- performance(pred_fitSnr,"tpr","fpr")
-plot(perf_fit, colorize=T , print.cutoffs.at = seq(0,1,by=0.1))
+plot(perf_fitSnr, colorize=T , print.cutoffs.at = seq(0,1,by=0.1))
 aucSnr  <- performance(pred_fitSnr, measure = "auc")
 str(aucSnr)
-
+# plot(perf_fitSnr, col='blue')
 pROC_obj_preDiagSnr <- roc(dfXlsxSnr$hist_is_tumor,dfXlsxSnr$preDiagSnr,
                        smoothed = TRUE,
                        ci=TRUE, ci.alpha=0.9, stratified=FALSE,
