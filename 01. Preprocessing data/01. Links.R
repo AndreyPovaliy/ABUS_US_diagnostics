@@ -9,7 +9,7 @@ gr_US_MMG <- "C"
 #ср.узи ABUS (j)
 gr_US_ABUS <- "B"
 # cр.ММГ узи ABUS (s)
-gr_US_MMG_ABUS <- "Ds"
+gr_US_MMG_ABUS <- "D"
 
 
 
