@@ -25,12 +25,12 @@
   <macro name="author">
     <names variable="author">
       <name name-as-sort-order="all" sort-separator=" " initialize-with=". " delimiter=", " delimiter-precedes-last="always"/>
-      <label form="short" prefix=" " text-case="lowercase"/>
+      <label form="long" prefix=" " text-case="lowercase"/>
     </names>
   </macro>
   <macro name="author_short">
     <names variable="author">
-      <name form="short" name-as-sort-order="all" sort-separator=" " delimiter=", " delimiter-precedes-last="always"/>
+      <name form="long" name-as-sort-order="all" sort-separator=" " delimiter=", " delimiter-precedes-last="always"/>
       <substitute>
         <text variable="title"/>
       </substitute>
@@ -82,7 +82,7 @@
       <key macro="author"/>
       <key variable="issued"/>
     </sort>
-    <layout prefix="[" suffix="]" delimiter="; ">
+    <layout prefix="(" suffix=")" delimiter="; ">
       <text macro="author_short" suffix=", "/>
       <text macro="year-date"/>
       <text variable="locator" prefix=", с. "/>
@@ -90,7 +90,7 @@
   </citation>
   <locale xml:lang="en">
     <terms>
-      <term name="et-al">и др.</term>
+      <term name="et-al">et al.</term>
       <term name="editor" form="verb">под ред.</term>
       <term name="accessed">дата обращения</term>
     </terms>
