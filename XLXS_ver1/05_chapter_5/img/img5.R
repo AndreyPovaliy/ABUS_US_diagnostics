@@ -661,19 +661,24 @@ figure1
 ggsave("./XLXS_ver1/05_chapter_5/img/Snr/numberNodles.png",figure1,width = 8,height = 5)
 rm(figure1)
 ## (е) “Кальцинаты” -----------------------------------------------------------------------
-dfXlsxMetCompSnrUsAbus_calcinatesT <- dfXlsxMetCompSnrUsAbus
+dfXlsxMetCompSnr$methodsVizualisation<- factor(dfXlsxMetCompSnr$methodsVizualisation,
+                                                     levels=c("us","mmg","abus"),
+                                                     labels = c("us"="2D УЗИ",
+                                                                "mmg" = "ММГ",
+                                                                "abus"="3D УЗИ"))
+dfXlsxMetCompSnrUsAbus_calcinatesT <- dfXlsxMetCompSnr
 
-dfXlsxMetCompSnrUsAbus_calcinatesT$calcinates <- factor(dfXlsxMetCompSnrUsAbus_calcinatesT$calcinates, 
+dfXlsxMetCompSnrUsAbus_calcinatesT$isCalc <- factor(dfXlsxMetCompSnrUsAbus_calcinatesT$isCalc, 
                                                         order=TRUE,
-                                                        levels=c("кальцинаты",
-                                                                 "нет"),
-                                                        labels = c("кальцинаты" = "1",
-                                                                   "нет" = "2"))
+                                                        levels=c("Да",
+                                                                 "Нет"),
+                                                        labels = c("Да" = "1",
+                                                                   "Нет" = "2"))
 
-figure1 <- ggplot(dfXlsxMetCompSnrUsAbus_calcinatesT, aes(x=methodsVizualisation, fill = calcinates))+
+figure1 <- ggplot(dfXlsxMetCompSnrUsAbus_calcinatesT, aes(x=methodsVizualisation, fill = isCalc))+
   geom_bar(position = "dodge")+   
   geom_label(position = position_dodge(0.9),
-             aes(label = calcinates), 
+             aes(label = isCalc), 
              size = 6.5,
              stat = "count",      
              vjust = 1,      
