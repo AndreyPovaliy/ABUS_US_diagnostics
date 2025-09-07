@@ -4,6 +4,10 @@ write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
 
 dfXlsx <- read.xlsx(xlsxFile = XlxsWayLab,
                     sheet = 'Data')
+
+
+
+
 ## to factor --------------------------------------------------------------
 dfXlsx$group_separation <- as.factor(dfXlsx$group_separation)
 dfXlsx$diagnosis_primary <- as.factor(dfXlsx$diagnosis_primary)

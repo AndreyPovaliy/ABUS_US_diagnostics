@@ -145,19 +145,14 @@ Quantity_discr<-function(parametr,database){
   n <- length(data.frame(table(database), row.names = TRUE )$Freq)
   i<-0
   while (i<n){
-    Descr<-print(paste(
+    Descr<-print(paste0(
                        data.frame(table(database))[i+1,1],
                        " в ",
                        data.frame(round(prop.table(table(database))*100,2))[i+1,2],
                        "% (", 
                        data.frame(table(database))[i+1,2],
                        "/",length(database),
-                       "случаев)",
-                       "[95% ДИ ",
-                       round(prop.test(table(database)[i+1], length(database))$conf.int[1],2),
-                       ";",
-                       round(prop.test(table(database)[i+1], length(database))$conf.int[2],2),
-                       "]."
+                       ")"
                        , sep=""))
     
     i<-i+1
@@ -181,7 +176,7 @@ Quantity_table<-function(parametr,database1,database2){
   cat(a, file = FileName, append = TRUE)
   i<-0
   while (i<n){
-    Descr<-print(paste(data.frame(table(database1))[i+1,1],
+    Descr<-print(paste0("|",data.frame(table(database1))[i+1,1],
                        "|",
                        data.frame(round(prop.table(table(database1)),5))[i+1,2]*100,
                        "% (", 
@@ -272,21 +267,20 @@ Quantity_table<-function(parametr,database1,database2){
 
   
   n <- length(data.frame(table(database1), row.names = TRUE )$Freq)
-  Descr<-print(paste(parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
+  Descr<-print(paste("|",parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
 |------|------|------|------|------|
-|Группы|Группа X|------|Группа Y|------|
-"))
+|Группы|Группа X|------|Группа Y|------|"))
   a <- paste(Descr,"\n")
   cat(a, file = FileName, append = TRUE)
   i<-0
   while (i<n){
-    Descr<-print(paste(data.frame(table(database1))[i+1,1],
+    Descr<-print(paste0("|",data.frame(table(database1))[i+1,1],
                        "|",
                        data.frame(round(prop.table(table(database1)),5))[i+1,2]*100,
                        "% (", 
                        data.frame(table(database1))[i+1,2],
                        "/",length(database1),
-                       "случаев)|",
+                       ")|",
                        "[",
                        round(prop.test(table(database1)[i+1], length(database1))$conf.int[1],2),
                        ";",
@@ -296,7 +290,7 @@ Quantity_table<-function(parametr,database1,database2){
                        "% (", 
                        data.frame(table(database2))[i+1,2],
                        "/",length(database2),
-                       "случаев)|",
+                       ")|",
                        "[",
                        round(prop.test(table(database2)[i+1], length(database2))$conf.int[1],2),
                        ";",

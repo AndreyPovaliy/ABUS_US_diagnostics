@@ -1,8 +1,20 @@
+---
+title: "correction"
+author: "AndreyPovaliy"
+date: "2025-09-05"
+output: word_document
+# bibliography: references.bib
+# csl: gost-r-7-0-5-2008.csl
+# csl: gost-r-7-0-5-2008-numeric-alphabetical.csl
+---
 
-* Категория BIRADS * 
-Категория BIRADS по результатам 2D УЗИ Birads 1 в 20.58% (149/724), Birads 2 в 56.49% (409/724), Birads 3 в 17.13% (124/724), Birads 4а в 3.31% (24/724), Birads 4b в 1.66% (12/724) и Birads 5 в 0.83% (6/724).
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+source("/Users/andreypovaliy/Documents/Science/ABUS_US_diagnostics/XLXS_ver1/00_preprocessing_data/05_real_script.R")
+```
 
-По результатам 3D УЗИ Birads 1 был в 21.13% (153/724), Birads 2 в 58.7% (425/724), Birads 3 в 15.19% (110/724), Birads 4а в 1.66% (12/724), Birads 4b в 0.83% (6/724) и Birads 5 в 2.49% (18/724).
+# Коррекции
 
 | Категория BIRADS |Процентная доля|95% ДИ |Процентная доля|95% ДИ | 
 |------|------|------|------|------|
@@ -13,4 +25,4 @@
 |Birads 4b|1.657% (12/724)|[0.01;0.03]|0.829% (6/724)|[0;0.02]| 
 |Birads 4а|3.315% (24/724)|[0.02;0.05]|1.657% (12/724)|[0.01;0.03]| 
 |Birads 5|0.829% (6/724)|[0;0.02]|2.486% (18/724)|[0.02;0.04]| 
-Разница между группами Категория BIRADS  составила 0 . 
+

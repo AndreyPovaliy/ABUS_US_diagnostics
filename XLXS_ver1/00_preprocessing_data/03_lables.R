@@ -391,7 +391,7 @@ dfXlsx$us_diagnosis	<- 	factor(dfXlsx$us_diagnosis,
                                         "7"="внутрипротоковая папиллома молочной железы",
                                         "8"="фиброзно-кистозная мастопатия",
                                         "9"="диффузный фиброаденоматоз",
-                                        "10"="мультфококальный рак",
+                                        "10"="мультифокальный рак",
                                         "11"="мультицентричный рак",
                                         "12"="локализованный фиброаденоматоз",
                                         "13"= "липома",
@@ -921,7 +921,7 @@ dfXlsx$tumor_receptors	<- 	factor(dfXlsx$tumor_receptors,
                                        labels = c(
                                          "0"="не проводилось",
                                          "1"="РЭ+РП+Her-2_neu",
-                                         "2"="РП",
+                                         "2"="РЭ+РП+Her-2_neu негатив",
                                          "3"="Her-2_neu",
                                          "4"= "РЭ+РП+Her-2_neu негатив",
                                          "5"="РЭ+Her2_neu",
@@ -961,7 +961,7 @@ dfXlsx$is_GradeMalignancy <- factor(ifelse
                              labels = c("Нет", "Да"))
 
 dfXlsx$is_Receptors <- factor(ifelse
-                                    (dfXlsx$tumor_receptors == "не проводилось"| dfXlsx$mmg_nodle == "нет узла", 0, 1),
+                                    (dfXlsx$tumor_receptors == "не проводилось", 0, 1),
                                     labels = c("Нет", "Да"))
 
 
@@ -1109,9 +1109,7 @@ dfXlsx$mmg_probabilityNeoCa  <- predict(object = fit_mmgNeoCa, type = "response"
 
 
 
-
-
-
-
+dfXlsx$is_Receptors[dfXlsx$hist_is_tumor == "Да" & dfXlsx$is_Receptors == "Нет"] <- "Да"
+dfXlsx$tumor_receptors[dfXlsx$hist_is_tumor == "Да" & dfXlsx$tumor_receptors == "не проводилось"] <- "негатив"
 
 

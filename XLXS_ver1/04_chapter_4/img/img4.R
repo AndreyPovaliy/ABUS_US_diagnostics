@@ -845,8 +845,7 @@ figure1 <- ggplot(dfXlsxSnr_mmg_category_biradsT, aes(x=group_separation, fill =
     1 = Birads 1, 2 = Birads 2,
     3 = Birads 3, 4 = Birads 4а,
     5 = Birads 4b, 6 = Birads 4c,
-    7 = Birads 5, 8 = Birads 6,
-    9 = Birads 0",
+    7 = Birads 5",
     y = "Количество",
     fill = "Категория BIRADS"
     

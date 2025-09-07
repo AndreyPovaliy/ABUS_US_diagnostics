@@ -234,7 +234,7 @@ figure1 <- ggplot(dfXlsxGr3_isNode, aes(x=abus_number_nodles, fill = abus_number
         legend.title=element_text(size = rel(1.3)))
 
 figure1
-ggsave("./XLXS_ver1/03_chapter_3/img/ABUS/abus_number_nodles.png",figure1)
+ggsave("./XLXS_ver1/03_chapter_3/img/ABUS/abus_number_nodles.png",figure)
 rm(figure1)
 
 ## категория BIRADS --------------------------------------------------------------------
@@ -270,7 +270,7 @@ figure1 <- ggplot(dfXlsxGr3_BIRADS, aes(x=abus_category_birads, fill = abus_cate
     x = "Категория BIRADS:
     1 = Birads 1, 2 = Birads 2, 3 = Birads 3,
     4 = Birads 4а, 5 = Birads 4b, 6 = Birads 4c,
-    7 = Birads 5, 8 = Birads 6, 9 = Birads 0",
+    7 = Birads 5",
     y = "Количество",
     fill = "категория BIRADS"
     
