@@ -1,14 +1,13 @@
 #####FUNCTIONS####
 #приемер: escribir ("Запись1")
 escribir <- function(a) {
-  
-  Descr <- print(a)
-  a <- paste(Descr,"\n")
+  descr <- print(a)
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   
 }
 
-#escribir_rT("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Calc_abus_accur/decomp/txt/Материалы.txt")
+# escribir_rT("~/Documents/Science/ABUS_US_diagnostics/Text_work/Articles/Calc_abus_accur/decomp/txt/Материалы.txt")
 escribir_rT <- function (way_to_text){
   rT <- read.table(way_to_text,sep = "_")
   for (i in 1:nrow(rT)) {
@@ -21,8 +20,8 @@ escribir_rT <- function (way_to_text){
 #приемер: escribirPaste ("Запись2")
 escribirPaste <- function(a) {
   
-  Descr <- print(paste((a)))
-  a <- paste(Descr,"\n")
+  descr <- print(paste((a)))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   
 }
@@ -32,44 +31,43 @@ escribirPaste <- function(a) {
 How_many<-function(a,b)
 {
   количество_пациентов<-length(a)
-  Descr<-print(paste(b,количество_пациентов, "пациентов."))
-  a <- paste(Descr,"\n")
+  descr<-print(paste(b,количество_пациентов, "пациентов."))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
 
 
-# приемер:Describe_numeric_Norm (df_Abus$Age, "возраст ","пациентов по всей выборке составил "," лет")
-Describe_numeric_Norm<-function(database,parametr,sample1,mesurement)
+# приемер:describe_numeric_Norm (df_Abus$Age, "возраст ","пациентов по всей выборке составил "," лет")
+describe_numeric_Norm<-function(database,parametr,sample1,mesurement)
 {
   mean1<-round(mean(database, na.rm = TRUE),2)
   sd1<-round(sd(database, na.rm = TRUE),2)
-  Descr<-print(paste("Средний ", parametr ,sample1,mean1 ,"±",sd1, mesurement,".", sep=""))
-  a <- paste(Descr,"\n")
+  descr<-print(paste("Средний ", parametr ,sample1,mean1 ,"±",sd1, mesurement,".", sep=""))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
 
-# приемер:Describe_numeric_NoNorm (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
-Describe_numeric_NoNorm<-function(database,parametr,sample1,mesurement)
+# приемер:describe_numeric_NoNorm (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
+describe_numeric_NoNorm<-function(database,parametr,sample1,mesurement)
 {
   median1<-round(median(database, na.rm = TRUE),2)
   quan1<-summary(database, na.rm = TRUE)
-  Descr<-print(paste("Медиана ", parametr ,sample1,median1 ," [Q1-Q3: ",round(quan1[2],2),";",round(quan1[5],2),"]", mesurement,".", sep=""))
-  a <- paste(Descr,"\n")
+  descr<-print(paste("Медиана ", parametr ,sample1,median1 ," [Q1-Q3: ",round(quan1[2],2),";",round(quan1[5],2),"]", mesurement,".", sep=""))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
 
-# приемер:Table_numeric_Normal("возраст",df_Abus$Age, df_Abus$Group)
-Table_numeric_Normal<-function(parametr,database,dev )
+# приемер: row_num_norm("возраст",df$age_patient,df$group_separation)
+row_num_norm<-function(parametr,vector)
 {
-  mean1<-round(mean(database, na.rm = TRUE),2)
-  sd1<-round(sd(database, na.rm = TRUE),2)
+  mean<-round(mean(vector, na.rm = TRUE),2)
+  sd<-round(sd(vector, na.rm = TRUE),2)
   
-  Descr<-print(paste(parametr,"*",mean1 ,"±",sd1))
-  a <- paste(Descr,"\n")
-  cat(a, file = FileName, append = TRUE)
+  answer <-print(paste("|:",parametr,":|:",mean1 ,"±",sd1,":|\n"))
+  cat(answer, file = FileName, append = TRUE)
 }
 
 
@@ -77,13 +75,13 @@ Table_numeric_Normal<-function(parametr,database,dev )
 
 
 # приемер:Table_numeric_NoNormal("возраст",gr_Jun$Age, gr_Jun$Group)
-Table_numeric_NoNormal<-function(parametr,database,dev )
+Table_numeric_NoNormal<-function(parametr,database)
 {
   median1<-round(median(database, na.rm = TRUE),2)
   quan1<-summary(database, na.rm = TRUE)
   p_value <- round(as.numeric(wilcox.test(database ~ dev)[3]),2)
-  Descr<-print(paste(parametr,"*",median1 ,"[ Q1-Q3:",round(quan1[2],2),";",round(quan1[5],2),"]","*", p_value))
-  a <- paste(Descr,"\n")
+  descr<-print(paste(parametr,"*",median1 ,"[ Q1-Q3:",round(quan1[2],2),";",round(quan1[5],2),"]","*", p_value))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
@@ -95,8 +93,8 @@ Table_numericANOV<-function(parametr,database,dev )
   mean1<-round(mean(database, na.rm = TRUE),2)
   sd1<-round(sd(database, na.rm = TRUE),2)
   p_value <- round(as.numeric(summary(aov(database ~ dev))[[1]][["Pr(>F)"]][1],2))
-  Descr<-print(paste(parametr,"*",mean1 ,"±",sd1,"*", p_value))
-  a <- paste(Descr,"\n")
+  descr<-print(paste(parametr,"*",mean1 ,"±",sd1,"*", p_value))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
@@ -106,21 +104,20 @@ Table_numericKr<-function(parametr,database,dev )
   median1<-round(median(database, na.rm = TRUE),2)
   quan1<-summary(database, na.rm = TRUE)
   p_value <- round(as.numeric(kruskal.test(database ~ dev)[3]),2)
-  Descr<-print(paste(parametr,"*",median1 ,"[ Q1-Q3:",round(quan1[2],2),";",round(quan1[5],2),"]","*", p_value))
-  a <- paste(Descr,"\n")
+  descr<-print(paste(parametr,"*",median1 ,"[ Q1-Q3:",round(quan1[2],2),";",round(quan1[5],2),"]","*", p_value))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
 
-# Quantity_discr_short("Кожа была ",dfXlsxJun$us_skin)
-Quantity_discr_short<-function(parametr,database){
-  Descr <- parametr
-  a <- paste(Descr,"\n")
+quantity_discr_short<-function(parametr,database,file_name){
+  descr <- parametr
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   n <- length(data.frame(table(database), row.names = TRUE )$Freq)
   i<-0
   while (i<n){
-    Descr<-print(paste(
+    descr<-print(paste(
       data.frame(table(database))[i+1,1],
       " в ",
       data.frame(round(prop.table(table(database))*100,2))[i+1,2],
@@ -130,22 +127,22 @@ Quantity_discr_short<-function(parametr,database){
       ")", sep=""))
     
     i<-i+1
-    a <- paste(Descr,"\n")
-    cat(a, file = FileName, append = TRUE)
+    a <- paste(descr,"\n")
+    cat(a, file = file_name, append = TRUE)
     
   }
 }
 
 
-# Quantity_discr("Кожа была ",dfXlsxJun$us_skin)
-Quantity_discr<-function(parametr,database){
-  Descr <- parametr
-  a <- paste(Descr,"\n")
-  cat(a, file = FileName, append = TRUE)
+# quantity_discr("Кожа была ",as.factor(mtcars$vs))
+quantity_discr<-function(parametr,database,file_name){
+  descr <- parametr
+  a <- paste(descr,"\n")
+  cat(a, file = file_name, append = TRUE)
   n <- length(data.frame(table(database), row.names = TRUE )$Freq)
   i<-0
   while (i<n){
-    Descr<-print(paste0(
+    descr<-print(paste0(
                        data.frame(table(database))[i+1,1],
                        " в ",
                        data.frame(round(prop.table(table(database))*100,2))[i+1,2],
@@ -156,27 +153,27 @@ Quantity_discr<-function(parametr,database){
                        , sep=""))
     
     i<-i+1
-    a <- paste(Descr,"\n")
-    cat(a, file = FileName, append = TRUE)
+    a <- paste(descr,"\n")
+    cat(a, file = file_name, append = TRUE)
    
   }
 }
 
 
-#Quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary,dfXlsxGr3$diagnosis_primary)
-Quantity_table<-function(parametr,database1,database2){
+#quantity_table("Диагноз",dfXlsxGr1$diagnosis_primary,dfXlsxGr3$diagnosis_primary)
+quantity_table<-function(parametr,database1,database2){
 
   
   n <- length(data.frame(table(database1), row.names = TRUE )$Freq)
-  Descr<-print(paste(parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
+  descr<-print(paste(parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
 |------|------|------|------|------|
 |Группы|Группа X|------|Группа Y|------|
 "))
-  a <- paste(Descr,"\n")
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   i<-0
   while (i<n){
-    Descr<-print(paste0("|",data.frame(table(database1))[i+1,1],
+    descr<-print(paste0("|",data.frame(table(database1))[i+1,1],
                        "|",
                        data.frame(round(prop.table(table(database1)),5))[i+1,2]*100,
                        "% (", 
@@ -200,7 +197,7 @@ Quantity_table<-function(parametr,database1,database2){
                        "]|"
                        
     ))
-    a <- paste(Descr,"\n")
+    a <- paste(descr,"\n")
     cat(a, file = FileName, append = TRUE)
     i<-i+1
     
@@ -208,19 +205,19 @@ Quantity_table<-function(parametr,database1,database2){
 }
 
 
-Quantity_table_3<-function(parametr,database1,database2,database3){
+quantity_table_3<-function(parametr,database1,database2,database3){
   
   
   n <- length(data.frame(table(database1), row.names = TRUE )$Freq)
-  Descr<-print(paste(parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
+  descr<-print(paste(parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
 |------|------|------|------|------|------|------|
 |Группы|Группа X|------|Группа Y|------|Группа Z|------|
 "))
-  a <- paste(Descr,"\n")
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   i<-0
   while (i<n){
-    Descr<-print(paste(data.frame(table(database1))[i+1,1],
+    descr<-print(paste(data.frame(table(database1))[i+1,1],
                        "|",
                        data.frame(round(prop.table(table(database1)),5))[i+1,2]*100,
                        "% (", 
@@ -254,7 +251,7 @@ Quantity_table_3<-function(parametr,database1,database2,database3){
                        "]|"
                        
     ))
-    a <- paste(Descr,"\n")
+    a <- paste(descr,"\n")
     cat(a, file = FileName, append = TRUE)
     i<-i+1
     
@@ -267,14 +264,14 @@ Quantity_table<-function(parametr,database1,database2){
 
   
   n <- length(data.frame(table(database1), row.names = TRUE )$Freq)
-  Descr<-print(paste("|",parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
+  descr<-print(paste("|",parametr,"|Процентная доля|95% ДИ","|Процентная доля|95% ДИ |","
 |------|------|------|------|------|
 |Группы|Группа X|------|Группа Y|------|"))
-  a <- paste(Descr,"\n")
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   i<-0
   while (i<n){
-    Descr<-print(paste0("|",data.frame(table(database1))[i+1,1],
+    descr<-print(paste0("|",data.frame(table(database1))[i+1,1],
                        "|",
                        data.frame(round(prop.table(table(database1)),5))[i+1,2]*100,
                        "% (", 
@@ -298,7 +295,7 @@ Quantity_table<-function(parametr,database1,database2){
                        "]|"
                        
     ))
-    a <- paste(Descr,"\n")
+    a <- paste(descr,"\n")
     cat(a, file = FileName, append = TRUE)
     i<-i+1
     
@@ -308,8 +305,8 @@ Quantity_table<-function(parametr,database1,database2){
 
 
 #pvalue сравнения качественных данных
-#приемер: pvalueQualitativeText(df_Abus$Side,df_Abus$Group,"по стороне поражения")
-pvalueQualitativeText <-  function(x,y,parametr1){
+#приемер: pvalue_qualitative_text(df_Abus$Side,df_Abus$Group,"по стороне поражения")
+pvalue_qualitative_text <-  function(x,y,parametr1){
   if(
     min(table(x)>5)
     
@@ -317,15 +314,15 @@ pvalueQualitativeText <-  function(x,y,parametr1){
   {
     S_Table <-chisq.test(table(x,y), simulate.p.value = TRUE)$p.value
     S_Table <- round(as.numeric(S_Table),2)
-    Descr<-print(paste("Разница между группами", parametr1," составила",S_Table, "."))
-    a <- paste(Descr,"\n")
+    descr<-print(paste("Разница между группами", parametr1," составила",S_Table, "."))
+    a <- paste(descr,"\n")
     cat(a, file = FileName, append = TRUE) 
   }
   else{
     S_Table <-fisher.test(table(x,y), simulate.p.value = TRUE)$p.value
     S_Table <- round(as.numeric(S_Table),2)
-    Descr<-print(paste("Разница между группами", parametr1," составила",S_Table, "."))
-    a <- paste(Descr,"\n")
+    descr<-print(paste("Разница между группами", parametr1," составила",S_Table, "."))
+    a <- paste(descr,"\n")
     cat(a, file = FileName, append = TRUE)
     
   }
@@ -341,18 +338,18 @@ pvalueQualitativeText <-  function(x,y,parametr1){
 pvalueParaKrText <-function(database,x,y, parametr1)
 {
   kruskal<-round(as.numeric(kruskal.test(x ~ y, data=database)[3]),2)
-  Descr<-print(paste("Разница между группами", parametr1," составила",kruskal, "."))
-  a <- paste(Descr,"\n")
+  descr<-print(paste("Разница между группами", parametr1," составила",kruskal, "."))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
 #pvalue сравнения непарметрич данных (wilcox.test)
-#приемер: pvalueParaWxText(gr_Jun,gr_Jun$Age,gr_Jun$Group,"по возрасту")
-pvalueParaWxText <-function(database,x,y, parametr1)
+#приемер: pvalue_nonorm_test(gr_Jun,gr_Jun$Age,gr_Jun$Group,"по возрасту")
+pvalue_nonorm_test <-function(database,x,y, parametr1)
 {
   wilcox<-round(as.numeric(wilcox.test(x ~ y, data=database)[3]),2)
-  Descr<-print(paste("Разница между группами", parametr1," составила",wilcox, "."))
-  a <- paste(Descr,"\n")
+  descr<-print(paste("Разница между группами", parametr1," составила",wilcox, "."))
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
 }
 
@@ -386,15 +383,15 @@ Table_numeric3<-function(parametr,database,dev)
 
 
 #####COMB FUNCTIONS####
-# приемер:Describe_numeric (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
-Describe_numeric<-function(database,parametr,sample1,mesurement){
+# приемер:describe_numeric (df_Abus$Age, "возраст","пациентов по всей выборке составил","лет")
+describe_numeric<-function(database,parametr,sample1,mesurement){
   if( shapiro.test(database)$p.value> 0.05
   ){
-    Describe_numeric_Norm(database,parametr,sample1,mesurement)
+    describe_numeric_Norm(database,parametr,sample1,mesurement)
     
   }
   else{
-    Describe_numeric_NoNorm(database,parametr,sample1,mesurement)
+    describe_numeric_NoNorm(database,parametr,sample1,mesurement)
     
   }
  
@@ -458,7 +455,7 @@ article_text <- function(text, in_group1, in_group2, vector1, vector2, vectorSum
 # SSA_text(dfXlsxJun$us_is_tumor,dfXlsxJun$hist_is_tumor, "УЗИ в группе А")
 SSA_text <- function(predicted_value, expected_value, method){
   x <- SSA(predicted_value, expected_value)
-  Descr<-print(paste("При оценке ", method," количество истинно верно определенных образований как доброкачественные было ",x[["table"]][4], 
+  descr<-print(paste("При оценке ", method," количество истинно верно определенных образований как доброкачественные было ",x[["table"]][4], 
                         ",  количество верно определённых образований как злокачественные было", x[["table"]][1],
                         ", количество неверно определенных образований как злокачественные было ", x[["table"]][3],
                         " и количество неопределенных злокачественных образований как доброкачественные было ",x[["table"]][2], ".",
@@ -498,7 +495,7 @@ SSA_text <- function(predicted_value, expected_value, method){
                         
                         ))
   
-  a <- paste(Descr,"\n")
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   
 }
@@ -507,7 +504,7 @@ SSA_text <- function(predicted_value, expected_value, method){
 # SSA_textClac(dfXlsxJun$us_is_tumor,dfXlsxJun$hist_is_tumor, "УЗИ в группе А")
 SSA_textClac <- function(predicted_value, expected_value, method){
   x <- SSA(predicted_value, expected_value)
-  Descr<-print(paste("При оценке ", method," количество истинно верно определенных образований как отсутствие кальцината было ",x[["table"]][4], 
+  descr<-print(paste("При оценке ", method," количество истинно верно определенных образований как отсутствие кальцината было ",x[["table"]][4], 
                         ",  количество верно определённых образований как наличие кальцината было", x[["table"]][1],
                         ", количество неверно определенных кальцинатов как отсутствие кальцината было ", x[["table"]][2],
                         " и количество определенных истинно отсутствовавших кальциантов как найденное было ",x[["table"]][3], ".",
@@ -547,7 +544,7 @@ SSA_textClac <- function(predicted_value, expected_value, method){
                         
   ))
   
-  a <- paste(Descr,"\n")
+  a <- paste(descr,"\n")
   cat(a, file = FileName, append = TRUE)
   
 }
