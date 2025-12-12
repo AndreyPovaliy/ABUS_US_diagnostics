@@ -1,0 +1,5 @@
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/01. Links.R")
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/02. Samples.R")
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/03. Lables.R")
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/04. SubSamp.R")
+source("~/Статиьи и диссертации/ABUS_US_diagnostics/01. Preprocessing data/functions/func.R")

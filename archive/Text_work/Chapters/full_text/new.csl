@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="ru-RU">
+  <!-- ... остальная часть info секции остается без изменений ... -->
+  
+  <locale xml:lang="ru">
+    <terms>
+      <term name="et-al"> </term>
+      <term name="editor">под ред.</term>
+      <term name="accessed">дата обращения</term>
+      <term name="page" form="short">с.</term>
+      <term name="translator">перевод</term>
+    </terms>
+  </locale>
+  
+  <!-- ... остальные макросы без изменений ... -->
+  
+  <!-- Специальный макрос для сортировки с приоритетом кириллицы -->
+  <macro name="author-sort-key">
+    <choose>
+      <if variable="author">
+        <names variable="author">
+          <name>
+            <sort>
+              <!-- Создаем ключ сортировки: префикс + фамилия -->
+              <key macro="create-sort-key"/>
+            </sort>
+          </name>
+        </names>
+      </if>
+      <else-if variable="editor">
+        <names variable="editor">
+          <name>
+            <sort>
+              <key macro="create-sort-key"/>
+            </sort>
+          </name>
+        </names>
+      </else-if>
+      <else>
+        <!-- Если нет автора и редактора, используем заголовок с префиксом Z -->
+        <text value="Z"/>
+        <text variable="title"/>
+      </else>
+    </choose>
+  </macro>
+  
+  <macro name="create-sort-key">
+    <choose>
+      <!-- Определяем, является ли первый символ кириллическим -->
+      <!-- Для этого используем простую проверку диапазона Unicode -->
+      <!-- Коды кириллических букв: А-Я: 1040-1071, а-я: 1072-1103, Ё: 1025, ё: 1105 -->
+      <if match="^[А-Яа-яЁё]">
+        <!-- Кириллица: префикс "A" -->
+        <text value="A"/>
+        <text variable="family"/>
+      </if>
+      <else-if match="^[A-Za-z]">
+        <!-- Латиница: префикс "B" -->
+        <text value="B"/>
+        <text variable="family"/>
+      </else-if>
+      <else>
+        <!-- Другие символы: префикс "C" -->
+        <text value="C"/>
+        <text variable="family"/>
+      </else>
+    </choose>
+  </macro>
+  
+  <!-- ... остальная часть стиля без изменений до bibliography ... -->
+  
+  <bibliography et-al-min="4" et-al-use-first="1">
+    <!-- Сортировка с приоритетом кириллицы -->
+    <sort>
+      <key macro="author-sort-key"/>
+      <key variable="issued"/>
+    </sort>
+    
+    <!-- ... остальная часть layout без изменений ... -->
+  </bibliography>
+</style>

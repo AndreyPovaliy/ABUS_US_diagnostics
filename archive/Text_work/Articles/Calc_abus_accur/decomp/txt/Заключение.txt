@@ -1,0 +1,41 @@
+"##" Выводы
+По результатам проведенного нами сравнительного анализа диагностической эффективности обнаружения кальцианатов и микрокальцинатов с помощью 2d УЗИ в B-режиме MicroPure и автоматизированного 3d УЗИ у женщин в возрастной группе 40 лет и старше лет с неоднородной и высокой плотностью тканей молочной железы пердставленные методы показали сопоставимую эффективность. В 18% c помощью 2d УЗИ и в 20% c помощью 3d УЗИ можно верно обнаружить микракальцинат, что позволяет провести пункцию во время исследования под УЗнаведением. Ложноположительные результаты не превышают 1% случаев при использовании 2d и 3d УЗИ.
+"##" Участие авторов
+Гаранина А.Э. – концепция и дизайн исследования,
+проведение исследования, анализ и интерпретация полученных данных, написание текста и статистическая обработка данных.
+Холин А.В. – концепция и дизайн исследования, подготовка и
+редактирование текста, утверждение окончательного варианта
+статьи.
+"##" Authors’ participation
+Garanina A.E. – сoncept and design of the study, conducting research, analysis and interpretation of the data, text writing and data processing.
+Kholin A.V. – concept and design of the study, preparation and editing of the text and approval of the final version of the article.
+"##" Информация об авторах
+Гаранина Анна Эдуардовна – аспирант кафедры лучевой диагностики ФГБОУ ВО “Северо-Западный государственный Медицинский университет им.И.И.Мечникова”, Врач ультразвуковой диагностики, Клиника СМТ АО Поликлинический комплекс, Санкт-Петербург, Российская Федерация. 
+e-mail: anna.garanina.90@mail.ru
+SPIN-код: 8668-3521
+ORCID: https://orcid.org/0009-0001-8193-6657 
+Холин Александр Васильевич - доктор медицинских наук, профессор заведующий кафедрой лучевой диагностики ФГБОУ ВО “Северо-Западный государственный Медицинский университет им.И.И.Мечникова”. 
+e-mail: holin1959@list.ru. 
+SPIN-код: 9791-8550 
+ORCID: https://orcid.org/0000-0001-8227-1530
+"##" Информация об авторах
+Контакты: Гаранина Анна Эдуардовна, anna.garanina.90@mail.ru
+Гаранина Анна Эдуардовна – аспирант кафедры лучевой диагностики ФГБОУ ВО “Северо-Западный государственный Медицинский университет им.И.И.Мечникова”, Врач ультразвуковой диагностики, Клиника СМТ АО Поликлинический комплекс, Санкт-Петербург, Российская Федерация. 
+e-mail: anna.garanina.90@mail.ru
+SPIN-код: 8668-3521
+ORCID: https://orcid.org/0009-0001-8193-6657 
+Холин Александр Васильевич - доктор медицинских наук, профессор заведующий кафедрой лучевой диагностики ФГБОУ ВО “Северо-Западный государственный Медицинский университет им.И.И.Мечникова”. 
+e-mail: holin1959@list.ru. 
+SPIN-код: 9791-8550 
+ORCID: https://orcid.org/0000-0001-8227-1530
+"##" About the authors
+Contacts: Anna E. Garanina, anna.garanina.90@mail.ru
+Garanina Anna Eduardovna – PhD student at the Department of Radiation Diagnostics North-Western State Medical University named after I.I. Mechnikov,  Saint-Petersburg, 191015, 41 Kirochnaya str., Saint Petersburg, Russian Federation, Врач ультразвуковой диагностики, SMT Clinic JSC Polyclinic Complex, Russia, 190013, St. Petersburg, Moskovsky ave., 22, letter a.
+e-mail: anna.garanina.90@mail.ru
+SPIN-код: 8668-3521
+ORCID: https://orcid.org/0009-0001-8193-6657 
+Kholin Aleksandr Vasilevich - Doctor of Medical Sciences, Professor, Head of the Department of Radiation Diagnostics North-Western State Medical University named after I.I. Mechnikov,  Saint-Petersburg, 191015, 41 Kirochnaya str., Saint Petersburg, Russian Federation 
+e-mail: holin1959@list.ru. 
+SPIN-код: 9791-8550 
+ORCID: https://orcid.org/0000-0001-8227-1530
+"##" Список литературы

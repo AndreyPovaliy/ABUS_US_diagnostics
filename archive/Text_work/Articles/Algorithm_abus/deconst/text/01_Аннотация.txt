@@ -1,0 +1,28 @@
+УДК 616-006.04
+"#" ОПРЕДЕЛЕНИЕ МЕСТА АВТОМАТИЗИРОВАННОГО 3D УЗИ В СТРУКТУРЕ РАННЕЙ ДИАГНОСТИКИ НОВОБРАЗОВАНИЙ МОЛОЧНОЙ ЖЕЛЕЗЫ
+Гаранина А.Э. ^1,2^, Холин А.В.^1^
+^1^ Северо-Западный государственный Медицинский университет им. И. И.
+Мечникова, Россия, Санкт-Петербург, 191015, Российская Федерация, г.
+Санкт-Петербург, ул. Кирочная, д. 41
+^2^ Клиника СМТ АО Поликлинический комплекс, Россия, 190013, г.
+Санкт-Петербург, Московский пр., д. 22, литер а
+Контакты: Гаранина Анна Эдуардовна,
+[anna.garanina.90\@mail.ru](mailto:anna.garanina.90@mail.ru)
+**Резюме** Автоматическое ультразвуковое исследование МЖ (3D УЗИ) стало важным инструментом в диагностике РМЖ. Считается, что 3D УЗИ обладает высокой воспроизводимостью, низкой зависимостью от оператора, меньшими затратами времени на получение изображений, автоматической трехмерной реконструкцией всей МЖ.
+**Цель исследования.** Разработать новый алгоритма маршрутизации пациенток, основанный на предиктивных факторах и результатах диагностики для оптимизации использования 3D УЗИ в процессе скрининга и ранней диагностики рака молочной железы.
+**Материалы и методы.** С февраля 2019 по май 2023 года проводилось ретро-проспективное клиническое исследование. Всего в исследование вошло 2794 пациенток. Всем пациенткам проводили клинический осмотр, пальпацию, собрали информацию о социально-демографических данных и потенциальных факторах риска РМЖ, также был проведено 2D УЗИ. У пациенток от 40 лет и старше проводилась ММГ. В выборку до 40 лет вошло 1511 пациенток из них 628 выполнено 3D УЗИ. В выборку 40 лет и старше вошло 1283 пациенток из них 655 выполнено 3D УЗИ.
+**Результаты.** Были выявлены наиболее значимые факторы и на их основании скрининг с 3D УЗИ в выборке до 40 лет в 95.96% его можно использовать и не показан в 4.04%. Представленная модель в выборке до 40 лет сработала корректно в 99.21% и в 0.79%. В то время как скрининг с 3D УЗИ в выборке 40 лет и старше не показан в 15.74%, в 84.26% исследование целесообразно. Представленная модель сработала корректно в 97.12% и в 2.88% нет. 
+**Выводы.** 3D УЗИ не уступает по эффективности традиционному УЗИ в ранней диагностике опухолей молочных желез как у женщин до 40 лет, так и у женщин старше этого возраста. 3D УЗИ дополняет традиционную ультразвуковую диагностику, что позволяет улучшить организацию потока пациенток и обеспечить более точное и своевременное выявление опухолей в молочных железах.
+**Ключевые слова:** рак молочной железы, ультразвуковое исследование, автоматизированное объемное сканирование молочных желез
+Авторы подтверждают отсутствие конфликтов интересов.
+"#" DETERMINING THE PLACE OF AUTOMATED 3D ULTRASOUND IN THE STRUCTURE OF EARLY DIAGNOSIS OF BREAST NEOPLASMS
+Garanina A.E. 1,2, Kholin A.V.1 
+1 North-Western State Medical University named after I.I. Mechnikov,  Saint-Petersburg, 191015, 41 Kirochnaya str., Saint Petersburg, Russian Federation
+2 SMT Clinic JSC Polyclinic Complex, Russia, 190013, St. Petersburg, Moskovsky ave., 22, letter a
+**Abstract** Automatic ultrasound examination of the breast (3D ultrasound) has become an important tool in the diagnosis of breast cancer. It is believed that 3D ultrasound has high reproducibility, low dependence on the operator, less time spent on obtaining images, and automatic three-dimensional reconstruction of the entire breast.
+**Aim.** To develop a new patient routing algorithm based on predictive factors and diagnostic results to optimize the use of 3D ultrasound in the process of screening and early diagnosis of breast cancer.
+**Methods.** From February 2019 to May 2023, a retro-prospective clinical study was conducted. A total of 2794 patients were included in the study. All patients underwent clinical examination, palpation, collected information on socio-demographic data and potential risk factors for breast cancer, and 2D ultrasound was also performed. In patients 40 years of age and older, MMG was performed. The sample under 40 years of age included 1511 patients, of which 628 underwent 3D ultrasound. The sample of 40 years and older included 1283 patients, of which 655 underwent 3D ultrasound.
+**Results.** The most significant factors were identified and, based on them, screening with 3D ultrasound in a sample up to 40 years of age in 95.96% can be used and is not indicated in 4.04%. The presented model in the sample up to 40 years worked correctly in 99.21% and 0.79%. While screening with 3D ultrasound in a sample of 40 years and older is not indicated in 15.74%, in 84.26% the study is appropriate. The presented model worked correctly in 97.12% and in 2.88% it did not. 
+**Conclusion.** 3D ultrasound is not inferior in effectiveness to traditional ultrasound in the early diagnosis of breast tumors both in women under 40 years of age and in women older than this age. 3D ultrasound complements traditional ultrasound diagnostics, which improves the organization of the patient flow and provides more accurate and timely detection of tumors in the mammary glands.
+**Keywords:** breast cancer, ultrasound, automated volumetric breast scanning.
+Conflict of interest. The authors declare no conflict of interest. The study had no sponsorship
