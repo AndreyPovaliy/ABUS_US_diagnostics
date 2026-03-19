@@ -1,6 +1,6 @@
 #####Write Xlsx####
-setwd("~/Documents/Science/ABUS_US_diagnostics")
-write.xlsx(dfXlsx, "ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
+# setwd("~/Documents/Science/ABUS_US_diagnostics")
+write.xlsx(dfXlsx, "./archive/ABUS_US_MG_WXLS_lab.xlsx", sheetName = "Data")
 
 dfXlsx <- read.xlsx(xlsxFile = XlxsWayLab,
                     sheet = 'Data')
@@ -91,7 +91,7 @@ dfXlsx$abus_is_microCalc <- as.factor(dfXlsx$abus_is_microCalc)
 dfXlsx$mmg_is_microCalc <- as.factor(dfXlsx$mmg_is_microCalc)
 # Mathirials -----------------------------------------------------------------
 ## Jun --------------------------------------------------------------
-dfXlsxJun <- subset(dfXlsx, group_separation == gr_US | group_separation ==gr_US_ABUS)
+dfXlsxJun <- subset(dfXlsx, group_separation == gr_US | group_separation == gr_US_ABUS)
 
 ## Sin --------------------------------------------------------------
 dfXlsxSnr <- subset(dfXlsx, group_separation == gr_US_MMG | group_separation ==gr_US_MMG_ABUS)
@@ -228,13 +228,15 @@ dfXlsxMetComp <- data.frame("groupSep" = groupSep,
 )
 
 
-dfXlsxMetComp$metod_is_tumor <- factor(ifelse
-                              (dfXlsxMetComp$diagnosis == "Susp Ca"
+dfXlsxMetComp$metod_is_tumor <- factor(
+  ifelse(dfXlsxMetComp$diagnosis == "Susp Ca"
                                 | dfXlsxMetComp$diagnosis == "образование Ca"
                                 | dfXlsxMetComp$diagnosis == "мультифокальный рак"
                                 | dfXlsxMetComp$diagnosis== "мультицентричный рак"
-                                , 1, 0),
-                              labels = c("Нет", "Да"))
+                                , 1, 0)
+  ,
+                              labels = c("Нет", "Да")
+  )
 
 
 dfXlsxMetComp$methodsVizualisation <-  as.factor(dfXlsxMetComp$methodsVizualisation )

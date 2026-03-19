@@ -1,0 +1,24 @@
+# Титульный лист {.unnumbered}
+
+<center>МИНЕСТЕРСТВО ЗДРАВООХРАНЕНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ 
+"СЕВЕРО-ЗАПАДНЫЙ ГОСУДАРСТВЕННЫЙ МЕДИЦИНСКИЙ УНИВЕРСИТЕТ ИМЕНИ И.И.МЕЧНИКОВА"
+</center>
+
+<div style="text-align: right;
+padding: 56px;">*На правах рукописи*</div>
+
+<div style="text-align: center; padding: 24px;">ГАРАНИНА</div>
+<div style="text-align: center; padding: 24px;">Анна Эдуардовна</div>
+
+<div style="text-align: center; padding: 24px;">РОЛЬ АВТОМАТИЗИРОВАННОГО ОБЪЕМНОГО УЛЬТРАЗВУКОВОГО СКАНИРОВАНИЯ В КОМПЛЕКСНОЙ РАННЕЙ ДИАГНОСТИКЕ ОБРАЗОВАНИЙ МОЛОЧНЫХ ЖЕЛЕЗ</div>
+
+<div style="text-align: right; padding: 24px;">Научная специальность: 3.1.25 - Лучевая диагностика</div>
+
+<div style="text-align: right; padding: 12px;">Диссертация на соискание ученой степени</div>
+<div style="text-align: right; padding: 12px;">кандидата медицинских наук</div>
+
+<div style="text-align: right; padding: 12px;">Научный руководитель:</div>
+<div style="text-align: right; padding: 12px;">доктор медицинских наук, профессор</div>
+<div style="text-align: right; padding: 12px;">А.В. Холин</div>
+
+<div style="text-align: center; padding_top: 36px;">Санкт-Петербург, 2025</div>

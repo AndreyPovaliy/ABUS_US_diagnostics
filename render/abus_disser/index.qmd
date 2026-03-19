@@ -1,5 +1,3 @@
-# Preface {.unnumbered}
+# Общая информация {.unnumbered}
 
-This is a Quarto book.
-
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Это проект работы Гараниной Анна Эдуардовны.

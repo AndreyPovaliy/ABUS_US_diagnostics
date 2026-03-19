@@ -7,19 +7,44 @@ book:
   date: "12/6/2025"
   chapters:
     - index.qmd
+    - title.qmd
     - intro.qmd
-    - summary.qmd
+    - chapter_1.qmd
+    - chapter_2.qmd
+    - chapter_3.qmd
+    - chapter_4.qmd
+    - chapter_5.qmd
+    - chapter_6.qmd
+    - conclusion.qmd
     - references.qmd
 
 bibliography: references.bib
+csl: ama.csl
+link-citations: true
+reference-section-title: "Список литературы"
+
+lang: ru
 
 format:
   html:
     theme:
       - cosmo
       - brand
-  pdf:
-    documentclass: scrreprt
+    toc: true
+    toc-title: "Содержание"
+    lang: ru
+  docx: 
+    prefer-html: true
+    toc: true
+    number-sections: true
+    toc-title: "Содержание"
+    reference-doc: "./tmp/template.docx"  # Опционально: свой шаблон Word
+    fig-width: 6  # Ширина рисунков
+    fig-height: 4  # Высота рисунков
+    # df-print: kable  # Таблицы через kable
+    # keep-md: true  # Сохранять промежуточный Markdown (для отладки)
+
+
 
 
 
